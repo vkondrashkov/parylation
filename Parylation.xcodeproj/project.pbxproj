@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CB78719A2C9A707B665BCE6 /* Pods_Parylation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */; };
 		9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C207E7A2470ADAE0022AC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E792470ADAE0022AC92 /* SceneDelegate.swift */; };
 		9C207E7C2470ADAE0022AC92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E7B2470ADAE0022AC92 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parylation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C88BD1CA5D8868D563E9C52 /* Pods-Parylation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parylation.debug.xcconfig"; path = "Target Support Files/Pods-Parylation/Pods-Parylation.debug.xcconfig"; sourceTree = "<group>"; };
+		6637B8AC741B4D9F0324F1E4 /* Pods-Parylation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parylation.release.xcconfig"; path = "Target Support Files/Pods-Parylation/Pods-Parylation.release.xcconfig"; sourceTree = "<group>"; };
 		9C207E742470ADAE0022AC92 /* Parylation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parylation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C207E772470ADAE0022AC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C207E792470ADAE0022AC92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB78719A2C9A707B665BCE6 /* Pods_Parylation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				9C207E762470ADAE0022AC92 /* Parylation */,
 				9C207E752470ADAE0022AC92 /* Products */,
+				D54CFEBF893D163822B989B9 /* Pods */,
+				DC5568DE053774DFACFE2048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = Parylation;
 			sourceTree = "<group>";
 		};
+		D54CFEBF893D163822B989B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C88BD1CA5D8868D563E9C52 /* Pods-Parylation.debug.xcconfig */,
+				6637B8AC741B4D9F0324F1E4 /* Pods-Parylation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC5568DE053774DFACFE2048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C207E882470ADB10022AC92 /* Build configuration list for PBXNativeTarget "Parylation" */;
 			buildPhases = (
+				5E6E2E293450AFFC4D3755B5 /* [CP] Check Pods Manifest.lock */,
 				9C207E702470ADAE0022AC92 /* Sources */,
 				9C207E712470ADAE0022AC92 /* Frameworks */,
 				9C207E722470ADAE0022AC92 /* Resources */,
+				463E11538DD75658886500A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		463E11538DD75658886500A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parylation/Pods-Parylation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parylation/Pods-Parylation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Parylation/Pods-Parylation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E6E2E293450AFFC4D3755B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parylation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C207E702470ADAE0022AC92 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		9C207E892470ADB10022AC92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C88BD1CA5D8868D563E9C52 /* Pods-Parylation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		9C207E8A2470ADB10022AC92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6637B8AC741B4D9F0324F1E4 /* Pods-Parylation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
