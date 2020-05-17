@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AppComponent {
+final class AppComponent: RootDependency {
     unowned let window: UIWindow
     
     init(window: UIWindow) {

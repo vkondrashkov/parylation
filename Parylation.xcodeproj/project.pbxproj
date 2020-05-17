@@ -12,6 +12,17 @@
 		9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E802470ADB10022AC92 /* Assets.xcassets */; };
 		9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */; };
 		9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E8E2470B39A0022AC92 /* AppComponent.swift */; };
+		9C207E992470B4990022AC92 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E982470B4990022AC92 /* RootComponent.swift */; };
+		9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9A2470B4A00022AC92 /* RootContract.swift */; };
+		9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9C2470B4B40022AC92 /* RootBuilder.swift */; };
+		9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9E2470B4C00022AC92 /* RootView.swift */; };
+		9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA02470B4C80022AC92 /* RootRouter.swift */; };
+		9C207EA32470B5DD0022AC92 /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA22470B5DD0022AC92 /* RootInteractorImpl.swift */; };
+		9C207EA52470B5E70022AC92 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA42470B5E70022AC92 /* RootInteractor.swift */; };
+		9C207EA82470B7590022AC92 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA72470B7590022AC92 /* UserRepository.swift */; };
+		9C207EAA2470B7A80022AC92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA92470B7A80022AC92 /* User.swift */; };
+		9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
+		9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		9C207E832470ADB10022AC92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C207E852470ADB10022AC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C207E8E2470B39A0022AC92 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		9C207E982470B4990022AC92 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
+		9C207E9A2470B4A00022AC92 /* RootContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContract.swift; sourceTree = "<group>"; };
+		9C207E9C2470B4B40022AC92 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		9C207E9E2470B4C00022AC92 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		9C207EA02470B4C80022AC92 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		9C207EA22470B5DD0022AC92 /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
+		9C207EA42470B5E70022AC92 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		9C207EA72470B7590022AC92 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9C207EA92470B7A80022AC92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9C207E8B2470B2480022AC92 /* Application */,
+				9C207EA62470B73C0022AC92 /* Data */,
 				9C207E8C2470B3600022AC92 /* Domain */,
 				9C207E8D2470B3680022AC92 /* Presentation */,
 				9C207E802470ADB10022AC92 /* Assets.xcassets */,
@@ -102,6 +125,7 @@
 		9C207E902470B3E20022AC92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9C207E972470B4850022AC92 /* Root */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -123,6 +147,7 @@
 		9C207E932470B3FB0022AC92 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9C207EA92470B7A80022AC92 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -130,6 +155,7 @@
 		9C207E942470B4090022AC92 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				9C207EA42470B5E70022AC92 /* RootInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -137,6 +163,7 @@
 		9C207E952470B4110022AC92 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9C207EA72470B7590022AC92 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -146,6 +173,28 @@
 			children = (
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9C207E972470B4850022AC92 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9C207E9A2470B4A00022AC92 /* RootContract.swift */,
+				9C207E982470B4990022AC92 /* RootComponent.swift */,
+				9C207E9C2470B4B40022AC92 /* RootBuilder.swift */,
+				9C207EA02470B4C80022AC92 /* RootRouter.swift */,
+				9C207EA22470B5DD0022AC92 /* RootInteractorImpl.swift */,
+				9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */,
+				9C207E9E2470B4C00022AC92 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9C207EA62470B73C0022AC92 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -279,8 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
+				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
+				9C207E992470B4990022AC92 /* RootComponent.swift in Sources */,
+				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
+				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
+				9C207EA32470B5DD0022AC92 /* RootInteractorImpl.swift in Sources */,
+				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
+				9C207EA52470B5E70022AC92 /* RootInteractor.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
+				9C207EA82470B7590022AC92 /* UserRepository.swift in Sources */,
+				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
+				9C207EAA2470B7A80022AC92 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
