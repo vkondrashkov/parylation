@@ -15,8 +15,12 @@ final class RootView: UIViewController {
         super.viewDidLoad()
         
         bindViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        viewModel.viewDidLoadTrigger.send()
+        viewModel.viewDidAppearTrigger.send()
     }
     
     private func bindViewModel() {

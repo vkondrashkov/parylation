@@ -6,4 +6,12 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class RootComponent: DashboardDependency {
+    let parent: UIViewController
+    
+    init(parent: UIViewController) {
+        self.parent = parent
+    }
+}

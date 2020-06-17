@@ -13,7 +13,7 @@ final class RootViewModelImpl: RootViewModel {
     private let interactor: RootInteractor
     private let router: RootRouter
     
-    let viewDidLoadTrigger = PassthroughSubject<Void, Never>()
+    let viewDidAppearTrigger = PassthroughSubject<Void, Never>()
     
     private let disposeBag = DisposeBag()
     
@@ -24,7 +24,7 @@ final class RootViewModelImpl: RootViewModel {
         self.interactor = interactor
         self.router = router
         
-        let isUserAuthorized = viewDidLoadTrigger
+        let isUserAuthorized = viewDidAppearTrigger
             .flatMapConcat {
                 interactor.isUserAuthorized()
             }

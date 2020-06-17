@@ -9,13 +9,15 @@
 import UIKit
 
 final class RootRouterImpl {
-    private let navigationController: UINavigationController
+    private weak var view: UIViewController?
+    private let dashboardBuilder: DashboardBuilder
 
     init(
-        navigationController: UINavigationController
-        // builder
+        view: UIViewController,
+        dashboardBuilder: DashboardBuilder
     ) {
-        self.navigationController = navigationController
+        self.view = view
+        self.dashboardBuilder = dashboardBuilder
     }
 }
 
@@ -24,5 +26,9 @@ final class RootRouterImpl {
 extension RootRouterImpl: RootRouter {
     func showAuth() { }
     
-    func showDashboard() { }
+    func showDashboard() {
+        let dashboardView = dashboardBuilder.build()
+        dashboardView.modalPresentationStyle = .fullScreen
+        view?.present(dashboardView, animated: false, completion: nil)
+    }
 }

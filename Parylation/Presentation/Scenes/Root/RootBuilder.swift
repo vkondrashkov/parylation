@@ -21,12 +21,14 @@ final class RootBuilderImpl {
 extension RootBuilderImpl: RootBuilder {
     func build() -> UIViewController {
         let view = RootView()
-//        let component = RootComponent(dependency: dependency, parent: view)
-//        let contactsListBuilder = ContactsListBuilderImpl(dependency: component)
-//        let scene = NavigationScene(parent: view)
+        let component = RootComponent(parent: view)
+        let dashboardBuilder = DashboardBuilderImpl(dependency: component)
         let userRepository = UserRepositoryImpl()
         let interactor = RootInteractorImpl(userRepository: userRepository)
-        let router = RootRouterImpl(navigationController: UINavigationController())
+        let router = RootRouterImpl(
+            view: view,
+            dashboardBuilder: dashboardBuilder
+        )
         let viewModel = RootViewModelImpl(
             interactor: interactor,
             router: router

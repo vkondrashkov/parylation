@@ -24,5 +24,5 @@ protocol RootRouter: AnyObject {
 }
 
 protocol RootViewModel {
-    var viewDidLoadTrigger: PassthroughSubject<Void, Never> { get }
+    var viewDidAppearTrigger: PassthroughSubject<Void, Never> { get }
 }
