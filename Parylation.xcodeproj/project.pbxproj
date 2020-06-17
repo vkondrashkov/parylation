@@ -23,6 +23,14 @@
 		9C207EAA2470B7A80022AC92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA92470B7A80022AC92 /* User.swift */; };
 		9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
 		9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */; };
+		9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
+		9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB2247169490022AC92 /* DashboardComponent.swift */; };
+		9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
+		9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
+		9C207EB9247169600022AC92 /* DashboardInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */; };
+		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
+		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
+		9C207EBF24716BA50022AC92 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +54,14 @@
 		9C207EA92470B7A80022AC92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		9C207EB0247169410022AC92 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
+		9C207EB2247169490022AC92 /* DashboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComponent.swift; sourceTree = "<group>"; };
+		9C207EB4247169500022AC92 /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
+		9C207EB6247169580022AC92 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorImpl.swift; sourceTree = "<group>"; };
+		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9C207E972470B4850022AC92 /* Root */,
+				9C207EAF247169280022AC92 /* Dashboard */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -156,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				9C207EA42470B5E70022AC92 /* RootInteractor.swift */,
+				9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -195,6 +213,20 @@
 				9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9C207EAF247169280022AC92 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9C207EB0247169410022AC92 /* DashboardContract.swift */,
+				9C207EB2247169490022AC92 /* DashboardComponent.swift */,
+				9C207EB4247169500022AC92 /* DashboardBuilder.swift */,
+				9C207EB6247169580022AC92 /* DashboardRouter.swift */,
+				9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */,
+				9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */,
+				9C207EBC247169730022AC92 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -328,8 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
+				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
+				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
 				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
 				9C207E992470B4990022AC92 /* RootComponent.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
@@ -337,10 +372,15 @@
 				9C207EA32470B5DD0022AC92 /* RootInteractorImpl.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C207EA52470B5E70022AC92 /* RootInteractor.swift in Sources */,
+				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
+				9C207EB9247169600022AC92 /* DashboardInteractorImpl.swift in Sources */,
 				9C207EA82470B7590022AC92 /* UserRepository.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
+				9C207EBF24716BA50022AC92 /* DashboardInteractor.swift in Sources */,
+				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9C207EAA2470B7A80022AC92 /* User.swift in Sources */,
+				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
