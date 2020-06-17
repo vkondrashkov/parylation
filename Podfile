@@ -15,3 +15,11 @@ end
 target 'Parylation' do
   common_pods
 end
+
+target 'ParylationDev' do
+  common_pods
+end
+
+target 'ParylationDevTests' do
+  test_pods
+end

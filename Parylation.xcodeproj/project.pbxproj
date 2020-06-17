@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CB78719A2C9A707B665BCE6 /* Pods_Parylation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */; };
+		2CB78719A2C9A707B665BCE6 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		89928F9084C8587C3F8F1B86 /* Pods_Parylation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4F8DBD8A94E013E455AA9A /* Pods_Parylation.framework */; };
 		9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E802470ADB10022AC92 /* Assets.xcassets */; };
 		9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */; };
@@ -31,12 +32,52 @@
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
 		9C207EBF24716BA50022AC92 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */; };
+		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
+		9C5C6545249A5DC800E9D889 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
+		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
+		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
+		9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
+		9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */; };
+		9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E982470B4990022AC92 /* RootComponent.swift */; };
+		9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9E2470B4C00022AC92 /* RootView.swift */; };
+		9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9C2470B4B40022AC92 /* RootBuilder.swift */; };
+		9C5C654D249A5DC800E9D889 /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA22470B5DD0022AC92 /* RootInteractorImpl.swift */; };
+		9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA02470B4C80022AC92 /* RootRouter.swift */; };
+		9C5C654F249A5DC800E9D889 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA42470B5E70022AC92 /* RootInteractor.swift */; };
+		9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
+		9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E8E2470B39A0022AC92 /* AppComponent.swift */; };
+		9C5C6552249A5DC800E9D889 /* DashboardInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */; };
+		9C5C6553249A5DC800E9D889 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA72470B7590022AC92 /* UserRepository.swift */; };
+		9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9A2470B4A00022AC92 /* RootContract.swift */; };
+		9C5C6555249A5DC800E9D889 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */; };
+		9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
+		9C5C6557249A5DC800E9D889 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA92470B7A80022AC92 /* User.swift */; };
+		9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB2247169490022AC92 /* DashboardComponent.swift */; };
+		9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */; };
+		9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E802470ADB10022AC92 /* Assets.xcassets */; };
+		9C5C6578249A607800E9D889 /* UserRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6577249A607800E9D889 /* UserRepositorySpec.swift */; };
+		D1B5F6C4AEB69B4883EC66E7 /* Pods_ParylationDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C6D33F9C855A0125C72175 /* Pods_ParylationDev.framework */; };
+		E37971D2C4C48C665611F230 /* Pods_ParylationDevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9C5C656E249A602600E9D889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C207E6C2470ADAE0022AC92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C5C6541249A5DC800E9D889;
+			remoteInfo = ParylationDev;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parylation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2705E5094112C27542A0EBC9 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
+		4CE1811599EFB2918D695266 /* Pods-ParylationDevTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDevTests.release.xcconfig"; path = "Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C88BD1CA5D8868D563E9C52 /* Pods-Parylation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parylation.debug.xcconfig"; path = "Target Support Files/Pods-Parylation/Pods-Parylation.debug.xcconfig"; sourceTree = "<group>"; };
 		6637B8AC741B4D9F0324F1E4 /* Pods-Parylation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parylation.release.xcconfig"; path = "Target Support Files/Pods-Parylation/Pods-Parylation.release.xcconfig"; sourceTree = "<group>"; };
+		8F4F8DBD8A94E013E455AA9A /* Pods_Parylation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parylation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9424529FBCA0AD3DA1C236C2 /* Pods-ParylationDevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDevTests.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C207E742470ADAE0022AC92 /* Parylation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parylation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C207E772470ADAE0022AC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C207E802470ADB10022AC92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +103,13 @@
 		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		9C207EBE24716BA50022AC92 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5C656D249A602600E9D889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5C6577249A607800E9D889 /* UserRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositorySpec.swift; sourceTree = "<group>"; };
+		9C5C6579249A625400E9D889 /* InfoDev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoDev.plist; sourceTree = "<group>"; };
+		D6C6D33F9C855A0125C72175 /* Pods_ParylationDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF3FA01649C8DA378ABCC0E /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +117,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB78719A2C9A707B665BCE6 /* Pods_Parylation.framework in Frameworks */,
+				2CB78719A2C9A707B665BCE6 /* (null) in Frameworks */,
+				89928F9084C8587C3F8F1B86 /* Pods_Parylation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5C6559249A5DC800E9D889 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1B5F6C4AEB69B4883EC66E7 /* Pods_ParylationDev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5C6566249A602600E9D889 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E37971D2C4C48C665611F230 /* Pods_ParylationDevTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				9C207E762470ADAE0022AC92 /* Parylation */,
+				9C5C656A249A602600E9D889 /* ParylationDevTests */,
 				9C207E752470ADAE0022AC92 /* Products */,
 				D54CFEBF893D163822B989B9 /* Pods */,
 				DC5568DE053774DFACFE2048 /* Frameworks */,
@@ -90,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				9C207E742470ADAE0022AC92 /* Parylation.app */,
+				9C5C6562249A5DC800E9D889 /* ParylationDev.app */,
+				9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,10 +168,9 @@
 				9C207E8B2470B2480022AC92 /* Application */,
 				9C207EA62470B73C0022AC92 /* Data */,
 				9C207E8C2470B3600022AC92 /* Domain */,
+				9C5C6564249A5ED200E9D889 /* Resources */,
 				9C207E8D2470B3680022AC92 /* Presentation */,
-				9C207E802470ADB10022AC92 /* Assets.xcassets */,
 				9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */,
-				9C207E852470ADB10022AC92 /* Info.plist */,
 			);
 			path = Parylation;
 			sourceTree = "<group>";
@@ -229,11 +296,42 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		9C5C6564249A5ED200E9D889 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C207E802470ADB10022AC92 /* Assets.xcassets */,
+				9C207E852470ADB10022AC92 /* Info.plist */,
+				9C5C6579249A625400E9D889 /* InfoDev.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9C5C656A249A602600E9D889 /* ParylationDevTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C6576249A606D00E9D889 /* Data */,
+				9C5C656D249A602600E9D889 /* Info.plist */,
+			);
+			path = ParylationDevTests;
+			sourceTree = "<group>";
+		};
+		9C5C6576249A606D00E9D889 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C6577249A607800E9D889 /* UserRepositorySpec.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				5C88BD1CA5D8868D563E9C52 /* Pods-Parylation.debug.xcconfig */,
 				6637B8AC741B4D9F0324F1E4 /* Pods-Parylation.release.xcconfig */,
+				DBF3FA01649C8DA378ABCC0E /* Pods-ParylationDev.debug.xcconfig */,
+				2705E5094112C27542A0EBC9 /* Pods-ParylationDev.release.xcconfig */,
+				9424529FBCA0AD3DA1C236C2 /* Pods-ParylationDevTests.debug.xcconfig */,
+				4CE1811599EFB2918D695266 /* Pods-ParylationDevTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -241,7 +339,9 @@
 		DC5568DE053774DFACFE2048 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				539126FCE3B32C80A0631EE3 /* Pods_Parylation.framework */,
+				D6C6D33F9C855A0125C72175 /* Pods_ParylationDev.framework */,
+				1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */,
+				8F4F8DBD8A94E013E455AA9A /* Pods_Parylation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -268,18 +368,61 @@
 			productReference = 9C207E742470ADAE0022AC92 /* Parylation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9C5C6541249A5DC800E9D889 /* ParylationDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5C655F249A5DC800E9D889 /* Build configuration list for PBXNativeTarget "ParylationDev" */;
+			buildPhases = (
+				9C5C6542249A5DC800E9D889 /* [CP] Check Pods Manifest.lock */,
+				9C5C6543249A5DC800E9D889 /* Sources */,
+				9C5C6559249A5DC800E9D889 /* Frameworks */,
+				9C5C655B249A5DC800E9D889 /* Resources */,
+				9C5C655E249A5DC800E9D889 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParylationDev;
+			productName = Parylation;
+			productReference = 9C5C6562249A5DC800E9D889 /* ParylationDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C5C6568249A602600E9D889 /* ParylationDevTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5C6570249A602600E9D889 /* Build configuration list for PBXNativeTarget "ParylationDevTests" */;
+			buildPhases = (
+				B4974C0693D97DA39D6C3C80 /* [CP] Check Pods Manifest.lock */,
+				9C5C6565249A602600E9D889 /* Sources */,
+				9C5C6566249A602600E9D889 /* Frameworks */,
+				9C5C6567249A602600E9D889 /* Resources */,
+				AEE3D53FC9FE61A3E8897CD9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C5C656F249A602600E9D889 /* PBXTargetDependency */,
+			);
+			name = ParylationDevTests;
+			productName = ParylationDevTests;
+			productReference = 9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9C207E6C2470ADAE0022AC92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Vladislav Kondrashkov";
 				TargetAttributes = {
 					9C207E732470ADAE0022AC92 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					9C5C6568249A602600E9D889 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 9C5C6541249A5DC800E9D889;
 					};
 				};
 			};
@@ -297,6 +440,8 @@
 			projectRoot = "";
 			targets = (
 				9C207E732470ADAE0022AC92 /* Parylation */,
+				9C5C6541249A5DC800E9D889 /* ParylationDev */,
+				9C5C6568249A602600E9D889 /* ParylationDevTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +453,22 @@
 			files = (
 				9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */,
 				9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5C655B249A5DC800E9D889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */,
+				9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5C6567249A602600E9D889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +514,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9C5C6542249A5DC800E9D889 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParylationDev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C5C655E249A5DC800E9D889 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParylationDev/Pods-ParylationDev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParylationDev/Pods-ParylationDev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ParylationDev/Pods-ParylationDev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEE3D53FC9FE61A3E8897CD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4974C0693D97DA39D6C3C80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParylationDevTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,7 +623,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C5C6543249A5DC800E9D889 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
+				9C5C6545249A5DC800E9D889 /* UserRepositoryImpl.swift in Sources */,
+				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
+				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
+				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
+				9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */,
+				9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */,
+				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
+				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
+				9C5C654D249A5DC800E9D889 /* RootInteractorImpl.swift in Sources */,
+				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
+				9C5C654F249A5DC800E9D889 /* RootInteractor.swift in Sources */,
+				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
+				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
+				9C5C6552249A5DC800E9D889 /* DashboardInteractorImpl.swift in Sources */,
+				9C5C6553249A5DC800E9D889 /* UserRepository.swift in Sources */,
+				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
+				9C5C6555249A5DC800E9D889 /* DashboardInteractor.swift in Sources */,
+				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
+				9C5C6557249A5DC800E9D889 /* User.swift in Sources */,
+				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5C6565249A602600E9D889 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5C6578249A607800E9D889 /* UserRepositorySpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C5C656F249A602600E9D889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C5C6541249A5DC800E9D889 /* ParylationDev */;
+			targetProxy = 9C5C656E249A602600E9D889 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */ = {
@@ -518,7 +801,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Parylation/Info.plist;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = Parylation/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,7 +821,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Parylation/Info.plist;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = Parylation/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,6 +832,90 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9C5C6560249A5DC800E9D889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF3FA01649C8DA378ABCC0E /* Pods-ParylationDev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = Parylation/Resources/InfoDev.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkondrashkov.ParylationDev;
+				PRODUCT_NAME = ParylationDev;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C5C6561249A5DC800E9D889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2705E5094112C27542A0EBC9 /* Pods-ParylationDev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = Parylation/Resources/InfoDev.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkondrashkov.ParylationDev;
+				PRODUCT_NAME = ParylationDev;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9C5C6571249A602600E9D889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9424529FBCA0AD3DA1C236C2 /* Pods-ParylationDevTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = ParylationDevTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkondrashkov.ParylationDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParylationDev.app/ParylationDev";
+			};
+			name = Debug;
+		};
+		9C5C6572249A602600E9D889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE1811599EFB2918D695266 /* Pods-ParylationDevTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D9VU6JV7P;
+				INFOPLIST_FILE = ParylationDevTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkondrashkov.ParylationDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParylationDev.app/ParylationDev";
 			};
 			name = Release;
 		};
@@ -567,6 +936,24 @@
 			buildConfigurations = (
 				9C207E892470ADB10022AC92 /* Debug */,
 				9C207E8A2470ADB10022AC92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C5C655F249A5DC800E9D889 /* Build configuration list for PBXNativeTarget "ParylationDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5C6560249A5DC800E9D889 /* Debug */,
+				9C5C6561249A5DC800E9D889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C5C6570249A602600E9D889 /* Build configuration list for PBXNativeTarget "ParylationDevTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5C6571249A602600E9D889 /* Debug */,
+				9C5C6572249A602600E9D889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
