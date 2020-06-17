@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C5C6541249A5DC800E9D889"
-               BuildableName = "ParylationDev.app"
-               BlueprintName = "ParylationDev"
+               BlueprintIdentifier = "9C207E732470ADAE0022AC92"
+               BuildableName = "Parylation.app"
+               BlueprintName = "Parylation"
                ReferencedContainer = "container:Parylation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9C5C6541249A5DC800E9D889"
-            BuildableName = "ParylationDev.app"
-            BlueprintName = "ParylationDev"
+            BlueprintIdentifier = "9C207E732470ADAE0022AC92"
+            BuildableName = "Parylation.app"
+            BlueprintName = "Parylation"
             ReferencedContainer = "container:Parylation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9C5C6541249A5DC800E9D889"
-            BuildableName = "ParylationDev.app"
-            BlueprintName = "ParylationDev"
+            BlueprintIdentifier = "9C207E732470ADAE0022AC92"
+            BuildableName = "Parylation.app"
+            BlueprintName = "Parylation"
             ReferencedContainer = "container:Parylation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
