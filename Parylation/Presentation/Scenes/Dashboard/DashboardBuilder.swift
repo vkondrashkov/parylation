@@ -24,8 +24,18 @@ extension DashboardBuilderImpl: DashboardBuilder {
         let component = DashboardComponent(parent: view)
         let interactor = DashboardInteractorImpl()
         
-        let tabBarController = UITabBarController()
-        let router = DashboardRouterImpl(tabBarController: tabBarController)
+        let feedNavigationController = UINavigationController()
+        feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: nil, selectedImage: nil)
+        
+        let messagesNavigationController = UINavigationController()
+        messagesNavigationController.tabBarItem = UITabBarItem(title: "Messages", image: nil, selectedImage: nil)
+        
+        let settingsNavigationController = UINavigationController()
+        settingsNavigationController.tabBarItem = UITabBarItem(title: "Settings", image: nil, selectedImage: nil)
+        
+        view.viewControllers = [feedNavigationController, messagesNavigationController, settingsNavigationController]
+        
+        let router = DashboardRouterImpl(tabBarController: view)
         let viewModel = DashboardViewModelImpl(
             interactor: interactor,
             router: router

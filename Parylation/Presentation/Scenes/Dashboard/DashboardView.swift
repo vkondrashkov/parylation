@@ -15,7 +15,6 @@ final class DashboardView: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         
         bindViewModel()
     }
