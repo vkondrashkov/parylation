@@ -10,13 +10,16 @@ import UIKit
 
 final class RootRouterImpl {
     private weak var view: UIViewController?
+    private let signUpBuilder: SignUpBuilder
     private let dashboardBuilder: DashboardBuilder
 
     init(
         view: UIViewController,
+        signUpBuilder: SignUpBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
         self.view = view
+        self.signUpBuilder = signUpBuilder
         self.dashboardBuilder = dashboardBuilder
     }
 }
@@ -24,7 +27,11 @@ final class RootRouterImpl {
 // MARK: - RootRouter implementation
 
 extension RootRouterImpl: RootRouter {
-    func showAuth() { }
+    func showSignUp() {
+        let signUpView = signUpBuilder.build()
+        signUpView.modalPresentationStyle = .fullScreen
+        view?.present(signUpView, animated: false, completion: nil)
+    }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()

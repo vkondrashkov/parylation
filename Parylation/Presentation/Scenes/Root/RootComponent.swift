@@ -8,10 +8,15 @@
 
 import UIKit
 
-final class RootComponent: DashboardDependency {
+final class RootComponent: DashboardDependency, SignUpDependency {
     let parent: UIViewController
+    let authNavigationController: UINavigationController
     
-    init(parent: UIViewController) {
+    init(
+        parent: UIViewController,
+        authNavigationController: UINavigationController
+    ) {
         self.parent = parent
+        self.authNavigationController = authNavigationController
     }
 }
