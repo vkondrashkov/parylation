@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParylationDomain
 
 final class DashboardBuilderImpl {
     private let dependency: DashboardDependency

@@ -14,3 +14,11 @@ public enum DashboardInteractorError: Error {
 }
 
 public protocol DashboardInteractor { }
+
+public final class DashboardInteractorImpl {
+    public init() { }
+}
+
+// MARK: - DashboardInteractor implementation
+
+extension DashboardInteractorImpl: DashboardInteractor { }

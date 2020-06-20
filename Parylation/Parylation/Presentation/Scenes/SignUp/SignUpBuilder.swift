@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParylationDomain
 
 final class SignUpBuilderImpl {
     private let dependency: SignUpDependency

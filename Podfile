@@ -41,4 +41,4 @@ end
 target 'ParylationDomain' do
   project 'ParylationDomain/ParylationDomain'
   common_pods
-end  
+end

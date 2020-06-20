@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParylationDomain
 
 final class RootBuilderImpl {
     private let dependency: RootDependency

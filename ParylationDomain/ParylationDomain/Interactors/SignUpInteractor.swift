@@ -14,3 +14,11 @@ public enum SignUpInteractorError: Error {
 }
 
 public protocol SignUpInteractor { }
+
+public final class SignUpInteractorImpl {
+    public init() { }
+}
+
+// MARK: - SignUpInteractor implementation
+
+extension SignUpInteractorImpl: SignUpInteractor { }

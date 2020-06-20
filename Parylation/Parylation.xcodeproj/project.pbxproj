@@ -19,14 +19,12 @@
 		9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9C2470B4B40022AC92 /* RootBuilder.swift */; };
 		9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9E2470B4C00022AC92 /* RootView.swift */; };
 		9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA02470B4C80022AC92 /* RootRouter.swift */; };
-		9C207EA32470B5DD0022AC92 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA22470B5DD0022AC92 /* RootInteractor.swift */; };
 		9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
 		9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */; };
 		9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
 		9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB2247169490022AC92 /* DashboardComponent.swift */; };
 		9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
 		9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
-		9C207EB9247169600022AC92 /* DashboardInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */; };
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
@@ -38,11 +36,9 @@
 		9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E982470B4990022AC92 /* RootComponent.swift */; };
 		9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9E2470B4C00022AC92 /* RootView.swift */; };
 		9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9C2470B4B40022AC92 /* RootBuilder.swift */; };
-		9C5C654D249A5DC800E9D889 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA22470B5DD0022AC92 /* RootInteractor.swift */; };
 		9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA02470B4C80022AC92 /* RootRouter.swift */; };
 		9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
 		9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E8E2470B39A0022AC92 /* AppComponent.swift */; };
-		9C5C6552249A5DC800E9D889 /* DashboardInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */; };
 		9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9A2470B4A00022AC92 /* RootContract.swift */; };
 		9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
 		9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB2247169490022AC92 /* DashboardComponent.swift */; };
@@ -55,8 +51,6 @@
 		9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C657E249A65E600E9D889 /* SignUpBuilder.swift */; };
 		9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6581249A65ED00E9D889 /* SignUpRouter.swift */; };
 		9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6581249A65ED00E9D889 /* SignUpRouter.swift */; };
-		9C5C6585249A65F600E9D889 /* SignUpInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6584249A65F600E9D889 /* SignUpInteractorImpl.swift */; };
-		9C5C6586249A65F600E9D889 /* SignUpInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6584249A65F600E9D889 /* SignUpInteractorImpl.swift */; };
 		9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6587249A65FF00E9D889 /* SignUpViewModel.swift */; };
 		9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6587249A65FF00E9D889 /* SignUpViewModel.swift */; };
 		9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C658A249A660500E9D889 /* SignUpView.swift */; };
@@ -121,14 +115,12 @@
 		9C207E9C2470B4B40022AC92 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		9C207E9E2470B4C00022AC92 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9C207EA02470B4C80022AC92 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		9C207EA22470B5DD0022AC92 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		9C207EB0247169410022AC92 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
 		9C207EB2247169490022AC92 /* DashboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComponent.swift; sourceTree = "<group>"; };
 		9C207EB4247169500022AC92 /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
 		9C207EB6247169580022AC92 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
-		9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorImpl.swift; sourceTree = "<group>"; };
 		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +131,6 @@
 		9C5C657B249A65DD00E9D889 /* SignUpContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpContract.swift; sourceTree = "<group>"; };
 		9C5C657E249A65E600E9D889 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
 		9C5C6581249A65ED00E9D889 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
-		9C5C6584249A65F600E9D889 /* SignUpInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractorImpl.swift; sourceTree = "<group>"; };
 		9C5C6587249A65FF00E9D889 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		9C5C658A249A660500E9D889 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,7 +254,6 @@
 				9C207E982470B4990022AC92 /* RootComponent.swift */,
 				9C207E9C2470B4B40022AC92 /* RootBuilder.swift */,
 				9C207EA02470B4C80022AC92 /* RootRouter.swift */,
-				9C207EA22470B5DD0022AC92 /* RootInteractor.swift */,
 				9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */,
 				9C207E9E2470B4C00022AC92 /* RootView.swift */,
 			);
@@ -285,7 +275,6 @@
 				9C207EB2247169490022AC92 /* DashboardComponent.swift */,
 				9C207EB4247169500022AC92 /* DashboardBuilder.swift */,
 				9C207EB6247169580022AC92 /* DashboardRouter.swift */,
-				9C207EB8247169600022AC92 /* DashboardInteractorImpl.swift */,
 				9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */,
 				9C207EBC247169730022AC92 /* DashboardView.swift */,
 			);
@@ -325,7 +314,6 @@
 				9C5C657B249A65DD00E9D889 /* SignUpContract.swift */,
 				9C5C657E249A65E600E9D889 /* SignUpBuilder.swift */,
 				9C5C6581249A65ED00E9D889 /* SignUpRouter.swift */,
-				9C5C6584249A65F600E9D889 /* SignUpInteractorImpl.swift */,
 				9C5C6587249A65FF00E9D889 /* SignUpViewModel.swift */,
 				9C5C658A249A660500E9D889 /* SignUpView.swift */,
 			);
@@ -622,8 +610,6 @@
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
-				9C5C6585249A65F600E9D889 /* SignUpInteractorImpl.swift in Sources */,
-				9C207EA32470B5DD0022AC92 /* RootInteractor.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -631,7 +617,6 @@
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
-				9C207EB9247169600022AC92 /* DashboardInteractorImpl.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
@@ -652,8 +637,6 @@
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
-				9C5C6586249A65F600E9D889 /* SignUpInteractorImpl.swift in Sources */,
-				9C5C654D249A5DC800E9D889 /* RootInteractor.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -661,7 +644,6 @@
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
-				9C5C6552249A5DC800E9D889 /* DashboardInteractorImpl.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,
