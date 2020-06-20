@@ -3,7 +3,7 @@ use_frameworks!
 
 platform :ios, '11.0'
 
-project 'ParylationApp/ParylationApp'
+project 'Parylation/Parylation'
 project 'ParylationDomain/ParylationDomain'  
 
 def common_pods
@@ -20,11 +20,23 @@ def test_pods
   pod 'Nimble', '~> 8.0'
 end
 
-target 'ParylationApp' do
-  project 'ParylationApp/ParylationApp'
+target 'Parylation' do
+  project 'Parylation/Parylation'
   app_pods
   common_pods
 end
+
+target 'ParylationDev' do
+  project 'Parylation/Parylation'
+  app_pods
+  common_pods
+end
+
+target 'ParylationDevTests' do
+  project 'Parylation/Parylation'
+  test_pods
+  common_pods
+end  
 
 target 'ParylationDomain' do
   project 'ParylationDomain/ParylationDomain'
