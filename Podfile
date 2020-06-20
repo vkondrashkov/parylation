@@ -1,10 +1,18 @@
-platform :ios, '11.0'
+workspace 'Parylation.xcworkspace' 
 use_frameworks!
 
+platform :ios, '11.0'
+
+project 'ParylationApp/ParylationApp'
+project 'ParylationDomain/ParylationDomain'  
+
 def common_pods
-  pod 'SnapKit', '~> 5.0.0'
   pod 'ReactiveKit', '~> 3.0'
   pod 'Bond', '~> 7.0'
+end
+
+def app_pods
+  pod 'SnapKit', '~> 5.0.0'
 end
 
 def test_pods
@@ -12,14 +20,13 @@ def test_pods
   pod 'Nimble', '~> 8.0'
 end
 
-target 'Parylation' do
+target 'ParylationApp' do
+  project 'ParylationApp/ParylationApp'
+  app_pods
   common_pods
 end
 
-target 'ParylationDev' do
+target 'ParylationDomain' do
+  project 'ParylationDomain/ParylationDomain'
   common_pods
-end
-
-target 'ParylationDevTests' do
-  test_pods
-end
+end  
