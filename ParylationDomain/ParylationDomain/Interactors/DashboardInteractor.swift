@@ -1,18 +1,16 @@
 //
 //  DashboardInteractor.swift
-//  Parylation
+//  ParylationDomain
 //
-//  Created by Vladislav Kondrashkov on 5/17/20.
+//  Created by Vladislav Kondrashkov on 6/20/20.
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
 import Bond
 import ReactiveKit
 
-enum DashboardInteractorError: Error {
+public enum DashboardInteractorError: Error {
     case failed
 }
 
-protocol DashboardInteractor {
-    
-}
+public protocol DashboardInteractor { }

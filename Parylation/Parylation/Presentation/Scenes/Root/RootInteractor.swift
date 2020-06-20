@@ -8,6 +8,7 @@
 
 import Bond
 import ReactiveKit
+import ParylationDomain
 
 final class RootInteractorImpl {
     private let userRepository: UserRepository

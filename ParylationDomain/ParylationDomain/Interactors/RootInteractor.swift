@@ -1,18 +1,18 @@
 //
 //  RootInteractor.swift
-//  Parylation
+//  ParylationDomain
 //
-//  Created by Vladislav Kondrashkov on 5/17/20.
+//  Created by Vladislav Kondrashkov on 6/20/20.
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
 import Bond
 import ReactiveKit
 
-enum RootInteractorError: Error {
+public enum RootInteractorError: Error {
     case failed
 }
 
-protocol RootInteractor {
+public protocol RootInteractor {
     func isUserAuthorized() -> Signal<Bool, RootInteractorError>
 }

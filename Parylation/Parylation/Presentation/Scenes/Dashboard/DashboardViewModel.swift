@@ -8,6 +8,7 @@
 
 import Bond
 import ReactiveKit
+import ParylationDomain
 
 final class DashboardViewModelImpl: DashboardViewModel {
     private let interactor: DashboardInteractor

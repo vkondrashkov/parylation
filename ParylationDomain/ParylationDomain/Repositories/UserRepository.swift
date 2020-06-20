@@ -1,18 +1,18 @@
 //
 //  UserRepository.swift
-//  Parylation
+//  ParylationDomain
 //
-//  Created by Vladislav Kondrashkov on 5/17/20.
+//  Created by Vladislav Kondrashkov on 6/20/20.
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
 import ReactiveKit
 
-enum UserRepositoryError: Error {
+public enum UserRepositoryError: Error {
     case failed
     case missingData
 }
 
-protocol UserRepository {
+public protocol UserRepository {
     func fetchCurrentUser() -> Signal<User, UserRepositoryError>
 }

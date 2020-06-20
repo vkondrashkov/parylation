@@ -8,6 +8,7 @@
 
 import Bond
 import ReactiveKit
+import ParylationDomain
 
 final class RootViewModelImpl: RootViewModel {
     private let interactor: RootInteractor

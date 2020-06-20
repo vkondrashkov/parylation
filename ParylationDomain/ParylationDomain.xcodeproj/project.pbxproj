@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		500B7A922977CEAD82FBA4AD /* Pods_ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */; };
-		9CADB55C249CDA8700901E45 /* SomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB55B249CDA8700901E45 /* SomeTest.swift */; };
+		9CADB564249E0DD500901E45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB563249E0DD500901E45 /* User.swift */; };
+		9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB566249E0E0000901E45 /* RootInteractor.swift */; };
+		9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB568249E0E1900901E45 /* SignUpInteractor.swift */; };
+		9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */; };
+		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,7 +20,11 @@
 		7BC5593B75FEDB2740C4E44C /* Pods-ParylationDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomain.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomain/Pods-ParylationDomain.debug.xcconfig"; sourceTree = "<group>"; };
 		9CADB548249CD86C00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB54C249CD86C00901E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CADB55B249CDA8700901E45 /* SomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTest.swift; sourceTree = "<group>"; };
+		9CADB563249E0DD500901E45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9CADB566249E0E0000901E45 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		9CADB568249E0E1900901E45 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,10 +79,46 @@
 		9CADB54A249CD86C00901E45 /* ParylationDomain */ = {
 			isa = PBXGroup;
 			children = (
+				9CADB562249E0DCA00901E45 /* Entities */,
+				9CADB565249E0DEF00901E45 /* Interactors */,
+				9CADB56C249E0E3C00901E45 /* Repositories */,
+				9CADB56F249E0E6300901E45 /* UseCases */,
 				9CADB54C249CD86C00901E45 /* Info.plist */,
-				9CADB55B249CDA8700901E45 /* SomeTest.swift */,
 			);
 			path = ParylationDomain;
+			sourceTree = "<group>";
+		};
+		9CADB562249E0DCA00901E45 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB563249E0DD500901E45 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9CADB565249E0DEF00901E45 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB566249E0E0000901E45 /* RootInteractor.swift */,
+				9CADB568249E0E1900901E45 /* SignUpInteractor.swift */,
+				9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		9CADB56C249E0E3C00901E45 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB56D249E0E4C00901E45 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9CADB56F249E0E6300901E45 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CADB55C249CDA8700901E45 /* SomeTest.swift in Sources */,
+				9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */,
+				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
+				9CADB564249E0DD500901E45 /* User.swift in Sources */,
+				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
+				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +370,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParylationDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +398,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParylationDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

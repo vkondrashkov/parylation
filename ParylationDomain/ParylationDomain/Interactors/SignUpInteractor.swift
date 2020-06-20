@@ -1,16 +1,16 @@
 //
 //  SignUpInteractor.swift
-//  Parylation
+//  ParylationDomain
 //
-//  Created by Vladislav Kondrashkov on 6/17/20.
+//  Created by Vladislav Kondrashkov on 6/20/20.
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
 import Bond
 import ReactiveKit
 
-enum SignUpInteractorError: Error {
+public enum SignUpInteractorError: Error {
     case failed
 }
 
-protocol SignUpInteractor { }
+public protocol SignUpInteractor { }

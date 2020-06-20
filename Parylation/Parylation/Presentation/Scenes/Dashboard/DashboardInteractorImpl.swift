@@ -6,6 +6,10 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
+import Bond
+import ReactiveKit
+import ParylationDomain
+
 final class DashboardInteractorImpl { }
 
 // MARK: - DashboardInteractor implementation

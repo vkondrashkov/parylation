@@ -7,6 +7,7 @@
 //
 
 import ReactiveKit
+import ParylationDomain
 
 final class UserRepositoryImpl {
     
