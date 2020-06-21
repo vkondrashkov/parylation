@@ -19,7 +19,6 @@
 		9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9C2470B4B40022AC92 /* RootBuilder.swift */; };
 		9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E9E2470B4C00022AC92 /* RootView.swift */; };
 		9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EA02470B4C80022AC92 /* RootRouter.swift */; };
-		9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
 		9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */; };
 		9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
 		9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB2247169490022AC92 /* DashboardComponent.swift */; };
@@ -28,7 +27,6 @@
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
-		9C5C6545249A5DC800E9D889 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */; };
 		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
 		9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
@@ -59,6 +57,12 @@
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
 		9CADB576249E0F1A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
+		9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
+		9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
+		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
+		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
+		9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
 		E37971D2C4C48C665611F230 /* Pods_ParylationDevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,7 +119,6 @@
 		9C207E9C2470B4B40022AC92 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		9C207E9E2470B4C00022AC92 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9C207EA02470B4C80022AC92 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		9C207EAD2470BA6C0022AC92 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		9C207EB0247169410022AC92 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
 		9C207EB2247169490022AC92 /* DashboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComponent.swift; sourceTree = "<group>"; };
@@ -135,6 +138,9 @@
 		9C5C658A249A660500E9D889 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
+		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
 		A70C837D96962AC1B1FCE7CA /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 		E4808E5AA520167FF8790829 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9EE1FC137D17916D69473 /* Pods_ParylationDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +203,7 @@
 			children = (
 				9C207E8B2470B2480022AC92 /* Application */,
 				9C207EA62470B73C0022AC92 /* Data */,
+				9CADB5AB249ECB6B00901E45 /* Networking */,
 				9C5C6564249A5ED200E9D889 /* Resources */,
 				9C207E8D2470B3680022AC92 /* Presentation */,
 				9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */,
@@ -263,7 +270,6 @@
 		9C207EA62470B73C0022AC92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9C207EAB2470B7C40022AC92 /* UserRepositoryImpl.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -318,6 +324,40 @@
 				9C5C658A249A660500E9D889 /* SignUpView.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		9CADB5AB249ECB6B00901E45 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5AC249ECB7600901E45 /* API */,
+				9CADB5B0249ED02100901E45 /* Repositories */,
+				9CADB5B4249ED7AC00901E45 /* Entities */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9CADB5AC249ECB7600901E45 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9CADB5B0249ED02100901E45 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5B1249ED03F00901E45 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9CADB5B4249ED7AC00901E45 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5B5249ED7C800901E45 /* MappableUser.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -600,8 +640,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
-				9C207EAC2470B7C40022AC92 /* UserRepositoryImpl.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
@@ -610,6 +650,7 @@
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
+				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -617,6 +658,7 @@
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
+				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
@@ -627,8 +669,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
-				9C5C6545249A5DC800E9D889 /* UserRepositoryImpl.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
@@ -637,6 +679,7 @@
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
+				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -644,6 +687,7 @@
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
+				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,

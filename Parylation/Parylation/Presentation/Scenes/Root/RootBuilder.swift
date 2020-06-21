@@ -8,6 +8,7 @@
 
 import UIKit
 import ParylationDomain
+import Moya
 
 final class RootBuilderImpl {
     private let dependency: RootDependency
@@ -28,7 +29,7 @@ extension RootBuilderImpl: RootBuilder {
         )
         let signUpBuilder = SignUpBuilderImpl(dependency: component)
         let dashboardBuilder = DashboardBuilderImpl(dependency: component)
-        let userRepository = UserRepositoryImpl()
+        let userRepository = UserRepositoryImpl(provider: MoyaProvider<ParylationAPI>())
         let interactor = RootInteractorImpl(userRepository: userRepository)
         let router = RootRouterImpl(
             view: view,
