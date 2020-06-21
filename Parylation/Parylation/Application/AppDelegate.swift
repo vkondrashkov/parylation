@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let component = AppComponent(window: window)
+        let component = AppComponent(
+            window: window,
+            realm: try! Realm()
+        )
         let view = RootBuilderImpl(dependency: component).build()
         
         window.rootViewController = view

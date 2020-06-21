@@ -65,6 +65,10 @@
 		9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
 		9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
 		9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
+		9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C024A0079100901E45 /* RealmUser.swift */; };
+		9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C024A0079100901E45 /* RealmUser.swift */; };
+		9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
+		9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
 		E37971D2C4C48C665611F230 /* Pods_ParylationDevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +148,8 @@
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
 		9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Reactive.swift"; sourceTree = "<group>"; };
+		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
+		9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		A70C837D96962AC1B1FCE7CA /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 		E4808E5AA520167FF8790829 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9EE1FC137D17916D69473 /* Pods_ParylationDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +280,7 @@
 		9C207EA62470B73C0022AC92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9CADB5BD24A0076F00901E45 /* Realm */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -378,6 +385,31 @@
 				9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */,
 			);
 			path = "Moya+ReactiveKit";
+			sourceTree = "<group>";
+		};
+		9CADB5BD24A0076F00901E45 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5BE24A0077600901E45 /* Entities */,
+				9CADB5BF24A0077B00901E45 /* Repositories */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		9CADB5BE24A0077600901E45 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5C024A0079100901E45 /* RealmUser.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9CADB5BF24A0077B00901E45 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -662,6 +694,7 @@
 			files = (
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
+				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
@@ -675,6 +708,7 @@
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
+				9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
@@ -692,6 +726,7 @@
 			files = (
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
+				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
@@ -705,6 +740,7 @@
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
+				9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
