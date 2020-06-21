@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 workspace 'Parylation.xcworkspace' 
 use_frameworks!
 
@@ -15,6 +17,7 @@ def app_pods
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya', '~> 14.0'
   pod 'ObjectMapper', '~> 4.2'
+  pod 'RealmSwift', '~> 5.0' 
 end
 
 def test_pods
