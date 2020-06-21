@@ -13,6 +13,8 @@ end
 
 def app_pods
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Moya', '~> 14.0'
+  pod 'ObjectMapper', '~> 4.2'
 end
 
 def test_pods

@@ -29,15 +29,6 @@ public final class RootInteractorImpl {
 
 extension RootInteractorImpl: RootInteractor {
     public func isUserAuthorized() -> Signal<Bool, RootInteractorError> {
-        userRepository.fetchCurrentUser()
-            .map { _ in true }
-            .flatMapError { error -> Signal<Bool, RootInteractorError> in
-                switch error {
-                case .failed:
-                    return .failed(.failed)
-                case .missingData:
-                    return .init(just: false)
-                }
-        }
+        Signal<Bool, RootInteractorError>(just: true) // TEMP
     }
 }

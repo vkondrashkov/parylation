@@ -10,9 +10,11 @@ import ReactiveKit
 
 public enum UserRepositoryError: Error {
     case failed
+    case userAlreadyExists
     case missingData
 }
 
 public protocol UserRepository {
-    func fetchCurrentUser() -> Signal<User, UserRepositoryError>
+    func registerUser(login: String, password: String) -> Signal<Void, UserRepositoryError>
+    func authorizeUser(login: String, password: String) -> Signal<User, UserRepositoryError>
 }
