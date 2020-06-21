@@ -30,7 +30,10 @@ extension RootBuilderImpl: RootBuilder {
         let signUpBuilder = SignUpBuilderImpl(dependency: component)
         let dashboardBuilder = DashboardBuilderImpl(dependency: component)
         let userRepository = UserRepositoryImpl(provider: MoyaProvider<ParylationAPI>())
-        let interactor = RootInteractorImpl(userRepository: userRepository)
+        let authorizationUseCase = AuthorizationUseCaseImpl(
+            authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: dependency.realm)
+        )
+        let interactor = RootInteractorImpl(authorizationUseCase: authorizationUseCase)
         let router = RootRouterImpl(
             view: view,
             signUpBuilder: signUpBuilder,

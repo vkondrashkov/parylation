@@ -13,6 +13,8 @@
 		9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB568249E0E1900901E45 /* SignUpInteractor.swift */; };
 		9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */; };
 		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
+		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
+		9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9CADB568249E0E1900901E45 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
+		9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
 		A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				9CADB56D249E0E4C00901E45 /* UserRepository.swift */,
+				9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		9CADB56F249E0E6300901E45 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -235,9 +241,11 @@
 			files = (
 				9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */,
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
+				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
+				9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

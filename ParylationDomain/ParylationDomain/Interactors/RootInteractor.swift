@@ -18,10 +18,10 @@ public protocol RootInteractor {
 }
 
 public final class RootInteractorImpl {
-    private let userRepository: UserRepository
+    private let authorizationUseCase: AuthorizationUseCase
     
-    public init(userRepository: UserRepository) {
-        self.userRepository = userRepository
+    public init(authorizationUseCase: AuthorizationUseCase) {
+        self.authorizationUseCase = authorizationUseCase
     }
 }
 
@@ -29,6 +29,9 @@ public final class RootInteractorImpl {
 
 extension RootInteractorImpl: RootInteractor {
     public func isUserAuthorized() -> Signal<Bool, RootInteractorError> {
-        Signal<Bool, RootInteractorError>(just: true) // TEMP
+        return authorizationUseCase.isAuthorized()
+            .mapError { _ in
+                return .failed
+            }
     }
 }
