@@ -63,6 +63,8 @@
 		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
 		9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
+		9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
+		9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
 		E37971D2C4C48C665611F230 /* Pods_ParylationDevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D67CBC4C1CF0329C86460F3 /* Pods_ParylationDevTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +143,7 @@
 		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
+		9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Reactive.swift"; sourceTree = "<group>"; };
 		A70C837D96962AC1B1FCE7CA /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 		E4808E5AA520167FF8790829 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9EE1FC137D17916D69473 /* Pods_ParylationDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +209,7 @@
 				9CADB5AB249ECB6B00901E45 /* Networking */,
 				9C5C6564249A5ED200E9D889 /* Resources */,
 				9C207E8D2470B3680022AC92 /* Presentation */,
+				9CADB5B8249F59DF00901E45 /* Utils */,
 				9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */,
 			);
 			path = Parylation;
@@ -358,6 +362,22 @@
 				9CADB5B5249ED7C800901E45 /* MappableUser.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		9CADB5B8249F59DF00901E45 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5B9249F59F500901E45 /* Moya+ReactiveKit */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9CADB5B9249F59F500901E45 /* Moya+ReactiveKit */ = {
+			isa = PBXGroup;
+			children = (
+				9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */,
+			);
+			path = "Moya+ReactiveKit";
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -662,6 +682,7 @@
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
+				9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +712,7 @@
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,
+				9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
