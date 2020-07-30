@@ -26,6 +26,14 @@
 		9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
+		9C3C2A4E24D35B6200B04898 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A4D24D35B6200B04898 /* Scene.swift */; };
+		9C3C2A4F24D35B6200B04898 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A4D24D35B6200B04898 /* Scene.swift */; };
+		9C3C2A5124D35C1900B04898 /* NavigationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5024D35C1900B04898 /* NavigationScene.swift */; };
+		9C3C2A5224D35C1900B04898 /* NavigationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5024D35C1900B04898 /* NavigationScene.swift */; };
+		9C3C2A5424D35CE500B04898 /* PresentationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5324D35CE500B04898 /* PresentationScene.swift */; };
+		9C3C2A5524D35CE500B04898 /* PresentationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5324D35CE500B04898 /* PresentationScene.swift */; };
+		9C3C2A5724D35D3B00B04898 /* WindowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5624D35D3B00B04898 /* WindowScene.swift */; };
+		9C3C2A5824D35D3B00B04898 /* WindowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2A5624D35D3B00B04898 /* WindowScene.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
 		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
@@ -132,6 +140,10 @@
 		9C207EB6247169580022AC92 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9C3C2A4D24D35B6200B04898 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		9C3C2A5024D35C1900B04898 /* NavigationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationScene.swift; sourceTree = "<group>"; };
+		9C3C2A5324D35CE500B04898 /* PresentationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationScene.swift; sourceTree = "<group>"; };
+		9C3C2A5624D35D3B00B04898 /* WindowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowScene.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C656D249A602600E9D889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -252,6 +264,10 @@
 		9C207E922470B3F30022AC92 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9C3C2A4D24D35B6200B04898 /* Scene.swift */,
+				9C3C2A5024D35C1900B04898 /* NavigationScene.swift */,
+				9C3C2A5324D35CE500B04898 /* PresentationScene.swift */,
+				9C3C2A5624D35D3B00B04898 /* WindowScene.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -689,11 +705,15 @@
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
+				9C3C2A5424D35CE500B04898 /* PresentationScene.swift in Sources */,
+				9C3C2A4E24D35B6200B04898 /* Scene.swift in Sources */,
 				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
+				9C3C2A5724D35D3B00B04898 /* WindowScene.swift in Sources */,
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
 				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
 				9C207E992470B4990022AC92 /* RootComponent.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9C3C2A5124D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
@@ -721,11 +741,15 @@
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
+				9C3C2A5524D35CE500B04898 /* PresentationScene.swift in Sources */,
+				9C3C2A4F24D35B6200B04898 /* Scene.swift in Sources */,
 				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
+				9C3C2A5824D35D3B00B04898 /* WindowScene.swift in Sources */,
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
 				9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */,
 				9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9C3C2A5224D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
