@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 
 workspace 'Parylation.xcworkspace' 
 use_frameworks!
@@ -11,13 +11,13 @@ project 'ParylationDomain/ParylationDomain'
 def common_pods
   pod 'ReactiveKit', '~> 3.0'
   pod 'Bond', '~> 7.0'
+  pod 'RealmSwift', '~> 5.0'
 end
 
 def app_pods
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya', '~> 14.0'
   pod 'ObjectMapper', '~> 4.2'
-  pod 'RealmSwift', '~> 5.0' 
 end
 
 def test_pods
