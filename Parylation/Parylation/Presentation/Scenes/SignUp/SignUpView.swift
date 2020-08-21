@@ -15,9 +15,13 @@ final class SignUpView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
         
+        setupUI()
         bindViewModel()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .purple
     }
     
     private func bindViewModel() {

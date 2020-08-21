@@ -9,16 +9,19 @@
 import UIKit
 
 final class RootRouterImpl {
-    private weak var view: UIViewController?
+    private let presentationScene: PresentationScene
+    private let navigationScene: NavigationScene
     private let signUpBuilder: SignUpBuilder
     private let dashboardBuilder: DashboardBuilder
 
     init(
-        view: UIViewController,
+        presentationScene: PresentationScene,
+        navigationScene: NavigationScene,
         signUpBuilder: SignUpBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
-        self.view = view
+        self.presentationScene = presentationScene
+        self.navigationScene = navigationScene
         self.signUpBuilder = signUpBuilder
         self.dashboardBuilder = dashboardBuilder
     }
@@ -29,13 +32,12 @@ final class RootRouterImpl {
 extension RootRouterImpl: RootRouter {
     func showSignUp() {
         let signUpView = signUpBuilder.build()
-        signUpView.modalPresentationStyle = .fullScreen
-        view?.present(signUpView, animated: false, completion: nil)
+        navigationScene.play(view: signUpView, animated: false, completion: nil)
     }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()
         dashboardView.modalPresentationStyle = .fullScreen
-        view?.present(dashboardView, animated: false, completion: nil)
+        presentationScene.play(view: dashboardView, animated: false, completion: nil)
     }
 }

@@ -10,9 +10,7 @@ import Bond
 import ReactiveKit
 import UIKit
 
-protocol DashboardDependency {
-    var parent: UIViewController { get }
-}
+protocol DashboardDependency { }
 
 protocol DashboardBuilder {
     func build() -> UIViewController

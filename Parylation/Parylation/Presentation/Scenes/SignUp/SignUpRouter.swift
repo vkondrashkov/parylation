@@ -9,13 +9,10 @@
 import UIKit
 
 final class SignUpRouterImpl {
-    private weak var navigationController: UINavigationController?
+    private let navigationScene: NavigationScene
     
-    init(
-        navigationController: UINavigationController
-    ) {
-        self.navigationController = navigationController
-        
+    init(navigationScene: NavigationScene) {
+        self.navigationScene = navigationScene
     }
 }
 
