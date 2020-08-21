@@ -1,5 +1,3 @@
-source 'https://cdn.cocoapods.org/'
-
 workspace 'Parylation.xcworkspace' 
 use_frameworks!
 
@@ -16,7 +14,7 @@ end
 
 def app_pods
   pod 'SnapKit', '~> 5.0.0'
-  pod 'Moya', '~> 14.0'
+  pod 'Moya'
   pod 'ObjectMapper', '~> 4.2'
 end
 

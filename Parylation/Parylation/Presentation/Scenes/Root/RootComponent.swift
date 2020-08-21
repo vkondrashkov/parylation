@@ -8,12 +8,8 @@
 
 import UIKit
 
-final class RootComponent: DashboardDependency, SignUpDependency {
-    private let navigationController: UINavigationController
-    
-    var authNavigationController: UINavigationController {
-        return navigationController
-    }
+final class RootComponent: DashboardDependency, WelcomeDependency {
+    let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

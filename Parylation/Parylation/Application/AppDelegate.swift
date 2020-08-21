@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,5 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .portrait
     }
 }
