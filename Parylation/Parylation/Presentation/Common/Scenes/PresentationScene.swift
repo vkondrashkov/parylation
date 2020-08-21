@@ -8,8 +8,12 @@
 
 import UIKit
 
-class PresentationScene: Scene {
+class PresentationScene: Scene, PresentableScene {
     private weak var presentingViewController: UIViewController?
+    
+    var presentableView: UIViewController? {
+        return presentingViewController
+    }
     
     init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
@@ -17,6 +21,14 @@ class PresentationScene: Scene {
     
     func play(view: UIViewController, animated: Bool, completion: (() -> Void)?) {
         presentingViewController?.present(view, animated: animated, completion: completion)
+    }
+    
+    func play(scene: PresentableScene, animated: Bool, completion: (() -> Void)?) {
+        guard let view = scene.presentableView else {
+            completion?()
+            return
+        }
+        play(view: view, animated: animated, completion: completion)
     }
     
     func stop(animated: Bool, completion: (() -> Void)?) {

@@ -8,8 +8,12 @@
 
 import UIKit
 
-class NavigationScene: Scene {
+class NavigationScene: Scene, PresentableScene {
     private weak var navigationController: UINavigationController?
+    
+    var presentableView: UIViewController? {
+        return navigationController
+    }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -20,6 +24,13 @@ class NavigationScene: Scene {
             return nil
         }
         self.init(navigationController: navigationController)
+    }
+    
+    func set(views: [UIViewController], animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        navigationController?.setViewControllers(views, animated: animated)
+        CATransaction.commit()
     }
     
     func play(view: UIViewController, animated: Bool, completion: (() -> Void)?) {
