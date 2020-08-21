@@ -9,7 +9,7 @@
 import UIKit
 
 class WindowScene: Scene {
-    private let window: UIWindow
+    private unowned let window: UIWindow
     
     init(window: UIWindow) {
         self.window = window

@@ -8,12 +8,13 @@
 
 import UIKit
 
-final class RootView: UIViewController {
+final class RootView: UINavigationController {
     var viewModel: RootViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         bindViewModel()
     }
     
@@ -21,6 +22,10 @@ final class RootView: UIViewController {
         super.viewDidAppear(animated)
         
         viewModel.viewDidAppearTrigger.send()
+    }
+    
+    private func setupUI() {
+        
     }
     
     private func bindViewModel() {

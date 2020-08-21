@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias AnyScene = Scene
-
 protocol Scene {
     func play(view: UIViewController, animated: Bool, completion: (() -> Void)?)
     func stop(animated: Bool, completion: (() -> Void)?)

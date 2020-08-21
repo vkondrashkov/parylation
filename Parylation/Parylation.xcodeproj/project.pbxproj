@@ -264,10 +264,7 @@
 		9C207E922470B3F30022AC92 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9C3C2A4D24D35B6200B04898 /* Scene.swift */,
-				9C3C2A5024D35C1900B04898 /* NavigationScene.swift */,
-				9C3C2A5324D35CE500B04898 /* PresentationScene.swift */,
-				9C3C2A5624D35D3B00B04898 /* WindowScene.swift */,
+				9C67852B24EFE303006E28BD /* Scenes */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -335,6 +332,17 @@
 				9C5C658A249A660500E9D889 /* SignUpView.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		9C67852B24EFE303006E28BD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9C3C2A4D24D35B6200B04898 /* Scene.swift */,
+				9C3C2A5024D35C1900B04898 /* NavigationScene.swift */,
+				9C3C2A5324D35CE500B04898 /* PresentationScene.swift */,
+				9C3C2A5624D35D3B00B04898 /* WindowScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		9CADB5AB249ECB6B00901E45 /* Networking */ = {

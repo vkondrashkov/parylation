@@ -12,7 +12,6 @@ import UIKit
 import RealmSwift
 
 protocol RootDependency {
-    var window: UIWindow { get }
     var realm: Realm { get }
 }
 

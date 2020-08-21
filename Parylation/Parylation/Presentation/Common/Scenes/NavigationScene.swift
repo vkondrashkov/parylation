@@ -9,7 +9,7 @@
 import UIKit
 
 class NavigationScene: Scene {
-    private let navigationController: UINavigationController
+    private weak var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,14 +25,14 @@ class NavigationScene: Scene {
     func play(view: UIViewController, animated: Bool, completion: (() -> Void)?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
-        navigationController.pushViewController(view, animated: animated)
+        navigationController?.pushViewController(view, animated: animated)
         CATransaction.commit()
     }
     
     func stop(animated: Bool, completion: (() -> Void)?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
-        navigationController.popViewController(animated: animated)
+        navigationController?.popViewController(animated: animated)
         CATransaction.commit()
     }
 }
