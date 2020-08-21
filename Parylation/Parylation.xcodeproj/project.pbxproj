@@ -93,6 +93,20 @@
 		9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5CC24A0130D00901E45 /* AuthorizationUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */; };
+		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
+		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
+		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
+		9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
+		9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E324F05E3B008B835A /* SignInRouter.swift */; };
+		9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E324F05E3B008B835A /* SignInRouter.swift */; };
+		9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E624F05E45008B835A /* SignInViewModel.swift */; };
+		9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E624F05E45008B835A /* SignInViewModel.swift */; };
+		9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E924F05E4E008B835A /* SignInView.swift */; };
+		9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E924F05E4E008B835A /* SignInView.swift */; };
+		9CEB58EF24F0607A008B835A /* SignInComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EE24F0607A008B835A /* SignInComponent.swift */; };
+		9CEB58F024F0607A008B835A /* SignInComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EE24F0607A008B835A /* SignInComponent.swift */; };
+		9CEB58F224F06082008B835A /* SignUpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F124F06082008B835A /* SignUpComponent.swift */; };
+		9CEB58F324F06082008B835A /* SignUpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F124F06082008B835A /* SignUpComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +199,13 @@
 		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCaseSpec.swift; sourceTree = "<group>"; };
+		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
+		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
+		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		9CEB58E624F05E45008B835A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		9CEB58E924F05E4E008B835A /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		9CEB58EE24F0607A008B835A /* SignInComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInComponent.swift; sourceTree = "<group>"; };
+		9CEB58F124F06082008B835A /* SignUpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComponent.swift; sourceTree = "<group>"; };
 		A70C837D96962AC1B1FCE7CA /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 		C5CE576FD43C80F16B12B3A2 /* Pods_Parylation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parylation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4808E5AA520167FF8790829 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +300,7 @@
 				9C207E972470B4850022AC92 /* Root */,
 				9C67852F24EFEC93006E28BD /* Welcome */,
 				9C5C657A249A65C400E9D889 /* SignUp */,
+				9CEB58D424F05DDF008B835A /* SignIn */,
 				9C207EAF247169280022AC92 /* Dashboard */,
 			);
 			path = Scenes;
@@ -350,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				9C5C657B249A65DD00E9D889 /* SignUpContract.swift */,
+				9CEB58F124F06082008B835A /* SignUpComponent.swift */,
 				9C5C657E249A65E600E9D889 /* SignUpBuilder.swift */,
 				9C5C6581249A65ED00E9D889 /* SignUpRouter.swift */,
 				9C5C6587249A65FF00E9D889 /* SignUpViewModel.swift */,
@@ -472,6 +495,19 @@
 				9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9CEB58D424F05DDF008B835A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB58DD24F05E2D008B835A /* SignInContract.swift */,
+				9CEB58EE24F0607A008B835A /* SignInComponent.swift */,
+				9CEB58E024F05E34008B835A /* SignInBuilder.swift */,
+				9CEB58E324F05E3B008B835A /* SignInRouter.swift */,
+				9CEB58E624F05E45008B835A /* SignInViewModel.swift */,
+				9CEB58E924F05E4E008B835A /* SignInView.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -761,6 +797,8 @@
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
+				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
+				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5424D35CE500B04898 /* PresentationScene.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4E24D35B6200B04898 /* Scene.swift in Sources */,
@@ -776,7 +814,9 @@
 				9C67853424EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
+				9CEB58F224F06082008B835A /* SignUpComponent.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -786,9 +826,12 @@
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
+				9CEB58EF24F0607A008B835A /* SignInComponent.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C67854024EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
 				9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */,
@@ -805,6 +848,8 @@
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
+				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
+				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5524D35CE500B04898 /* PresentationScene.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4F24D35B6200B04898 /* Scene.swift in Sources */,
@@ -820,7 +865,9 @@
 				9C67853524EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
+				9CEB58F324F06082008B835A /* SignUpComponent.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
@@ -830,9 +877,12 @@
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
+				9CEB58F024F0607A008B835A /* SignInComponent.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,
 				9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */,

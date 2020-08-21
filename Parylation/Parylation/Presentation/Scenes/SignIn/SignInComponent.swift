@@ -1,5 +1,5 @@
 //
-//  WelcomeComponent.swift
+//  SignInComponent.swift
 //  Parylation
 //
 //  Created by Vladislav Kondrashkov on 8/21/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class WelcomeComponent: SignUpDependency, SignInDependency {
+final class SignInComponent: SignUpDependency {
     private let navigationController: UINavigationController
     
     var authNavigationController: UINavigationController {

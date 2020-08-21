@@ -27,11 +27,13 @@ extension WelcomeBuilderImpl: WelcomeBuilder {
 //        authNavigationController.interactivePopGestureRecognizer?.delegate = nil
         let component = WelcomeComponent(navigationController: authNavigationController)
         let signUpBuilder = SignUpBuilderImpl(dependency: component)
+        let signInBuilder = SignInBuilderImpl(dependency: component)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
             presentationScene: PresentationScene(presentingViewController: view),
             navigationScene: NavigationScene(navigationController: authNavigationController),
-            signUpBuilder: signUpBuilder
+            signUpBuilder: signUpBuilder,
+            signInBuilder: signInBuilder
         )
         let viewModel = WelcomeViewModelImpl(
             interactor: interactor,

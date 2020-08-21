@@ -14,11 +14,26 @@ final class SignUpViewModelImpl: SignUpViewModel {
     private let interactor: SignUpInteractor
     private let router: SignUpRouter
     
+    /// Input
+    let signInTrigger: Subject<Void, Never>
+    
+    private let disposeBag = DisposeBag()
+    
     init(
         interactor: SignUpInteractor,
         router: SignUpRouter
     ) {
         self.interactor = interactor
         self.router = router
+        
+        let signInSubject = PassthroughSubject<Void, Never>()
+        
+        signInSubject
+            .observeNext {
+                router.showSignIn()
+            }
+            .dispose(in: disposeBag)
+        
+        signInTrigger = signInSubject
     }
 }

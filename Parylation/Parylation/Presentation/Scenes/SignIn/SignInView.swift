@@ -1,8 +1,8 @@
 //
-//  SignUpView.swift
+//  SignInView.swift
 //  Parylation
 //
-//  Created by Vladislav Kondrashkov on 6/17/20.
+//  Created by Vladislav Kondrashkov on 8/21/20.
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import Bond
 import ReactiveKit
 import UIKit
 
-final class SignUpView: UIViewController {
-    var viewModel: SignUpViewModel!
+final class SignInView: UIViewController {
+    var viewModel: SignInViewModel!
     
     private let contentView = UIView()
     private let titleLabel = UILabel()
@@ -19,11 +19,10 @@ final class SignUpView: UIViewController {
     private let emailTextField = UITextField()
     private let passwordCaptionLabel = UILabel()
     private let passwordTextField = UITextField()
-    private let confirmPasswordCaptionLabel = UILabel()
-    private let confirmPasswordTextField = UITextField()
-    private let signUpButton = UIButton()
-    private let signInCaption = UILabel()
+    private let forgotPasswordButton = UIButton()
     private let signInButton = UIButton()
+    private let signUpCaption = UILabel()
+    private let signUpButton = UIButton()
     
     override func loadView() {
         view = UIView()
@@ -72,45 +71,38 @@ final class SignUpView: UIViewController {
             $0.height.equalTo(60)
         }
         
-        contentView.addSubview(confirmPasswordCaptionLabel)
-        confirmPasswordCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(25)
+        contentView.addSubview(forgotPasswordButton)
+        forgotPasswordButton.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
-        contentView.addSubview(confirmPasswordTextField)
-        confirmPasswordTextField.snp.makeConstraints {
-            $0.top.equalTo(confirmPasswordCaptionLabel.snp.bottom).offset(15)
+        contentView.addSubview(signInButton)
+        signInButton.snp.makeConstraints {
+            $0.top.equalTo(forgotPasswordButton.snp.bottom).offset(25)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(60)
         }
         
-        contentView.addSubview(signUpButton)
-        signUpButton.snp.makeConstraints {
-            $0.top.equalTo(confirmPasswordTextField.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
-        }
-        
-        let signInView = UIView()
-        contentView.addSubview(signInView)
-        signInView.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(5)
+        let signUpView = UIView()
+        contentView.addSubview(signUpView)
+        signUpView.snp.makeConstraints {
+            $0.top.equalTo(signInButton.snp.bottom).offset(5)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
             $0.bottom.equalToSuperview()
         }
         
-        signInView.addSubview(signInCaption)
-        signInCaption.snp.makeConstraints {
+        signUpView.addSubview(signUpCaption)
+        signUpCaption.snp.makeConstraints {
             $0.top.leading.bottom.equalToSuperview()
         }
         
-        signInView.addSubview(signInButton)
-        signInButton.snp.makeConstraints {
-            $0.leading.equalTo(signInCaption.snp.trailing).offset(5)
+        signUpView.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints {
+            $0.leading.equalTo(signUpCaption.snp.trailing).offset(5)
             $0.top.bottom.trailing.equalToSuperview()
         }
     }
@@ -126,7 +118,7 @@ final class SignUpView: UIViewController {
         view.backgroundColor = Color.whisper
         
         titleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        titleLabel.text = "Start using Parylation!" // localize
+        titleLabel.text = "Great to see you again!" // localize
         titleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -150,25 +142,19 @@ final class SignUpView: UIViewController {
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         
-        confirmPasswordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        confirmPasswordCaptionLabel.text = "Confirm password"
-        confirmPasswordCaptionLabel.textColor = Color.gigas
+        forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
+        forgotPasswordButton.setTitleColor(Color.marigoldYellow, for: .normal)
+        forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         
-        confirmPasswordTextField.backgroundColor = .white
-        confirmPasswordTextField.layer.cornerRadius = 15
-        confirmPasswordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
-        confirmPasswordTextField.leftViewMode = .always
-        confirmPasswordTextField.isSecureTextEntry = true
-        
-        signUpButton.setTitle("SIGN UP", for: .normal)
-        signUpButton.setTitleColor(.black, for: .normal)
-        signUpButton.backgroundColor = Color.marigoldYellow
-        signUpButton.layer.cornerRadius = 20
+        signInButton.setTitle("SIGN IN", for: .normal)
+        signInButton.setTitleColor(.black, for: .normal)
+        signInButton.backgroundColor = Color.marigoldYellow
+        signInButton.layer.cornerRadius = 20
         if #available(iOS 13.0, *) {
-            signUpButton.layer.cornerCurve = .continuous
+            signInButton.layer.cornerCurve = .continuous
         }
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
-        signUpButton.layer.applyShadow(
+        signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signInButton.layer.applyShadow(
             color: Color.marigoldYellow,
             alpha: 0.5,
             x: 0,
@@ -177,13 +163,13 @@ final class SignUpView: UIViewController {
             spread: -20
         )
         
-        signInCaption.text = "Already a member?"
-        signInCaption.textColor = Color.dustyGray
-        signInCaption.font = .systemFont(ofSize: 14, weight: .regular)
+        signUpCaption.text = "No account yet?"
+        signUpCaption.textColor = Color.dustyGray
+        signUpCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
-        signInButton.setTitle("Sign In", for: .normal)
-        signInButton.setTitleColor(Color.marigoldYellow, for: .normal)
-        signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(Color.marigoldYellow, for: .normal)
+        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     
     @objc func test() {
@@ -193,7 +179,7 @@ final class SignUpView: UIViewController {
     }
     
     private func bindViewModel() {
-        signInButton.reactive.tap
-            .bind(to: viewModel.signInTrigger)
+        signUpButton.reactive.tap
+            .bind(to: viewModel.signUpTrigger)
     }
 }
