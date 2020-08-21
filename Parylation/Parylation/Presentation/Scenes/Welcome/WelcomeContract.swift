@@ -10,9 +10,7 @@ import Bond
 import ReactiveKit
 import UIKit
 
-protocol WelcomeDependency {
-    var navigationController: UINavigationController { get }
-}
+protocol WelcomeDependency { }
 
 protocol WelcomeBuilder: AnyObject {
     func build() -> UIViewController

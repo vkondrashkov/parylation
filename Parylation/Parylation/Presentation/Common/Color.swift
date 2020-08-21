@@ -21,6 +21,9 @@ struct Color {
     private let violentViolet_ = #colorLiteral(red: 0.10, green: 0.05, blue: 0.34, alpha: 1)
     static let violentViolet = UIColor(red: 26 / 255.0, green: 15 / 255.0, blue: 87 / 255.0, alpha: 1)
     
+    private let whisper_ = #colorLiteral(red: 0.96, green: 0.96, blue: 0.97, alpha: 1)
+    static let whisper = UIColor(red: 245 / 255.0, green: 245 / 255.0, blue: 249 / 255.0, alpha: 1)
+    
     private let dustyGray_ = #colorLiteral(red: 0.65, green: 0.61, blue: 0.62, alpha: 1)
     static let dustyGray = UIColor(red: 166 / 255.0, green: 157 / 255.0, blue: 159 / 255.0, alpha: 1)
     

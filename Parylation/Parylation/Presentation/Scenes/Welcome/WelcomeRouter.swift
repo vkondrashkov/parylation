@@ -7,13 +7,16 @@
 //
 
 final class WelcomeRouterImpl {
+    private let presentationScene: PresentationScene
     private let navigationScene: NavigationScene
     private let signUpBuilder: SignUpBuilder
     
     init(
+        presentationScene: PresentationScene,
         navigationScene: NavigationScene,
         signUpBuilder: SignUpBuilder
     ) {
+        self.presentationScene = presentationScene
         self.navigationScene = navigationScene
         self.signUpBuilder = signUpBuilder
     }
@@ -24,7 +27,9 @@ final class WelcomeRouterImpl {
 extension WelcomeRouterImpl: WelcomeRouter {
     func showSignUp() {
         let signUpView = signUpBuilder.build()
-        navigationScene.play(view: signUpView, animated: true, completion: nil)
+        navigationScene.set(views: [signUpView], animated: false, completion: nil)
+//        presentationScene.play(view: signUpView, animated: true, completion: nil)
+        presentationScene.play(scene: navigationScene, animated: true, completion: nil)
     }
     
     func showSignIn() {

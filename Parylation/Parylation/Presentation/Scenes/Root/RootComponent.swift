@@ -8,10 +8,4 @@
 
 import UIKit
 
-final class RootComponent: DashboardDependency, WelcomeDependency {
-    let navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-}
+final class RootComponent: DashboardDependency, WelcomeDependency { }

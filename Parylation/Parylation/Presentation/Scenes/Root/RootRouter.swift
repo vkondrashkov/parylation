@@ -10,18 +10,15 @@ import UIKit
 
 final class RootRouterImpl {
     private let presentationScene: PresentationScene
-    private let navigationScene: NavigationScene
     private let welcomeBuilder: WelcomeBuilder
     private let dashboardBuilder: DashboardBuilder
 
     init(
         presentationScene: PresentationScene,
-        navigationScene: NavigationScene,
         welcomeBuilder: WelcomeBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
         self.presentationScene = presentationScene
-        self.navigationScene = navigationScene
         self.welcomeBuilder = welcomeBuilder
         self.dashboardBuilder = dashboardBuilder
     }
@@ -32,8 +29,8 @@ final class RootRouterImpl {
 extension RootRouterImpl: RootRouter {
     func showWelcome() {
         let welcomeView = welcomeBuilder.build()
-//        welcomeView.modalPresentationStyle = .fullScreen
-        navigationScene.play(view: welcomeView, animated: false, completion: nil)
+        welcomeView.modalPresentationStyle = .fullScreen
+        presentationScene.play(view: welcomeView, animated: false, completion: nil)
     }
     
     func showDashboard() {

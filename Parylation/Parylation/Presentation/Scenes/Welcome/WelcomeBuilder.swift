@@ -22,11 +22,15 @@ final class WelcomeBuilderImpl {
 extension WelcomeBuilderImpl: WelcomeBuilder {
     func build() -> UIViewController {
         let view = WelcomeView()
-        let component = WelcomeComponent(navigationController: dependency.navigationController)
+        let authNavigationController = UINavigationController()
+        authNavigationController.setNavigationBarHidden(true, animated: false)
+//        authNavigationController.interactivePopGestureRecognizer?.delegate = nil
+        let component = WelcomeComponent(navigationController: authNavigationController)
         let signUpBuilder = SignUpBuilderImpl(dependency: component)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
-            navigationScene: NavigationScene(navigationController: dependency.navigationController),
+            presentationScene: PresentationScene(presentingViewController: view),
+            navigationScene: NavigationScene(navigationController: authNavigationController),
             signUpBuilder: signUpBuilder
         )
         let viewModel = WelcomeViewModelImpl(
