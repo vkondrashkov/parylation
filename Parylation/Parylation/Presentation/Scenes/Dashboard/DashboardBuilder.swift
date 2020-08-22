@@ -22,19 +22,28 @@ final class DashboardBuilderImpl {
 extension DashboardBuilderImpl: DashboardBuilder {
     func build() -> UIViewController {
         let view = DashboardView()
-        let component = DashboardComponent(parent: view)
+        
+        let homeNavigationController = UINavigationController()
+        homeNavigationController.setNavigationBarHidden(true, animated: false)
+        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        
+        let calendarNavigationController = UINavigationController()
+        calendarNavigationController.setNavigationBarHidden(true, animated: false)
+        calendarNavigationController.tabBarItem = UITabBarItem(title: "Calendar", image: nil, selectedImage: nil)
+        
+        let profileNavigationController = UINavigationController()
+        profileNavigationController.setNavigationBarHidden(true, animated: false)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
+        
+        let component = DashboardComponent(
+            parent: view,
+            homeNavigationController: homeNavigationController,
+            calendarNavigationController: calendarNavigationController,
+            profileNavigationController: profileNavigationController
+        )
         let interactor = DashboardInteractorImpl()
         
-        let feedNavigationController = UINavigationController()
-        feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: nil, selectedImage: nil)
-        
-        let messagesNavigationController = UINavigationController()
-        messagesNavigationController.tabBarItem = UITabBarItem(title: "Messages", image: nil, selectedImage: nil)
-        
-        let settingsNavigationController = UINavigationController()
-        settingsNavigationController.tabBarItem = UITabBarItem(title: "Settings", image: nil, selectedImage: nil)
-        
-        view.viewControllers = [feedNavigationController, messagesNavigationController, settingsNavigationController]
+        view.viewControllers = [homeNavigationController, calendarNavigationController, profileNavigationController]
         
         let router = DashboardRouterImpl(tabBarController: view)
         let viewModel = DashboardViewModelImpl(

@@ -16,6 +16,10 @@ protocol DashboardBuilder {
     func build() -> UIViewController
 }
 
-protocol DashboardRouter: AnyObject { }
+protocol DashboardRouter: AnyObject {
+    func showTabs()
+}
 
-protocol DashboardViewModel { }
+protocol DashboardViewModel {
+    var viewWillAppearTrigger: Subject<Void, Never> { get }
+}

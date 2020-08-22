@@ -19,5 +19,7 @@ final class DashboardRouterImpl {
 // MARK: - DashboardRouter implementation
 
 extension DashboardRouterImpl: DashboardRouter {
-    
+    func showTabs() {
+        
+    }
 }

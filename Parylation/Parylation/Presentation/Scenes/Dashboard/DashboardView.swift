@@ -13,9 +13,10 @@ import UIKit
 final class DashboardView: UITabBarController {
     var viewModel: DashboardViewModel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        viewModel.viewWillAppearTrigger.receive()
         bindViewModel()
     }
     
