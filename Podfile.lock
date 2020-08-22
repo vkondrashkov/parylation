@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.2.2)
   - Bond (7.6.6):
     - Differ (~> 1.4)
     - ReactiveKit (~> 3.14)
@@ -10,18 +10,18 @@ PODS:
     - Alamofire (~> 5.0)
   - Nimble (8.1.1)
   - ObjectMapper (4.2.0)
-  - Quick (2.2.0)
-  - ReactiveKit (3.17.1)
-  - Realm (5.0.3):
-    - Realm/Headers (= 5.0.3)
-  - Realm/Headers (5.0.3)
-  - RealmSwift (5.0.3):
-    - Realm (= 5.0.3)
+  - Quick (2.2.1)
+  - ReactiveKit (3.17.4)
+  - Realm (5.3.5):
+    - Realm/Headers (= 5.3.5)
+  - Realm/Headers (5.3.5)
+  - RealmSwift (5.3.5):
+    - Realm (= 5.3.5)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Bond (~> 7.0)
-  - Moya (~> 14.0)
+  - Moya
   - Nimble (~> 8.0)
   - ObjectMapper (~> 4.2)
   - Quick (~> 2.0)
@@ -44,18 +44,18 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Bond: 9e7d901cf4ed825b6004a93dd0a7f1c7479e2834
   Differ: 3b6bd78e2b20cc795d9a86f7641d087524e4273e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  ReactiveKit: f578a74d3555296ea61fab228f5245a4ed7b4b27
-  Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
-  RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  ReactiveKit: f9f9e079efa39312c597bf1508ef4810d111ce76
+  Realm: 2b52fcc86fc0ed3d75a56ac0eb1e73c4f1a60e16
+  RealmSwift: a6ea2ea561039fc3833c08dec81371a9a3bb5ca6
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: c1d1cd2659a6c938304d1abe229ede4d21c8a4de
+PODFILE CHECKSUM: 1d702203e0e171d572527b326b274bc91fc244c5
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

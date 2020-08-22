@@ -22,9 +22,12 @@ final class SignUpBuilderImpl {
 extension SignUpBuilderImpl: SignUpBuilder {
     func build() -> UIViewController {
         let view = SignUpView()
+        let component = SignUpComponent(navigationController: dependency.authNavigationController)
+        let signInBuilder = SignInBuilderImpl(dependency: component)
         let interactor = SignUpInteractorImpl()
         let router = SignUpRouterImpl(
-            navigationScene: NavigationScene(navigationController: dependency.authNavigationController)
+            navigationScene: NavigationScene(navigationController: dependency.authNavigationController),
+            signInBuilder: signInBuilder
         )
         let viewModel = SignUpViewModelImpl(
             interactor: interactor,

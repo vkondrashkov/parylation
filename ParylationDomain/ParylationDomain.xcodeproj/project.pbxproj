@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		500B7A922977CEAD82FBA4AD /* Pods_ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */; };
+		69AD1543B4ABD32B88403CA4 /* Pods_ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */; };
+		9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */; };
 		9CADB564249E0DD500901E45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB563249E0DD500901E45 /* User.swift */; };
 		9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB566249E0E0000901E45 /* RootInteractor.swift */; };
 		9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB568249E0E1900901E45 /* SignUpInteractor.swift */; };
@@ -15,6 +16,7 @@
 		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
 		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */; };
+		9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EC24F05F24008B835A /* SignInInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +24,9 @@
 		2F352D182152C17D3253D04E /* Pods_ParylationDomainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		683C1811F74393BC84F3E7B7 /* Pods-ParylationDomain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomain.release.xcconfig"; path = "Target Support Files/Pods-ParylationDomain/Pods-ParylationDomain.release.xcconfig"; sourceTree = "<group>"; };
 		6F3FB703A3E9250111FF2B80 /* Pods-ParylationDomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomainTests.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomainTests/Pods-ParylationDomainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC5593B75FEDB2740C4E44C /* Pods-ParylationDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomain.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomain/Pods-ParylationDomain.debug.xcconfig"; sourceTree = "<group>"; };
+		9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9CADB548249CD86C00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB54C249CD86C00901E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CADB563249E0DD500901E45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -32,7 +36,7 @@
 		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
-		A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CEB58EC24F05F24008B835A /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				500B7A922977CEAD82FBA4AD /* Pods_ParylationDomain.framework in Frameworks */,
+				69AD1543B4ABD32B88403CA4 /* Pods_ParylationDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +66,8 @@
 		99A2FBC43577D8DFE919B9A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0F8E29EE60ED7F1C72E6498 /* Pods_ParylationDomain.framework */,
 				2F352D182152C17D3253D04E /* Pods_ParylationDomainTests.framework */,
+				7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				9CADB566249E0E0000901E45 /* RootInteractor.swift */,
+				9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */,
 				9CADB568249E0E1900901E45 /* SignUpInteractor.swift */,
+				9CEB58EC24F05F24008B835A /* SignInInteractor.swift */,
 				9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */,
 			);
 			path = Interactors;
@@ -240,12 +246,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */,
+				9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */,
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
 				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
 				9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */,
+				9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

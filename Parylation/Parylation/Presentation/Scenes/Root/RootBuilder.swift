@@ -23,8 +23,8 @@ final class RootBuilderImpl {
 extension RootBuilderImpl: RootBuilder {
     func build() -> UIViewController {
         let view = RootView()
-        let component = RootComponent(navigationController: view)
-        let signUpBuilder = SignUpBuilderImpl(dependency: component)
+        let component = RootComponent()
+        let welcomeBuilder = WelcomeBuilderImpl(dependency: component)
         let dashboardBuilder = DashboardBuilderImpl(dependency: component)
 //        let userRepository = UserRepositoryImpl(provider: MoyaProvider<ParylationAPI>())
         let authorizationUseCase = AuthorizationUseCaseImpl(
@@ -33,8 +33,7 @@ extension RootBuilderImpl: RootBuilder {
         let interactor = RootInteractorImpl(authorizationUseCase: authorizationUseCase)
         let router = RootRouterImpl(
             presentationScene: PresentationScene(presentingViewController: view),
-            navigationScene: NavigationScene(navigationController: view),
-            signUpBuilder: signUpBuilder,
+            welcomeBuilder: welcomeBuilder,
             dashboardBuilder: dashboardBuilder
         )
         let viewModel = RootViewModelImpl(

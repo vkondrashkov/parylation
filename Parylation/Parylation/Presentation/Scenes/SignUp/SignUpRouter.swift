@@ -10,9 +10,14 @@ import UIKit
 
 final class SignUpRouterImpl {
     private let navigationScene: NavigationScene
+    private let signInBuilder: SignInBuilder
     
-    init(navigationScene: NavigationScene) {
+    init(
+        navigationScene: NavigationScene,
+        signInBuilder: SignInBuilder
+    ) {
         self.navigationScene = navigationScene
+        self.signInBuilder = signInBuilder
     }
 }
 
@@ -20,7 +25,7 @@ final class SignUpRouterImpl {
 
 extension SignUpRouterImpl: SignUpRouter {
     func showSignIn() {
-        // build
-        
+        let signInView = signInBuilder.build()
+        navigationScene.set(views: [signInView], animated: true, completion: nil)
     }
 }

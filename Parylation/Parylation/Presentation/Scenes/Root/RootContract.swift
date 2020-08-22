@@ -20,7 +20,7 @@ protocol RootBuilder: AnyObject {
 }
 
 protocol RootRouter: AnyObject {
-    func showSignUp()
+    func showWelcome()
     func showDashboard()
 }
 

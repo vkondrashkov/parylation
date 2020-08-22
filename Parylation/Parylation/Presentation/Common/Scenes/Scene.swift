@@ -12,3 +12,7 @@ protocol Scene {
     func play(view: UIViewController, animated: Bool, completion: (() -> Void)?)
     func stop(animated: Bool, completion: (() -> Void)?)
 }
+
+protocol PresentableScene {
+    var presentableView: UIViewController? { get }
+}

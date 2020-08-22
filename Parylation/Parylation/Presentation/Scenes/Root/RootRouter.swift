@@ -10,19 +10,16 @@ import UIKit
 
 final class RootRouterImpl {
     private let presentationScene: PresentationScene
-    private let navigationScene: NavigationScene
-    private let signUpBuilder: SignUpBuilder
+    private let welcomeBuilder: WelcomeBuilder
     private let dashboardBuilder: DashboardBuilder
 
     init(
         presentationScene: PresentationScene,
-        navigationScene: NavigationScene,
-        signUpBuilder: SignUpBuilder,
+        welcomeBuilder: WelcomeBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
         self.presentationScene = presentationScene
-        self.navigationScene = navigationScene
-        self.signUpBuilder = signUpBuilder
+        self.welcomeBuilder = welcomeBuilder
         self.dashboardBuilder = dashboardBuilder
     }
 }
@@ -30,14 +27,17 @@ final class RootRouterImpl {
 // MARK: - RootRouter implementation
 
 extension RootRouterImpl: RootRouter {
-    func showSignUp() {
-        let signUpView = signUpBuilder.build()
-        navigationScene.play(view: signUpView, animated: false, completion: nil)
+    func showWelcome() {
+        let welcomeView = welcomeBuilder.build()
+        welcomeView.modalPresentationStyle = .fullScreen
+        welcomeView.modalTransitionStyle = .crossDissolve
+        presentationScene.play(view: welcomeView, animated: true, completion: nil)
     }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()
         dashboardView.modalPresentationStyle = .fullScreen
-        presentationScene.play(view: dashboardView, animated: false, completion: nil)
+        dashboardView.modalTransitionStyle = .crossDissolve
+        presentationScene.play(view: dashboardView, animated: true, completion: nil)
     }
 }

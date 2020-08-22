@@ -22,4 +22,6 @@ protocol SignUpRouter: AnyObject {
     func showSignIn()
 }
 
-protocol SignUpViewModel { }
+protocol SignUpViewModel {
+    var signInTrigger: Subject<Void, Never> { get }
+}

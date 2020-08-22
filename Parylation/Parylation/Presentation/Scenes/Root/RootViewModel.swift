@@ -35,7 +35,7 @@ final class RootViewModelImpl: RootViewModel {
                 if isUserAuthorized_ {
                     router.showDashboard()
                 } else {
-                    router.showSignUp()
+                    router.showWelcome()
                 }
             }
             .dispose(in: disposeBag)
