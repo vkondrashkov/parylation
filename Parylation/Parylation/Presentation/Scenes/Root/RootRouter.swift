@@ -30,12 +30,14 @@ extension RootRouterImpl: RootRouter {
     func showWelcome() {
         let welcomeView = welcomeBuilder.build()
         welcomeView.modalPresentationStyle = .fullScreen
-        presentationScene.play(view: welcomeView, animated: false, completion: nil)
+        welcomeView.modalTransitionStyle = .crossDissolve
+        presentationScene.play(view: welcomeView, animated: true, completion: nil)
     }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()
         dashboardView.modalPresentationStyle = .fullScreen
-        presentationScene.play(view: dashboardView, animated: false, completion: nil)
+        dashboardView.modalTransitionStyle = .crossDissolve
+        presentationScene.play(view: dashboardView, animated: true, completion: nil)
     }
 }

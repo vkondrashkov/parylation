@@ -75,7 +75,7 @@ final class WelcomeView: UIViewController {
         contentView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.width.equalTo(175)
+            $0.width.equalTo(200)
             $0.height.equalTo(60)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
@@ -84,7 +84,7 @@ final class WelcomeView: UIViewController {
         
         contentView.addSubview(signInButton)
         signInButton.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(5)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
@@ -149,7 +149,7 @@ final class WelcomeView: UIViewController {
             spread: -20
         )
         
-        signInButton.setTitle("Sign In", for: .normal)
+        signInButton.setTitle("I already have an account", for: .normal)
         signInButton.setTitleColor(Color.dustyGray, for: .normal)
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
         

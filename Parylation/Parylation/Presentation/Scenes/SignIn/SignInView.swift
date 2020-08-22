@@ -15,6 +15,7 @@ final class SignInView: UIViewController {
     
     private let contentView = UIView()
     private let titleLabel = UILabel()
+    private let subtitleLabel = UILabel()
     private let emailCaptionLabel = UILabel()
     private let emailTextField = UITextField()
     private let passwordCaptionLabel = UILabel()
@@ -43,9 +44,17 @@ final class SignInView: UIViewController {
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
+        contentView.addSubview(subtitleLabel)
+        subtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.leading.greaterThanOrEqualToSuperview()
+            $0.trailing.lessThanOrEqualToSuperview()
+        }
+        
         contentView.addSubview(emailCaptionLabel)
         emailCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(30)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
@@ -88,7 +97,7 @@ final class SignInView: UIViewController {
         let signUpView = UIView()
         contentView.addSubview(signUpView)
         signUpView.snp.makeConstraints {
-            $0.top.equalTo(signInButton.snp.bottom).offset(5)
+            $0.top.equalTo(signInButton.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
@@ -117,9 +126,12 @@ final class SignInView: UIViewController {
     private func setupUI() {
         view.backgroundColor = Color.whisper
         
-        titleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        titleLabel.text = "Great to see you again!" // localize
-        titleLabel.textColor = .black
+        titleLabel.font = .systemFont(ofSize: 48)
+        titleLabel.text = "👋"
+        
+        subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        subtitleLabel.text = "Great to see you again!" // localize
+        subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         emailCaptionLabel.text = "Email"
@@ -143,19 +155,19 @@ final class SignInView: UIViewController {
         passwordTextField.isSecureTextEntry = true
         
         forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
-        forgotPasswordButton.setTitleColor(Color.marigoldYellow, for: .normal)
+        forgotPasswordButton.setTitleColor(Color.blazeOrange, for: .normal)
         forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         
         signInButton.setTitle("SIGN IN", for: .normal)
-        signInButton.setTitleColor(.black, for: .normal)
-        signInButton.backgroundColor = Color.marigoldYellow
+        signInButton.setTitleColor(.white, for: .normal)
+        signInButton.backgroundColor = Color.blazeOrange
         signInButton.layer.cornerRadius = 20
         if #available(iOS 13.0, *) {
             signInButton.layer.cornerCurve = .continuous
         }
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         signInButton.layer.applyShadow(
-            color: Color.marigoldYellow,
+            color: Color.blazeOrange,
             alpha: 0.5,
             x: 0,
             y: 5,
@@ -168,7 +180,7 @@ final class SignInView: UIViewController {
         signUpCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
         signUpButton.setTitle("Sign Up", for: .normal)
-        signUpButton.setTitleColor(Color.marigoldYellow, for: .normal)
+        signUpButton.setTitleColor(Color.blazeOrange, for: .normal)
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     

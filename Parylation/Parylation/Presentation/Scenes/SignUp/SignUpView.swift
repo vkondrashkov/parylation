@@ -15,6 +15,7 @@ final class SignUpView: UIViewController {
     
     private let contentView = UIView()
     private let titleLabel = UILabel()
+    private let subtitleLabel = UILabel()
     private let emailCaptionLabel = UILabel()
     private let emailTextField = UITextField()
     private let passwordCaptionLabel = UILabel()
@@ -44,9 +45,17 @@ final class SignUpView: UIViewController {
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
+        contentView.addSubview(subtitleLabel)
+        subtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.leading.greaterThanOrEqualToSuperview()
+            $0.trailing.lessThanOrEqualToSuperview()
+        }
+        
         contentView.addSubview(emailCaptionLabel)
         emailCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(30)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
@@ -96,7 +105,7 @@ final class SignUpView: UIViewController {
         let signInView = UIView()
         contentView.addSubview(signInView)
         signInView.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(5)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
@@ -125,9 +134,12 @@ final class SignUpView: UIViewController {
     private func setupUI() {
         view.backgroundColor = Color.whisper
         
-        titleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        titleLabel.text = "Start using Parylation!" // localize
-        titleLabel.textColor = .black
+        titleLabel.font = .systemFont(ofSize: 56)
+        titleLabel.text = "🤝"
+        
+        subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        subtitleLabel.text = "Start using Parylation!" // localize
+        subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         emailCaptionLabel.text = "Email"
@@ -161,15 +173,15 @@ final class SignUpView: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = true
         
         signUpButton.setTitle("SIGN UP", for: .normal)
-        signUpButton.setTitleColor(.black, for: .normal)
-        signUpButton.backgroundColor = Color.marigoldYellow
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.backgroundColor = Color.blazeOrange
         signUpButton.layer.cornerRadius = 20
         if #available(iOS 13.0, *) {
             signUpButton.layer.cornerCurve = .continuous
         }
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         signUpButton.layer.applyShadow(
-            color: Color.marigoldYellow,
+            color: Color.blazeOrange,
             alpha: 0.5,
             x: 0,
             y: 5,
@@ -182,7 +194,7 @@ final class SignUpView: UIViewController {
         signInCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
         signInButton.setTitle("Sign In", for: .normal)
-        signInButton.setTitleColor(Color.marigoldYellow, for: .normal)
+        signInButton.setTitleColor(Color.blazeOrange, for: .normal)
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     
