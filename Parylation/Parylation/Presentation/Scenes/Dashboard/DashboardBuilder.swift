@@ -25,15 +25,36 @@ extension DashboardBuilderImpl: DashboardBuilder {
         
         let homeNavigationController = UINavigationController()
         homeNavigationController.setNavigationBarHidden(true, animated: false)
-        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        let homeTabBarImage = UIImage(named: "dashboard-home")
+        let homeTabBarItem = UITabBarItem(
+            title: nil,
+            image: homeTabBarImage,
+            selectedImage: nil
+        )
+        homeTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+        homeNavigationController.tabBarItem = homeTabBarItem
         
         let calendarNavigationController = UINavigationController()
         calendarNavigationController.setNavigationBarHidden(true, animated: false)
-        calendarNavigationController.tabBarItem = UITabBarItem(title: "Calendar", image: nil, selectedImage: nil)
+        let calendarTabBarImage = UIImage(named: "dashboard-calendar")
+        let calendarTabBarItem = UITabBarItem(
+            title: nil,
+            image: calendarTabBarImage,
+            selectedImage: nil
+        )
+        calendarTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+        calendarNavigationController.tabBarItem = calendarTabBarItem
         
         let profileNavigationController = UINavigationController()
         profileNavigationController.setNavigationBarHidden(true, animated: false)
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
+        let profileTabBarImage = UIImage(named: "dashboard-profile")
+        let profileTabBarItem = UITabBarItem(
+            title: nil,
+            image: profileTabBarImage,
+            selectedImage: nil
+        )
+        profileTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+        profileNavigationController.tabBarItem = profileTabBarItem
         
         let component = DashboardComponent(
             parent: view,
@@ -41,11 +62,18 @@ extension DashboardBuilderImpl: DashboardBuilder {
             calendarNavigationController: calendarNavigationController,
             profileNavigationController: profileNavigationController
         )
+        
+        let homeBuilder = HomeBuilderImpl(dependency: component)
+        
         let interactor = DashboardInteractorImpl()
         
         view.viewControllers = [homeNavigationController, calendarNavigationController, profileNavigationController]
         
-        let router = DashboardRouterImpl(tabBarController: view)
+        let router = DashboardRouterImpl(
+            tabBarController: view,
+            homeNavigationScene: NavigationScene(navigationController: homeNavigationController),
+            homeBuilder: homeBuilder
+        )
         let viewModel = DashboardViewModelImpl(
             interactor: interactor,
             router: router

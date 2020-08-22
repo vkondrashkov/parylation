@@ -107,6 +107,18 @@
 		9CEB58F024F0607A008B835A /* SignInComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EE24F0607A008B835A /* SignInComponent.swift */; };
 		9CEB58F224F06082008B835A /* SignUpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F124F06082008B835A /* SignUpComponent.swift */; };
 		9CEB58F324F06082008B835A /* SignUpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F124F06082008B835A /* SignUpComponent.swift */; };
+		9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F524F1343A008B835A /* HomeContract.swift */; };
+		9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F524F1343A008B835A /* HomeContract.swift */; };
+		9CEB58F924F13442008B835A /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F824F13442008B835A /* HomeComponent.swift */; };
+		9CEB58FA24F13442008B835A /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58F824F13442008B835A /* HomeComponent.swift */; };
+		9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58FB24F13449008B835A /* HomeBuilder.swift */; };
+		9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58FB24F13449008B835A /* HomeBuilder.swift */; };
+		9CEB58FF24F13450008B835A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58FE24F13450008B835A /* HomeRouter.swift */; };
+		9CEB590024F13450008B835A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58FE24F13450008B835A /* HomeRouter.swift */; };
+		9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590124F13457008B835A /* HomeViewModel.swift */; };
+		9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590124F13457008B835A /* HomeViewModel.swift */; };
+		9CEB590524F1345D008B835A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590424F1345D008B835A /* HomeView.swift */; };
+		9CEB590624F1345D008B835A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590424F1345D008B835A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +218,12 @@
 		9CEB58E924F05E4E008B835A /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9CEB58EE24F0607A008B835A /* SignInComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInComponent.swift; sourceTree = "<group>"; };
 		9CEB58F124F06082008B835A /* SignUpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComponent.swift; sourceTree = "<group>"; };
+		9CEB58F524F1343A008B835A /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
+		9CEB58F824F13442008B835A /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		9CEB58FB24F13449008B835A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		9CEB58FE24F13450008B835A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		9CEB590124F13457008B835A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9CEB590424F1345D008B835A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A70C837D96962AC1B1FCE7CA /* Pods-ParylationDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.debug.xcconfig"; sourceTree = "<group>"; };
 		C5CE576FD43C80F16B12B3A2 /* Pods_Parylation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parylation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4808E5AA520167FF8790829 /* Pods-ParylationDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDev.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDev/Pods-ParylationDev.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +320,7 @@
 				9C5C657A249A65C400E9D889 /* SignUp */,
 				9CEB58D424F05DDF008B835A /* SignIn */,
 				9C207EAF247169280022AC92 /* Dashboard */,
+				9CEB58F424F13419008B835A /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -508,6 +527,19 @@
 				9CEB58E924F05E4E008B835A /* SignInView.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		9CEB58F424F13419008B835A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB58F524F1343A008B835A /* HomeContract.swift */,
+				9CEB58F824F13442008B835A /* HomeComponent.swift */,
+				9CEB58FB24F13449008B835A /* HomeBuilder.swift */,
+				9CEB58FE24F13450008B835A /* HomeRouter.swift */,
+				9CEB590124F13457008B835A /* HomeViewModel.swift */,
+				9CEB590424F1345D008B835A /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		D54CFEBF893D163822B989B9 /* Pods */ = {
@@ -794,12 +826,14 @@
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852D24EFE321006E28BD /* Color.swift in Sources */,
+				9CEB590524F1345D008B835A /* HomeView.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5424D35CE500B04898 /* PresentationScene.swift in Sources */,
+				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4E24D35B6200B04898 /* Scene.swift in Sources */,
 				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
@@ -807,17 +841,20 @@
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
 				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
 				9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CEB58F924F13442008B835A /* HomeComponent.swift in Sources */,
 				9C207E992470B4990022AC92 /* RootComponent.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C3C2A5124D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C67853424EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
+				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9CEB58F224F06082008B835A /* SignUpComponent.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
+				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
@@ -825,6 +862,7 @@
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
+				9CEB58FF24F13450008B835A /* HomeRouter.swift in Sources */,
 				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9CEB58EF24F0607A008B835A /* SignInComponent.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
@@ -845,12 +883,14 @@
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852E24EFE321006E28BD /* Color.swift in Sources */,
+				9CEB590624F1345D008B835A /* HomeView.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5524D35CE500B04898 /* PresentationScene.swift in Sources */,
+				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4F24D35B6200B04898 /* Scene.swift in Sources */,
 				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
@@ -858,17 +898,20 @@
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
 				9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */,
 				9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CEB58FA24F13442008B835A /* HomeComponent.swift in Sources */,
 				9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C3C2A5224D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C67853524EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
+				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9CEB58F324F06082008B835A /* SignUpComponent.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
+				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
@@ -876,6 +919,7 @@
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
+				9CEB590024F13450008B835A /* HomeRouter.swift in Sources */,
 				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9CEB58F024F0607A008B835A /* SignInComponent.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,

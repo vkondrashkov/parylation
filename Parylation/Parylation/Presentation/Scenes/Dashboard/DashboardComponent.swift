@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DashboardComponent {
+final class DashboardComponent: HomeDependency {
     let parent: UIViewController
     let homeNavigationController: UINavigationController
     let calendarNavigationController: UINavigationController
