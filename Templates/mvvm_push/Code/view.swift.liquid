@@ -1,0 +1,29 @@
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Bond
+import ReactiveKit
+import UIKit
+
+final class {{ module_info.name }}View: UIViewController {
+    var viewModel: {{ module_info.name }}ViewModel!
+
+    override func loadView() {
+        view = UIView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+	setupUI()
+	bindViewModel()
+    }
+
+    private func setupUI() { }
+
+    private func bindViewModel() { } 
+}

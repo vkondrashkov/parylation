@@ -1,0 +1,22 @@
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}RouterImpl {
+    private let navigationScene: NavigationScene
+
+    init(
+        navigationScene: NavigationScene
+    ) {
+        self.navigationScene = navigationScene
+    }
+}
+
+// MARK: - {{ module_info.name }}Router implementation
+
+extension {{ module_info.name }}RouterImpl: {{ module_info.name }}Router { }

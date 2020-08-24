@@ -1,0 +1,15 @@
+name: "mvvm_push"
+summary: "Swift MVVM module with NavigationController template"
+author: "vladislav.kondrashkov@gmail.com"
+version: "1.0.0"
+license: "MIT"
+
+code_files:
+# UI Module
+- {name: Contract.swift, path: Code/contract.swift.liquid}
+- {name: Component.swift, path: Code/component.swift.liquid}
+- {name: Builder.swift, path: Code/builder.swift.liquid}
+- {name: Router.swift, path: Code/router.swift.liquid}
+- {name: ViewModel.swift, path: Code/viewmodel.swift.liquid}
+- {name: View.swift, path: Code/view.swift.liquid}
+- {name: .strings, path: Code/localization.strings.liquid}
