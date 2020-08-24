@@ -12,12 +12,16 @@ final class SignInRouterImpl {
     private let navigationScene: NavigationScene
     private let signUpBuilder: SignUpBuilder
     
+    private weak var signInListener: (SignInListener & SignUpListener)?
+    
     init(
         navigationScene: NavigationScene,
-        signUpBuilder: SignUpBuilder
+        signUpBuilder: SignUpBuilder,
+        signInListener: SignInListener & SignUpListener
     ) {
         self.navigationScene = navigationScene
         self.signUpBuilder = signUpBuilder
+        self.signInListener = signInListener
     }
 }
 
@@ -25,7 +29,12 @@ final class SignInRouterImpl {
 
 extension SignInRouterImpl: SignInRouter {
     func showSignUp() {
-        let signUpView = signUpBuilder.build()
+        guard let signInListener = signInListener else { return }
+        let signUpView = signUpBuilder.build(listener: signInListener)
         navigationScene.set(views: [signUpView], animated: true, completion: nil)
+    }
+    
+    func finishSignIn() {
+        signInListener?.onSignInFinish()
     }
 }

@@ -8,10 +8,21 @@
 
 import UIKit
 
-final class DashboardComponent {
+final class DashboardComponent: HomeDependency {
     let parent: UIViewController
+    let homeNavigationController: UINavigationController
+    let calendarNavigationController: UINavigationController
+    let profileNavigationController: UINavigationController
     
-    init(parent: UIViewController) {
+    init(
+        parent: UIViewController,
+        homeNavigationController: UINavigationController,
+        calendarNavigationController: UINavigationController,
+        profileNavigationController: UINavigationController
+    ) {
         self.parent = parent
+        self.homeNavigationController = homeNavigationController
+        self.calendarNavigationController = calendarNavigationController
+        self.profileNavigationController = profileNavigationController
     }
 }

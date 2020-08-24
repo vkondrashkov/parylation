@@ -7,5 +7,17 @@
 //
 
 import UIKit
+import ParylationDomain
 
-final class RootComponent: DashboardDependency, WelcomeDependency { }
+final class RootComponent: DashboardDependency, WelcomeDependency {
+    unowned let window: UIWindow
+    let authorizationUseCase: AuthorizationUseCase
+    
+    init(
+        window: UIWindow,
+        authorizationUseCase: AuthorizationUseCase
+    ) {
+        self.window = window
+        self.authorizationUseCase = authorizationUseCase
+    }
+}

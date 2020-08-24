@@ -23,16 +23,10 @@ final class RootView: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Temp
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: { [weak self] in
-            self?.viewModel.viewDidAppearTrigger.send()
-        })
+        viewModel.viewDidAppearTrigger.send()
     }
     
     private func setupUI() {
-//        setNavigationBarHidden(true, animated: false)
-//        interactivePopGestureRecognizer?.delegate = self
-        
         view.backgroundColor = Color.chablis
         view.addSubview(logoImageView)
         logoImageView.image = UIImage(named: "app_logo")
@@ -40,7 +34,6 @@ final class RootView: UIViewController {
         logoImageView.snp.makeConstraints {
             $0.center.equalTo(view.safeAreaLayoutGuide.snp.center)
             $0.size.equalTo(248)
-//            $0.size.equalTo(270)
         }
     }
     
@@ -48,9 +41,3 @@ final class RootView: UIViewController {
         
     }
 }
-
-//extension RootView: UIGestureRecognizerDelegate {
-//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-//        return viewControllers.count > 1
-//    }
-//}

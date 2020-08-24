@@ -25,15 +25,21 @@ extension WelcomeBuilderImpl: WelcomeBuilder {
         let authNavigationController = UINavigationController()
         authNavigationController.setNavigationBarHidden(true, animated: false)
 //        authNavigationController.interactivePopGestureRecognizer?.delegate = nil
-        let component = WelcomeComponent(navigationController: authNavigationController)
+        let component = WelcomeComponent(
+            navigationController: authNavigationController,
+            authorizationUseCase: dependency.authorizationUseCase
+        )
         let signUpBuilder = SignUpBuilderImpl(dependency: component)
         let signInBuilder = SignInBuilderImpl(dependency: component)
+        let dashboardBuilder = DashboardBuilderImpl(dependency: component)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
+            windowScene: WindowScene(window: dependency.window),
             presentationScene: PresentationScene(presentingViewController: view),
             navigationScene: NavigationScene(navigationController: authNavigationController),
             signUpBuilder: signUpBuilder,
-            signInBuilder: signInBuilder
+            signInBuilder: signInBuilder,
+            dashboardBuilder: dashboardBuilder
         )
         let viewModel = WelcomeViewModelImpl(
             interactor: interactor,

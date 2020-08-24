@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import ParylationDomain
 
-final class WelcomeComponent: SignUpDependency, SignInDependency {
+final class WelcomeComponent: SignUpDependency, SignInDependency, DashboardDependency {
     private let navigationController: UINavigationController
+    let authorizationUseCase: AuthorizationUseCase
     
     var authNavigationController: UINavigationController {
         return navigationController
     }
     
-    init(navigationController: UINavigationController) {
+    init(
+        navigationController: UINavigationController,
+        authorizationUseCase: AuthorizationUseCase
+    ) {
         self.navigationController = navigationController
+        self.authorizationUseCase = authorizationUseCase
     }
 }

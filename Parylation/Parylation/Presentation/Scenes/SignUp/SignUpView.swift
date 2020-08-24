@@ -179,7 +179,7 @@ final class SignUpView: UIViewController {
         if #available(iOS 13.0, *) {
             signUpButton.layer.cornerCurve = .continuous
         }
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         signUpButton.layer.applyShadow(
             color: Color.blazeOrange,
             alpha: 0.5,
@@ -205,6 +205,9 @@ final class SignUpView: UIViewController {
     }
     
     private func bindViewModel() {
+        signUpButton.reactive.tap
+            .bind(to: viewModel.signUpTrigger)
+        
         signInButton.reactive.tap
             .bind(to: viewModel.signInTrigger)
     }

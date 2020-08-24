@@ -13,12 +13,23 @@ public enum SignUpInteractorError: Error {
     case failed
 }
 
-public protocol SignUpInteractor { }
+public protocol SignUpInteractor {
+    func register(email: String, password: String) -> Signal<User, SignUpInteractorError>
+}
 
 public final class SignUpInteractorImpl {
-    public init() { }
+    private let authorizationUseCase: AuthorizationUseCase
+    
+    public init(authorizationUseCase: AuthorizationUseCase) {
+        self.authorizationUseCase = authorizationUseCase
+    }
 }
 
 // MARK: - SignUpInteractor implementation
 
-extension SignUpInteractorImpl: SignUpInteractor { }
+extension SignUpInteractorImpl: SignUpInteractor {
+    public func register(email: String, password: String) -> Signal<User, SignUpInteractorError> {
+        return authorizationUseCase.register(email: email, password: password)
+            .mapError { _ in return .failed }
+    }
+}

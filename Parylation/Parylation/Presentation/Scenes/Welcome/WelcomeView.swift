@@ -139,7 +139,7 @@ final class WelcomeView: UIViewController {
         if #available(iOS 13.0, *) {
             signUpButton.layer.cornerCurve = .continuous
         }
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         signUpButton.layer.applyShadow(
             color: Color.marigoldYellow,
             alpha: 0.5,
