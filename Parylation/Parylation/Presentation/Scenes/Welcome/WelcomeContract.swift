@@ -9,14 +9,19 @@
 import Bond
 import ReactiveKit
 import UIKit
+import ParylationDomain
 
-protocol WelcomeDependency { }
+protocol WelcomeDependency {
+    var window: UIWindow { get }
+    var authorizationUseCase: AuthorizationUseCase { get }
+}
 
 protocol WelcomeBuilder: AnyObject {
     func build() -> UIViewController
 }
 
 protocol WelcomeRouter: AnyObject {
+    func showDashboard()
     func showSignUp()
     func showSignIn()
 }

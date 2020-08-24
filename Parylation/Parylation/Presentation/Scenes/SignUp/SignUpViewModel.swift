@@ -15,6 +15,7 @@ final class SignUpViewModelImpl: SignUpViewModel {
     private let router: SignUpRouter
     
     /// Input
+    let signUpTrigger: Subject<Void, Never>
     let signInTrigger: Subject<Void, Never>
     
     private let disposeBag = DisposeBag()
@@ -26,14 +27,24 @@ final class SignUpViewModelImpl: SignUpViewModel {
         self.interactor = interactor
         self.router = router
         
-        let signInSubject = PassthroughSubject<Void, Never>()
+        let signUpSubject = PassthroughSubject<Void, Never>()
+        signUpSubject
+            .flatMapConcat {
+                interactor.register(email: "", password: "")
+            }
+            .observeNext { _ in
+                router.finishSignUp()
+            }
+            .dispose(in: disposeBag)
         
+        let signInSubject = PassthroughSubject<Void, Never>()
         signInSubject
             .observeNext {
                 router.showSignIn()
             }
             .dispose(in: disposeBag)
         
+        signUpTrigger = signUpSubject
         signInTrigger = signInSubject
     }
 }

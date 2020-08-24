@@ -13,6 +13,7 @@ import RealmSwift
 
 protocol RootDependency {
     var realm: Realm { get }
+    var window: UIWindow { get }
 }
 
 protocol RootBuilder: AnyObject {

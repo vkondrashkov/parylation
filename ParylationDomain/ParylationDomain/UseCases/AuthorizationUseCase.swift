@@ -16,6 +16,9 @@ public enum AuthorizationUseCaseError: Error {
 public protocol AuthorizationUseCase: AnyObject {
     func isAuthorized() -> Signal<Bool, AuthorizationUseCaseError>
     func fetchCurrentUser() -> Signal<User, AuthorizationUseCaseError>
+    func authorize(email: String, password: String) -> Signal<User, AuthorizationUseCaseError>
+    func register(email: String, password: String) -> Signal<User, AuthorizationUseCaseError>
+    // DEPRECATED
     func saveUser(user: User) -> Signal<Void, AuthorizationUseCaseError>
 }
 
@@ -49,6 +52,22 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
                     return .missingData
                 }
             }
+    }
+    
+    public func authorize(email: String, password: String) -> Signal<User, AuthorizationUseCaseError> {
+        // DO API LOGIC
+        let user = User(id: "123", name: "Vladislav")
+        return authorizedUserRepository.saveUser(user: user)
+            .map { _ in return user }
+            .mapError { _ in return .failed }
+    }
+    
+    public func register(email: String, password: String) -> Signal<User, AuthorizationUseCaseError> {
+        // DO API LOGIC
+        let user = User(id: "123", name: "Vladislav")
+        return authorizedUserRepository.saveUser(user: user)
+            .map { _ in return user }
+            .mapError { _ in return .failed }
     }
     
     public func saveUser(user: User) -> Signal<Void, AuthorizationUseCaseError> {
