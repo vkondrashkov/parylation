@@ -11,8 +11,7 @@ import ReactiveKit
 import UIKit
 import ParylationDomain
 
-protocol SignUpDependency {
-    var authNavigationController: UINavigationController { get }
+protocol SignUpContainer {
     var authorizationUseCase: AuthorizationUseCase { get }
 }
 
@@ -21,7 +20,7 @@ protocol SignUpListener: AnyObject {
 }
 
 protocol SignUpBuilder: AnyObject {
-    func build(listener: SignUpListener & SignInListener) -> UIViewController
+    func build(navigationController: UINavigationController, listener: SignUpListener & SignInListener) -> UIViewController
 }
 
 protocol SignUpRouter: AnyObject {

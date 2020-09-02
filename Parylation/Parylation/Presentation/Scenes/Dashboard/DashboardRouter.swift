@@ -10,23 +10,24 @@ import UIKit
 
 final class DashboardRouterImpl {
     private let tabBarController: UITabBarController
-    private let homeNavigationScene: NavigationScene
+    
+    private weak var homeNavigationController: UINavigationController?
     private let homeBuilder: HomeBuilder
     
-    private let settingsNavigationScene: NavigationScene
+    private weak var settingsNavigationController: UINavigationController?
     private let settingsBuilder: SettingsBuilder
     
     init(
         tabBarController: UITabBarController,
-        homeNavigationScene: NavigationScene,
+        homeNavigationController: UINavigationController,
         homeBuilder: HomeBuilder,
-        settingsNavigationScene: NavigationScene,
+        settingsNavigationController: UINavigationController,
         settingsBuilder: SettingsBuilder
     ) {
         self.tabBarController = tabBarController
-        self.homeNavigationScene = homeNavigationScene
+        self.homeNavigationController = homeNavigationController
         self.homeBuilder = homeBuilder
-        self.settingsNavigationScene = settingsNavigationScene
+        self.settingsNavigationController = settingsNavigationController
         self.settingsBuilder = settingsBuilder
     }
 }
@@ -35,10 +36,13 @@ final class DashboardRouterImpl {
 
 extension DashboardRouterImpl: DashboardRouter {
     func showTabs() {
-        let homeView = homeBuilder.build()
-        homeNavigationScene.set(views: [homeView], animated: false, completion: nil)
-        
-        let settingsView = settingsBuilder.build()
-        settingsNavigationScene.set(views: [settingsView], animated: false, completion: nil)
+        if let navigationController = homeNavigationController {
+            let homeView = homeBuilder.build(navigationController: navigationController)
+            navigationController.setViewControllers([homeView], animated: false)
+        }
+        if let navigationController = settingsNavigationController {
+            let settingsView = settingsBuilder.build(navigationController: navigationController)
+            navigationController.setViewControllers([settingsView], animated: false)
+        }
     }
 }

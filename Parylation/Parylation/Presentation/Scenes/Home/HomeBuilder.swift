@@ -10,22 +10,23 @@ import UIKit
 import ParylationDomain
 
 final class HomeBuilderImpl {
-    private let dependency: HomeDependency
+    typealias Context = HomeContainer
     
-    init(dependency: HomeDependency) {
-        self.dependency = dependency
+    private let context: Context
+    
+    init(context: Context) {
+        self.context = context
     }
 }
 
 // MARK: - HomeBuilder implementation
 
 extension HomeBuilderImpl: HomeBuilder {
-    func build() -> UIViewController {
+    func build(navigationController: UINavigationController) -> UIViewController {
         let view = HomeView()
-        let component = HomeComponent(navigationController: dependency.homeNavigationController)
         let interactor = HomeInteractorImpl()
         let router = HomeRouterImpl(
-            navigationScene: NavigationScene(navigationController: dependency.homeNavigationController)
+            navigationController: navigationController
         )
         let viewModel = HomeViewModelImpl(
             interactor: interactor,

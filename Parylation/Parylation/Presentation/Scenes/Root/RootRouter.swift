@@ -9,16 +9,16 @@
 import UIKit
 
 final class RootRouterImpl {
-    private let presentationScene: PresentationScene
+    private weak var presentingViewController: UIViewController?
     private let welcomeBuilder: WelcomeBuilder
     private let dashboardBuilder: DashboardBuilder
 
     init(
-        presentationScene: PresentationScene,
+        presentingViewController: UIViewController,
         welcomeBuilder: WelcomeBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
-        self.presentationScene = presentationScene
+        self.presentingViewController = presentingViewController
         self.welcomeBuilder = welcomeBuilder
         self.dashboardBuilder = dashboardBuilder
     }
@@ -31,13 +31,13 @@ extension RootRouterImpl: RootRouter {
         let welcomeView = welcomeBuilder.build()
         welcomeView.modalPresentationStyle = .fullScreen
         welcomeView.modalTransitionStyle = .crossDissolve
-        presentationScene.play(view: welcomeView, animated: true, completion: nil)
+        presentingViewController?.present(welcomeView, animated: true, completion: nil)
     }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()
         dashboardView.modalPresentationStyle = .fullScreen
         dashboardView.modalTransitionStyle = .crossDissolve
-        presentationScene.play(view: dashboardView, animated: true, completion: nil)
+        presentingViewController?.present(dashboardView, animated: true, completion: nil)
     }
 }

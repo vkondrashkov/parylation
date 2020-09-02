@@ -10,10 +10,12 @@ import UIKit
 import ParylationDomain
 
 final class DashboardBuilderImpl {
-    private let dependency: DashboardDependency
+    typealias Context = DashboardContainer & HomeContainer & SettingsContainer
     
-    init(dependency: DashboardDependency) {
-        self.dependency = dependency
+    private let context: Context
+    
+    init(context: Context) {
+        self.context = context
     }
 }
 
@@ -56,15 +58,8 @@ extension DashboardBuilderImpl: DashboardBuilder {
         profileTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         settingsNavigationController.tabBarItem = profileTabBarItem
         
-        let component = DashboardComponent(
-            parent: view,
-            homeNavigationController: homeNavigationController,
-            calendarNavigationController: calendarNavigationController,
-            settingsNavigationController: settingsNavigationController
-        )
-        
-        let homeBuilder = HomeBuilderImpl(dependency: component)
-        let settingsBuilder = SettingsBuilderImpl(dependency: component)
+        let homeBuilder = HomeBuilderImpl(context: context)
+        let settingsBuilder = SettingsBuilderImpl(context: context)
         
         let interactor = DashboardInteractorImpl()
         
@@ -72,9 +67,9 @@ extension DashboardBuilderImpl: DashboardBuilder {
         
         let router = DashboardRouterImpl(
             tabBarController: view,
-            homeNavigationScene: NavigationScene(navigationController: homeNavigationController),
+            homeNavigationController: homeNavigationController,
             homeBuilder: homeBuilder,
-            settingsNavigationScene: NavigationScene(navigationController: settingsNavigationController),
+            settingsNavigationController: settingsNavigationController,
             settingsBuilder: settingsBuilder
         )
         let viewModel = DashboardViewModelImpl(

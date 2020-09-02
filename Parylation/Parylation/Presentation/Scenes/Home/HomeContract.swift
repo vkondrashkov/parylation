@@ -10,12 +10,10 @@ import Bond
 import ReactiveKit
 import UIKit
 
-protocol HomeDependency {
-    var homeNavigationController: UINavigationController { get }
-}
+protocol HomeContainer { }
 
 protocol HomeBuilder: AnyObject {
-    func build() -> UIViewController
+    func build(navigationController: UINavigationController) -> UIViewController
 }
 
 protocol HomeRouter: AnyObject { }

@@ -11,12 +11,10 @@
 import UIKit
 
 final class SettingsRouterImpl {
-    private let navigationScene: NavigationScene
+    private weak var navigationController: UINavigationController?
 
-    init(
-        navigationScene: NavigationScene
-    ) {
-        self.navigationScene = navigationScene
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 }
 

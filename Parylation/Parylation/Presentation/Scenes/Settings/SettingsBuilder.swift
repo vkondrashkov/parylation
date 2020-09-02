@@ -12,24 +12,24 @@ import ParylationDomain
 import UIKit
 
 final class SettingsBuilderImpl {
-    private let dependency: SettingsDependency
+    typealias Context = SettingsContainer
+    
+    private let context: Context
 
-    init(dependency: SettingsDependency) {
-        self.dependency = dependency
+    init(context: Context) {
+        self.context = context
     }
 }
 
 // MARK: - SettingsBuilder implementation
 
 extension SettingsBuilderImpl: SettingsBuilder {
-    func build() -> UIViewController {
+    func build(navigationController: UINavigationController) -> UIViewController {
         let view = SettingsView()
-        let component = SettingsComponent()
 
-        let navigationScene = NavigationScene(navigationController: dependency.settingsNavigationController)
         let interactor = SettingsInteractorImpl()
         let router = SettingsRouterImpl(
-            navigationScene: navigationScene
+            navigationController: navigationController
         )
         let viewModel = SettingsViewModelImpl(
             interactor: interactor,

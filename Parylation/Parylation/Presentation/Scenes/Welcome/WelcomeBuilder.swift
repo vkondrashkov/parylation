@@ -10,10 +10,12 @@ import UIKit
 import ParylationDomain
 
 final class WelcomeBuilderImpl {
-    private let dependency: WelcomeDependency
+    typealias Context = AuthContext & MainContext
     
-    init(dependency: WelcomeDependency) {
-        self.dependency = dependency
+    private let context: Context
+    
+    init(context: Context) {
+        self.context = context
     }
 }
 
@@ -24,19 +26,14 @@ extension WelcomeBuilderImpl: WelcomeBuilder {
         let view = WelcomeView()
         let authNavigationController = UINavigationController()
         authNavigationController.setNavigationBarHidden(true, animated: false)
-//        authNavigationController.interactivePopGestureRecognizer?.delegate = nil
-        let component = WelcomeComponent(
-            navigationController: authNavigationController,
-            authorizationUseCase: dependency.authorizationUseCase
-        )
-        let signUpBuilder = SignUpBuilderImpl(dependency: component)
-        let signInBuilder = SignInBuilderImpl(dependency: component)
-        let dashboardBuilder = DashboardBuilderImpl(dependency: component)
+        let signUpBuilder = SignUpBuilderImpl(context: context)
+        let signInBuilder = SignInBuilderImpl(context: context)
+        let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
-            windowScene: WindowScene(window: dependency.window),
-            presentationScene: PresentationScene(presentingViewController: view),
-            navigationScene: NavigationScene(navigationController: authNavigationController),
+            window: context.window,
+            presentingViewController: view,
+            navigationController: authNavigationController,
             signUpBuilder: signUpBuilder,
             signInBuilder: signInBuilder,
             dashboardBuilder: dashboardBuilder
