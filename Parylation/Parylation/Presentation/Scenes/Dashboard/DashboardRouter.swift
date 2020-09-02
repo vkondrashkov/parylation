@@ -13,14 +13,21 @@ final class DashboardRouterImpl {
     private let homeNavigationScene: NavigationScene
     private let homeBuilder: HomeBuilder
     
+    private let settingsNavigationScene: NavigationScene
+    private let settingsBuilder: SettingsBuilder
+    
     init(
         tabBarController: UITabBarController,
         homeNavigationScene: NavigationScene,
-        homeBuilder: HomeBuilder
+        homeBuilder: HomeBuilder,
+        settingsNavigationScene: NavigationScene,
+        settingsBuilder: SettingsBuilder
     ) {
         self.tabBarController = tabBarController
         self.homeNavigationScene = homeNavigationScene
         self.homeBuilder = homeBuilder
+        self.settingsNavigationScene = settingsNavigationScene
+        self.settingsBuilder = settingsBuilder
     }
 }
 
@@ -30,5 +37,8 @@ extension DashboardRouterImpl: DashboardRouter {
     func showTabs() {
         let homeView = homeBuilder.build()
         homeNavigationScene.set(views: [homeView], animated: false, completion: nil)
+        
+        let settingsView = settingsBuilder.build()
+        settingsNavigationScene.set(views: [settingsView], animated: false, completion: nil)
     }
 }

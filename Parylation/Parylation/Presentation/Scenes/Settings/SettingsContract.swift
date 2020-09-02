@@ -9,9 +9,11 @@
 //
 
 import UIKit
+import ReactiveKit
+import Bond
 
 protocol SettingsDependency {
-    var navigationController: UINavigationController { get }
+    var settingsNavigationController: UINavigationController { get }
 }
 
 protocol SettingsBuilder {
@@ -20,4 +22,8 @@ protocol SettingsBuilder {
 
 protocol SettingsRouter: AnyObject { }
 
-protocol SettingsViewModel { }
+protocol SettingsViewModel {
+    var selectTrigger: Subject<IndexPath, Never> { get }
+    
+    var sections: SafeSignal<Array2D<String?, SettingsTableItem>> { get }
+}

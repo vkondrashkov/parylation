@@ -105,6 +105,28 @@
 		9CBB9BC124F50771005EF51A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB624F50771005EF51A /* SettingsView.swift */; };
 		9CBB9BC224F50771005EF51A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB724F50771005EF51A /* SettingsViewModel.swift */; };
 		9CBB9BC324F50771005EF51A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB724F50771005EF51A /* SettingsViewModel.swift */; };
+		9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */; };
+		9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */; };
+		9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */; };
+		9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */; };
+		9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BCF24F5ABC3005EF51A /* SettingsTableItem.swift */; };
+		9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BCF24F5ABC3005EF51A /* SettingsTableItem.swift */; };
+		9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD224F5AE2B005EF51A /* SettingsTableSection.swift */; };
+		9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD224F5AE2B005EF51A /* SettingsTableSection.swift */; };
+		9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */; };
+		9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */; };
+		9CBB9BDA24F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD924F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift */; };
+		9CBB9BDB24F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD924F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift */; };
+		9CBB9BE124F6E147005EF51A /* TopSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE024F6E147005EF51A /* TopSettingsTableViewCell.swift */; };
+		9CBB9BE224F6E147005EF51A /* TopSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE024F6E147005EF51A /* TopSettingsTableViewCell.swift */; };
+		9CBB9BE424F6E654005EF51A /* BottomSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE324F6E654005EF51A /* BottomSettingsTableViewCell.swift */; };
+		9CBB9BE524F6E654005EF51A /* BottomSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE324F6E654005EF51A /* BottomSettingsTableViewCell.swift */; };
+		9CBB9BE724F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE624F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift */; };
+		9CBB9BE824F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE624F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift */; };
+		9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
+		9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
+		9CBB9C1324FF774B005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
+		9CBB9C1424FF779C005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -229,6 +251,17 @@
 		9CBB9BB524F50771005EF51A /* SettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
 		9CBB9BB624F50771005EF51A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9CBB9BB724F50771005EF51A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Generic.swift"; sourceTree = "<group>"; };
+		9CBB9BCF24F5ABC3005EF51A /* SettingsTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableItem.swift; sourceTree = "<group>"; };
+		9CBB9BD224F5AE2B005EF51A /* SettingsTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableSection.swift; sourceTree = "<group>"; };
+		9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		9CBB9BD924F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		9CBB9BE024F6E147005EF51A /* TopSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		9CBB9BE324F6E654005EF51A /* BottomSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		9CBB9BE624F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSettingsTableVIewCell.swift; sourceTree = "<group>"; };
+		9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array2D+Collection.swift"; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -488,8 +521,10 @@
 		9CADB5B8249F59DF00901E45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CBB9BC524F5AA71005EF51A /* GenericCollectionViews */,
 				9C67854424EFFBD7006E28BD /* UIKit+Utils */,
 				9CADB5B9249F59F500901E45 /* Moya+ReactiveKit */,
+				9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -538,14 +573,39 @@
 		9CBB9B5B24F5044C005EF51A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9CBB9BD524F5AF75005EF51A /* ContentView */,
 				9CBB9BB224F50771005EF51A /* SettingsContract.swift */,
 				9CBB9BB324F50771005EF51A /* SettingsRouter.swift */,
 				9CBB9BB424F50771005EF51A /* SettingsComponent.swift */,
 				9CBB9BB524F50771005EF51A /* SettingsBuilder.swift */,
 				9CBB9BB624F50771005EF51A /* SettingsView.swift */,
 				9CBB9BB724F50771005EF51A /* SettingsViewModel.swift */,
+				9CBB9BCF24F5ABC3005EF51A /* SettingsTableItem.swift */,
+				9CBB9BD224F5AE2B005EF51A /* SettingsTableSection.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		9CBB9BC524F5AA71005EF51A /* GenericCollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */,
+				9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */,
+			);
+			path = GenericCollectionViews;
+			sourceTree = "<group>";
+		};
+		9CBB9BD524F5AF75005EF51A /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */,
+				9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */,
+				9CBB9BE024F6E147005EF51A /* TopSettingsTableViewCell.swift */,
+				9CBB9BD924F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift */,
+				9CBB9BE324F6E654005EF51A /* BottomSettingsTableViewCell.swift */,
+				9CBB9BE624F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift */,
+			);
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 		9CEB58D424F05DDF008B835A /* SignIn */ = {
@@ -855,17 +915,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBB9BE124F6E147005EF51A /* TopSettingsTableViewCell.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852D24EFE321006E28BD /* Color.swift in Sources */,
 				9CEB590524F1345D008B835A /* HomeView.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
+				9CBB9BE424F6E654005EF51A /* BottomSettingsTableViewCell.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5424D35CE500B04898 /* PresentationScene.swift in Sources */,
 				9CBB9BC024F50771005EF51A /* SettingsView.swift in Sources */,
+				9CBB9BDA24F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift in Sources */,
 				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4E24D35B6200B04898 /* Scene.swift in Sources */,
@@ -879,12 +942,16 @@
 				9CEB58F924F13442008B835A /* HomeComponent.swift in Sources */,
 				9C207E992470B4990022AC92 /* RootComponent.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9CBB9C1324FF774B005EF51A /* Array2D+Collection.swift in Sources */,
 				9C3C2A5124D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
+				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9C67853424EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9CEB58F224F06082008B835A /* SignUpComponent.swift in Sources */,
@@ -893,6 +960,7 @@
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
+				9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C207E8F2470B39A0022AC92 /* AppComponent.swift in Sources */,
@@ -904,9 +972,12 @@
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C67854024EFECD5006E28BD /* WelcomeView.swift in Sources */,
 				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
+				9CBB9BE724F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift in Sources */,
+				9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
 				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
+				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9C207EB3247169490022AC92 /* DashboardComponent.swift in Sources */,
 				9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */,
@@ -918,17 +989,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBB9BE224F6E147005EF51A /* TopSettingsTableViewCell.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852E24EFE321006E28BD /* Color.swift in Sources */,
 				9CEB590624F1345D008B835A /* HomeView.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
+				9CBB9BE524F6E654005EF51A /* BottomSettingsTableViewCell.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9C3C2A5524D35CE500B04898 /* PresentationScene.swift in Sources */,
 				9CBB9BC124F50771005EF51A /* SettingsView.swift in Sources */,
+				9CBB9BDB24F5AFC3005EF51A /* MiddleSettingsTableViewCell.swift in Sources */,
 				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C3C2A4F24D35B6200B04898 /* Scene.swift in Sources */,
@@ -942,12 +1016,16 @@
 				9CEB58FA24F13442008B835A /* HomeComponent.swift in Sources */,
 				9C5C654A249A5DC800E9D889 /* RootComponent.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9CBB9C1424FF779C005EF51A /* Array2D+Collection.swift in Sources */,
 				9C3C2A5224D35C1900B04898 /* NavigationScene.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
+				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9C67853524EFECB3006E28BD /* WelcomeComponent.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9CEB58F324F06082008B835A /* SignUpComponent.swift in Sources */,
@@ -956,6 +1034,7 @@
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
+				9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6551249A5DC800E9D889 /* AppComponent.swift in Sources */,
@@ -967,9 +1046,12 @@
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */,
 				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
+				9CBB9BE824F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift in Sources */,
+				9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
 				9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
+				9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBB24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9C5C6558249A5DC800E9D889 /* DashboardComponent.swift in Sources */,
 				9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */,

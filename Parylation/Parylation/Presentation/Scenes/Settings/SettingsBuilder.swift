@@ -26,7 +26,7 @@ extension SettingsBuilderImpl: SettingsBuilder {
         let view = SettingsView()
         let component = SettingsComponent()
 
-        let navigationScene = NavigationScene(navigationController: dependency.navigationController)
+        let navigationScene = NavigationScene(navigationController: dependency.settingsNavigationController)
         let interactor = SettingsInteractorImpl()
         let router = SettingsRouterImpl(
             navigationScene: navigationScene

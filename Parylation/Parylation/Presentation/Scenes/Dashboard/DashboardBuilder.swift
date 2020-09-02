@@ -45,8 +45,8 @@ extension DashboardBuilderImpl: DashboardBuilder {
         calendarTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         calendarNavigationController.tabBarItem = calendarTabBarItem
         
-        let profileNavigationController = UINavigationController()
-        profileNavigationController.setNavigationBarHidden(true, animated: false)
+        let settingsNavigationController = UINavigationController()
+        settingsNavigationController.setNavigationBarHidden(true, animated: false)
         let profileTabBarImage = UIImage(named: "dashboard-profile")
         let profileTabBarItem = UITabBarItem(
             title: nil,
@@ -54,25 +54,28 @@ extension DashboardBuilderImpl: DashboardBuilder {
             selectedImage: nil
         )
         profileTabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
-        profileNavigationController.tabBarItem = profileTabBarItem
+        settingsNavigationController.tabBarItem = profileTabBarItem
         
         let component = DashboardComponent(
             parent: view,
             homeNavigationController: homeNavigationController,
             calendarNavigationController: calendarNavigationController,
-            profileNavigationController: profileNavigationController
+            settingsNavigationController: settingsNavigationController
         )
         
         let homeBuilder = HomeBuilderImpl(dependency: component)
+        let settingsBuilder = SettingsBuilderImpl(dependency: component)
         
         let interactor = DashboardInteractorImpl()
         
-        view.viewControllers = [homeNavigationController, calendarNavigationController, profileNavigationController]
+        view.viewControllers = [homeNavigationController, calendarNavigationController, settingsNavigationController]
         
         let router = DashboardRouterImpl(
             tabBarController: view,
             homeNavigationScene: NavigationScene(navigationController: homeNavigationController),
-            homeBuilder: homeBuilder
+            homeBuilder: homeBuilder,
+            settingsNavigationScene: NavigationScene(navigationController: settingsNavigationController),
+            settingsBuilder: settingsBuilder
         )
         let viewModel = DashboardViewModelImpl(
             interactor: interactor,
