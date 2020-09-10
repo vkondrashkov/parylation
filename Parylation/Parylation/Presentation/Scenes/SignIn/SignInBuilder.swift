@@ -22,14 +22,14 @@ final class SignInBuilderImpl {
 // MARK: - SignInBuilder implementation
 
 extension SignInBuilderImpl: SignInBuilder {
-    func build(navigationController: UINavigationController, listener: SignInListener & SignUpListener) -> UIViewController {
+    func build(listener: (SignInListener & SignUpListener)?) -> UIViewController {
         let view = SignInView()
         let signUpBuilder = SignUpBuilderImpl(context: context)
         let interactor = SignInInteractorImpl(
             authorizationUseCase: context.authorizationUseCase
         )
         let router = SignInRouterImpl(
-            navigationController: navigationController,
+            view: view,
             signUpBuilder: signUpBuilder,
             signInListener: listener
         )

@@ -13,7 +13,7 @@ import UIKit
 protocol HomeContainer { }
 
 protocol HomeBuilder: AnyObject {
-    func build(navigationController: UINavigationController) -> UIViewController
+    func build() -> UIViewController
 }
 
 protocol HomeRouter: AnyObject { }

@@ -12,15 +12,20 @@ import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
-        let context = AppContextImpl()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let context = AppContextImpl(window: window)
         let view = RootBuilderImpl(context: context).build()
         
-        context.window.rootViewController = view
-        context.window.makeKeyAndVisible()
+        window.rootViewController = view
+        window.makeKeyAndVisible()
+
+        self.window = window
         
         return true
     }

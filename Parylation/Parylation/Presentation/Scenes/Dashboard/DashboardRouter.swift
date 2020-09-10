@@ -36,13 +36,9 @@ final class DashboardRouterImpl {
 
 extension DashboardRouterImpl: DashboardRouter {
     func showTabs() {
-        if let navigationController = homeNavigationController {
-            let homeView = homeBuilder.build(navigationController: navigationController)
-            navigationController.setViewControllers([homeView], animated: false)
-        }
-        if let navigationController = settingsNavigationController {
-            let settingsView = settingsBuilder.build(navigationController: navigationController)
-            navigationController.setViewControllers([settingsView], animated: false)
-        }
+        let homeView = homeBuilder.build()
+        homeNavigationController?.setViewControllers([homeView], animated: false)
+        let settingsView = settingsBuilder.build()
+        settingsNavigationController?.setViewControllers([settingsView], animated: false)
     }
 }

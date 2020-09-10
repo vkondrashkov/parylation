@@ -22,11 +22,11 @@ final class HomeBuilderImpl {
 // MARK: - HomeBuilder implementation
 
 extension HomeBuilderImpl: HomeBuilder {
-    func build(navigationController: UINavigationController) -> UIViewController {
+    func build() -> UIViewController {
         let view = HomeView()
         let interactor = HomeInteractorImpl()
         let router = HomeRouterImpl(
-            navigationController: navigationController
+            view: view
         )
         let viewModel = HomeViewModelImpl(
             interactor: interactor,

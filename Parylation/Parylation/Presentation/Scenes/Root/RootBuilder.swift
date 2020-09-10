@@ -29,7 +29,7 @@ extension RootBuilderImpl: RootBuilder {
         let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = RootInteractorImpl(authorizationUseCase: context.authorizationUseCase)
         let router = RootRouterImpl(
-            presentingViewController: view,
+            view: view,
             welcomeBuilder: welcomeBuilder,
             dashboardBuilder: dashboardBuilder
         )

@@ -24,12 +24,12 @@ final class SettingsBuilderImpl {
 // MARK: - SettingsBuilder implementation
 
 extension SettingsBuilderImpl: SettingsBuilder {
-    func build(navigationController: UINavigationController) -> UIViewController {
+    func build() -> UIViewController {
         let view = SettingsView()
 
         let interactor = SettingsInteractorImpl()
         let router = SettingsRouterImpl(
-            navigationController: navigationController
+            view: view
         )
         let viewModel = SettingsViewModelImpl(
             interactor: interactor,

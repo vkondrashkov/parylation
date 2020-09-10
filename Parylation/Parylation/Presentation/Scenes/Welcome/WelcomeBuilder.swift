@@ -24,16 +24,13 @@ final class WelcomeBuilderImpl {
 extension WelcomeBuilderImpl: WelcomeBuilder {
     func build() -> UIViewController {
         let view = WelcomeView()
-        let authNavigationController = UINavigationController()
-        authNavigationController.setNavigationBarHidden(true, animated: false)
         let signUpBuilder = SignUpBuilderImpl(context: context)
         let signInBuilder = SignInBuilderImpl(context: context)
         let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
             window: context.window,
-            presentingViewController: view,
-            navigationController: authNavigationController,
+            view: view,
             signUpBuilder: signUpBuilder,
             signInBuilder: signInBuilder,
             dashboardBuilder: dashboardBuilder

@@ -15,7 +15,7 @@ import Bond
 protocol SettingsContainer { }
 
 protocol SettingsBuilder {
-    func build(navigationController: UINavigationController) -> UIViewController
+    func build() -> UIViewController
 }
 
 protocol SettingsRouter: AnyObject { }

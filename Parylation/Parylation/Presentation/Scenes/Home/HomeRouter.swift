@@ -9,10 +9,10 @@
 import UIKit
 
 final class HomeRouterImpl {
-    private weak var navigationController: UINavigationController?
+    private weak var view: UIViewController?
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(view: UIViewController) {
+        self.view = view
     }
 }
 

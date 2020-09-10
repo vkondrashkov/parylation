@@ -20,7 +20,7 @@ protocol SignInListener: AnyObject {
 }
 
 protocol SignInBuilder: AnyObject {
-    func build(navigationController: UINavigationController, listener: SignInListener & SignUpListener) -> UIViewController
+    func build(listener: (SignInListener & SignUpListener)?) -> UIViewController
 }
 
 protocol SignInRouter: AnyObject {

@@ -11,25 +11,26 @@ import UIKit
 final class WelcomeRouterImpl {
     private weak var window: UIWindow?
     private let navigationController: UINavigationController
-    private weak var presentingViewController: UIViewController?
+    private weak var view: UIViewController?
     private let signUpBuilder: SignUpBuilder
     private let signInBuilder: SignInBuilder
     private let dashboardBuilder: DashboardBuilder
     
     init(
         window: UIWindow,
-        presentingViewController: UIViewController,
-        navigationController: UINavigationController,
+        view: UIViewController,
         signUpBuilder: SignUpBuilder,
         signInBuilder: SignInBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
         self.window = window
-        self.presentingViewController = presentingViewController
-        self.navigationController = navigationController
+        self.view = view
         self.signUpBuilder = signUpBuilder
         self.signInBuilder = signInBuilder
         self.dashboardBuilder = dashboardBuilder
+
+        navigationController = UINavigationController()
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -37,15 +38,15 @@ final class WelcomeRouterImpl {
 
 extension WelcomeRouterImpl: WelcomeRouter {
     func showSignUp() {
-        let signUpView = signUpBuilder.build(navigationController: navigationController, listener: self)
+        let signUpView = signUpBuilder.build(listener: self)
         navigationController.setViewControllers([signUpView], animated: false)
-        presentingViewController?.present(navigationController, animated: true, completion: nil)
+        view?.present(navigationController, animated: true, completion: nil)
     }
     
     func showSignIn() {
-        let signInView = signInBuilder.build(navigationController: navigationController, listener: self)
+        let signInView = signInBuilder.build(listener: self)
         navigationController.setViewControllers([signInView], animated: false)
-        presentingViewController?.present(navigationController, animated: true, completion: nil)
+        view?.present(navigationController, animated: true, completion: nil)
     }
     
     func showDashboard() {
@@ -58,7 +59,7 @@ extension WelcomeRouterImpl: WelcomeRouter {
 
 extension WelcomeRouterImpl: SignInListener {
     func onSignInFinish() {
-        presentingViewController?.dismiss(animated: true, completion: { [weak self] in
+        view?.dismiss(animated: true, completion: { [weak self] in
             self?.showDashboard()
         })
     }
@@ -68,7 +69,7 @@ extension WelcomeRouterImpl: SignInListener {
 
 extension WelcomeRouterImpl: SignUpListener {
     func onSignUpFinish() {
-        presentingViewController?.dismiss(animated: true, completion: { [weak self] in
+        view?.dismiss(animated: true, completion: { [weak self] in
             self?.showDashboard()
         })
     }

@@ -1,5 +1,5 @@
 //
-//  ProdAppContext.swift
+//  AppContext.swift
 //  Parylation
 //
 //  Created by Vladislav Kondrashkov on 9/2/20.
@@ -10,12 +10,25 @@ import ParylationDomain
 import RealmSwift
 import UIKit
 
+// TODO: typealias AnalyticsContext =
+
+typealias AuthContext = RootContainer
+    & WelcomeContainer
+    & SignUpContainer
+    & SignInContainer
+
+typealias MainContext = DashboardContainer
+    & HomeContainer
+    & SettingsContainer
+
+typealias AppContext = AuthContext & MainContext // & AnalyticsContext
+
 final class AppContextImpl: AppContext {
-    let window: UIWindow
+    unowned var window: UIWindow
     let authorizationUseCase: AuthorizationUseCase
-    
-    init()  {
-        window = UIWindow(frame: UIScreen.main.bounds)
+
+    init(window: UIWindow)  {
+        self.window = window
         let authorizedUserRepository = AuthorizedUserRepositoryImpl(realm: try! Realm())
         authorizationUseCase = AuthorizationUseCaseImpl(
             authorizedUserRepository: authorizedUserRepository

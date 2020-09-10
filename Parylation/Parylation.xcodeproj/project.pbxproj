@@ -109,10 +109,8 @@
 		9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
 		9CBB9C1324FF774B005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
 		9CBB9C1424FF779C005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
-		9CBB9C1624FFBCFD005EF51A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* Context.swift */; };
-		9CBB9C1724FFBCFD005EF51A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* Context.swift */; };
-		9CBB9C1924FFBED6005EF51A /* ProdAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1824FFBED6005EF51A /* ProdAppContext.swift */; };
-		9CBB9C1C24FFCBB1005EF51A /* DevAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1B24FFCBB1005EF51A /* DevAppContext.swift */; };
+		9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
+		9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -233,9 +231,7 @@
 		9CBB9BE624F6E6C3005EF51A /* SingleSettingsTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSettingsTableVIewCell.swift; sourceTree = "<group>"; };
 		9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array2D+Collection.swift"; sourceTree = "<group>"; };
-		9CBB9C1524FFBCFD005EF51A /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		9CBB9C1824FFBED6005EF51A /* ProdAppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdAppContext.swift; sourceTree = "<group>"; };
-		9CBB9C1B24FFCBB1005EF51A /* DevAppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevAppContext.swift; sourceTree = "<group>"; };
+		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -320,9 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				9C207E772470ADAE0022AC92 /* AppDelegate.swift */,
-				9CBB9C1524FFBCFD005EF51A /* Context.swift */,
-				9CBB9C1824FFBED6005EF51A /* ProdAppContext.swift */,
-				9CBB9C1B24FFCBB1005EF51A /* DevAppContext.swift */,
+				9CBB9C1524FFBCFD005EF51A /* AppContext.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -899,7 +893,7 @@
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
-				9CBB9C1624FFBCFD005EF51A /* Context.swift in Sources */,
+				9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
@@ -922,7 +916,6 @@
 				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
-				9CBB9C1924FFBED6005EF51A /* ProdAppContext.swift in Sources */,
 				9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */,
 				9CBB9BC224F50771005EF51A /* SettingsViewModel.swift in Sources */,
@@ -963,7 +956,7 @@
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
-				9CBB9C1724FFBCFD005EF51A /* Context.swift in Sources */,
+				9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
@@ -989,7 +982,6 @@
 				9CBB9BBB24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */,
 				9CBB9BC324F50771005EF51A /* SettingsViewModel.swift in Sources */,
-				9CBB9C1C24FFCBB1005EF51A /* DevAppContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
