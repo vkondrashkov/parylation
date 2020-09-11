@@ -11,9 +11,8 @@ import ReactiveKit
 import UIKit
 import ParylationDomain
 
-protocol WelcomeDependency {
+protocol WelcomeContainer {
     var window: UIWindow { get }
-    var authorizationUseCase: AuthorizationUseCase { get }
 }
 
 protocol WelcomeBuilder: AnyObject {

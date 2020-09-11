@@ -9,17 +9,17 @@
 import UIKit
 
 final class SignUpRouterImpl {
-    private let navigationScene: NavigationScene
+    private weak var view: UIViewController?
     private let signInBuilder: SignInBuilder
     
     private weak var signUpListener: (SignUpListener & SignInListener)?
     
     init(
-        navigationScene: NavigationScene,
+        view: UIViewController,
         signInBuilder: SignInBuilder,
-        signUpListener: SignUpListener & SignInListener
+        signUpListener: (SignUpListener & SignInListener)?
     ) {
-        self.navigationScene = navigationScene
+        self.view = view
         self.signInBuilder = signInBuilder
         self.signUpListener = signUpListener
     }
@@ -29,9 +29,8 @@ final class SignUpRouterImpl {
 
 extension SignUpRouterImpl: SignUpRouter {
     func showSignIn() {
-        guard let signUpListener = signUpListener else { return }
         let signInView = signInBuilder.build(listener: signUpListener)
-        navigationScene.set(views: [signInView], animated: true, completion: nil)
+        view?.navigationController?.setViewControllers([signInView], animated: true)
     }
     
     func finishSignUp() {

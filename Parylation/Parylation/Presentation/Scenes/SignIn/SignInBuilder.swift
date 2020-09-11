@@ -10,28 +10,26 @@ import UIKit
 import ParylationDomain
 
 final class SignInBuilderImpl {
-    private let dependency: SignInDependency
+    typealias Context = SignInContainer & SignUpContainer
     
-    init(dependency: SignInDependency) {
-        self.dependency = dependency
+    private let context: Context
+    
+    init(context: Context) {
+        self.context = context
     }
 }
 
 // MARK: - SignInBuilder implementation
 
 extension SignInBuilderImpl: SignInBuilder {
-    func build(listener: SignInListener & SignUpListener) -> UIViewController {
+    func build(listener: (SignInListener & SignUpListener)?) -> UIViewController {
         let view = SignInView()
-        let component = SignInComponent(
-            navigationController: dependency.authNavigationController,
-            authorizationUseCase: dependency.authorizationUseCase
-        )
-        let signUpBuilder = SignUpBuilderImpl(dependency: component)
+        let signUpBuilder = SignUpBuilderImpl(context: context)
         let interactor = SignInInteractorImpl(
-            authorizationUseCase: dependency.authorizationUseCase
+            authorizationUseCase: context.authorizationUseCase
         )
         let router = SignInRouterImpl(
-            navigationScene: NavigationScene(navigationController: dependency.authNavigationController),
+            view: view,
             signUpBuilder: signUpBuilder,
             signInListener: listener
         )

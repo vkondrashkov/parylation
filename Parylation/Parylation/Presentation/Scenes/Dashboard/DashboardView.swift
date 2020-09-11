@@ -27,6 +27,7 @@ final class DashboardView: UITabBarController {
     
     private func setupUI() {
         tabBar.tintColor = Color.gigas
+        tabBar.backgroundColor = .white
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = true

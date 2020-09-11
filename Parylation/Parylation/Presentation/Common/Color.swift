@@ -41,4 +41,7 @@ struct Color {
     
     private let matterHorn_ = #colorLiteral(red: 0.25, green: 0.21, blue: 0.23, alpha: 1)
     static let matterHorn = UIColor(red: 65 / 255.0, green: 54 / 255.0, blue: 60 / 255.0, alpha: 1)
+    
+    //240 239 239
+    static let veryLightPink = UIColor(red: 240 / 255.0, green: 239 / 255.0, blue: 239 / 255.0, alpha: 1)
 }

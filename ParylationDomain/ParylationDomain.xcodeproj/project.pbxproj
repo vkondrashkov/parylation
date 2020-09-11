@@ -16,6 +16,7 @@
 		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
 		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */; };
+		9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */; };
 		9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EC24F05F24008B835A /* SignInInteractor.swift */; };
 		9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590724F1352C008B835A /* HomeInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
+		9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		9CEB58EC24F05F24008B835A /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		9CEB590724F1352C008B835A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				9CEB58EC24F05F24008B835A /* SignInInteractor.swift */,
 				9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */,
 				9CEB590724F1352C008B835A /* HomeInteractor.swift */,
+				9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
 				9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */,
 				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
+				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
