@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SettingsTableViewCell: UITableViewCell {
-    func bindViewModel(_ viewModel: SettingsTableViewCellViewModel)
-}
-
 final class SettingsTableView: UITableView {
     override var contentSize: CGSize {
         didSet {
@@ -29,10 +25,7 @@ final class SettingsTableView: UITableView {
         rowHeight = UITableView.automaticDimension
         estimatedRowHeight = 60
         backgroundColor = .clear
-        register(TopSettingsTableViewCell.self)
-        register(MiddleSettingsTableViewCell.self)
-        register(BottomSettingsTableViewCell.self)
-        register(SingleSettingsTableViewCell.self)
+        register(SettingsTableViewCell.self)
     }
     
     required init?(coder: NSCoder) {

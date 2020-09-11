@@ -95,22 +95,18 @@ final class SettingsView: UIViewController {
     private func bindViewModel() {
         viewModel.sections
             .bind(to: settingsTableView, createCell: { items, indexPath, tableView in
-                var cell: SettingsTableViewCell
+                let cell: SettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
                 let section = items[indexPath.section]
                 let itemsCount = section.items.count
                 guard itemsCount >= 1 else { return UITableViewCell() }
                 if itemsCount == 1 {
-                    let singleCell: SingleSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = singleCell
+                    cell.cellType = .single
                 } else if indexPath.row == 0 {
-                    let topCell: TopSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = topCell
+                    cell.cellType = .top
                 } else if indexPath.row == itemsCount - 1 {
-                    let bottomCell: BottomSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = bottomCell
+                    cell.cellType = .bottom
                 } else {
-                    let middleCell: MiddleSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = middleCell
+                    cell.cellType = .middle
                 }
                 let item = section.items[indexPath.row]
                 let viewModel = SettingsTableViewCellViewModelImpl(
