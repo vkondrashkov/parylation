@@ -7,13 +7,12 @@
 //
 
 import Bond
+import ParylationDomain
 import ReactiveKit
 import UIKit
-import RealmSwift
 
-protocol RootDependency {
-    var realm: Realm { get }
-    var window: UIWindow { get }
+protocol RootContainer {
+    var authorizationUseCase: AuthorizationUseCase { get }
 }
 
 protocol RootBuilder: AnyObject {

@@ -12,9 +12,7 @@ import UIKit
 import ReactiveKit
 import Bond
 
-protocol SettingsDependency {
-    var settingsNavigationController: UINavigationController { get }
-}
+protocol SettingsContainer { }
 
 protocol SettingsBuilder {
     func build() -> UIViewController

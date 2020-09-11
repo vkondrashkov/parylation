@@ -11,10 +11,12 @@ import ParylationDomain
 import Moya
 
 final class RootBuilderImpl {
-    private let dependency: RootDependency
+    typealias Context = AppContext
     
-    init(dependency: RootDependency) {
-        self.dependency = dependency
+    private let context: Context
+    
+    init(context: Context) {
+        self.context = context
     }
 }
 
@@ -23,19 +25,11 @@ final class RootBuilderImpl {
 extension RootBuilderImpl: RootBuilder {
     func build() -> UIViewController {
         let view = RootView()
-//        let userRepository = UserRepositoryImpl(provider: MoyaProvider<ParylationAPI>())
-        let authorizationUseCase = AuthorizationUseCaseImpl(
-            authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: dependency.realm)
-        )
-        let component = RootComponent(
-            window: dependency.window,
-            authorizationUseCase: authorizationUseCase
-        )
-        let welcomeBuilder = WelcomeBuilderImpl(dependency: component)
-        let dashboardBuilder = DashboardBuilderImpl(dependency: component)
-        let interactor = RootInteractorImpl(authorizationUseCase: authorizationUseCase)
+        let welcomeBuilder = WelcomeBuilderImpl(context: context)
+        let dashboardBuilder = DashboardBuilderImpl(context: context)
+        let interactor = RootInteractorImpl(authorizationUseCase: context.authorizationUseCase)
         let router = RootRouterImpl(
-            presentationScene: PresentationScene(presentingViewController: view),
+            view: view,
             welcomeBuilder: welcomeBuilder,
             dashboardBuilder: dashboardBuilder
         )

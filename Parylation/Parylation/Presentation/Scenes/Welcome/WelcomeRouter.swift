@@ -6,28 +6,31 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
+import UIKit
+
 final class WelcomeRouterImpl {
-    private let windowScene: WindowScene
-    private let presentationScene: PresentationScene
-    private let navigationScene: NavigationScene
+    private weak var window: UIWindow?
+    private let navigationController: UINavigationController
+    private weak var view: UIViewController?
     private let signUpBuilder: SignUpBuilder
     private let signInBuilder: SignInBuilder
     private let dashboardBuilder: DashboardBuilder
     
     init(
-        windowScene: WindowScene,
-        presentationScene: PresentationScene,
-        navigationScene: NavigationScene,
+        window: UIWindow,
+        view: UIViewController,
         signUpBuilder: SignUpBuilder,
         signInBuilder: SignInBuilder,
         dashboardBuilder: DashboardBuilder
     ) {
-        self.windowScene = windowScene
-        self.presentationScene = presentationScene
-        self.navigationScene = navigationScene
+        self.window = window
+        self.view = view
         self.signUpBuilder = signUpBuilder
         self.signInBuilder = signInBuilder
         self.dashboardBuilder = dashboardBuilder
+
+        navigationController = UINavigationController()
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -36,19 +39,19 @@ final class WelcomeRouterImpl {
 extension WelcomeRouterImpl: WelcomeRouter {
     func showSignUp() {
         let signUpView = signUpBuilder.build(listener: self)
-        navigationScene.set(views: [signUpView], animated: false, completion: nil)
-        presentationScene.play(scene: navigationScene, animated: true, completion: nil)
+        navigationController.setViewControllers([signUpView], animated: false)
+        view?.present(navigationController, animated: true, completion: nil)
     }
     
     func showSignIn() {
         let signInView = signInBuilder.build(listener: self)
-        navigationScene.set(views: [signInView], animated: false, completion: nil)
-        presentationScene.play(scene: navigationScene, animated: true, completion: nil)
+        navigationController.setViewControllers([signInView], animated: false)
+        view?.present(navigationController, animated: true, completion: nil)
     }
     
     func showDashboard() {
         let dashboardView = dashboardBuilder.build()
-        windowScene.play(view: dashboardView, animated: false, completion: nil)
+        window?.rootViewController = dashboardView
     }
 }
 
@@ -56,7 +59,7 @@ extension WelcomeRouterImpl: WelcomeRouter {
 
 extension WelcomeRouterImpl: SignInListener {
     func onSignInFinish() {
-        presentationScene.stop(animated: true, completion: { [weak self] in
+        view?.dismiss(animated: true, completion: { [weak self] in
             self?.showDashboard()
         })
     }
@@ -66,7 +69,7 @@ extension WelcomeRouterImpl: SignInListener {
 
 extension WelcomeRouterImpl: SignUpListener {
     func onSignUpFinish() {
-        presentationScene.stop(animated: true, completion: { [weak self] in
+        view?.dismiss(animated: true, completion: { [weak self] in
             self?.showDashboard()
         })
     }
