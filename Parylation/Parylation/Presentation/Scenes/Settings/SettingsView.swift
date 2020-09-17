@@ -38,25 +38,27 @@ final class SettingsView: UIViewController {
             $0.width.equalToSuperview()
             $0.height.equalToSuperview().priority(.low)
         }
-        
+
+        contentView.addSubview(headerTitleLabel)
+        headerTitleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+        }
+
+        contentView.addSubview(headerSubtitleLabel)
+        headerSubtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+        }
+
         contentView.addSubview(settingsTableView)
         settingsTableView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
         }
-        
-//        view.addSubview(headerTitleLabel)
-//        headerTitleLabel.snp.makeConstraints {
-//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
-//        }
-//
-//        view.addSubview(headerSubtitleLabel)
-//        headerSubtitleLabel.snp.makeConstraints {
-//            $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
-//        }
+
     }
 
     override func viewDidLoad() {
