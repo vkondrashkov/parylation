@@ -38,25 +38,27 @@ final class SettingsView: UIViewController {
             $0.width.equalToSuperview()
             $0.height.equalToSuperview().priority(.low)
         }
-        
+
+        contentView.addSubview(headerTitleLabel)
+        headerTitleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+        }
+
+        contentView.addSubview(headerSubtitleLabel)
+        headerSubtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+        }
+
         contentView.addSubview(settingsTableView)
         settingsTableView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
         }
-        
-//        view.addSubview(headerTitleLabel)
-//        headerTitleLabel.snp.makeConstraints {
-//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
-//        }
-//
-//        view.addSubview(headerSubtitleLabel)
-//        headerSubtitleLabel.snp.makeConstraints {
-//            $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
-//        }
+
     }
 
     override func viewDidLoad() {
@@ -95,22 +97,18 @@ final class SettingsView: UIViewController {
     private func bindViewModel() {
         viewModel.sections
             .bind(to: settingsTableView, createCell: { items, indexPath, tableView in
-                var cell: SettingsTableViewCell
+                let cell: SettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
                 let section = items[indexPath.section]
                 let itemsCount = section.items.count
                 guard itemsCount >= 1 else { return UITableViewCell() }
                 if itemsCount == 1 {
-                    let singleCell: SingleSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = singleCell
+                    cell.cellType = .single
                 } else if indexPath.row == 0 {
-                    let topCell: TopSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = topCell
+                    cell.cellType = .top
                 } else if indexPath.row == itemsCount - 1 {
-                    let bottomCell: BottomSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = bottomCell
+                    cell.cellType = .bottom
                 } else {
-                    let middleCell: MiddleSettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                    cell = middleCell
+                    cell.cellType = .middle
                 }
                 let item = section.items[indexPath.row]
                 let viewModel = SettingsTableViewCellViewModelImpl(
