@@ -8,19 +8,17 @@
 //
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import ParylationDomain
 
 final class SettingsViewModelImpl: SettingsViewModel {
     private let interactor: SettingsInteractor
     private let router: SettingsRouter
-    
-    /// Input
-    let selectTrigger: Subject<IndexPath, Never>
-    
-    /// Ouput
-    let sections: SafeSignal<Array2D<String?, SettingsTableItem>>
+
+    let selectTrigger: AnyObserver<IndexPath>
+
+    let sections: Driver<[SettingsTableSection]>
     
     private let disposeBag = DisposeBag()
 
@@ -31,9 +29,10 @@ final class SettingsViewModelImpl: SettingsViewModel {
         self.interactor = interactor
         self.router = router
         
-        let items = SafeSignal<Array2D<String?, SettingsTableItem>> { observer in
-            observer.receive(Array2D(sectionsWithItems: [
-                ("Settings", [
+        let items = Observable.just([
+            SettingsTableSection(
+                name: "Settings",
+                items: [
                     SettingsTableItem(
                         icon: nil,
                         color: Color.gigas,
@@ -52,8 +51,11 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         title: "Change password",
                         action: nil
                     )
-                ]),
-                ("Others", [
+                ]
+            ),
+            SettingsTableSection(
+                name: "Others",
+                items: [
                     SettingsTableItem(
                         icon: nil,
                         color: Color.marigoldYellow,
@@ -66,36 +68,36 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         title: "About us",
                         action: nil
                     )
-                ]),
-                (nil, [
+                ]
+            ),
+            SettingsTableSection(
+                name: nil,
+                items: [
                     SettingsTableItem(
                         icon: nil,
                         color: Color.blazeOrange,
                         title: "Sign out",
                         action: nil
                     )
-                ])
-            ]))
-            return SimpleDisposable()
-        }
+                ]
+            )
+        ])
         
-        let selectSubject = PassthroughSubject<IndexPath, Never>()
+        let selectSubject = PublishSubject<IndexPath>()
         selectSubject
-            .with(latestFrom: items)
-            .observeNext { indexPath, sections in
+            .withLatestFrom(items) { ($0, $1) }
+            .subscribe(onNext: { indexPath, sections in
                 guard indexPath.section < sections.count,
                     indexPath.row < sections[indexPath.section].items.count else {
                         return
                 }
                 let item = sections[indexPath.section].items[indexPath.row]
                 item.action?()
-            }
-            .dispose(in: disposeBag)
-        
-        /// Input
-        selectTrigger = selectSubject
-        
-        /// Output
-        sections = items
+            })
+            .disposed(by: disposeBag)
+
+        selectTrigger = selectSubject.asObserver()
+
+        sections = items.asDriver(onErrorJustReturn: [])
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import UIKit
 import ParylationDomain
+import UIKit
 
 final class SignUpBuilderImpl {
     typealias Context = SignUpContainer & SignInContainer

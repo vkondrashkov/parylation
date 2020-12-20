@@ -7,7 +7,7 @@
 //
 
 import RealmSwift
-import ReactiveKit
+import RxSwift
 import ParylationDomain
 
 final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
@@ -17,19 +17,19 @@ final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
         self.realm = realm
     }
     
-    func fetchUser() -> Signal<User, AuthorizedUserRepositoryError> {
+    func fetchUser() -> Single<User> {
         let users = realm.objects(RealmUser.self)
         guard let user = users.first else {
-            return .failed(.missingData)
+            return .error(AuthorizedUserRepositoryError.missingData)
         }
-        return Signal(just: user.toDomain())
+        return .just(user.toDomain())
     }
     
-    func saveUser(user: User) -> Signal<Void, AuthorizedUserRepositoryError> {
-        return Signal { [weak self] observer in
+    func saveUser(user: User) -> Single<Void> {
+        return .create { [weak self] single in
             guard let self = self else {
-                observer.receive(completion: .failure(.failed))
-                return SimpleDisposable()
+                single(.error(AuthorizedUserRepositoryError.failed))
+                return Disposables.create()
             }
             let realmUser = RealmUser.from(user: user)
             do {
@@ -37,15 +37,14 @@ final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
                     self.realm.add(realmUser)
                 }
             } catch {
-                observer.receive(completion: .failure(.failed))
+                single(.error(AuthorizationUseCaseError.failed))
             }
             guard self.realm.object(ofType: RealmUser.self, forPrimaryKey: realmUser.id) != nil else {
-                observer.receive(completion: .failure(.failed))
-                return SimpleDisposable()
+                single(.error(AuthorizationUseCaseError.failed))
+                return Disposables.create()
             }
-            observer.receive()
-            observer.receive(completion: .finished)
-            return SimpleDisposable()
+            single(.success(()))
+            return Disposables.create()
         }
     }
 }

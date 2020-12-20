@@ -6,6 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
@@ -30,6 +32,14 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
     private let separatorView = UIView()
+
+    private var disposeBag = DisposeBag()
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        disposeBag = DisposeBag()
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -82,11 +92,14 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         self.viewModel = viewModel
 
         viewModel.color
-            .bind(to: iconBackgroundView.reactive.backgroundColor)
+            .drive(iconBackgroundView.rx.backgroundColor)
+            .disposed(by: disposeBag)
         viewModel.icon
-            .bind(to: iconImageView)
+            .drive(iconImageView.rx.image)
+            .disposed(by: disposeBag)
         viewModel.title
-            .bind(to: titleLabel)
+            .drive(titleLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 
     private func updateLayoutAccording(cellType: CellType) {

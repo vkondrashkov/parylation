@@ -23,7 +23,7 @@ final class RootView: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.viewDidAppearTrigger.send()
+        viewModel.viewDidAppearTrigger.onNext(())
     }
     
     private func setupUI() {

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class SignInView: UIViewController {
@@ -24,6 +24,8 @@ final class SignInView: UIViewController {
     private let signInButton = UIButton()
     private let signUpCaption = UILabel()
     private let signUpButton = UIButton()
+
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = UIView()
@@ -184,17 +186,13 @@ final class SignInView: UIViewController {
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     
-    @objc func test() {
-        let test = UIViewController()
-        test.view.backgroundColor = .white
-        navigationController?.pushViewController(test, animated: true)
-    }
-    
     private func bindViewModel() {
-        signInButton.reactive.tap
+        signInButton.rx.tap
             .bind(to: viewModel.signInTrigger)
+            .disposed(by: disposeBag)
         
-        signUpButton.reactive.tap
+        signUpButton.rx.tap
             .bind(to: viewModel.signUpTrigger)
+            .disposed(by: disposeBag)
     }
 }

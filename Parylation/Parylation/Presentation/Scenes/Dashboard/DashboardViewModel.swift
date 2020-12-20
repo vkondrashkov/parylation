@@ -6,16 +6,15 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import ParylationDomain
 
 final class DashboardViewModelImpl: DashboardViewModel {
     private let interactor: DashboardInteractor
     private let router: DashboardRouter
-    
-    /// Input
-    let viewWillAppearTrigger: Subject<Void, Never>
+
+    let viewWillAppearTrigger: AnyObserver<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -26,13 +25,11 @@ final class DashboardViewModelImpl: DashboardViewModel {
         self.interactor = interactor
         self.router = router
         
-        let viewWillAppearSubject = PassthroughSubject<Void, Never>()
+        let viewWillAppearSubject = PublishSubject<Void>()
         viewWillAppearSubject
-            .observeNext {
-                router.showTabs()
-            }
-            .dispose(in: disposeBag)
+            .subscribe(onNext: { router.showTabs() })
+            .disposed(by: disposeBag)
         
-        viewWillAppearTrigger = viewWillAppearSubject
+        viewWillAppearTrigger = viewWillAppearSubject.asObserver()
     }
 }

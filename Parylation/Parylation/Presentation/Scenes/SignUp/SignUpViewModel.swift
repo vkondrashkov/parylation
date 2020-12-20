@@ -6,17 +6,16 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import ParylationDomain
 
 final class SignUpViewModelImpl: SignUpViewModel {
     private let interactor: SignUpInteractor
     private let router: SignUpRouter
     
-    /// Input
-    let signUpTrigger: Subject<Void, Never>
-    let signInTrigger: Subject<Void, Never>
+    let signUpTrigger: AnyObserver<Void>
+    let signInTrigger: AnyObserver<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -27,24 +26,18 @@ final class SignUpViewModelImpl: SignUpViewModel {
         self.interactor = interactor
         self.router = router
         
-        let signUpSubject = PassthroughSubject<Void, Never>()
+        let signUpSubject = PublishSubject<Void>()
         signUpSubject
-            .flatMapConcat {
-                interactor.register(email: "", password: "")
-            }
-            .observeNext { _ in
-                router.finishSignUp()
-            }
-            .dispose(in: disposeBag)
+            .flatMap { interactor.register(email: "", password: "") }
+            .subscribe(onNext: { _ in router.finishSignUp() })
+            .disposed(by: disposeBag)
         
-        let signInSubject = PassthroughSubject<Void, Never>()
+        let signInSubject = PublishSubject<Void>()
         signInSubject
-            .observeNext {
-                router.showSignIn()
-            }
-            .dispose(in: disposeBag)
+            .subscribe(onNext: { router.showSignIn() })
+            .disposed(by: disposeBag)
         
-        signUpTrigger = signUpSubject
-        signInTrigger = signInSubject
+        signUpTrigger = signUpSubject.asObserver()
+        signInTrigger = signInSubject.asObserver()
     }
 }

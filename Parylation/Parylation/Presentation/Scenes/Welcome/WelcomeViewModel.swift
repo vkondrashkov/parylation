@@ -6,17 +6,16 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import ParylationDomain
 
 final class WelcomeViewModelImpl: WelcomeViewModel {
     private let interactor: WelcomeInteractor
     private let router: WelcomeRouter
     
-    /// Input
-    let signUpTrigger: Subject<Void, Never>
-    let signInTrigger: Subject<Void, Never>
+    let signUpTrigger: AnyObserver<Void>
+    let signInTrigger: AnyObserver<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -27,21 +26,17 @@ final class WelcomeViewModelImpl: WelcomeViewModel {
         self.interactor = interactor
         self.router = router
         
-        let signUpSubject = PassthroughSubject<Void, Never>()
+        let signUpSubject = PublishSubject<Void>()
         signUpSubject
-            .observeNext {
-                router.showSignUp()
-            }
-            .dispose(in: disposeBag)
+            .subscribe(onNext: { router.showSignUp() })
+            .disposed(by: disposeBag)
         
-        let signInSubject = PassthroughSubject<Void, Never>()
+        let signInSubject = PublishSubject<Void>()
         signInSubject
-            .observeNext {
-                router.showSignIn()
-            }
-            .dispose(in: disposeBag)
+            .subscribe(onNext: { router.showSignIn() })
+            .disposed(by: disposeBag)
         
-        signUpTrigger = signUpSubject
-        signInTrigger = signInSubject
+        signUpTrigger = signUpSubject.asObserver()
+        signInTrigger = signInSubject.asObserver()
     }
 }

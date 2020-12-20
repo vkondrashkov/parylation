@@ -8,9 +8,9 @@
 //
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
-import ReactiveKit
-import Bond
 
 protocol SettingsContainer { }
 
@@ -21,7 +21,7 @@ protocol SettingsBuilder {
 protocol SettingsRouter: AnyObject { }
 
 protocol SettingsViewModel {
-    var selectTrigger: Subject<IndexPath, Never> { get }
+    var selectTrigger: AnyObserver<IndexPath> { get }
     
-    var sections: SafeSignal<Array2D<String?, SettingsTableItem>> { get }
+    var sections: Driver<[SettingsTableSection]> { get }
 }

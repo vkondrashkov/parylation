@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import UIKit
 
 protocol DashboardContainer { }
@@ -21,5 +21,5 @@ protocol DashboardRouter: AnyObject {
 }
 
 protocol DashboardViewModel {
-    var viewWillAppearTrigger: Subject<Void, Never> { get }
+    var viewWillAppearTrigger: AnyObserver<Void> { get }
 }
