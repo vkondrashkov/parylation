@@ -6,15 +6,14 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxSwift
 
 public enum RootInteractorError: Error {
     case failed
 }
 
 public protocol RootInteractor {
-    func isUserAuthorized() -> Signal<Bool, RootInteractorError>
+    func isUserAuthorized() -> Single<Bool>
 }
 
 public final class RootInteractorImpl {
@@ -28,10 +27,8 @@ public final class RootInteractorImpl {
 // MARK: - RootInteractor implementation
 
 extension RootInteractorImpl: RootInteractor {
-    public func isUserAuthorized() -> Signal<Bool, RootInteractorError> {
+    public func isUserAuthorized() -> Single<Bool> {
         return authorizationUseCase.isAuthorized()
-            .mapError { _ in
-                return .failed
-            }
+            .catchError { _ in .error(RootInteractorError.failed) }
     }
 }

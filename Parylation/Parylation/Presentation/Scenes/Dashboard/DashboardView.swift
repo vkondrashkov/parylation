@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class DashboardView: UITabBarController {
@@ -20,7 +20,7 @@ final class DashboardView: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.viewWillAppearTrigger.receive()
+        viewModel.viewWillAppearTrigger.onNext(())
         setupUI()
         bindViewModel()
     }

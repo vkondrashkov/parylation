@@ -6,15 +6,14 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxSwift
 
 public enum SignInInteractorError: Error {
     case failed
 }
 
 public protocol SignInInteractor {
-    func authorize(email: String, password: String) -> Signal<User, SignInInteractorError>
+    func authorize(email: String, password: String) -> Single<User>
 }
 
 public final class SignInInteractorImpl {
@@ -28,8 +27,8 @@ public final class SignInInteractorImpl {
 // MARK: - SignInInteractor implementation
 
 extension SignInInteractorImpl: SignInInteractor {
-    public func authorize(email: String, password: String) -> Signal<User, SignInInteractorError> {
+    public func authorize(email: String, password: String) -> Single<User> {
         return authorizationUseCase.authorize(email: email, password: password)
-            .mapError { _ in return .failed }
+            .catchError { _ in .error(SignInInteractorError.failed) }
     }
 }

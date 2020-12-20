@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import ReactiveKit
+import RxSwift
 import Moya
 import ParylationDomain
 import ObjectMapper
@@ -18,25 +18,20 @@ final class UserRepositoryImpl: UserRepository {
         self.provider = provider
     }
     
-    func registerUser(login: String, password: String) -> Signal<Void, UserRepositoryError> {
-        return provider.reactive
+    func registerUser(login: String, password: String) -> Single<Void> {
+        return provider.rx
             .request(.signUp(login: login, password: password))
-            .eraseType()
-            .mapError { _ in
-                return .failed
-            }
+            .map { _ in () }
+            .catchError { _ in .error(UserRepositoryError.failed) }
     }
     
-    func authorizeUser(login: String, password: String) -> Signal<User, UserRepositoryError> {
-        let authorizeUser: Signal<MappableUser, UserRepositoryError> = provider.reactive
+    func authorizeUser(login: String, password: String) -> Single<User> {
+        return provider.rx
             .request(.signIn(login: login, password: password))
-            .mapError { _ -> UserRepositoryError in
-                return .failed
-            }
-        
-        return authorizeUser
-            .map {
-                $0.toDomain()
+            .mapJSON()
+            .flatMap { jsonObject in
+                // TODO: Replace with Codable
+                return .just(User(id: UUID().uuidString, name: "Vladislav"))
             }
     }
 }

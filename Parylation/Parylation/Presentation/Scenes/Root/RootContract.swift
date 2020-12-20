@@ -6,9 +6,9 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
 import ParylationDomain
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import UIKit
 
 protocol RootContainer {
@@ -25,5 +25,5 @@ protocol RootRouter: AnyObject {
 }
 
 protocol RootViewModel {
-    var viewDidAppearTrigger: PassthroughSubject<Void, Never> { get }
+    var viewDidAppearTrigger: AnyObserver<Void> { get }
 }

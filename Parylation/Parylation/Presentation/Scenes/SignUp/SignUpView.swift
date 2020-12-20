@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class SignUpView: UIViewController {
@@ -25,6 +25,8 @@ final class SignUpView: UIViewController {
     private let signUpButton = UIButton()
     private let signInCaption = UILabel()
     private let signInButton = UIButton()
+
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = UIView()
@@ -205,10 +207,12 @@ final class SignUpView: UIViewController {
     }
     
     private func bindViewModel() {
-        signUpButton.reactive.tap
+        signUpButton.rx.tap
             .bind(to: viewModel.signUpTrigger)
+            .disposed(by: disposeBag)
         
-        signInButton.reactive.tap
+        signInButton.rx.tap
             .bind(to: viewModel.signInTrigger)
+            .disposed(by: disposeBag)
     }
 }

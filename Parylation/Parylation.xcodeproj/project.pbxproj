@@ -72,8 +72,6 @@
 		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
 		9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
-		9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
-		9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */; };
 		9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C024A0079100901E45 /* RealmUser.swift */; };
 		9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C024A0079100901E45 /* RealmUser.swift */; };
 		9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
@@ -101,8 +99,6 @@
 		9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */; };
 		9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
 		9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
-		9CBB9C1324FF774B005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
-		9CBB9C1424FF779C005EF51A /* Array2D+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */; };
 		9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
 		9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
@@ -206,7 +202,6 @@
 		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
-		9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Reactive.swift"; sourceTree = "<group>"; };
 		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCaseSpec.swift; sourceTree = "<group>"; };
@@ -221,7 +216,6 @@
 		9CBB9BD224F5AE2B005EF51A /* SettingsTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableSection.swift; sourceTree = "<group>"; };
 		9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array2D+Collection.swift"; sourceTree = "<group>"; };
 		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
@@ -465,18 +459,8 @@
 			children = (
 				9CBB9BC524F5AA71005EF51A /* GenericCollectionViews */,
 				9C67854424EFFBD7006E28BD /* UIKit+Utils */,
-				9CADB5B9249F59F500901E45 /* Moya+ReactiveKit */,
-				9CBB9C1224FF774B005EF51A /* Array2D+Collection.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		9CADB5B9249F59F500901E45 /* Moya+ReactiveKit */ = {
-			isa = PBXGroup;
-			children = (
-				9CADB5BA249F5A1500901E45 /* MoyaProvider+Reactive.swift */,
-			);
-			path = "Moya+ReactiveKit";
 			sourceTree = "<group>";
 		};
 		9CADB5BD24A0076F00901E45 /* Realm */ = {
@@ -872,7 +856,6 @@
 				9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
-				9CBB9C1324FF774B005EF51A /* Array2D+Collection.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
@@ -902,7 +885,6 @@
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */,
-				9CADB5BB249F5A1500901E45 /* MoyaProvider+Reactive.swift in Sources */,
 				9CBB9BC224F50771005EF51A /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,7 +914,6 @@
 				9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
-				9CBB9C1424FF779C005EF51A /* Array2D+Collection.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
@@ -962,7 +943,6 @@
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBB24F50771005EF51A /* SettingsRouter.swift in Sources */,
-				9CADB5BC249F5DC100901E45 /* MoyaProvider+Reactive.swift in Sources */,
 				9CBB9BC324F50771005EF51A /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,15 +6,15 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxSwift
 import ParylationDomain
 
 final class RootViewModelImpl: RootViewModel {
     private let interactor: RootInteractor
     private let router: RootRouter
-    
-    let viewDidAppearTrigger = PassthroughSubject<Void, Never>()
+
+    let viewDidAppearTrigger: AnyObserver<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -24,20 +24,22 @@ final class RootViewModelImpl: RootViewModel {
     ) {
         self.interactor = interactor
         self.router = router
-        
-        let isUserAuthorized = viewDidAppearTrigger
-            .flatMapConcat {
-                interactor.isUserAuthorized()
-            }
+
+        let viewDidAppearSubject = PublishSubject<Void>()
+        let isUserAuthorized = viewDidAppearSubject
+            .flatMap { interactor.isUserAuthorized() }
+            .catchErrorJustReturn(false)
         
         isUserAuthorized
-            .observeNext { isUserAuthorized_ in
-                if isUserAuthorized_ {
+            .subscribe(onNext: { _isUserAuthorized in
+                if _isUserAuthorized {
                     router.showDashboard()
                 } else {
                     router.showWelcome()
                 }
-            }
-            .dispose(in: disposeBag)
+            })
+            .disposed(by: disposeBag)
+
+        viewDidAppearTrigger = viewDidAppearSubject.asObserver()
     }
 }

@@ -6,10 +6,11 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
-import UIKit
+
+import RxCocoa
+import RxSwift
 import ParylationDomain
+import UIKit
 
 protocol SignInContainer {
     var authorizationUseCase: AuthorizationUseCase { get }
@@ -29,6 +30,6 @@ protocol SignInRouter: AnyObject {
 }
 
 protocol SignInViewModel {
-    var signInTrigger: Subject<Void, Never> { get }
-    var signUpTrigger: Subject<Void, Never> { get }
+    var signInTrigger: AnyObserver<Void> { get }
+    var signUpTrigger: AnyObserver<Void> { get }
 }

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Parylation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CADB547249CD86C00901E45"
+               BuildableName = "ParylationDomain.framework"
+               BlueprintName = "ParylationDomain"
+               ReferencedContainer = "container:../ParylationDomain/ParylationDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

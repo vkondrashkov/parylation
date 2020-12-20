@@ -6,23 +6,24 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
-import ReactiveKit
 
 protocol SettingsTableViewCellViewModel: AnyObject {
-    var icon: SafeSignal<UIImage?> { get }
-    var color: SafeSignal<UIColor> { get }
-    var title: SafeSignal<String> { get }
+    var icon: Driver<UIImage?> { get }
+    var color: Driver<UIColor> { get }
+    var title: Driver<String> { get }
 }
 
 final class SettingsTableViewCellViewModelImpl: SettingsTableViewCellViewModel {
-    let icon: SafeSignal<UIImage?>
-    let color: SafeSignal<UIColor>
-    let title: SafeSignal<String>
+    let icon: Driver<UIImage?>
+    let color: Driver<UIColor>
+    let title: Driver<String>
     
     init(icon: UIImage?, color: UIColor, title: String) {
-        self.icon = SafeSignal(just: icon)
-        self.color = SafeSignal(just: color)
-        self.title = SafeSignal(just: title)
+        self.icon = .just(icon)
+        self.color = .just(color)
+        self.title = .just(title)
     }
 }

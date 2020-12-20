@@ -6,16 +6,19 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import Bond
-import ReactiveKit
+import RxDataSources
 
-struct SettingsTableSection {
+struct SettingsTableSection: SectionModelType {
     let name: String?
     let items: [SettingsTableItem]
-}
 
-extension SettingsTableSection: SectionedDataSourceChangesetConvertible {
-    var asSectionedDataSourceChangeset: OrderedCollectionChangeset<[SettingsTableItem]> {
-        return OrderedCollectionChangeset(collection: items, patch: [])
+    init(name: String?, items: [SettingsTableItem]) {
+        self.name = name
+        self.items = items
+    }
+
+    init(original: Self, items: [SettingsTableItem]) {
+        self.name = nil
+        self.items = items
     }
 }

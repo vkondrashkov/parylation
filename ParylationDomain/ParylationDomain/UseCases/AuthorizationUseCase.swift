@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import ReactiveKit
+import RxSwift
 
 public enum AuthorizationUseCaseError: Error {
     case failed
@@ -14,12 +14,13 @@ public enum AuthorizationUseCaseError: Error {
 }
 
 public protocol AuthorizationUseCase: AnyObject {
-    func isAuthorized() -> Signal<Bool, AuthorizationUseCaseError>
-    func fetchCurrentUser() -> Signal<User, AuthorizationUseCaseError>
-    func authorize(email: String, password: String) -> Signal<User, AuthorizationUseCaseError>
-    func register(email: String, password: String) -> Signal<User, AuthorizationUseCaseError>
+    func isAuthorized() -> Single<Bool>
+    func fetchCurrentUser() -> Single<User>
+    func authorize(email: String, password: String) -> Single<User>
+    func register(email: String, password: String) -> Single<User>
     // DEPRECATED
-    func saveUser(user: User) -> Signal<Void, AuthorizationUseCaseError>
+    @available(*, deprecated, message: "Do not use this method")
+    func saveUser(user: User) -> Single<Void>
 }
 
 public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
@@ -29,52 +30,36 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
         self.authorizedUserRepository = authorizedUserRepository
     }
     
-    public func isAuthorized() -> Signal<Bool, AuthorizationUseCaseError> {
+    public func isAuthorized() -> Single<Bool> {
         return authorizedUserRepository.fetchUser()
-            .flatMapConcat { _ in
-                return Signal(just: true)
-            }
-            .flatMapError { error -> Signal<Bool, AuthorizationUseCaseError>  in
-                if case .failed = error {
-                    return .failed(.failed)
-                }
-                return Signal(just: false)
-            }
+            .map { _ in true }
+            .catchError { _ in .error(AuthorizationUseCaseError.missingData) }
     }
     
-    public func fetchCurrentUser() -> Signal<User, AuthorizationUseCaseError> {
+    public func fetchCurrentUser() -> Single<User> {
         return authorizedUserRepository.fetchUser()
-            .mapError { error in
-                switch error {
-                case .failed:
-                    return .failed
-                case .missingData:
-                    return .missingData
-                }
-            }
+            .catchError { _ in .error(AuthorizationUseCaseError.missingData) }
     }
     
-    public func authorize(email: String, password: String) -> Signal<User, AuthorizationUseCaseError> {
-        // DO API LOGIC
+    public func authorize(email: String, password: String) -> Single<User> {
+        // TODO: DO API LOGIC
         let user = User(id: "123", name: "Vladislav")
         return authorizedUserRepository.saveUser(user: user)
-            .map { _ in return user }
-            .mapError { _ in return .failed }
+            .map { _ in user }
+            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
     }
     
-    public func register(email: String, password: String) -> Signal<User, AuthorizationUseCaseError> {
-        // DO API LOGIC
+    public func register(email: String, password: String) -> Single<User> {
+        // TODO: DO API LOGIC
         let user = User(id: "123", name: "Vladislav")
         return authorizedUserRepository.saveUser(user: user)
-            .map { _ in return user }
-            .mapError { _ in return .failed }
+            .map { _ in user }
+            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
     }
     
-    public func saveUser(user: User) -> Signal<Void, AuthorizationUseCaseError> {
+    public func saveUser(user: User) -> Single<Void> {
         return authorizedUserRepository.saveUser(user: user)
-            .mapError { _ in
-                return .failed
-            }
+            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
     }
     
     

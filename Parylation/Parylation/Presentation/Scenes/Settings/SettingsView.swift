@@ -8,8 +8,9 @@
 //
 //
 
-import Bond
-import ReactiveKit
+import RxCocoa
+import RxDataSources
+import RxSwift
 import UIKit
 
 final class SettingsView: UIViewController {
@@ -21,6 +22,8 @@ final class SettingsView: UIViewController {
     
     private let headerTitleLabel = UILabel()
     private let headerSubtitleLabel = UILabel()
+
+    private let disposeBag = DisposeBag()
 
     override func loadView() {
         view = UIView()
@@ -95,12 +98,10 @@ final class SettingsView: UIViewController {
     }
 
     private func bindViewModel() {
-        viewModel.sections
-            .bind(to: settingsTableView, createCell: { items, indexPath, tableView in
+        let dataSource = RxTableViewSectionedReloadDataSource<SettingsTableSection>(
+            configureCell: { dataSource, tableView, indexPath, item in
                 let cell: SettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                let section = items[indexPath.section]
-                let itemsCount = section.items.count
-                guard itemsCount >= 1 else { return UITableViewCell() }
+                let itemsCount = dataSource[indexPath.section].items.count
                 if itemsCount == 1 {
                     cell.cellType = .single
                 } else if indexPath.row == 0 {
@@ -110,7 +111,6 @@ final class SettingsView: UIViewController {
                 } else {
                     cell.cellType = .middle
                 }
-                let item = section.items[indexPath.row]
                 let viewModel = SettingsTableViewCellViewModelImpl(
                     icon: item.icon,
                     color: item.color,
@@ -118,6 +118,14 @@ final class SettingsView: UIViewController {
                 )
                 cell.bindViewModel(viewModel)
                 return cell
-            })
+            },
+            titleForHeaderInSection: { dataSource, section in
+                return dataSource[section].name
+            }
+        )
+        viewModel.sections
+            .asObservable()
+            .bind(to: settingsTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
 }
