@@ -1,61 +1,83 @@
 PODS:
-  - Alamofire (5.2.2)
-  - Bond (7.6.6):
-    - Differ (~> 1.4)
-    - ReactiveKit (~> 3.14)
-  - Differ (1.4.5)
-  - Moya (14.0.0):
-    - Moya/Core (= 14.0.0)
+  - Alamofire (5.4.0)
+  - Differentiator (4.0.1)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - Nimble (8.1.1)
   - ObjectMapper (4.2.0)
   - Quick (2.2.1)
-  - ReactiveKit (3.17.4)
   - Realm (5.3.5):
     - Realm/Headers (= 5.3.5)
   - Realm/Headers (5.3.5)
   - RealmSwift (5.3.5):
     - Realm (= 5.3.5)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - Bond (~> 7.0)
-  - Moya
+  - Moya/RxSwift (~> 14.0)
   - Nimble (~> 8.0)
   - ObjectMapper (~> 4.2)
   - Quick (~> 2.0)
-  - ReactiveKit (~> 3.0)
   - RealmSwift (~> 5.0)
+  - RxBlocking (~> 5.1)
+  - RxCocoa (~> 5.1)
+  - RxDataSources (~> 4.0)
+  - RxSwift (~> 5.1)
+  - RxTest (~> 5.1)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Bond
-    - Differ
+    - Differentiator
     - Moya
     - Nimble
     - ObjectMapper
     - Quick
-    - ReactiveKit
     - Realm
     - RealmSwift
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - RxTest
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  Bond: 9e7d901cf4ed825b6004a93dd0a7f1c7479e2834
-  Differ: 3b6bd78e2b20cc795d9a86f7641d087524e4273e
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
-  ReactiveKit: f9f9e079efa39312c597bf1508ef4810d111ce76
   Realm: 2b52fcc86fc0ed3d75a56ac0eb1e73c4f1a60e16
   RealmSwift: a6ea2ea561039fc3833c08dec81371a9a3bb5ca6
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 1d702203e0e171d572527b326b274bc91fc244c5
+PODFILE CHECKSUM: 366916b52ed4fb24e5150c14082ae3591b8fb331
 
 COCOAPODS: 1.9.3

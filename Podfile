@@ -7,20 +7,23 @@ project 'Parylation/Parylation'
 project 'ParylationDomain/ParylationDomain'  
 
 def common_pods
-  pod 'ReactiveKit', '~> 3.0'
-  pod 'Bond', '~> 7.0'
+  pod 'RxSwift', '~> 5.1'
+  pod 'RxCocoa', '~> 5.1'
   pod 'RealmSwift', '~> 5.0'
 end
 
 def app_pods
   pod 'SnapKit', '~> 5.0.0'
-  pod 'Moya'
+  pod 'Moya/RxSwift', '~> 14.0'
+  pod 'RxDataSources', '~> 4.0' 
   pod 'ObjectMapper', '~> 4.2'
 end
 
 def test_pods
   pod 'Quick', '~> 2.0'
   pod 'Nimble', '~> 8.0'
+  pod 'RxBlocking', '~> 5.1'
+  pod 'RxTest', '~> 5.1'
 end
 
 target 'Parylation' do
