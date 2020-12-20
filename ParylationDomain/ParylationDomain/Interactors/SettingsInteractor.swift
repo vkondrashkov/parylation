@@ -8,7 +8,7 @@
 //
 //
 
-import ReactiveKit
+import RxSwift
 
 public enum SettingsInteractorError: Error {
     case failed

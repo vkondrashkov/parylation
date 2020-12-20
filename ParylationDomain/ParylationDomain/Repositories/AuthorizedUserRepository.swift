@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import ReactiveKit
+import RxSwift
 
 public enum AuthorizedUserRepositoryError: Error {
     case failed
@@ -14,6 +14,6 @@ public enum AuthorizedUserRepositoryError: Error {
 }
 
 public protocol AuthorizedUserRepository {
-    func fetchUser() -> Signal<User, AuthorizedUserRepositoryError>
-    func saveUser(user: User) -> Signal<Void, AuthorizedUserRepositoryError>
+    func fetchUser() -> Single<User>
+    func saveUser(user: User) -> Single<Void>
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import ReactiveKit
+import RxSwift
 
 public enum UserRepositoryError: Error {
     case failed
@@ -15,6 +15,6 @@ public enum UserRepositoryError: Error {
 }
 
 public protocol UserRepository {
-    func registerUser(login: String, password: String) -> Signal<Void, UserRepositoryError>
-    func authorizeUser(login: String, password: String) -> Signal<User, UserRepositoryError>
+    func registerUser(login: String, password: String) -> Single<Void>
+    func authorizeUser(login: String, password: String) -> Single<User>
 }
