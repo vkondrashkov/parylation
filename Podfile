@@ -16,7 +16,6 @@ def app_pods
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'RxDataSources', '~> 4.0' 
-  pod 'ObjectMapper', '~> 4.2'
 end
 
 def test_pods

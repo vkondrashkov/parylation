@@ -6,17 +6,11 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
-import ObjectMapper
 import ParylationDomain
 
-class MappableUser: ImmutableMappable {
+class MappableUser: Codable {
     let id: String
     let name: String
-    
-    required init(map: Map) throws {
-        id = try map.value("id")
-        name = try map.value("name")
-    }
     
     func toDomain() -> User {
         return User(

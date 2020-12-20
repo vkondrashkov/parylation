@@ -9,7 +9,6 @@
 import RxSwift
 import Moya
 import ParylationDomain
-import ObjectMapper
 
 final class UserRepositoryImpl: UserRepository {
     private let provider: MoyaProvider<ParylationAPI>
@@ -28,10 +27,8 @@ final class UserRepositoryImpl: UserRepository {
     func authorizeUser(login: String, password: String) -> Single<User> {
         return provider.rx
             .request(.signIn(login: login, password: password))
-            .mapJSON()
-            .flatMap { jsonObject in
-                // TODO: Replace with Codable
-                return .just(User(id: UUID().uuidString, name: "Vladislav"))
-            }
+            .map(MappableUser.self)
+            .map { $0.toDomain() }
+            .catchError { _ in .error(UserRepositoryError.failed) }
     }
 }
