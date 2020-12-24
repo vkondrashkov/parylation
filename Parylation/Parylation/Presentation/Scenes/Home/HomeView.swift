@@ -7,6 +7,7 @@
 //
 
 import RxCocoa
+import RxDataSources
 import RxSwift
 import UIKit
 
@@ -18,6 +19,12 @@ final class HomeView: UIViewController {
     private let greetingsTitleLabel = UILabel()
     private let greetingsSubtitleLabel = UILabel()
     private let planButton = UIButton()
+
+    private let tableView = UITableView()
+
+    private let createButton = UIButton()
+
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = UIView()
@@ -62,6 +69,19 @@ final class HomeView: UIViewController {
             $0.height.equalTo(60)
             $0.bottom.leading.trailing.equalToSuperview()
         }
+
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        view.addSubview(createButton)
+        createButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.size.equalTo(60)
+        }
     }
     
     override func viewDidLoad() {
@@ -69,6 +89,10 @@ final class HomeView: UIViewController {
         
         setupUI()
         bindViewModel()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func setupUI() {
@@ -115,9 +139,76 @@ final class HomeView: UIViewController {
             blur: 20,
             spread: -20
         )
+
+        tableView.register(HomeTableViewCell.self)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
+        tableView.backgroundColor = .clear
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+
+        createButton.layer.cornerRadius = 30
+        createButton.backgroundColor = Color.marigoldYellow
     }
 
     private func bindViewModel() {
+        let dataSource = RxTableViewSectionedReloadDataSource<HomeTableSection>(
+            configureCell: { _, tableView, indexPath, item in
+                let cell: HomeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+                let viewModel = HomeTableViewCellViewModelImpl(
+                    icon: nil,
+                    color: Color.gigas,
+                    title: item.title
+                )
+                cell.bindViewModel(viewModel)
+                return cell
+            },
+            titleForHeaderInSection: { dataSource, section in
+                return dataSource[section].name
+            },
+            canEditRowAtIndexPath: { dataSource, indexPath in
+                return true
+            }
+        )
 
+        viewModel.sections
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+
+        rx.methodInvoked(#selector(UIViewController.viewWillAppear))
+            .map { _ in () }
+            .bind(to: viewModel.reloadTrigger)
+            .disposed(by: disposeBag)
+
+        createButton.rx.tap
+            .bind(to: viewModel.createTrigger)
+            .disposed(by: disposeBag)
+
+        tableView.rx.itemSelected
+            .do(onNext: { [weak self] in
+                self?.tableView.deselectRow(at: $0, animated: true)
+            })
+            .bind(to: viewModel.selectTrigger)
+            .disposed(by: disposeBag)
+
+        tableView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+
+        tableView.rx.itemDeleted
+            .bind(to: viewModel.deleteTrigger)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UITableViewDelegate implementation
+
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, indexPath in
+            self.viewModel.deleteTrigger.onNext(indexPath)
+            tableView.reloadData()
+        })
+
+        return [delete]
     }
 }

@@ -24,7 +24,9 @@ final class HomeBuilderImpl {
 extension HomeBuilderImpl: HomeBuilder {
     func build() -> UIViewController {
         let view = HomeView()
-        let interactor = HomeInteractorImpl()
+        let interactor = HomeInteractorImpl(
+            taskRepository: context.taskRepository
+        )
         let router = HomeRouterImpl(
             view: view
         )

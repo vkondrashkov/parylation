@@ -8,9 +8,12 @@
 
 import RxCocoa
 import RxSwift
+import ParylationDomain
 import UIKit
 
-protocol HomeContainer { }
+protocol HomeContainer {
+    var taskRepository: TaskRepository { get }
+}
 
 protocol HomeBuilder: AnyObject {
     func build() -> UIViewController
@@ -18,4 +21,11 @@ protocol HomeBuilder: AnyObject {
 
 protocol HomeRouter: AnyObject { }
 
-protocol HomeViewModel { }
+protocol HomeViewModel {
+    var reloadTrigger: AnyObserver<Void> { get }
+    var createTrigger: AnyObserver<Void> { get }
+    var selectTrigger: AnyObserver<IndexPath> { get }
+    var deleteTrigger: AnyObserver<IndexPath> { get }
+
+    var sections: Driver<[HomeTableSection]> { get }
+}
