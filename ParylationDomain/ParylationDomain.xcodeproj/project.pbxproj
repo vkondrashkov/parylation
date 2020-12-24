@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		69AD1543B4ABD32B88403CA4 /* Pods_ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */; };
+		9C11CE3E258FE46900E99F9E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE3D258FE46900E99F9E /* Task.swift */; };
+		9C11CE41258FE52300E99F9E /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE40258FE52300E99F9E /* TaskRepository.swift */; };
 		9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */; };
 		9CADB564249E0DD500901E45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB563249E0DD500901E45 /* User.swift */; };
 		9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB566249E0E0000901E45 /* RootInteractor.swift */; };
@@ -28,6 +30,8 @@
 		6F3FB703A3E9250111FF2B80 /* Pods-ParylationDomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomainTests.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomainTests/Pods-ParylationDomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC5593B75FEDB2740C4E44C /* Pods-ParylationDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomain.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomain/Pods-ParylationDomain.debug.xcconfig"; sourceTree = "<group>"; };
+		9C11CE3D258FE46900E99F9E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		9C11CE40258FE52300E99F9E /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9CADB548249CD86C00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB54C249CD86C00901E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9CADB563249E0DD500901E45 /* User.swift */,
+				9C11CE3D258FE46900E99F9E /* Task.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				9CADB56D249E0E4C00901E45 /* UserRepository.swift */,
+				9C11CE40258FE52300E99F9E /* TaskRepository.swift */,
 				9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */,
 			);
 			path = Repositories;
@@ -255,10 +261,12 @@
 				9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */,
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
 				9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */,
+				9C11CE3E258FE46900E99F9E /* Task.swift in Sources */,
 				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
 				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
+				9C11CE41258FE52300E99F9E /* TaskRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
 				9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */,

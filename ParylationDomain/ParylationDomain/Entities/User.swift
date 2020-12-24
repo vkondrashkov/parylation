@@ -17,7 +17,7 @@ public struct User {
 }
 
 extension User: Equatable {
-    public static func ==(lhs: User, rhs: User) -> Bool {
+    public static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id &&
             lhs.name == rhs.name
     }
