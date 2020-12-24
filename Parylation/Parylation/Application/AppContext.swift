@@ -26,12 +26,15 @@ typealias AppContext = AuthContext & MainContext // & AnalyticsContext
 final class AppContextImpl: AppContext {
     unowned var window: UIWindow
     let authorizationUseCase: AuthorizationUseCase
+    let taskRepository: TaskRepository
 
     init(window: UIWindow)  {
         self.window = window
-        let authorizedUserRepository = AuthorizedUserRepositoryImpl(realm: try! Realm())
+        let realm = try! Realm()
+        let authorizedUserRepository = AuthorizedUserRepositoryImpl(realm: realm)
         authorizationUseCase = AuthorizationUseCaseImpl(
             authorizedUserRepository: authorizedUserRepository
         )
+        taskRepository = TaskRepositoryImpl(realm: realm)
     }
 }

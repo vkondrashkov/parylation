@@ -14,6 +14,14 @@
 		9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE43258FE5CA00E99F9E /* RealmTask.swift */; };
 		9C11CE49258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE48258FE72B00E99F9E /* TaskRepositoryImpl.swift */; };
 		9C11CE4A258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE48258FE72B00E99F9E /* TaskRepositoryImpl.swift */; };
+		9C11CE4E258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE4D258FEA8600E99F9E /* HomeTableViewCell.swift */; };
+		9C11CE4F258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE4D258FEA8600E99F9E /* HomeTableViewCell.swift */; };
+		9C11CE52258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE51258FEABA00E99F9E /* HomeTableViewCellViewModel.swift */; };
+		9C11CE53258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE51258FEABA00E99F9E /* HomeTableViewCellViewModel.swift */; };
+		9C11CE57258FEC8300E99F9E /* HomeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */; };
+		9C11CE58258FEC8300E99F9E /* HomeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */; };
+		9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */; };
+		9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */; };
 		9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E802470ADB10022AC92 /* Assets.xcassets */; };
 		9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */; };
@@ -171,6 +179,10 @@
 		9424529FBCA0AD3DA1C236C2 /* Pods-ParylationDevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDevTests.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-ParylationDevTests/Pods-ParylationDevTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C11CE43258FE5CA00E99F9E /* RealmTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTask.swift; sourceTree = "<group>"; };
 		9C11CE48258FE72B00E99F9E /* TaskRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryImpl.swift; sourceTree = "<group>"; };
+		9C11CE4D258FEA8600E99F9E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		9C11CE51258FEABA00E99F9E /* HomeTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableItem.swift; sourceTree = "<group>"; };
+		9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSection.swift; sourceTree = "<group>"; };
 		9C207E742470ADAE0022AC92 /* Parylation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parylation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C207E772470ADAE0022AC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C207E802470ADB10022AC92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -268,6 +280,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C11CE4C258FEA4000E99F9E /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9C11CE51258FEABA00E99F9E /* HomeTableViewCellViewModel.swift */,
+				9C11CE4D258FEA8600E99F9E /* HomeTableViewCell.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
 		9C207E6B2470ADAE0022AC92 = {
 			isa = PBXGroup;
 			children = (
@@ -553,11 +574,14 @@
 		9CEB58F424F13419008B835A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9C11CE4C258FEA4000E99F9E /* ContentView */,
 				9CEB58F524F1343A008B835A /* HomeContract.swift */,
 				9CEB58FB24F13449008B835A /* HomeBuilder.swift */,
 				9CEB58FE24F13450008B835A /* HomeRouter.swift */,
 				9CEB590124F13457008B835A /* HomeViewModel.swift */,
 				9CEB590424F1345D008B835A /* HomeView.swift */,
+				9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */,
+				9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -865,6 +889,7 @@
 				9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9C11CE57258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C11CE44258FE5CA00E99F9E /* RealmTask.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
@@ -874,6 +899,8 @@
 				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
+				9C11CE52258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
+				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
@@ -885,6 +912,7 @@
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB58FF24F13450008B835A /* HomeRouter.swift in Sources */,
+				9C11CE4E258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */,
 				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C67854024EFECD5006E28BD /* WelcomeView.swift in Sources */,
@@ -925,6 +953,7 @@
 				9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9C11CE58258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
@@ -934,6 +963,8 @@
 				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
+				9C11CE53258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
+				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,
@@ -945,6 +976,7 @@
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB590024F13450008B835A /* HomeRouter.swift in Sources */,
+				9C11CE4F258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */,
 				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */,
