@@ -10,7 +10,7 @@ import UIKit
 import ParylationDomain
 
 final class HomeBuilderImpl {
-    typealias Context = HomeContainer
+    typealias Context = HomeContainer & TaskContainer
     
     private let context: Context
     
@@ -27,8 +27,10 @@ extension HomeBuilderImpl: HomeBuilder {
         let interactor = HomeInteractorImpl(
             taskRepository: context.taskRepository
         )
+        let taskBuilder = TaskBuilderImpl(context: context)
         let router = HomeRouterImpl(
-            view: view
+            view: view,
+            taskBuilder: taskBuilder
         )
         let viewModel = HomeViewModelImpl(
             interactor: interactor,

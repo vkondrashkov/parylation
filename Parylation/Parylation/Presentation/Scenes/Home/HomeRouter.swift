@@ -10,12 +10,23 @@ import UIKit
 
 final class HomeRouterImpl {
     private weak var view: UIViewController?
+    private let taskBuilder: TaskBuilder
     
-    init(view: UIViewController) {
+    init(
+        view: UIViewController,
+        taskBuilder: TaskBuilder
+    ) {
         self.view = view
+        self.taskBuilder = taskBuilder
     }
 }
 
 // MARK: - HomeRouter implementation
 
-extension HomeRouterImpl: HomeRouter { }
+extension HomeRouterImpl: HomeRouter {
+    func showTask(taskId: String) {
+        let taskView = taskBuilder.build(taskId: taskId)
+        taskView.hidesBottomBarWhenPushed = true
+        view?.navigationController?.pushViewController(taskView, animated: true)
+    }
+}

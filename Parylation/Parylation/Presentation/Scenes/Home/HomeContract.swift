@@ -19,7 +19,9 @@ protocol HomeBuilder: AnyObject {
     func build() -> UIViewController
 }
 
-protocol HomeRouter: AnyObject { }
+protocol HomeRouter: AnyObject {
+    func showTask(taskId: String)
+}
 
 protocol HomeViewModel {
     var reloadTrigger: AnyObserver<Void> { get }

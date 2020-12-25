@@ -62,7 +62,9 @@ final class HomeViewModelImpl: HomeViewModel {
                 }
                 return items[indexPath.row]
             }
-            .subscribe(onNext: { _ in print("selected item") })
+            .subscribe(onNext: { task in
+                router.showTask(taskId: task.id)
+            })
             .disposed(by: disposeBag)
 
         let deleteSubject = PublishSubject<IndexPath>()

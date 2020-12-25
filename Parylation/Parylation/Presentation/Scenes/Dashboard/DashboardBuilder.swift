@@ -10,7 +10,7 @@ import UIKit
 import ParylationDomain
 
 final class DashboardBuilderImpl {
-    typealias Context = DashboardContainer & HomeContainer & SettingsContainer
+    typealias Context = MainContext
     
     private let context: Context
     
@@ -26,7 +26,6 @@ extension DashboardBuilderImpl: DashboardBuilder {
         let view = DashboardView()
         
         let homeNavigationController = UINavigationController()
-        homeNavigationController.setNavigationBarHidden(true, animated: false)
         let homeTabBarImage = UIImage(named: "dashboard-home")
         let homeTabBarItem = UITabBarItem(
             title: nil,
