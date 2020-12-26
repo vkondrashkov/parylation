@@ -52,8 +52,8 @@ final class TaskViewModelImpl: TaskViewModel {
             .flatMap { _ -> PublishSubject<Void> in
                 let alertSubject = PublishSubject<Void>()
                 let alertInfo = AlertViewInfo(
-                    title: "Are you sure?",
-                    message: "This action can't be undone!",
+                    title: "Delete task?",
+                    message: "This action can't be undone! Do you want to delete it anyway?",
                     actions: [
                         AlertViewInfo.ActionInfo(
                             name: "Cancel",

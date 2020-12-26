@@ -20,6 +20,7 @@ typealias AuthContext = RootContainer
 typealias HomeContext = DashboardContainer
     & HomeContainer
     & TaskContainer
+    & TaskEditContainer
 
 // TODO: typealias CalendarContext
 

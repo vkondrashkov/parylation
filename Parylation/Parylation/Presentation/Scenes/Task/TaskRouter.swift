@@ -13,13 +13,16 @@ import UIKit
 final class TaskRouterImpl {
     private weak var viewController: UIViewController?
     private let alertBuilder: AlertBuilder
+    private let taskEditBuilder: TaskEditBuilder
 
     init(
         viewController: UIViewController,
-        alertBuilder: AlertBuilder
+        alertBuilder: AlertBuilder,
+        taskEditBuilder: TaskEditBuilder
     ) {
         self.viewController = viewController
         self.alertBuilder = alertBuilder
+        self.taskEditBuilder = taskEditBuilder
     }
 }
 
@@ -27,7 +30,8 @@ final class TaskRouterImpl {
 
 extension TaskRouterImpl: TaskRouter {
     func showTaskEdit(taskId: String, completion: (() -> Void)?) {
-
+        let editView = taskEditBuilder.build(taskId: taskId)
+        viewController?.navigationController?.pushViewController(editView, animated: true)
     }
 
     func showAlert(info: AlertViewInfo) {

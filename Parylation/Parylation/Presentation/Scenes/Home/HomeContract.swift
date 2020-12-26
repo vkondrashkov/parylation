@@ -21,6 +21,7 @@ protocol HomeBuilder: AnyObject {
 
 protocol HomeRouter: AnyObject {
     func showTask(taskId: String)
+    func showTaskCreation()
 }
 
 protocol HomeViewModel {

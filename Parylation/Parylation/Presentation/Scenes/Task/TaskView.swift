@@ -115,12 +115,14 @@ final class TaskView: UIViewController {
         }
 
         taskTitleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        taskTitleLabel.numberOfLines = 2
 
         descriptionCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         descriptionCaptionLabel.text = "Description"
 
         descriptionLabel.font = .systemFont(ofSize: 17)
         descriptionLabel.textAlignment = .justified
+        descriptionLabel.numberOfLines = 0
 
         dateCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         dateCaptionLabel.text = "Date"

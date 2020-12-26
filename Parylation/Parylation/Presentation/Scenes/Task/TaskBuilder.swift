@@ -12,7 +12,7 @@ import ParylationDomain
 import UIKit
 
 final class TaskBuilderImpl {
-    typealias Context = TaskContainer
+    typealias Context = TaskContainer & TaskEditContainer
     
     private let context: Context
 
@@ -31,9 +31,11 @@ extension TaskBuilderImpl: TaskBuilder {
             taskRepository: context.taskRepository
         )
         let alertBuilder = AlertBuilderImpl()
+        let taskEditBuilder = TaskEditBuilderImpl(context: context)
         let router = TaskRouterImpl(
             viewController: view,
-            alertBuilder: alertBuilder
+            alertBuilder: alertBuilder,
+            taskEditBuilder: taskEditBuilder
         )
         let viewModel = TaskViewModelImpl(
             interactor: interactor,

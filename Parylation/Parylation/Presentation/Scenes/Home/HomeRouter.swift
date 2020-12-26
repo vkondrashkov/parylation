@@ -11,19 +11,27 @@ import UIKit
 final class HomeRouterImpl {
     private weak var view: UIViewController?
     private let taskBuilder: TaskBuilder
+    private let taskEditBuilder: TaskEditBuilder
     
     init(
         view: UIViewController,
-        taskBuilder: TaskBuilder
+        taskBuilder: TaskBuilder,
+        taskEditBuilder: TaskEditBuilder
     ) {
         self.view = view
         self.taskBuilder = taskBuilder
+        self.taskEditBuilder = taskEditBuilder
     }
 }
 
 // MARK: - HomeRouter implementation
 
 extension HomeRouterImpl: HomeRouter {
+    func showTaskCreation() {
+        let editView = taskEditBuilder.build(taskId: nil)
+        view?.present(editView, animated: true, completion: nil)
+    }
+
     func showTask(taskId: String) {
         let taskView = taskBuilder.build(taskId: taskId)
         taskView.hidesBottomBarWhenPushed = true
