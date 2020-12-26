@@ -1,0 +1,75 @@
+/* 
+  Localizable.strings
+  Parylation
+
+  Created by Vladislav Kondrashkov on 26.12.20.
+  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
+*/
+
+// MARK: - Common
+
+"app_name" = "Parylation";
+
+// MARK: - Welcome page
+
+"welcome_sign_up" = "Sign Up";
+"welcome_sign_in" = "I already have an account";
+"welcome_subtitle" = "Plan Your Day with";
+
+// MARK: - Sign Up page
+
+"sign_up_subtitle" = "Start using Parylation!";
+"sign_up_email" = "Email";
+"sign_up_password" = "Password";
+"sign_up_confirm_password" = "Confirm password";
+"sign_up_button" = "Sign Up";
+"sign_up_sign_in_caption" = "Already a member?";
+"sign_up_sign_in" = "Sign In";
+
+// MARK: - Sign In page
+
+"sign_in_subtitle" = "Great to see you again!";
+"sign_in_email" = "Email";
+"sign_in_password" = "Password";
+"sign_in_forgot_password" = "Forgot your password?";
+"sign_in_button" = "Sign In";
+"sign_in_sign_up_caption" = "No account yet?";
+"sign_in_sign_up" = "Sign Up";
+
+// MARK: - Home page
+
+"home_greetings_title" = "Hey, %@!";
+"home_greetings_subtitle" = "Let's plan your ";
+"home_plan_button" = "Write important things";
+"home_delete_button" = "Delete";
+
+// MARK: - Task page
+
+"task_page_title" = "Task";
+"task_description" = "Description";
+"task_date" = "Date";
+"task_edit_button" = "Edit";
+
+// MARK: - Task Edit page
+
+"task_edit_page_title" = "Edit Task";
+"task_edit_title" = "Title";
+"task_edit_description" = "Description";
+"task_edit_date" = "Date";
+"task_edit_icon" = "Icon";
+"task_edit_color" = "Color";
+"task_edit_save_button" = "Save";
+
+// MARK: - Settings page
+
+"settings_title" = "Edit your workspace";
+"settings_subtitle" = "Update your ";
+"settings_subtitle_accent" = "settings";
+"settings_main_section" = "Settings";
+"settings_main_change_username" = "Change username";
+"settings_main_change_email" = "Change email";
+"settings_main_change_password" = "Change password";
+"settings_others_section" = "Others";
+"settings_others_rate_us" = "Rate us";
+"settings_others_about_us" = "About us";
+"settings_sign_out" = "Sign out";

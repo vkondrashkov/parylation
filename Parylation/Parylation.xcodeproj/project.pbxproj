@@ -113,6 +113,8 @@
 		9C90F8B42597314A0052080B /* TaskEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A8259731490052080B /* TaskEditViewModel.swift */; };
 		9C90F8C2259732BD0052080B /* TaskEditViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */; };
 		9C90F8C3259732BD0052080B /* TaskEditViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */; };
+		9C90F8EB2597883E0052080B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F8EE2597883E0052080B /* Localizable.strings */; };
+		9C90F8EC2597883E0052080B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F8EE2597883E0052080B /* Localizable.strings */; };
 		9CADB571249E0E8A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; };
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
@@ -274,6 +276,8 @@
 		9C90F8A7259731490052080B /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		9C90F8A8259731490052080B /* TaskEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModel.swift; sourceTree = "<group>"; };
 		9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewInfo.swift; sourceTree = "<group>"; };
+		9C90F8ED2597883E0052080B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C90F9192597E7C50052080B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 				9C207E802470ADB10022AC92 /* Assets.xcassets */,
 				9C207E852470ADB10022AC92 /* Info.plist */,
 				9C5C6579249A625400E9D889 /* InfoDev.plist */,
+				9C90F8EE2597883E0052080B /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -804,6 +809,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 9C207E6B2470ADAE0022AC92;
 			productRefGroup = 9C207E752470ADAE0022AC92 /* Products */;
@@ -823,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */,
+				9C90F8EB2597883E0052080B /* Localizable.strings in Resources */,
 				9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */,
+				9C90F8EC2597883E0052080B /* Localizable.strings in Resources */,
 				9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1160,6 +1168,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		9C90F8EE2597883E0052080B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C90F8ED2597883E0052080B /* en */,
+				9C90F9192597E7C50052080B /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1167,6 +1184,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1227,6 +1245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
