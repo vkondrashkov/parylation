@@ -75,12 +75,12 @@ final class SettingsView: UIViewController {
         view.backgroundColor = .white
         
         headerTitleLabel.font = .systemFont(ofSize: 28, weight: .heavy)
-        headerTitleLabel.text = "Edit your workspace" // localize
+        headerTitleLabel.text = L10n.settingsTitle
         headerTitleLabel.textColor = Color.gigas
         
         headerSubtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        let subtitleText = "Update your " // localize
-        let accent = "settings"
+        let subtitleText = L10n.settingsSubtitle
+        let accent = L10n.settingsSubtitleAccent
         let headerSubtitleText = NSMutableAttributedString(
             string: subtitleText + accent,
             attributes: [

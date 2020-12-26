@@ -111,11 +111,11 @@ final class HomeView: UIViewController {
         }
         
         greetingsTitleLabel.font = .systemFont(ofSize: 28, weight: .heavy)
-        greetingsTitleLabel.text = "Hey, Vladislav!" // localize
+        greetingsTitleLabel.text = L10n.homeGreetingsTitle("Vladislav")
         greetingsTitleLabel.textColor = Color.gigas
         
         greetingsSubtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        let subtitleText = "Let's plan your " // localize
+        let subtitleText = L10n.homeGreetingsSubtitle
         let date = "Monday"
         let greetingsSubtitleText = NSMutableAttributedString(
             string: subtitleText + date,
@@ -129,7 +129,7 @@ final class HomeView: UIViewController {
         greetingsSubtitleLabel.attributedText = greetingsSubtitleText
         greetingsSubtitleLabel.textColor = .black
         
-        planButton.setTitle("WRITE IMPORTANT THINGS", for: .normal)
+        planButton.setTitle(L10n.homePlanButton.uppercased(), for: .normal)
         planButton.setTitleColor(.black, for: .normal)
         planButton.backgroundColor = Color.marigoldYellow
         planButton.layer.cornerRadius = 20
@@ -210,7 +210,7 @@ final class HomeView: UIViewController {
 
 extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, indexPath in
+        let delete = UITableViewRowAction(style: .destructive, title: L10n.homeDeleteButton, handler: { _, indexPath in
             self.viewModel.deleteTrigger.onNext(indexPath)
             tableView.reloadData()
         })

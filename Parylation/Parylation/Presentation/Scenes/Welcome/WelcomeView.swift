@@ -124,17 +124,17 @@ final class WelcomeView: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        logoImageView.image = UIImage(named: "app_logo")
+        logoImageView.image = Asset.appLogo.image
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        subtitleLabel.text = "Plan Your Day with" // localize
+        subtitleLabel.text = L10n.welcomeSubtitle
         subtitleLabel.textColor = .black
         
         titleLabel.font = .systemFont(ofSize: 32, weight: .heavy)
-        titleLabel.text = "PARYLATION" // localize
+        titleLabel.text = L10n.appName.uppercased()
         titleLabel.textColor = Color.gigas
         
-        signUpButton.setTitle("SIGN UP", for: .normal)
+        signUpButton.setTitle(L10n.welcomeSignUp.uppercased(), for: .normal)
         signUpButton.setTitleColor(.black, for: .normal)
         signUpButton.backgroundColor = Color.marigoldYellow
         signUpButton.layer.cornerRadius = 20
@@ -151,7 +151,7 @@ final class WelcomeView: UIViewController {
             spread: -20
         )
         
-        signInButton.setTitle("I already have an account", for: .normal)
+        signInButton.setTitle(L10n.welcomeSignIn, for: .normal)
         signInButton.setTitleColor(Color.dustyGray, for: .normal)
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
         
@@ -163,7 +163,7 @@ final class WelcomeView: UIViewController {
             imageBackgroundView.layer.cornerCurve = .continuous
         }
         
-        imageView.image = UIImage(named: "welcome_background")
+        imageView.image = Asset.welcomeBackground.image
         imageView.contentMode = .scaleAspectFit
     }
     

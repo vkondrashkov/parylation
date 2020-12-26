@@ -148,13 +148,13 @@ final class TaskEditView: UIViewController {
     }
 
     private func setupUI() {
-        title = "Edit Task"
+        title = L10n.taskEditPageTitle
         view.backgroundColor = Color.whisper
 
         iconBackgroundView.layer.cornerRadius = 15
         iconBackgroundView.backgroundColor = Color.gigas
 
-        taskTitleCaptionLabel.text = "Title"
+        taskTitleCaptionLabel.text = L10n.taskEditTitle
         taskTitleCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskTitleTextField.backgroundColor = .white
@@ -162,7 +162,7 @@ final class TaskEditView: UIViewController {
         taskTitleTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskTitleTextField.leftViewMode = .always
 
-        taskDescriptionCaptionLabel.text = "Description"
+        taskDescriptionCaptionLabel.text = L10n.taskEditDescription
         taskDescriptionCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskDescriptionTextField.backgroundColor = .white
@@ -170,7 +170,7 @@ final class TaskEditView: UIViewController {
         taskDescriptionTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDescriptionTextField.leftViewMode = .always
 
-        taskDateCaptionLabel.text = "Date"
+        taskDateCaptionLabel.text = L10n.taskEditDate
         taskDateCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskDateTextField.backgroundColor = .white
@@ -178,12 +178,12 @@ final class TaskEditView: UIViewController {
         taskDateTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDateTextField.leftViewMode = .always
 
-        iconCaptionLabel.text = "Icon"
+        iconCaptionLabel.text = L10n.taskEditIcon
         iconCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         iconContainerView.backgroundColor = Color.gray
 
-        colorCaptionLabel.text = "Color"
+        colorCaptionLabel.text = L10n.taskEditColor
         colorCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         colorContainerView.backgroundColor = Color.gray
@@ -191,7 +191,7 @@ final class TaskEditView: UIViewController {
         saveButton.layer.cornerRadius = 20
         saveButton.backgroundColor = Color.shamrock
         saveButton.setTitleColor(.white, for: .normal)
-        saveButton.setTitle("SAVE", for: .normal)
+        saveButton.setTitle(L10n.taskEditSaveButton.uppercased(), for: .normal)
         saveButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         if #available(iOS 13.0, *) {
             saveButton.layer.cornerCurve = .continuous

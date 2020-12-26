@@ -31,41 +31,41 @@ final class SettingsViewModelImpl: SettingsViewModel {
         
         let items = Observable.just([
             SettingsTableSection(
-                name: "Settings",
+                name: L10n.settingsMainSection,
                 items: [
                     SettingsTableItem(
                         icon: nil,
                         color: Color.gigas,
-                        title: "Change username",
+                        title: L10n.settingsMainChangeUsername,
                         action: nil
                     ),
                     SettingsTableItem(
                         icon: nil,
                         color: Color.gigas,
-                        title: "Change email",
+                        title: L10n.settingsMainChangeEmail,
                         action: nil
                     ),
                     SettingsTableItem(
                         icon: nil,
                         color: Color.gigas,
-                        title: "Change password",
+                        title: L10n.settingsMainChangePassword,
                         action: nil
                     )
                 ]
             ),
             SettingsTableSection(
-                name: "Others",
+                name: L10n.settingsOthersSection,
                 items: [
                     SettingsTableItem(
                         icon: nil,
                         color: Color.marigoldYellow,
-                        title: "Rate us",
+                        title: L10n.settingsOthersRateUs,
                         action: nil
                     ),
                     SettingsTableItem(
                         icon: nil,
                         color: Color.marigoldYellow,
-                        title: "About us",
+                        title: L10n.settingsOthersAboutUs,
                         action: nil
                     )
                 ]
@@ -76,7 +76,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                     SettingsTableItem(
                         icon: nil,
                         color: Color.blazeOrange,
-                        title: "Sign out",
+                        title: L10n.settingsSignOut,
                         action: nil
                     )
                 ]

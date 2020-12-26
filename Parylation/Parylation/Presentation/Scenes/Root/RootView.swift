@@ -29,7 +29,7 @@ final class RootView: UIViewController {
     private func setupUI() {
         view.backgroundColor = Color.chablis
         view.addSubview(logoImageView)
-        logoImageView.image = UIImage(named: "app_logo")
+        logoImageView.image = Asset.appLogo.image
         logoImageView.contentMode = .scaleAspectFit
         logoImageView.snp.makeConstraints {
             $0.center.equalTo(view.safeAreaLayoutGuide.snp.center)
