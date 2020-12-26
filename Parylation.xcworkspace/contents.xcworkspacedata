@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Parylation.xcodeproj">
+      location = "group:Parylation/Parylation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ParylationDomain/ParylationDomain.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
