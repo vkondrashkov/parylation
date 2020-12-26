@@ -30,8 +30,10 @@ extension TaskBuilderImpl: TaskBuilder {
         let interactor = TaskInteractorImpl(
             taskRepository: context.taskRepository
         )
+        let alertBuilder = AlertBuilderImpl()
         let router = TaskRouterImpl(
-            viewController: view
+            viewController: view,
+            alertBuilder: alertBuilder
         )
         let viewModel = TaskViewModelImpl(
             interactor: interactor,

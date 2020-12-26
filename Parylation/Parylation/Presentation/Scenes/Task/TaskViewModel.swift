@@ -49,6 +49,29 @@ final class TaskViewModelImpl: TaskViewModel {
         let deleteSubject = PublishSubject<Void>()
         deleteSubject
             .do(onNext: { stateSubject.onNext(.loading) })
+            .flatMap { _ -> PublishSubject<Void> in
+                let alertSubject = PublishSubject<Void>()
+                let alertInfo = AlertViewInfo(
+                    title: "Are you sure?",
+                    message: "This action can't be undone!",
+                    actions: [
+                        AlertViewInfo.ActionInfo(
+                            name: "Cancel",
+                            color: Color.gigas,
+                            action: nil
+                        ),
+                        AlertViewInfo.ActionInfo(
+                            name: "Delete",
+                            color: Color.blazeOrange,
+                            action: {
+                                alertSubject.onNext(())
+                            }
+                        )
+                    ]
+                )
+                router.showAlert(info: alertInfo)
+                return alertSubject.asObserver()
+            }
             .flatMap { interactor.deleteTask(taskId: taskId) }
             .subscribe(onNext: {
                 router.terminate()

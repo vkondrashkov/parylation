@@ -23,6 +23,7 @@ protocol TaskBuilder {
 
 protocol TaskRouter: AnyObject {
     func showTaskEdit(taskId: String, completion: (() -> Void)?)
+    func showAlert(info: AlertViewInfo)
     func terminate()
 }
 
