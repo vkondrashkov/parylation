@@ -73,6 +73,7 @@ final class AlertView: UIViewController {
 
         messageLabel.textAlignment = .justified
         messageLabel.font = .systemFont(ofSize: 17)
+        messageLabel.numberOfLines = 0
 
         actionsContainerView.alignment = .fill
         actionsContainerView.axis = .horizontal
