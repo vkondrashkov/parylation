@@ -140,11 +140,13 @@ final class SignUpView: UIViewController {
         titleLabel.text = "🤝"
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        subtitleLabel.text = "Start using Parylation!" // localize
+        subtitleLabel.text = L10n.signUpSubtitle
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        emailCaptionLabel.text = "Email"
+        emailCaptionLabel.text = L10n.signUpEmail
         emailCaptionLabel.textColor = Color.gigas
         
         emailTextField.backgroundColor = .white
@@ -155,7 +157,7 @@ final class SignUpView: UIViewController {
         emailTextField.keyboardType = .emailAddress
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        passwordCaptionLabel.text = "Password"
+        passwordCaptionLabel.text = L10n.signUpPassword
         passwordCaptionLabel.textColor = Color.gigas
         
         passwordTextField.backgroundColor = .white
@@ -165,7 +167,7 @@ final class SignUpView: UIViewController {
         passwordTextField.isSecureTextEntry = true
         
         confirmPasswordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        confirmPasswordCaptionLabel.text = "Confirm password"
+        confirmPasswordCaptionLabel.text = L10n.signUpConfirmPassword
         confirmPasswordCaptionLabel.textColor = Color.gigas
         
         confirmPasswordTextField.backgroundColor = .white
@@ -174,7 +176,7 @@ final class SignUpView: UIViewController {
         confirmPasswordTextField.leftViewMode = .always
         confirmPasswordTextField.isSecureTextEntry = true
         
-        signUpButton.setTitle("SIGN UP", for: .normal)
+        signUpButton.setTitle(L10n.signUpButton.uppercased(), for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.backgroundColor = Color.blazeOrange
         signUpButton.layer.cornerRadius = 20
@@ -191,11 +193,11 @@ final class SignUpView: UIViewController {
             spread: -20
         )
         
-        signInCaption.text = "Already a member?"
+        signInCaption.text = L10n.signUpSignInCaption
         signInCaption.textColor = Color.dustyGray
         signInCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
-        signInButton.setTitle("Sign In", for: .normal)
+        signInButton.setTitle(L10n.signUpSignIn, for: .normal)
         signInButton.setTitleColor(Color.blazeOrange, for: .normal)
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }

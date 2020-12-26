@@ -132,11 +132,11 @@ final class SignInView: UIViewController {
         titleLabel.text = "👋"
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        subtitleLabel.text = "Great to see you again!" // localize
+        subtitleLabel.text = L10n.signInSubtitle
         subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        emailCaptionLabel.text = "Email"
+        emailCaptionLabel.text = L10n.signInEmail
         emailCaptionLabel.textColor = Color.gigas
         
         emailTextField.backgroundColor = .white
@@ -147,7 +147,7 @@ final class SignInView: UIViewController {
         emailTextField.keyboardType = .emailAddress
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        passwordCaptionLabel.text = "Password"
+        passwordCaptionLabel.text = L10n.signInPassword
         passwordCaptionLabel.textColor = Color.gigas
         
         passwordTextField.backgroundColor = .white
@@ -156,11 +156,11 @@ final class SignInView: UIViewController {
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         
-        forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
+        forgotPasswordButton.setTitle(L10n.signInForgotPassword, for: .normal)
         forgotPasswordButton.setTitleColor(Color.blazeOrange, for: .normal)
         forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         
-        signInButton.setTitle("SIGN IN", for: .normal)
+        signInButton.setTitle(L10n.signInButton.uppercased(), for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
         signInButton.backgroundColor = Color.blazeOrange
         signInButton.layer.cornerRadius = 20
@@ -177,11 +177,11 @@ final class SignInView: UIViewController {
             spread: -20
         )
         
-        signUpCaption.text = "No account yet?"
+        signUpCaption.text = L10n.signInSignUpCaption
         signUpCaption.textColor = Color.dustyGray
         signUpCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
-        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitle(L10n.signInSignUp, for: .normal)
         signUpButton.setTitleColor(Color.blazeOrange, for: .normal)
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
