@@ -1,0 +1,11 @@
+strings:
+  inputs: Parylation/Parylation/Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Parylation/Parylation/Generated/Strings.swift
+xcassets:
+  inputs:
+    - Parylation/Parylation/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Parylation/Parylation/Generated/Assets.swift
