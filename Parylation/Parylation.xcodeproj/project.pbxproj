@@ -115,6 +115,10 @@
 		9C90F8C3259732BD0052080B /* TaskEditViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */; };
 		9C90F8EB2597883E0052080B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F8EE2597883E0052080B /* Localizable.strings */; };
 		9C90F8EC2597883E0052080B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F8EE2597883E0052080B /* Localizable.strings */; };
+		9C90F90F2597DFD90052080B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F90D2597DFD90052080B /* Assets.swift */; };
+		9C90F9102597DFD90052080B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F90D2597DFD90052080B /* Assets.swift */; };
+		9C90F9112597DFD90052080B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F90E2597DFD90052080B /* Strings.swift */; };
+		9C90F9122597DFD90052080B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F90E2597DFD90052080B /* Strings.swift */; };
 		9CADB571249E0E8A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; };
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
@@ -277,6 +281,8 @@
 		9C90F8A8259731490052080B /* TaskEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModel.swift; sourceTree = "<group>"; };
 		9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewInfo.swift; sourceTree = "<group>"; };
 		9C90F8ED2597883E0052080B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C90F90D2597DFD90052080B /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		9C90F90E2597DFD90052080B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		9C90F9192597E7C50052080B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,6 +386,7 @@
 				9C207EA62470B73C0022AC92 /* Data */,
 				9CADB5AB249ECB6B00901E45 /* Networking */,
 				9C5C6564249A5ED200E9D889 /* Resources */,
+				9C90F90C2597DFBD0052080B /* Generated */,
 				9C207E8D2470B3680022AC92 /* Presentation */,
 				9CADB5B8249F59DF00901E45 /* Utils */,
 				9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */,
@@ -552,6 +559,15 @@
 				9C90F8A8259731490052080B /* TaskEditViewModel.swift */,
 			);
 			path = TaskEdit;
+			sourceTree = "<group>";
+		};
+		9C90F90C2597DFBD0052080B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9C90F90D2597DFD90052080B /* Assets.swift */,
+				9C90F90E2597DFD90052080B /* Strings.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		9CADB5AB249ECB6B00901E45 /* Networking */ = {
@@ -979,6 +995,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C90F86925969A0F0052080B /* TaskContract.swift in Sources */,
+				9C90F90F2597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852D24EFE321006E28BD /* Color.swift in Sources */,
@@ -1023,6 +1040,7 @@
 				9C90F86B25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE52258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
 				9C90F8862596B63F0052080B /* AlertContract.swift in Sources */,
+				9C90F9112597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
@@ -1062,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */,
+				9C90F9102597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852E24EFE321006E28BD /* Color.swift in Sources */,
@@ -1106,6 +1125,7 @@
 				9C90F86C25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE53258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
 				9C90F8872596B63F0052080B /* AlertContract.swift in Sources */,
+				9C90F9122597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
