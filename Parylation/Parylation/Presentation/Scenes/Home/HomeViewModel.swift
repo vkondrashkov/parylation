@@ -45,8 +45,11 @@ final class HomeViewModelImpl: HomeViewModel {
 
         let createSubject = PublishSubject<Void>()
         createSubject
-            .flatMap { _ in interactor.createTask(task: Task(id: "", title: "Foo", taskDescription: "Bar", date: Date()))}
-            .bind(to: reloadSubject)
+//            .flatMap { _ in interactor.createTask(task: Task(id: UUID().uuidString, title: "Foo", taskDescription: "Bar", date: Date()))}
+//            .bind(to: reloadSubject)
+            .subscribe(onNext: {
+                router.showTaskCreation()
+            })
             .disposed(by: disposeBag)
 
         let selectSubject = PublishSubject<IndexPath>()
@@ -62,7 +65,9 @@ final class HomeViewModelImpl: HomeViewModel {
                 }
                 return items[indexPath.row]
             }
-            .subscribe(onNext: { _ in print("selected item") })
+            .subscribe(onNext: { task in
+                router.showTask(taskId: task.id)
+            })
             .disposed(by: disposeBag)
 
         let deleteSubject = PublishSubject<IndexPath>()

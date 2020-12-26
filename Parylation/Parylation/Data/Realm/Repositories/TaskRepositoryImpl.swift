@@ -22,16 +22,40 @@ final class TaskRepositoryImpl: TaskRepository {
         return .just(tasks.map { $0.toDomain() })
     }
 
+    func fetchTask(taskId: String) -> Single<Task> {
+        return .create { [weak self] single in
+            guard let self = self else {
+                single(.error(TaskRepositoryError.failed))
+                return Disposables.create()
+            }
+            let fetched = self.realm.objects(RealmTask.self)
+                .filter { $0.taskId == taskId }
+                .first
+            guard let task = fetched else {
+                single(.error(TaskRepositoryError.failed))
+                return Disposables.create()
+            }
+            single(.success(task.toDomain()))
+            return Disposables.create()
+        }
+    }
+
     func save(task: Task) -> Single<Void> {
         return .create { [weak self] single in
             guard let self = self else {
                 single(.error(TaskRepositoryError.failed))
                 return Disposables.create()
             }
+            let fetchedId = self.realm.objects(RealmTask.self)
+                .filter { $0.taskId == task.id }
+                .first
+                .map { $0.id }
             let realmTask = RealmTask.from(task: task)
+            // If task already in database, update its values
+            realmTask.id = fetchedId ?? realmTask.id
             do {
                 try self.realm.write {
-                    self.realm.add(realmTask)
+                    self.realm.add(realmTask, update: .modified)
                 }
             } catch {
                 single(.error(TaskRepositoryError.failed))

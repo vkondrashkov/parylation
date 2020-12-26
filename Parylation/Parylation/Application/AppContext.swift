@@ -17,9 +17,17 @@ typealias AuthContext = RootContainer
     & SignUpContainer
     & SignInContainer
 
-typealias MainContext = DashboardContainer
+typealias HomeContext = DashboardContainer
     & HomeContainer
-    & SettingsContainer
+    & TaskContainer
+    & TaskEditContainer
+
+// TODO: typealias CalendarContext
+
+typealias SettingsContext = SettingsContainer
+
+typealias MainContext = HomeContext
+    & SettingsContext
 
 typealias AppContext = AuthContext & MainContext // & AnalyticsContext
 

@@ -15,6 +15,7 @@ public enum TaskRepositoryError: Error {
 
 public protocol TaskRepository {
     func fetchTasks() -> Single<[Task]>
+    func fetchTask(taskId: String) -> Single<Task>
     func save(task: Task) -> Single<Void>
     func deleteTask(taskId: String) -> Single<Void>
 }

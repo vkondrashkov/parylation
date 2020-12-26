@@ -75,6 +75,44 @@
 		9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8572594D3680052080B /* TaskRepositorySpec.swift */; };
+		9C90F86925969A0F0052080B /* TaskContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86325969A0F0052080B /* TaskContract.swift */; };
+		9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86325969A0F0052080B /* TaskContract.swift */; };
+		9C90F86B25969A0F0052080B /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86425969A0F0052080B /* TaskRouter.swift */; };
+		9C90F86C25969A0F0052080B /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86425969A0F0052080B /* TaskRouter.swift */; };
+		9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86525969A0F0052080B /* TaskBuilder.swift */; };
+		9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86525969A0F0052080B /* TaskBuilder.swift */; };
+		9C90F87125969A0F0052080B /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86725969A0F0052080B /* TaskView.swift */; };
+		9C90F87225969A0F0052080B /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86725969A0F0052080B /* TaskView.swift */; };
+		9C90F87325969A0F0052080B /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86825969A0F0052080B /* TaskViewModel.swift */; };
+		9C90F87425969A0F0052080B /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F86825969A0F0052080B /* TaskViewModel.swift */; };
+		9C90F87B2596A13F0052080B /* TaskViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F87A2596A13F0052080B /* TaskViewInfo.swift */; };
+		9C90F87C2596A13F0052080B /* TaskViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F87A2596A13F0052080B /* TaskViewInfo.swift */; };
+		9C90F8862596B63F0052080B /* AlertContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8802596B63F0052080B /* AlertContract.swift */; };
+		9C90F8872596B63F0052080B /* AlertContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8802596B63F0052080B /* AlertContract.swift */; };
+		9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8812596B63F0052080B /* AlertRouter.swift */; };
+		9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8812596B63F0052080B /* AlertRouter.swift */; };
+		9C90F88A2596B63F0052080B /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8822596B63F0052080B /* AlertBuilder.swift */; };
+		9C90F88B2596B63F0052080B /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8822596B63F0052080B /* AlertBuilder.swift */; };
+		9C90F88E2596B63F0052080B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8842596B63F0052080B /* AlertView.swift */; };
+		9C90F88F2596B63F0052080B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8842596B63F0052080B /* AlertView.swift */; };
+		9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8852596B63F0052080B /* AlertViewModel.swift */; };
+		9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8852596B63F0052080B /* AlertViewModel.swift */; };
+		9C90F8952596B6700052080B /* AlertViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8942596B6700052080B /* AlertViewInfo.swift */; };
+		9C90F8962596B6700052080B /* AlertViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8942596B6700052080B /* AlertViewInfo.swift */; };
+		9C90F89F2596C3700052080B /* ClosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F89E2596C3700052080B /* ClosureButton.swift */; };
+		9C90F8A02596C3700052080B /* ClosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F89E2596C3700052080B /* ClosureButton.swift */; };
+		9C90F8A92597314A0052080B /* TaskEditContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A3259731490052080B /* TaskEditContract.swift */; };
+		9C90F8AA2597314A0052080B /* TaskEditContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A3259731490052080B /* TaskEditContract.swift */; };
+		9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A4259731490052080B /* TaskEditRouter.swift */; };
+		9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A4259731490052080B /* TaskEditRouter.swift */; };
+		9C90F8AD2597314A0052080B /* TaskEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A5259731490052080B /* TaskEditBuilder.swift */; };
+		9C90F8AE2597314A0052080B /* TaskEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A5259731490052080B /* TaskEditBuilder.swift */; };
+		9C90F8B12597314A0052080B /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A7259731490052080B /* TaskEditView.swift */; };
+		9C90F8B22597314A0052080B /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A7259731490052080B /* TaskEditView.swift */; };
+		9C90F8B32597314A0052080B /* TaskEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A8259731490052080B /* TaskEditViewModel.swift */; };
+		9C90F8B42597314A0052080B /* TaskEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8A8259731490052080B /* TaskEditViewModel.swift */; };
+		9C90F8C2259732BD0052080B /* TaskEditViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */; };
+		9C90F8C3259732BD0052080B /* TaskEditViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */; };
 		9CADB571249E0E8A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; };
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
@@ -217,6 +255,25 @@
 		9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9C90F8572594D3680052080B /* TaskRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositorySpec.swift; sourceTree = "<group>"; };
+		9C90F86325969A0F0052080B /* TaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContract.swift; sourceTree = "<group>"; };
+		9C90F86425969A0F0052080B /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
+		9C90F86525969A0F0052080B /* TaskBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBuilder.swift; sourceTree = "<group>"; };
+		9C90F86725969A0F0052080B /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		9C90F86825969A0F0052080B /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		9C90F87A2596A13F0052080B /* TaskViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewInfo.swift; sourceTree = "<group>"; };
+		9C90F8802596B63F0052080B /* AlertContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContract.swift; sourceTree = "<group>"; };
+		9C90F8812596B63F0052080B /* AlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRouter.swift; sourceTree = "<group>"; };
+		9C90F8822596B63F0052080B /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		9C90F8842596B63F0052080B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		9C90F8852596B63F0052080B /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		9C90F8942596B6700052080B /* AlertViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfo.swift; sourceTree = "<group>"; };
+		9C90F89E2596C3700052080B /* ClosureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureButton.swift; sourceTree = "<group>"; };
+		9C90F8A3259731490052080B /* TaskEditContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditContract.swift; sourceTree = "<group>"; };
+		9C90F8A4259731490052080B /* TaskEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditRouter.swift; sourceTree = "<group>"; };
+		9C90F8A5259731490052080B /* TaskEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditBuilder.swift; sourceTree = "<group>"; };
+		9C90F8A7259731490052080B /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		9C90F8A8259731490052080B /* TaskEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModel.swift; sourceTree = "<group>"; };
+		9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewInfo.swift; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
@@ -347,12 +404,15 @@
 		9C207E902470B3E20022AC92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9C90F87F2596B6310052080B /* Alert */,
 				9C207E972470B4850022AC92 /* Root */,
 				9C67852F24EFEC93006E28BD /* Welcome */,
 				9C5C657A249A65C400E9D889 /* SignUp */,
 				9CEB58D424F05DDF008B835A /* SignIn */,
 				9C207EAF247169280022AC92 /* Dashboard */,
 				9CEB58F424F13419008B835A /* Home */,
+				9C90F862259699E40052080B /* Task */,
+				9C90F8A22597312E0052080B /* TaskEdit */,
 				9CBB9B5B24F5044C005EF51A /* Settings */,
 			);
 			path = Scenes;
@@ -362,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				9C67852C24EFE321006E28BD /* Color.swift */,
+				9C90F89E2596C3700052080B /* ClosureButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -447,6 +508,45 @@
 				9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */,
 			);
 			path = "UIKit+Utils";
+			sourceTree = "<group>";
+		};
+		9C90F862259699E40052080B /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				9C90F87A2596A13F0052080B /* TaskViewInfo.swift */,
+				9C90F86325969A0F0052080B /* TaskContract.swift */,
+				9C90F86425969A0F0052080B /* TaskRouter.swift */,
+				9C90F86525969A0F0052080B /* TaskBuilder.swift */,
+				9C90F86725969A0F0052080B /* TaskView.swift */,
+				9C90F86825969A0F0052080B /* TaskViewModel.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		9C90F87F2596B6310052080B /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9C90F8942596B6700052080B /* AlertViewInfo.swift */,
+				9C90F8802596B63F0052080B /* AlertContract.swift */,
+				9C90F8812596B63F0052080B /* AlertRouter.swift */,
+				9C90F8822596B63F0052080B /* AlertBuilder.swift */,
+				9C90F8842596B63F0052080B /* AlertView.swift */,
+				9C90F8852596B63F0052080B /* AlertViewModel.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		9C90F8A22597312E0052080B /* TaskEdit */ = {
+			isa = PBXGroup;
+			children = (
+				9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */,
+				9C90F8A3259731490052080B /* TaskEditContract.swift */,
+				9C90F8A4259731490052080B /* TaskEditRouter.swift */,
+				9C90F8A5259731490052080B /* TaskEditBuilder.swift */,
+				9C90F8A7259731490052080B /* TaskEditView.swift */,
+				9C90F8A8259731490052080B /* TaskEditViewModel.swift */,
+			);
+			path = TaskEdit;
 			sourceTree = "<group>";
 		};
 		9CADB5AB249ECB6B00901E45 /* Networking */ = {
@@ -870,12 +970,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C90F86925969A0F0052080B /* TaskContract.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852D24EFE321006E28BD /* Color.swift in Sources */,
+				9C90F8A92597314A0052080B /* TaskEditContract.swift in Sources */,
 				9CEB590524F1345D008B835A /* HomeView.swift in Sources */,
 				9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
+				9C90F8952596B6700052080B /* AlertViewInfo.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
@@ -884,6 +987,7 @@
 				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE49258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
+				9C90F8C2259732BD0052080B /* TaskEditViewInfo.swift in Sources */,
 				9C207EB1247169410022AC92 /* DashboardContract.swift in Sources */,
 				9CBB9BBE24F50771005EF51A /* SettingsBuilder.swift in Sources */,
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
@@ -891,25 +995,39 @@
 				9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
 				9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9C90F89F2596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
 				9C11CE57258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C11CE44258FE5CA00E99F9E /* RealmTask.swift in Sources */,
+				9C90F8AD2597314A0052080B /* TaskEditBuilder.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */,
 				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
+				9C90F87B2596A13F0052080B /* TaskViewInfo.swift in Sources */,
 				9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */,
+				9C90F88E2596B63F0052080B /* AlertView.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
+				9C90F86B25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE52258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
+				9C90F8862596B63F0052080B /* AlertContract.swift in Sources */,
+				9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
+				9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
+				9C90F8B32597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
+				9C90F8B12597314A0052080B /* TaskEditView.swift in Sources */,
+				9C90F87325969A0F0052080B /* TaskViewModel.swift in Sources */,
+				9C90F87125969A0F0052080B /* TaskView.swift in Sources */,
 				9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
@@ -922,6 +1040,7 @@
 				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9C90F88A2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
@@ -934,12 +1053,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
 				9C67852E24EFE321006E28BD /* Color.swift in Sources */,
+				9C90F8AA2597314A0052080B /* TaskEditContract.swift in Sources */,
 				9CEB590624F1345D008B835A /* HomeView.swift in Sources */,
 				9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
+				9C90F8962596B6700052080B /* AlertViewInfo.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
@@ -948,6 +1070,7 @@
 				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE4A258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
+				9C90F8C3259732BD0052080B /* TaskEditViewInfo.swift in Sources */,
 				9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */,
 				9CBB9BBF24F50771005EF51A /* SettingsBuilder.swift in Sources */,
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
@@ -955,25 +1078,39 @@
 				9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
 				9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
+				9C90F8A02596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
 				9C11CE58258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */,
+				9C90F8AE2597314A0052080B /* TaskEditBuilder.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
+				9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */,
 				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
+				9C90F87C2596A13F0052080B /* TaskViewInfo.swift in Sources */,
 				9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */,
+				9C90F88F2596B63F0052080B /* AlertView.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
+				9C90F86C25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE53258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
+				9C90F8872596B63F0052080B /* AlertContract.swift in Sources */,
+				9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
+				9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,
+				9C90F8B42597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
+				9C90F8B22597314A0052080B /* TaskEditView.swift in Sources */,
+				9C90F87425969A0F0052080B /* TaskViewModel.swift in Sources */,
+				9C90F87225969A0F0052080B /* TaskView.swift in Sources */,
 				9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
@@ -986,6 +1123,7 @@
 				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9C90F88B2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
