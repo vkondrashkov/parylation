@@ -17,7 +17,6 @@ final class SignUpViewModelImpl: SignUpViewModel {
     let email: AnyObserver<String>
     let password: AnyObserver<String>
     let confirmPassword: AnyObserver<String>
-    let didEndEditingTrigger: AnyObserver<SignUpField>
     let signUpTrigger: AnyObserver<Void>
     let signInTrigger: AnyObserver<Void>
 
@@ -33,8 +32,6 @@ final class SignUpViewModelImpl: SignUpViewModel {
     ) {
         self.interactor = interactor
         self.router = router
-
-        let didEndEditingSubject = PublishSubject<SignUpField>()
 
         let emailSubject = PublishSubject<String>()
         let emailValidation = emailSubject
@@ -74,7 +71,8 @@ final class SignUpViewModelImpl: SignUpViewModel {
             .bind(to: confirmPasswordErrorSubject)
             .disposed(by: disposeBag)
 
-        let validation = Observable.combineLatest(emailValidation, passwordValidation, confirmPasswordValidation)
+        let validation = Observable
+            .combineLatest(emailValidation, passwordValidation, confirmPasswordValidation)
 
         let signUpSubject = PublishSubject<Void>()
         signUpSubject
@@ -102,7 +100,6 @@ final class SignUpViewModelImpl: SignUpViewModel {
         email = emailSubject.asObserver()
         password = passwordSubject.asObserver()
         confirmPassword = confirmPasswordSubject.asObserver()
-        didEndEditingTrigger = didEndEditingSubject.asObserver()
         signUpTrigger = signUpSubject.asObserver()
         signInTrigger = signInSubject.asObserver()
 

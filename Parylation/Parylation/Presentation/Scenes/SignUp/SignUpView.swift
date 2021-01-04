@@ -245,29 +245,14 @@ final class SignUpView: UIViewController {
             .bind(to: viewModel.email)
             .disposed(by: disposeBag)
 
-        emailTextField.rx.controlEvent(.editingDidEnd)
-            .map { SignUpField.email }
-            .bind(to: viewModel.didEndEditingTrigger)
-            .disposed(by: disposeBag)
-
         passwordTextField.rx.text
             .compactMap { $0 }
             .bind(to: viewModel.password)
             .disposed(by: disposeBag)
 
-        passwordTextField.rx.controlEvent(.editingDidEnd)
-            .map { SignUpField.password }
-            .bind(to: viewModel.didEndEditingTrigger)
-            .disposed(by: disposeBag)
-
         confirmPasswordTextField.rx.text
             .compactMap { $0 }
             .bind(to: viewModel.confirmPassword)
-            .disposed(by: disposeBag)
-
-        confirmPasswordTextField.rx.controlEvent(.editingDidEnd)
-            .map { SignUpField.confirmPassword }
-            .bind(to: viewModel.didEndEditingTrigger)
             .disposed(by: disposeBag)
 
         signUpButton.rx.tap
@@ -278,9 +263,6 @@ final class SignUpView: UIViewController {
             .bind(to: viewModel.signInTrigger)
             .disposed(by: disposeBag)
 
-//        viewModel.signUpEnabled
-//            .drive(onNext: updateSignUpButton)
-//            .disposed(by: disposeBag)
         viewModel.emailError
             .drive(emailErrorLabel.rx.text)
             .disposed(by: disposeBag)

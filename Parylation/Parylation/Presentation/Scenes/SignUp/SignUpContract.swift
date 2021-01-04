@@ -28,17 +28,10 @@ protocol SignUpRouter: AnyObject {
     func finishSignUp()
 }
 
-enum SignUpField {
-    case email
-    case password
-    case confirmPassword
-}
-
 protocol SignUpViewModel {
     var email: AnyObserver<String> { get }
     var password: AnyObserver<String> { get }
     var confirmPassword: AnyObserver<String> { get }
-    var didEndEditingTrigger: AnyObserver<SignUpField> { get }
     var signUpTrigger: AnyObserver<Void> { get }
     var signInTrigger: AnyObserver<Void> { get }
 

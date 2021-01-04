@@ -30,6 +30,10 @@ protocol SignInRouter: AnyObject {
 }
 
 protocol SignInViewModel {
+    var email: AnyObserver<String> { get }
+    var password: AnyObserver<String> { get }
     var signInTrigger: AnyObserver<Void> { get }
     var signUpTrigger: AnyObserver<Void> { get }
+
+    var emailError: Driver<String?> { get }
 }
