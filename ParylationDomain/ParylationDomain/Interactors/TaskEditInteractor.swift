@@ -15,13 +15,20 @@ public enum TaskEditInteractorError: Error {
 public protocol TaskEditInteractor {
     func fetchTask(taskId: String) -> Single<Task>
     func save(task: Task) -> Single<Void>
+    func validate(title: String) -> Single<Bool>
+    func validate(description: String) -> Single<Bool>
 }
 
 public final class TaskEditInteractorImpl {
     private let taskRepository: TaskRepository
+    private let credentialsValidatorUseCase: CredentialsValidatorUseCase
 
-    public init(taskRepository: TaskRepository) {
+    public init(
+        taskRepository: TaskRepository,
+        credentialsValidatorUseCase: CredentialsValidatorUseCase
+    ) {
         self.taskRepository = taskRepository
+        self.credentialsValidatorUseCase = credentialsValidatorUseCase
     }
 }
 
@@ -40,6 +47,16 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
 
     public func save(task: Task) -> Single<Void> {
         return taskRepository.save(task: task)
+            .catchError { _ in .error(TaskEditInteractorError.failed) }
+    }
+
+    public func validate(title: String) -> Single<Bool> {
+        return credentialsValidatorUseCase.validate(taskTitle: title)
+            .catchError { _ in .error(TaskEditInteractorError.failed) }
+    }
+
+    public func validate(description: String) -> Single<Bool> {
+        return credentialsValidatorUseCase.validate(taskDescription: description)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 }
