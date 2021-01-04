@@ -64,6 +64,12 @@ internal enum L10n {
   internal static let signUpConfirmPassword = L10n.tr("Localizable", "sign_up_confirm_password")
   /// Email
   internal static let signUpEmail = L10n.tr("Localizable", "sign_up_email")
+  /// Password does not match
+  internal static let signUpInvalidConfirmPassword = L10n.tr("Localizable", "sign_up_invalid_confirm_password")
+  /// Invalid email
+  internal static let signUpInvalidEmail = L10n.tr("Localizable", "sign_up_invalid_email")
+  /// Invalid password
+  internal static let signUpInvalidPassword = L10n.tr("Localizable", "sign_up_invalid_password")
   /// Password
   internal static let signUpPassword = L10n.tr("Localizable", "sign_up_password")
   /// Sign In
