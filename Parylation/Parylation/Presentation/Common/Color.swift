@@ -47,4 +47,7 @@ struct Color {
 
     private let shamrock_ = #colorLiteral(red: 0.1177469864, green: 0.8802679181, blue: 0.5776235461, alpha: 1)
     static let shamrock = UIColor(red: 38 / 255.0, green: 222 / 255.0, blue: 129 / 255.0, alpha: 1)
+
+    private let monza_ = #colorLiteral(red: 0.7522448897, green: 0.1044933274, blue: 0.1641886234, alpha: 1)
+    static let monza = UIColor(red: 176 / 255.0, green: 0 / 255.0, blue: 32 / 255.0, alpha: 1)
 }

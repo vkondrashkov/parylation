@@ -25,6 +25,9 @@
 "sign_up_button" = "Sign Up";
 "sign_up_sign_in_caption" = "Already a member?";
 "sign_up_sign_in" = "Sign In";
+"sign_up_invalid_email" = "Invalid email";
+"sign_up_invalid_password" = "Invalid password";
+"sign_up_invalid_confirm_password" = "Password does not match";
 
 // MARK: - Sign In page
 

@@ -25,6 +25,9 @@
 "sign_up_button" = "Зарегистрироваться";
 "sign_up_sign_in_caption" = "Уже зарегистирированы?";
 "sign_up_sign_in" = "Войти";
+"sign_up_invalid_email" = "Неправильный email";
+"sign_up_invalid_password" = "Неправильный пароль";
+"sign_up_invalid_confirm_password" = "Пароли не совпадают";
 
 // MARK: - Sign In page
 
