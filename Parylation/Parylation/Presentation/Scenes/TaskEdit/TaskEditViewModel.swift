@@ -82,7 +82,7 @@ final class TaskEditViewModelImpl: TaskEditViewModel {
         let validation = Observable
             .combineLatest(titleValidation, descriptionValidation)
         let saveSubject = PublishSubject<Void>()
-        saveSubject
+        let task = saveSubject
             .withLatestFrom(validation)
             .filter { $0 && $1 }
             .map { _ in () }
@@ -94,8 +94,22 @@ final class TaskEditViewModelImpl: TaskEditViewModel {
                 taskDescription: $1,
                 date: $2
             )}
+
+        task
             .flatMap { interactor.save(task: $0) }
-            .subscribe(onNext: { router.terminate() })
+            .withLatestFrom(task)
+            .map {
+                return PushNotification(
+                    id: $0.id,
+                    title: $0.title,
+                    body: $0.taskDescription,
+                    date: $0.date,
+                    badge: 1
+                )
+            }
+            .flatMap { interactor.scheduleNotification($0) }
+            .observeOn(MainScheduler.instance)
+            .subscribe { _ in router.terminate() }
             .disposed(by: disposeBag)
 
         willAppearTrigger = willAppearSubject.asObserver()

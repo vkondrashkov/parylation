@@ -29,7 +29,8 @@ extension TaskEditBuilderImpl: TaskEditBuilder {
 
         let interactor = TaskEditInteractorImpl(
             taskRepository: context.taskRepository,
-            credentialsValidatorUseCase: CredentialsValidatorUseCaseImpl()
+            credentialsValidatorUseCase: CredentialsValidatorUseCaseImpl(),
+            pushNotificationsUseCase: context.pushNotificationsUseCase
         )
         let router = TaskEditRouterImpl(
             viewController: view
