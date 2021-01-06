@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
 
         self.window = window
+
+        application.applicationIconBadgeNumber = 0
         
         return true
     }

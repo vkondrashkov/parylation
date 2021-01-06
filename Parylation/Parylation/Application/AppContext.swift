@@ -35,6 +35,7 @@ final class AppContextImpl: AppContext {
     unowned var window: UIWindow
     let authorizationUseCase: AuthorizationUseCase
     let taskRepository: TaskRepository
+    let pushNotificationsUseCase: PushNotificationsUseCase
 
     init(window: UIWindow)  {
         self.window = window
@@ -44,5 +45,6 @@ final class AppContextImpl: AppContext {
             authorizedUserRepository: authorizedUserRepository
         )
         taskRepository = TaskRepositoryImpl(realm: realm)
+        pushNotificationsUseCase = PushNotificationsUseCaseImpl()
     }
 }
