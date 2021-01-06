@@ -17,18 +17,22 @@ public protocol TaskEditInteractor {
     func save(task: Task) -> Single<Void>
     func validate(title: String) -> Single<Bool>
     func validate(description: String) -> Single<Bool>
+    func scheduleNotification(_ notification: PushNotification) -> Single<Void>
 }
 
 public final class TaskEditInteractorImpl {
     private let taskRepository: TaskRepository
     private let credentialsValidatorUseCase: CredentialsValidatorUseCase
+    private let pushNotificationsUseCase: PushNotificationsUseCase
 
     public init(
         taskRepository: TaskRepository,
-        credentialsValidatorUseCase: CredentialsValidatorUseCase
+        credentialsValidatorUseCase: CredentialsValidatorUseCase,
+        pushNotificationsUseCase: PushNotificationsUseCase
     ) {
         self.taskRepository = taskRepository
         self.credentialsValidatorUseCase = credentialsValidatorUseCase
+        self.pushNotificationsUseCase = pushNotificationsUseCase
     }
 }
 
@@ -57,6 +61,11 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
 
     public func validate(description: String) -> Single<Bool> {
         return credentialsValidatorUseCase.validate(taskDescription: description)
+            .catchError { _ in .error(TaskEditInteractorError.failed) }
+    }
+
+    public func scheduleNotification(_ notification: PushNotification) -> Single<Void> {
+        return pushNotificationsUseCase.scheduleNotification(notification)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 }
