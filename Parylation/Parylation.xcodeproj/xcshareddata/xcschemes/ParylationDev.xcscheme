@@ -43,6 +43,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9C5C6568249A602600E9D889"
+               BuildableName = "ParylationDevTests.xctest"
+               BlueprintName = "ParylationDevTests"
+               ReferencedContainer = "container:Parylation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
