@@ -29,18 +29,18 @@ public final class CredentialsValidatorUseCaseImpl: CredentialsValidatorUseCase 
     public init() { }
     
     public func validate(email: String) -> Single<Bool> {
-        let result = email.range(of: emailRegexPattern, options: .regularExpression)
-        return .just(result != nil)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegexPattern)
+        return .just(predicate.evaluate(with: email))
     }
 
     public func validate(username: String) -> Single<Bool> {
-        let result = username.range(of: usernameRegexPattern, options: .regularExpression)
-        return .just(result != nil)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", usernameRegexPattern)
+        return .just(predicate.evaluate(with: username))
     }
 
     public func validate(password: String) -> Single<Bool> {
-        let result = password.range(of: passwordRegexPattern, options: .regularExpression)
-        return .just(result != nil)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegexPattern)
+        return .just(predicate.evaluate(with: password))
     }
 
     public func validate(taskTitle: String) -> Single<Bool> {
