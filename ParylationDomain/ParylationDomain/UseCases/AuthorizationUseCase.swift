@@ -33,7 +33,7 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
     public func isAuthorized() -> Single<Bool> {
         return authorizedUserRepository.fetchUser()
             .map { _ in true }
-            .catchError { _ in .error(AuthorizationUseCaseError.missingData) }
+            .catchError { _ in .just(false) }
     }
     
     public func fetchCurrentUser() -> Single<User> {
