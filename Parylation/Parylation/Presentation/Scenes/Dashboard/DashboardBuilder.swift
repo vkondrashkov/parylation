@@ -26,7 +26,7 @@ extension DashboardBuilderImpl: DashboardBuilder {
         let view = DashboardView()
         
         let homeNavigationController = UINavigationController()
-        let homeTabBarImage = UIImage(named: "dashboard-home")
+        let homeTabBarImage = Asset.dashboardHome.image
         let homeTabBarItem = UITabBarItem(
             title: nil,
             image: homeTabBarImage,
@@ -37,7 +37,7 @@ extension DashboardBuilderImpl: DashboardBuilder {
         
         let calendarNavigationController = UINavigationController()
         calendarNavigationController.setNavigationBarHidden(true, animated: false)
-        let calendarTabBarImage = UIImage(named: "dashboard-calendar")
+        let calendarTabBarImage = Asset.dashboardCalendar.image
         let calendarTabBarItem = UITabBarItem(
             title: nil,
             image: calendarTabBarImage,
@@ -48,7 +48,7 @@ extension DashboardBuilderImpl: DashboardBuilder {
         
         let settingsNavigationController = UINavigationController()
         settingsNavigationController.setNavigationBarHidden(true, animated: false)
-        let profileTabBarImage = UIImage(named: "dashboard-profile")
+        let profileTabBarImage = Asset.dashboardProfile.image
         let profileTabBarItem = UITabBarItem(
             title: nil,
             image: profileTabBarImage,

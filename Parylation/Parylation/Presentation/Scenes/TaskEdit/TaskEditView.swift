@@ -23,10 +23,13 @@ final class TaskEditView: UIViewController {
 
     private let taskTitleCaptionLabel = UILabel()
     private let taskTitleTextField = UITextField()
+
     private let taskDescriptionCaptionLabel = UILabel()
     private let taskDescriptionTextField = UITextField()
+
     private let taskDateCaptionLabel = UILabel()
     private let taskDateTextField = UITextField()
+    private let datePicker = UIDatePicker()
 
     private let iconCaptionLabel = UILabel()
     private let iconContainerView = UIView() // Temp
@@ -35,6 +38,8 @@ final class TaskEditView: UIViewController {
     private let colorContainerView = UIView() // Temp
 
     private let saveButton = UIButton()
+
+    private let toolBar = UIToolbar()
 
     private let disposeBag = DisposeBag()
 
@@ -148,13 +153,13 @@ final class TaskEditView: UIViewController {
     }
 
     private func setupUI() {
-        title = "Edit Task"
+        title = L10n.taskEditPageTitle
         view.backgroundColor = Color.whisper
 
         iconBackgroundView.layer.cornerRadius = 15
         iconBackgroundView.backgroundColor = Color.gigas
 
-        taskTitleCaptionLabel.text = "Title"
+        taskTitleCaptionLabel.text = L10n.taskEditTitle
         taskTitleCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskTitleTextField.backgroundColor = .white
@@ -162,7 +167,7 @@ final class TaskEditView: UIViewController {
         taskTitleTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskTitleTextField.leftViewMode = .always
 
-        taskDescriptionCaptionLabel.text = "Description"
+        taskDescriptionCaptionLabel.text = L10n.taskEditDescription
         taskDescriptionCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskDescriptionTextField.backgroundColor = .white
@@ -170,20 +175,27 @@ final class TaskEditView: UIViewController {
         taskDescriptionTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDescriptionTextField.leftViewMode = .always
 
-        taskDateCaptionLabel.text = "Date"
+        taskDateCaptionLabel.text = L10n.taskEditDate
         taskDateCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         taskDateTextField.backgroundColor = .white
         taskDateTextField.layer.cornerRadius = 15
         taskDateTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDateTextField.leftViewMode = .always
+        taskDateTextField.inputAccessoryView = toolBar
+        taskDateTextField.inputView = datePicker
 
-        iconCaptionLabel.text = "Icon"
+        datePicker.datePickerMode = .dateAndTime
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+
+        iconCaptionLabel.text = L10n.taskEditIcon
         iconCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         iconContainerView.backgroundColor = Color.gray
 
-        colorCaptionLabel.text = "Color"
+        colorCaptionLabel.text = L10n.taskEditColor
         colorCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
         colorContainerView.backgroundColor = Color.gray
@@ -191,7 +203,7 @@ final class TaskEditView: UIViewController {
         saveButton.layer.cornerRadius = 20
         saveButton.backgroundColor = Color.shamrock
         saveButton.setTitleColor(.white, for: .normal)
-        saveButton.setTitle("SAVE", for: .normal)
+        saveButton.setTitle(L10n.taskEditSaveButton.uppercased(), for: .normal)
         saveButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         if #available(iOS 13.0, *) {
             saveButton.layer.cornerCurve = .continuous
@@ -204,6 +216,11 @@ final class TaskEditView: UIViewController {
             blur: 20,
             spread: -20
         )
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonDidTap))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.sizeToFit()
     }
 
     private func bindViewModel() {
@@ -222,9 +239,17 @@ final class TaskEditView: UIViewController {
             .compactMap { $0 }
             .bind(to: viewModel.taskDescription)
             .disposed(by: disposeBag)
-//        taskDateTextField.rx.text
         saveButton.rx.tap
             .bind(to: viewModel.saveTrigger)
+            .disposed(by: disposeBag)
+
+        datePicker.rx.date
+            .map { [weak self] date_ in CommonTextFormatter().dateToString(date_) }
+            .bind(to: taskDateTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        datePicker.rx.date
+            .bind(to: viewModel.taskDate)
             .disposed(by: disposeBag)
     }
 
@@ -237,7 +262,12 @@ final class TaskEditView: UIViewController {
         case .display(let info):
             taskTitleTextField.text = info.title
             taskDescriptionTextField.text = info.taskDescription
-            taskDateTextField.text = info.date.debugDescription
+            taskDateTextField.text = CommonTextFormatter().dateToString(info.date)
+            datePicker.date = info.date
         }
+    }
+
+    @objc private func doneButtonDidTap() {
+        view.endEditing(true)
     }
 }

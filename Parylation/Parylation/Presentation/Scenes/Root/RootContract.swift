@@ -13,6 +13,7 @@ import UIKit
 
 protocol RootContainer {
     var authorizationUseCase: AuthorizationUseCase { get }
+    var pushNotificationsUseCase: PushNotificationsUseCase { get }
 }
 
 protocol RootBuilder: AnyObject {

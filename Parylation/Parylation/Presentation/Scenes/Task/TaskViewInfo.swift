@@ -18,7 +18,7 @@ struct TaskViewInfo {
         return TaskViewInfo(
             title: task.title,
             taskDescription: task.taskDescription,
-            date: task.date.description,
+            date: CommonTextFormatter().dateToString(task.date),
             isCompleted: false
         )
     }

@@ -16,12 +16,19 @@ final class SignUpView: UIViewController {
     private let contentView = UIView()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
+
     private let emailCaptionLabel = UILabel()
+    private let emailErrorLabel = UILabel()
     private let emailTextField = UITextField()
+
     private let passwordCaptionLabel = UILabel()
+    private let passwordErrorLabel = UILabel()
     private let passwordTextField = UITextField()
+
     private let confirmPasswordCaptionLabel = UILabel()
+    private let confirmPasswordErrorLabel = UILabel()
     private let confirmPasswordTextField = UITextField()
+
     private let signUpButton = UIButton()
     private let signInCaption = UILabel()
     private let signInButton = UIButton()
@@ -61,6 +68,12 @@ final class SignUpView: UIViewController {
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
+
+        contentView.addSubview(emailErrorLabel)
+        emailErrorLabel.snp.makeConstraints {
+            $0.centerY.equalTo(emailCaptionLabel)
+            $0.trailing.equalToSuperview()
+        }
         
         contentView.addSubview(emailTextField)
         emailTextField.snp.makeConstraints {
@@ -75,6 +88,12 @@ final class SignUpView: UIViewController {
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
+
+        contentView.addSubview(passwordErrorLabel)
+        passwordErrorLabel.snp.makeConstraints {
+            $0.centerY.equalTo(passwordCaptionLabel)
+            $0.trailing.equalToSuperview()
+        }
         
         contentView.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints {
@@ -88,6 +107,12 @@ final class SignUpView: UIViewController {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(25)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
+        }
+
+        contentView.addSubview(confirmPasswordErrorLabel)
+        confirmPasswordErrorLabel.snp.makeConstraints {
+            $0.centerY.equalTo(confirmPasswordCaptionLabel)
+            $0.trailing.equalToSuperview()
         }
         
         contentView.addSubview(confirmPasswordTextField)
@@ -140,12 +165,18 @@ final class SignUpView: UIViewController {
         titleLabel.text = "🤝"
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        subtitleLabel.text = "Start using Parylation!" // localize
+        subtitleLabel.text = L10n.signUpSubtitle
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        emailCaptionLabel.text = "Email"
+        emailCaptionLabel.text = L10n.signUpEmail
         emailCaptionLabel.textColor = Color.gigas
+
+        emailErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        emailErrorLabel.textColor = Color.monza
+        emailErrorLabel.textAlignment = .right
         
         emailTextField.backgroundColor = .white
         emailTextField.layer.cornerRadius = 15
@@ -155,8 +186,12 @@ final class SignUpView: UIViewController {
         emailTextField.keyboardType = .emailAddress
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        passwordCaptionLabel.text = "Password"
+        passwordCaptionLabel.text = L10n.signUpPassword
         passwordCaptionLabel.textColor = Color.gigas
+
+        passwordErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        passwordErrorLabel.textColor = Color.monza
+        passwordErrorLabel.textAlignment = .right
         
         passwordTextField.backgroundColor = .white
         passwordTextField.layer.cornerRadius = 15
@@ -165,8 +200,12 @@ final class SignUpView: UIViewController {
         passwordTextField.isSecureTextEntry = true
         
         confirmPasswordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        confirmPasswordCaptionLabel.text = "Confirm password"
+        confirmPasswordCaptionLabel.text = L10n.signUpConfirmPassword
         confirmPasswordCaptionLabel.textColor = Color.gigas
+
+        confirmPasswordErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        confirmPasswordErrorLabel.textColor = Color.monza
+        confirmPasswordErrorLabel.textAlignment = .right
         
         confirmPasswordTextField.backgroundColor = .white
         confirmPasswordTextField.layer.cornerRadius = 15
@@ -174,7 +213,7 @@ final class SignUpView: UIViewController {
         confirmPasswordTextField.leftViewMode = .always
         confirmPasswordTextField.isSecureTextEntry = true
         
-        signUpButton.setTitle("SIGN UP", for: .normal)
+        signUpButton.setTitle(L10n.signUpButton.uppercased(), for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.backgroundColor = Color.blazeOrange
         signUpButton.layer.cornerRadius = 20
@@ -191,22 +230,31 @@ final class SignUpView: UIViewController {
             spread: -20
         )
         
-        signInCaption.text = "Already a member?"
+        signInCaption.text = L10n.signUpSignInCaption
         signInCaption.textColor = Color.dustyGray
         signInCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
-        signInButton.setTitle("Sign In", for: .normal)
+        signInButton.setTitle(L10n.signUpSignIn, for: .normal)
         signInButton.setTitleColor(Color.blazeOrange, for: .normal)
         signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     
-    @objc func test() {
-        let test = UIViewController()
-        test.view.backgroundColor = .white
-        navigationController?.pushViewController(test, animated: true)
-    }
-    
     private func bindViewModel() {
+        emailTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: viewModel.email)
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: viewModel.password)
+            .disposed(by: disposeBag)
+
+        confirmPasswordTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: viewModel.confirmPassword)
+            .disposed(by: disposeBag)
+
         signUpButton.rx.tap
             .bind(to: viewModel.signUpTrigger)
             .disposed(by: disposeBag)
@@ -214,5 +262,23 @@ final class SignUpView: UIViewController {
         signInButton.rx.tap
             .bind(to: viewModel.signInTrigger)
             .disposed(by: disposeBag)
+
+        viewModel.emailError
+            .drive(emailErrorLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.passwordError
+            .drive(passwordErrorLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.confirmPasswordError
+            .drive(confirmPasswordErrorLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+
+    private func updateSignUpButton(isEnabled: Bool) {
+        signUpButton.backgroundColor = isEnabled ? Color.blazeOrange : Color.gray
+        signUpButton.isEnabled = isEnabled
+        signUpButton.layer.shadowOpacity = isEnabled ? 0.5 : 0
     }
 }

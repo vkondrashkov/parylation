@@ -16,12 +16,17 @@ final class SignInView: UIViewController {
     private let contentView = UIView()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
+
     private let emailCaptionLabel = UILabel()
+    private let emailErrorLabel = UILabel()
     private let emailTextField = UITextField()
+
     private let passwordCaptionLabel = UILabel()
     private let passwordTextField = UITextField()
+
     private let forgotPasswordButton = UIButton()
     private let signInButton = UIButton()
+    
     private let signUpCaption = UILabel()
     private let signUpButton = UIButton()
 
@@ -59,6 +64,12 @@ final class SignInView: UIViewController {
             $0.top.equalTo(subtitleLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
+        }
+
+        contentView.addSubview(emailErrorLabel)
+        emailErrorLabel.snp.makeConstraints {
+            $0.centerY.equalTo(emailCaptionLabel)
+            $0.trailing.equalToSuperview()
         }
         
         contentView.addSubview(emailTextField)
@@ -132,12 +143,16 @@ final class SignInView: UIViewController {
         titleLabel.text = "👋"
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        subtitleLabel.text = "Great to see you again!" // localize
+        subtitleLabel.text = L10n.signInSubtitle
         subtitleLabel.textColor = .black
         
         emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        emailCaptionLabel.text = "Email"
+        emailCaptionLabel.text = L10n.signInEmail
         emailCaptionLabel.textColor = Color.gigas
+
+        emailErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        emailErrorLabel.textColor = Color.monza
+        emailErrorLabel.textAlignment = .right
         
         emailTextField.backgroundColor = .white
         emailTextField.layer.cornerRadius = 15
@@ -147,7 +162,7 @@ final class SignInView: UIViewController {
         emailTextField.keyboardType = .emailAddress
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        passwordCaptionLabel.text = "Password"
+        passwordCaptionLabel.text = L10n.signInPassword
         passwordCaptionLabel.textColor = Color.gigas
         
         passwordTextField.backgroundColor = .white
@@ -156,11 +171,11 @@ final class SignInView: UIViewController {
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         
-        forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
+        forgotPasswordButton.setTitle(L10n.signInForgotPassword, for: .normal)
         forgotPasswordButton.setTitleColor(Color.blazeOrange, for: .normal)
         forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         
-        signInButton.setTitle("SIGN IN", for: .normal)
+        signInButton.setTitle(L10n.signInButton.uppercased(), for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
         signInButton.backgroundColor = Color.blazeOrange
         signInButton.layer.cornerRadius = 20
@@ -177,22 +192,36 @@ final class SignInView: UIViewController {
             spread: -20
         )
         
-        signUpCaption.text = "No account yet?"
+        signUpCaption.text = L10n.signInSignUpCaption
         signUpCaption.textColor = Color.dustyGray
         signUpCaption.font = .systemFont(ofSize: 14, weight: .regular)
         
-        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitle(L10n.signInSignUp, for: .normal)
         signUpButton.setTitleColor(Color.blazeOrange, for: .normal)
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
     }
     
     private func bindViewModel() {
+        emailTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: viewModel.email)
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: viewModel.password)
+            .disposed(by: disposeBag)
+
         signInButton.rx.tap
             .bind(to: viewModel.signInTrigger)
             .disposed(by: disposeBag)
         
         signUpButton.rx.tap
             .bind(to: viewModel.signUpTrigger)
+            .disposed(by: disposeBag)
+
+        viewModel.emailError
+            .drive(emailErrorLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

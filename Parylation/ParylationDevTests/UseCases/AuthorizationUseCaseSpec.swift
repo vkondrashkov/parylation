@@ -8,76 +8,114 @@
 
 import RealmSwift
 import RxSwift
+import RxTest
 import ParylationDomain
 import Quick
 import Nimble
 
 @testable import ParylationDev
 
-// TODO: Fix in PI-011
 final class AuthorizationUseCaseSpec: QuickSpec {
     override func spec() {
+        var scheduler: TestScheduler!
         var authorizationUseCase: AuthorizationUseCase!
+        var disposeBag: DisposeBag!
         
         beforeSuite {
             Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
         }
+
+        beforeEach {
+            scheduler = TestScheduler(initialClock: 0)
+            authorizationUseCase = AuthorizationUseCaseImpl(
+                authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: try! Realm())
+            )
+            disposeBag = DisposeBag()
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
+        }
         
-        context("when data is correct") {
+        context("when user is authorized") {
             beforeEach {
                 let realm = try! Realm()
                 try! realm.write {
                     let user = User(id: "foo", name: "bar")
                     realm.add(RealmUser.from(user: user))
                 }
-                
-                authorizationUseCase = AuthorizationUseCaseImpl(
-                    authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: try! Realm())
-                )
             }
             
             describe("on isAuthorized()") {
                 it("should return true") {
-//                    let authorized = authorizationUseCase.isAuthorized()
-//                        .waitAndCollectElements()
-//                    expect(authorized.first).to(beTrue())
+                    let observer = scheduler.createObserver(Bool.self)
+                    authorizationUseCase.isAuthorized()
+                        .asObservable()
+                        .bind(to: observer)
+                        .disposed(by: disposeBag)
+
+                    let expected: [Recorded<Event<Bool>>] = [
+                        .next(0, true),
+                        .completed(0)
+                    ]
+
+                    scheduler.start()
+                    expect(observer.events).to(equal(expected))
                 }
             }
             
             describe("on fetchUser()") {
                 it("should return user") {
-//                    let user = authorizationUseCase.fetchCurrentUser()
-//                        .waitAndCollectElements()
-//                    expect(user.first).to(equal(User(id: "foo", name: "bar")))
+                    let observer = scheduler.createObserver(User.self)
+                    authorizationUseCase.fetchCurrentUser()
+                        .asObservable()
+                        .bind(to: observer)
+                        .disposed(by: disposeBag)
+
+                    let expected: [Recorded<Event<User>>] = [
+                        .next(0, User(id: "foo", name: "bar")),
+                        .completed(0)
+                    ]
+
+                    scheduler.start()
+                    expect(observer.events).to(equal(expected))
                 }
             }
         }
         
-        context("when data is incorrect") {
-            beforeEach {
-                let realm = try! Realm()
-                try! realm.write {
-                    realm.deleteAll()
-                }
-                
-                authorizationUseCase = AuthorizationUseCaseImpl(
-                    authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: try! Realm())
-                )
-            }
-            
+        context("when user is not authorized") {
             describe("on isAuthorized()") {
                 it("should return false") {
-//                    let authorized = authorizationUseCase.isAuthorized()
-//                        .waitAndCollectElements()
-//                    expect(authorized.first).to(beFalse())
+                    let observer = scheduler.createObserver(Bool.self)
+                    authorizationUseCase.isAuthorized()
+                        .asObservable()
+                        .bind(to: observer)
+                        .disposed(by: disposeBag)
+
+                    let expected: [Recorded<Event<Bool>>] = [
+                        .next(0, false),
+                        .completed(0)
+                    ]
+
+                    scheduler.start()
+                    expect(observer.events).to(equal(expected))
                 }
             }
             
             describe("on fetchUser()") {
                 it("should return error") {
-//                    let error = authorizationUseCase.fetchCurrentUser()
-//                        .waitAndCollectEvents()
-//                    expect(error.first?.isFailed).to(beTrue())
+                    let observer = scheduler.createObserver(User.self)
+                    authorizationUseCase.fetchCurrentUser()
+                        .asObservable()
+                        .bind(to: observer)
+                        .disposed(by: disposeBag)
+
+                    let expected: [Recorded<Event<User>>] = [
+                        .error(0, AuthorizationUseCaseError.missingData)
+                    ]
+
+                    scheduler.start()
+                    expect(observer.events).to(equal(expected))
                 }
             }
         }

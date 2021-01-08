@@ -105,7 +105,7 @@ final class TaskView: UIViewController {
     }
 
     private func setupUI() {
-        title = "Task"
+        title = L10n.taskPageTitle
         view.backgroundColor = Color.whisper
 
         iconBackgroundView.backgroundColor = Color.gigas
@@ -118,14 +118,14 @@ final class TaskView: UIViewController {
         taskTitleLabel.numberOfLines = 2
 
         descriptionCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        descriptionCaptionLabel.text = "Description"
+        descriptionCaptionLabel.text = L10n.taskDescription
 
         descriptionLabel.font = .systemFont(ofSize: 17)
         descriptionLabel.textAlignment = .justified
         descriptionLabel.numberOfLines = 0
 
         dateCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        dateCaptionLabel.text = "Date"
+        dateCaptionLabel.text = L10n.taskDate
 
         dateLabel.font = .systemFont(ofSize: 17)
 
@@ -147,7 +147,7 @@ final class TaskView: UIViewController {
         editButton.layer.cornerRadius = 20
         editButton.backgroundColor = Color.gigas
         editButton.setTitleColor(.white, for: .normal)
-        editButton.setTitle("EDIT", for: .normal)
+        editButton.setTitle(L10n.taskEditButton.uppercased(), for: .normal)
         editButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         if #available(iOS 13.0, *) {
             editButton.layer.cornerCurve = .continuous

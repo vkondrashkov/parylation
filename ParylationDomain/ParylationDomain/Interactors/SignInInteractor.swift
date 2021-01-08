@@ -14,13 +14,19 @@ public enum SignInInteractorError: Error {
 
 public protocol SignInInteractor {
     func authorize(email: String, password: String) -> Single<User>
+    func validate(email: String) -> Single<Bool>
 }
 
 public final class SignInInteractorImpl {
     private let authorizationUseCase: AuthorizationUseCase
+    private let credentialsValidatorUseCase: CredentialsValidatorUseCase
     
-    public init(authorizationUseCase: AuthorizationUseCase) {
+    public init(
+        authorizationUseCase: AuthorizationUseCase,
+        credentialsValidatorUseCase: CredentialsValidatorUseCase
+    ) {
         self.authorizationUseCase = authorizationUseCase
+        self.credentialsValidatorUseCase = credentialsValidatorUseCase
     }
 }
 
@@ -29,6 +35,11 @@ public final class SignInInteractorImpl {
 extension SignInInteractorImpl: SignInInteractor {
     public func authorize(email: String, password: String) -> Single<User> {
         return authorizationUseCase.authorize(email: email, password: password)
+            .catchError { _ in .error(SignInInteractorError.failed) }
+    }
+
+    public func validate(email: String) -> Single<Bool> {
+        return credentialsValidatorUseCase.validate(email: email)
             .catchError { _ in .error(SignInInteractorError.failed) }
     }
 }

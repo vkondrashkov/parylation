@@ -37,10 +37,10 @@ final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
                     self.realm.add(realmUser)
                 }
             } catch {
-                single(.error(AuthorizationUseCaseError.failed))
+                single(.error(AuthorizedUserRepositoryError.failed))
             }
             guard self.realm.object(ofType: RealmUser.self, forPrimaryKey: realmUser.id) != nil else {
-                single(.error(AuthorizationUseCaseError.failed))
+                single(.error(AuthorizedUserRepositoryError.failed))
                 return Disposables.create()
             }
             single(.success(()))

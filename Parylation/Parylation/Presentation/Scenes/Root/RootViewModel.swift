@@ -26,7 +26,15 @@ final class RootViewModelImpl: RootViewModel {
         self.router = router
 
         let viewDidAppearSubject = PublishSubject<Void>()
-        let isUserAuthorized = viewDidAppearSubject
+        let sharedDidAppear = viewDidAppearSubject
+            .share()
+
+        sharedDidAppear
+            .flatMap { interactor.requestPushNotificationPermissions() }
+            .subscribe(onNext: { _ in })
+            .disposed(by: disposeBag)
+        
+        let isUserAuthorized = sharedDidAppear
             .flatMap { interactor.isUserAuthorized() }
             .catchErrorJustReturn(false)
         
