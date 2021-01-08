@@ -24,6 +24,10 @@
 		9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */; };
 		9C1CAF4A25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */; };
 		9C1CAF4B25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */; };
+		9C1CB00625A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */; };
+		9C1CB00F25A749EA0006B513 /* RootRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */; };
+		9C1CB01325A74A540006B513 /* RootInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB01225A74A540006B513 /* RootInteractorMock.swift */; };
+		9C1CB01725A74B3D0006B513 /* RootViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */; };
 		9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E802470ADB10022AC92 /* Assets.xcassets */; };
 		9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C207E822470ADB10022AC92 /* LaunchScreen.storyboard */; };
@@ -231,6 +235,10 @@
 		9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableItem.swift; sourceTree = "<group>"; };
 		9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSection.swift; sourceTree = "<group>"; };
 		9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextFormatter.swift; sourceTree = "<group>"; };
+		9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorUseCaseSpec.swift; sourceTree = "<group>"; };
+		9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterSpy.swift; sourceTree = "<group>"; };
+		9C1CB01225A74A540006B513 /* RootInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorMock.swift; sourceTree = "<group>"; };
+		9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelSpec.swift; sourceTree = "<group>"; };
 		9C207E742470ADAE0022AC92 /* Parylation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parylation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C207E772470ADAE0022AC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C207E802470ADB10022AC92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -361,6 +369,31 @@
 			path = ContentView;
 			sourceTree = "<group>";
 		};
+		9C1CB00425A73E3C0006B513 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9C90F8572594D3680052080B /* TaskRepositorySpec.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9C1CB00925A749CA0006B513 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */,
+				9C1CB01225A74A540006B513 /* RootInteractorMock.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		9C1CB01525A74B2F0006B513 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9C207E6B2470ADAE0022AC92 = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +521,9 @@
 		9C5C656A249A602600E9D889 /* ParylationDevTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C1CB00925A749CA0006B513 /* TestDoubles */,
+				9C1CB00425A73E3C0006B513 /* Repositories */,
+				9C1CB01525A74B2F0006B513 /* ViewModels */,
 				9CADB5CA24A012F800901E45 /* UseCases */,
 				9C5C656D249A602600E9D889 /* Info.plist */,
 			);
@@ -648,7 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */,
-				9C90F8572594D3680052080B /* TaskRepositorySpec.swift */,
+				9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1170,8 +1206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1CB00F25A749EA0006B513 /* RootRouterSpy.swift in Sources */,
 				9CADB5CC24A0130D00901E45 /* AuthorizationUseCaseSpec.swift in Sources */,
 				9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */,
+				9C1CB01325A74A540006B513 /* RootInteractorMock.swift in Sources */,
+				9C1CB00625A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift in Sources */,
+				9C1CB01725A74B3D0006B513 /* RootViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
