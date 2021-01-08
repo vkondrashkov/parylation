@@ -1,5 +1,10 @@
 # Changelog
 
+## Alpha 0.2.0
+### Added
+
+### Changed
+
 ## Alpha 0.1.0
 ### Added
 - Push notifications on created tasks
