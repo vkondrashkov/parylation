@@ -24,6 +24,25 @@ final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
         }
         return .just(user.toDomain())
     }
+
+    func deleteUser() -> Single<Void> {
+        return .create { [weak self] single in
+            guard let self = self else { return Disposables.create() }
+            let users = self.realm.objects(RealmUser.self)
+            guard let user = users.first else {
+                single(.error(AuthorizedUserRepositoryError.missingData))
+                return Disposables.create()
+            }
+            do {
+                try self.realm.write {
+                    self.realm.delete(user)
+                }
+            } catch {
+                single(.error(AuthorizedUserRepositoryError.failed))
+            }
+            return Disposables.create()
+        }
+    }
     
     func saveUser(user: User) -> Single<Void> {
         return .create { [weak self] single in

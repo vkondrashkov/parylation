@@ -28,28 +28,88 @@ final class SettingsViewModelImpl: SettingsViewModel {
     ) {
         self.interactor = interactor
         self.router = router
-        
+
+        let disposeBag_ = disposeBag
         let items = Observable.just([
             SettingsTableSection(
                 name: L10n.settingsMainSection,
                 items: [
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-change_username"),
                         color: Color.gigas,
                         title: L10n.settingsMainChangeUsername,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Change username"))
+                                .add(.textField({ "vkondrashkov" }, { _ in }))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Cancel",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Accept",
+                                    color: Color.shamrock,
+                                    action: {
+//                                        alertSubject.onNext(())
+                                    }
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     ),
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-change_email"),
                         color: Color.gigas,
                         title: L10n.settingsMainChangeEmail,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Change email"))
+                                .add(.textField({ "vladislav@kondrashkov.com" }, { _ in }))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Cancel",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Accept",
+                                    color: Color.shamrock,
+                                    action: {
+//                                        alertSubject.onNext(())
+                                    }
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     ),
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-change_password"),
                         color: Color.gigas,
                         title: L10n.settingsMainChangePassword,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Change password"))
+                                .add(.text("Old password"))
+                                .add(.textField({ "" }, { _ in }))
+                                .add(.text("New password"))
+                                .add(.textField({ "" }, { _ in }))
+                                .add(.text("Confirm new password"))
+                                .add(.textField({ "" }, { _ in }))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Cancel",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Accept",
+                                    color: Color.shamrock,
+                                    action: {
+//                                        alertSubject.onNext(())
+                                    }
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     )
                 ]
             ),
@@ -57,16 +117,38 @@ final class SettingsViewModelImpl: SettingsViewModel {
                 name: L10n.settingsOthersSection,
                 items: [
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-rate_us"),
                         color: Color.marigoldYellow,
                         title: L10n.settingsOthersRateUs,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Oh no..."))
+                                .add(.text("This feature is not working yet. Try again later ;("))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Ok",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     ),
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-about_us"),
                         color: Color.marigoldYellow,
                         title: L10n.settingsOthersAboutUs,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Oh no..."))
+                                .add(.text("This feature is not working yet. Try again later ;("))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Ok",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     )
                 ]
             ),
@@ -74,10 +156,33 @@ final class SettingsViewModelImpl: SettingsViewModel {
                 name: nil,
                 items: [
                     SettingsTableItem(
-                        icon: nil,
+                        icon: UIImage(named: "settings-signout"),
                         color: Color.blazeOrange,
                         title: L10n.settingsSignOut,
-                        action: nil
+                        action: {
+                            let alertViewInfo = AlertViewInfoBuilderImpl()
+                                .add(.title("Are you sure?"))
+                                .add(.text("This action can't be undone! Do you want to quit anyway?"))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Cancel",
+                                    color: Color.gigas,
+                                    action: nil
+                                )))
+                                .add(.action(AlertViewInfo.ActionInfo(
+                                    name: "Quit",
+                                    color: Color.blazeOrange,
+                                    action: {
+                                        interactor.signout()
+                                            .asObservable()
+                                            .subscribe(onNext: {
+                                                router.terminate()
+                                            })
+                                            .disposed(by: disposeBag_)
+                                    }
+                                )))
+                                .build()
+                            router.showAlert(info: alertViewInfo)
+                        }
                     )
                 ]
             )

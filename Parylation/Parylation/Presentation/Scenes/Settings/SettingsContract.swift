@@ -11,14 +11,20 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import ParylationDomain
 
-protocol SettingsContainer { }
+protocol SettingsContainer {
+    var authorizationUseCase: AuthorizationUseCase { get }
+}
 
 protocol SettingsBuilder {
     func build() -> UIViewController
 }
 
-protocol SettingsRouter: AnyObject { }
+protocol SettingsRouter: AnyObject {
+    func showAlert(info: AlertViewInfo)
+    func terminate()
+}
 
 protocol SettingsViewModel {
     var selectTrigger: AnyObserver<IndexPath> { get }

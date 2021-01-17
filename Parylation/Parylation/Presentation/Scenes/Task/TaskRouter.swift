@@ -36,7 +36,7 @@ extension TaskRouterImpl: TaskRouter {
 
     func showAlert(info: AlertViewInfo) {
         let alertView = alertBuilder.build(info: info)
-        viewController?.present(alertView, animated: true, completion: nil)
+        alertView.selfDisplay()
     }
     
     func terminate() {

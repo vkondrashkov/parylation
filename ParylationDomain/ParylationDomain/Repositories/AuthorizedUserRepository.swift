@@ -16,4 +16,5 @@ public enum AuthorizedUserRepositoryError: Error {
 public protocol AuthorizedUserRepository {
     func fetchUser() -> Single<User>
     func saveUser(user: User) -> Single<Void>
+    func deleteUser() -> Single<Void>
 }

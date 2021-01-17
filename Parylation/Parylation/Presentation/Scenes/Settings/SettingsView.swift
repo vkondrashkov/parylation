@@ -123,9 +123,45 @@ final class SettingsView: UIViewController {
                 return dataSource[section].name
             }
         )
+
         viewModel.sections
             .asObservable()
             .bind(to: settingsTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        settingsTableView.rx.itemSelected
+            .do(onNext: { [weak self] in
+                self?.settingsTableView.deselectRow(at: $0, animated: true)
+            })
+            .bind(to: viewModel.selectTrigger)
+            .disposed(by: disposeBag)
+
+        settingsTableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UITableViewDelegate implementation
+
+extension SettingsView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        let header = UILabel()
+        header.font = .systemFont(ofSize: 17, weight: .semibold)
+
+        view.addSubview(header)
+        header.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.bottom.equalToSuperview().offset(-10)
+        }
+
+        viewModel.sections
+            .drive(onNext: {
+                header.text = $0[section].name
+            })
+            .disposed(by: disposeBag)
+        return view
     }
 }

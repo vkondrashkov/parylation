@@ -18,7 +18,7 @@ struct SettingsTableSection: SectionModelType {
     }
 
     init(original: Self, items: [SettingsTableItem]) {
-        self.name = nil
+        self.name = original.name
         self.items = items
     }
 }

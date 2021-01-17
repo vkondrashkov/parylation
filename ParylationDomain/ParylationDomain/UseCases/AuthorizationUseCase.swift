@@ -18,6 +18,7 @@ public protocol AuthorizationUseCase: AnyObject {
     func fetchCurrentUser() -> Single<User>
     func authorize(email: String, password: String) -> Single<User>
     func register(email: String, password: String) -> Single<User>
+    func signout() -> Single<Void>
     // DEPRECATED
     @available(*, deprecated, message: "Do not use this method")
     func saveUser(user: User) -> Single<Void>
@@ -56,11 +57,14 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
             .map { _ in user }
             .catchError { _ in .error(AuthorizationUseCaseError.failed) }
     }
+
+    public func signout() -> Single<Void> {
+        return authorizedUserRepository.deleteUser()
+            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
+    }
     
     public func saveUser(user: User) -> Single<Void> {
         return authorizedUserRepository.saveUser(user: user)
             .catchError { _ in .error(AuthorizationUseCaseError.failed) }
     }
-    
-    
 }

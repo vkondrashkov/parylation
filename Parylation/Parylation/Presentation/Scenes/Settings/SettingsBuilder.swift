@@ -27,9 +27,13 @@ extension SettingsBuilderImpl: SettingsBuilder {
     func build() -> UIViewController {
         let view = SettingsView()
 
-        let interactor = SettingsInteractorImpl()
+        let interactor = SettingsInteractorImpl(
+            authorizationUseCase: context.authorizationUseCase
+        )
+        let alertBuilder = AlertBuilderImpl()
         let router = SettingsRouterImpl(
-            view: view
+            view: view,
+            alertBuilder: alertBuilder
         )
         let viewModel = SettingsViewModelImpl(
             interactor: interactor,

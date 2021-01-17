@@ -47,7 +47,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentView.backgroundColor = .clear
 
         contentBackgroundView.backgroundColor = Color.whisper
-        contentBackgroundView.layer.cornerRadius = 30
+        contentBackgroundView.layer.cornerRadius = 15
         if #available(iOS 13.0, *) {
             contentBackgroundView.layer.cornerCurve = .continuous
         }
@@ -60,9 +60,11 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentMaskView.backgroundColor = Color.whisper
         contentView.insertSubview(contentMaskView, belowSubview: contentBackgroundView)
         contentBackgroundView.addSubview(iconBackgroundView)
+        iconBackgroundView.layer.cornerRadius = 10
 
         updateLayoutAccording(cellType: cellType)
 
+        iconImageView.contentMode = .scaleAspectFit
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.size.equalTo(25)
@@ -84,6 +86,38 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         }
     }
 
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let color = highlighted ? .lightGray : Color.whisper
+        guard animated else {
+            contentBackgroundView.backgroundColor = color
+            contentMaskView.backgroundColor = color
+            return
+        }
+        UIView.animate(
+            withDuration: 0.25,
+            animations: {
+                self.contentBackgroundView.backgroundColor = color
+                self.contentMaskView.backgroundColor = color
+            }
+        )
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        let color = selected ? .lightGray : Color.whisper
+        guard animated else {
+            contentBackgroundView.backgroundColor = color
+            contentMaskView.backgroundColor = color
+            return
+        }
+        UIView.animate(
+            withDuration: 0.25,
+            animations: {
+                self.contentBackgroundView.backgroundColor = color
+                self.contentMaskView.backgroundColor = color
+            }
+        )
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,6 +137,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
     }
 
     private func updateLayoutAccording(cellType: CellType) {
+        separatorView.isHidden = cellType == .bottom || cellType == .single
         switch cellType {
         case .top:
             contentMaskView.snp.remakeConstraints {
@@ -111,8 +146,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
             }
 
             iconBackgroundView.snp.remakeConstraints {
-                $0.top.leading.equalToSuperview().offset(20)
-                $0.bottom.equalToSuperview().inset(10)
+                $0.top.leading.bottom.equalToSuperview().inset(10)
                 $0.size.equalTo(40)
             }
         case .middle:
@@ -121,8 +155,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
             }
 
             iconBackgroundView.snp.remakeConstraints {
-                $0.leading.equalToSuperview().offset(20)
-                $0.top.bottom.equalToSuperview().inset(10)
+                $0.top.leading.bottom.equalToSuperview().inset(10)
                 $0.size.equalTo(40)
             }
         case .bottom:
@@ -132,8 +165,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
             }
 
             iconBackgroundView.snp.remakeConstraints {
-                $0.bottom.leading.equalToSuperview().inset(20)
-                $0.top.equalToSuperview().inset(10)
+                $0.top.bottom.leading.equalToSuperview().inset(10)
                 $0.size.equalTo(40)
             }
         case .single:
@@ -143,7 +175,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
             }
 
             iconBackgroundView.snp.remakeConstraints {
-                $0.top.bottom.leading.equalToSuperview().inset(20)
+                $0.top.bottom.leading.equalToSuperview().inset(10)
                 $0.size.equalTo(40)
             }
         }

@@ -15,14 +15,16 @@ import UIKit
 protocol AlertContainer { }
 
 protocol AlertBuilder {
-    func build(info: AlertViewInfo) -> UIViewController
+    func build(info: AlertViewInfo) -> SelfDisplayable
 }
 
 protocol AlertRouter: AnyObject {
+    func show()
     func terminate()
 }
 
 protocol AlertViewModel {
+    var showTrigger: AnyObserver<Void> { get }
     var terminateTrigger: AnyObserver<Void> { get }
 
     var info: Driver<AlertViewInfo> { get }
