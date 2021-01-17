@@ -164,6 +164,10 @@
 		9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
 		9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
 		9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
+		9CD38E2725B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
+		9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
+		9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
+		9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -315,6 +319,8 @@
 		9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfoBuilder.swift; sourceTree = "<group>"; };
+		9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDisplayable.swift; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -471,6 +477,7 @@
 				9C67852C24EFE321006E28BD /* Color.swift */,
 				9C90F89E2596C3700052080B /* ClosureButton.swift */,
 				9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */,
+				9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -584,6 +591,7 @@
 				9C90F8822596B63F0052080B /* AlertBuilder.swift */,
 				9C90F8842596B63F0052080B /* AlertView.swift */,
 				9C90F8852596B63F0052080B /* AlertViewModel.swift */,
+				9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1045,6 +1053,7 @@
 				9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9C90F8952596B6700052080B /* AlertViewInfo.swift in Sources */,
+				9CD38E2725B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
@@ -1059,6 +1068,7 @@
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
 				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
 				9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */,
 				9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F89F2596C3700052080B /* ClosureButton.swift in Sources */,
@@ -1131,6 +1141,7 @@
 				9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
 				9C90F8962596B6700052080B /* AlertViewInfo.swift in Sources */,
+				9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
@@ -1145,6 +1156,7 @@
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
 				9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */,
 				9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */,
 				9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F8A02596C3700052080B /* ClosureButton.swift in Sources */,

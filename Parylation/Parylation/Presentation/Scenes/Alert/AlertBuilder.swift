@@ -23,7 +23,7 @@ final class AlertBuilderImpl {
 // MARK: - AlertBuilder implementation
 
 extension AlertBuilderImpl: AlertBuilder {
-    func build(info: AlertViewInfo) -> UIViewController {
+    func build(info: AlertViewInfo) -> SelfDisplayable {
         let view = AlertView()
         view.modalPresentationStyle = .overCurrentContext
         view.modalTransitionStyle = .crossDissolve

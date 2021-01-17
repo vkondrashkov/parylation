@@ -15,6 +15,7 @@ final class AlertViewModelImpl: AlertViewModel {
     private let router: AlertRouter
     private let viewInfo: AlertViewInfo
 
+    let showTrigger: AnyObserver<Void>
     let terminateTrigger: AnyObserver<Void>
 
     let info: Driver<AlertViewInfo>
@@ -28,6 +29,13 @@ final class AlertViewModelImpl: AlertViewModel {
         self.router = router
         self.viewInfo = viewInfo
 
+        let showSubject = PublishSubject<Void>()
+        showSubject
+            .subscribe(onNext: {
+                router.show()
+            })
+            .disposed(by: disposeBag)
+
         let terminateSubject = PublishSubject<Void>()
         terminateSubject
             .subscribe(onNext: {
@@ -35,9 +43,10 @@ final class AlertViewModelImpl: AlertViewModel {
             })
             .disposed(by: disposeBag)
 
+        showTrigger = showSubject.asObserver()
         terminateTrigger = terminateSubject.asObserver()
 
         info = Observable.just(viewInfo)
-            .asDriver(onErrorJustReturn: AlertViewInfo(title: "", message: "", actions: []))
+            .asDriver(onErrorJustReturn: AlertViewInfo(content: [], actions: []))
     }
 }

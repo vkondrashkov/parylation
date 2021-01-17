@@ -17,8 +17,7 @@ final class AlertView: UIViewController {
 
     private let maskView = UIView()
     private let contentView = UIView()
-    private let titleLabel = UILabel()
-    private let messageLabel = UILabel()
+    private let contentContainerView = UIStackView()
     private let actionsContainerView = UIStackView()
 
     private let disposeBag = DisposeBag()
@@ -37,20 +36,14 @@ final class AlertView: UIViewController {
             $0.centerY.equalToSuperview()
         }
 
-        contentView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
+        contentView.addSubview(contentContainerView)
+        contentContainerView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview().inset(20)
-        }
-
-        contentView.addSubview(messageLabel)
-        messageLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
         }
 
         contentView.addSubview(actionsContainerView)
         actionsContainerView.snp.makeConstraints {
-            $0.top.equalTo(messageLabel.snp.bottom).offset(30)
+            $0.top.equalTo(contentContainerView.snp.bottom).offset(30)
             $0.leading.trailing.bottom.equalToSuperview().inset(20)
         }
     }
@@ -65,33 +58,99 @@ final class AlertView: UIViewController {
     private func setupUI() {
         maskView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Color.whisper
         contentView.layer.cornerRadius = 20
 
-        titleLabel.textAlignment = .center
-        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
-
-        messageLabel.textAlignment = .justified
-        messageLabel.font = .systemFont(ofSize: 17)
-        messageLabel.numberOfLines = 0
+        contentContainerView.alignment = .fill
+        contentContainerView.axis = .vertical
+        contentContainerView.distribution = .fill
+        contentContainerView.spacing = 10
 
         actionsContainerView.alignment = .fill
         actionsContainerView.axis = .horizontal
-        actionsContainerView.distribution = .fillProportionally
+        actionsContainerView.distribution = .fillEqually
         actionsContainerView.spacing = 10
     }
 
     private func bindViewModel() {
+//        rx.methodInvoked(#selector(AlertView.selfDisplay))
+//            .map { _ in () }
+//            .bind(to: viewModel.showTrigger)
+//            .disposed(by: disposeBag)
+
         viewModel.info
             .drive(onNext: { [weak self] info in
-                self?.titleLabel.text = info.title
-                self?.messageLabel.text = info.message
+                self?.buildContent(info.content)
                 self?.buildActions(info.actions)
             })
             .disposed(by: disposeBag)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
-        view.addGestureRecognizer(tapGesture)
+        maskView.addGestureRecognizer(tapGesture)
+    }
+
+    private func buildContent(_ content: [AlertViewInfoItem]) {
+        contentContainerView.arrangedSubviews.forEach {
+            contentContainerView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        content.forEach { item in
+            let itemView: UIView
+            switch item {
+            case .action:
+                debugPrint("⛔️ Actions shouldn't be placed inside Content!")
+                itemView = UIView()
+            case .text(let text):
+                itemView = buildText(text)
+            case .textField(let textProvider, let textConsumer):
+                itemView = buildTextField(textProvider, textConsumer)
+            case .title(let title):
+                itemView = buildTitle(title)
+            case .toggle(let switchProvider, let switchConsumer):
+                itemView = buildToggle(switchProvider, switchConsumer)
+            case .combined(let items):
+                itemView = UIView() // TODO
+            }
+//            itemView.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
+            contentContainerView.addArrangedSubview(itemView)
+        }
+    }
+
+    private func buildTitle(_ text: String) -> UIView {
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.text = text
+        return titleLabel
+    }
+
+    private func buildText(_ text: String) -> UIView {
+        let textLabel = UILabel()
+        textLabel.textAlignment = .justified
+        textLabel.font = .systemFont(ofSize: 17)
+        textLabel.numberOfLines = 0
+        textLabel.text = text
+        return textLabel
+    }
+
+    private func buildToggle(_ switchProvider: @escaping () -> Bool, _ switchConsumer: @escaping (Bool) -> Void) -> UIView {
+        return UISwitch()
+    }
+
+    private func buildTextField(_ textProvider: @escaping () -> String, _ textConsumer: @escaping (String) -> Void) -> UIView {
+        let textField = UITextField()
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 15
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
+        textField.leftViewMode = .always
+        textField.text = textProvider()
+        textField.rx.text
+            .subscribe(onNext: { textConsumer($0 ?? "") })
+            .disposed(by: disposeBag)
+        textField.snp.makeConstraints {
+            $0.height.equalTo(60)
+        }
+        return textField
     }
 
     private func buildActions(_ actions: [AlertViewInfo.ActionInfo]) {
@@ -129,5 +188,13 @@ final class AlertView: UIViewController {
 
     @objc func viewDidTap() {
         viewModel.terminateTrigger.onNext(())
+    }
+}
+
+// MARK: - SelfDisplayable implementation
+
+extension AlertView: SelfDisplayable {
+    @objc func selfDisplay() {
+        viewModel.showTrigger.onNext(())
     }
 }
