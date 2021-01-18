@@ -30,7 +30,7 @@ extension TaskEditBuilderImpl: TaskEditBuilder {
         let interactor = TaskEditInteractorImpl(
             taskRepository: context.taskRepository,
             credentialsValidatorService: CredentialsValidatorServiceImpl(),
-            pushNotificationsUseCase: context.pushNotificationsUseCase
+            pushNotificationsService: context.pushNotificationsService
         )
         let router = TaskEditRouterImpl(
             viewController: view

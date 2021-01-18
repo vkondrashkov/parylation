@@ -29,7 +29,7 @@ extension RootBuilderImpl: RootBuilder {
         let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = RootInteractorImpl(
             authorizationService: context.authorizationService,
-            pushNotificationsUseCase: context.pushNotificationsUseCase
+            pushNotificationsService: context.pushNotificationsService
         )
         let router = RootRouterImpl(
             view: view,

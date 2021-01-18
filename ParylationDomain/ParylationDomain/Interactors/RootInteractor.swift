@@ -19,14 +19,14 @@ public protocol RootInteractor {
 
 public final class RootInteractorImpl {
     private let authorizationService: AuthorizationService
-    private let pushNotificationsUseCase: PushNotificationsUseCase
+    private let pushNotificationsService: PushNotificationsService
     
     public init(
         authorizationService: AuthorizationService,
-        pushNotificationsUseCase: PushNotificationsUseCase
+        pushNotificationsService: PushNotificationsService
     ) {
         self.authorizationService = authorizationService
-        self.pushNotificationsUseCase = pushNotificationsUseCase
+        self.pushNotificationsService = pushNotificationsService
     }
 }
 
@@ -39,7 +39,7 @@ extension RootInteractorImpl: RootInteractor {
     }
 
     public func requestPushNotificationPermissions() -> Single<Bool> {
-        return pushNotificationsUseCase.requestPermissions()
+        return pushNotificationsService.requestPermissions()
             .catchError { _ in .error(RootInteractorError.failed) }
     }
 }

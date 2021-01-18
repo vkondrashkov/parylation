@@ -23,16 +23,16 @@ public protocol TaskEditInteractor {
 public final class TaskEditInteractorImpl {
     private let taskRepository: TaskRepository
     private let credentialsValidatorService: CredentialsValidatorService
-    private let pushNotificationsUseCase: PushNotificationsUseCase
+    private let pushNotificationsService: PushNotificationsService
 
     public init(
         taskRepository: TaskRepository,
         credentialsValidatorService: CredentialsValidatorService,
-        pushNotificationsUseCase: PushNotificationsUseCase
+        pushNotificationsService: PushNotificationsService
     ) {
         self.taskRepository = taskRepository
         self.credentialsValidatorService = credentialsValidatorService
-        self.pushNotificationsUseCase = pushNotificationsUseCase
+        self.pushNotificationsService = pushNotificationsService
     }
 }
 
@@ -65,7 +65,7 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
     }
 
     public func scheduleNotification(_ notification: PushNotification) -> Single<Void> {
-        return pushNotificationsUseCase.scheduleNotification(notification)
+        return pushNotificationsService.scheduleNotification(notification)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 }

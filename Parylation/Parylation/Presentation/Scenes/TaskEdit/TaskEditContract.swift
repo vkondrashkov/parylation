@@ -15,7 +15,7 @@ import UIKit
 
 protocol TaskEditContainer {
     var taskRepository: TaskRepository { get }
-    var pushNotificationsUseCase: PushNotificationsUseCase { get }
+    var pushNotificationsService: PushNotificationsService { get }
 }
 
 protocol TaskEditBuilder {
