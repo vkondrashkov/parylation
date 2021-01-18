@@ -1,5 +1,5 @@
 //
-//  CredentialsValidatorUseCaseSpec.swift
+//  CredentialsValidatorServiceSpec.swift
 //  ParylationDevTests
 //
 //  Created by Vladislav Kondrashkov on 7.01.21.
@@ -14,14 +14,14 @@ import Nimble
 
 @testable import ParylationDev
 
-final class CredentialsValidatorUseCaseSpec: QuickSpec {
+final class CredentialsValidatorServiceSpec: QuickSpec {
     override func spec() {
-        var credentialsValidatorUseCase: CredentialsValidatorUseCase!
+        var credentialsValidatorService: CredentialsValidatorService!
         var scheduler: TestScheduler!
         var disposeBag: DisposeBag!
 
         beforeEach {
-            credentialsValidatorUseCase = CredentialsValidatorUseCaseImpl()
+            credentialsValidatorService = CredentialsValidatorServiceImpl()
             scheduler = TestScheduler(initialClock: 0)
             disposeBag = DisposeBag()
         }
@@ -34,7 +34,7 @@ final class CredentialsValidatorUseCaseSpec: QuickSpec {
                 observer = scheduler.createObserver(Bool.self)
                 inputSubject = PublishSubject()
                 inputSubject
-                    .flatMap { credentialsValidatorUseCase.validate(email: $0) }
+                    .flatMap { credentialsValidatorService.validate(email: $0) }
                     .asObservable()
                     .bind(to: observer)
                     .disposed(by: disposeBag)
@@ -121,7 +121,7 @@ final class CredentialsValidatorUseCaseSpec: QuickSpec {
                 observer = scheduler.createObserver(Bool.self)
                 inputSubject = PublishSubject()
                 inputSubject
-                    .flatMap { credentialsValidatorUseCase.validate(username: $0) }
+                    .flatMap { credentialsValidatorService.validate(username: $0) }
                     .asObservable()
                     .bind(to: observer)
                     .disposed(by: disposeBag)
@@ -226,7 +226,7 @@ final class CredentialsValidatorUseCaseSpec: QuickSpec {
                 observer = scheduler.createObserver(Bool.self)
                 inputSubject = PublishSubject()
                 inputSubject
-                    .flatMap { credentialsValidatorUseCase.validate(password: $0) }
+                    .flatMap { credentialsValidatorService.validate(password: $0) }
                     .asObservable()
                     .bind(to: observer)
                     .disposed(by: disposeBag)
@@ -349,7 +349,7 @@ final class CredentialsValidatorUseCaseSpec: QuickSpec {
                 observer = scheduler.createObserver(Bool.self)
                 inputSubject = PublishSubject()
                 inputSubject
-                    .flatMap { credentialsValidatorUseCase.validate(taskTitle: $0) }
+                    .flatMap { credentialsValidatorService.validate(taskTitle: $0) }
                     .asObservable()
                     .bind(to: observer)
                     .disposed(by: disposeBag)
@@ -418,7 +418,7 @@ final class CredentialsValidatorUseCaseSpec: QuickSpec {
                 observer = scheduler.createObserver(Bool.self)
                 inputSubject = PublishSubject()
                 inputSubject
-                    .flatMap { credentialsValidatorUseCase.validate(taskDescription: $0) }
+                    .flatMap { credentialsValidatorService.validate(taskDescription: $0) }
                     .asObservable()
                     .bind(to: observer)
                     .disposed(by: disposeBag)

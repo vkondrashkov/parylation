@@ -28,7 +28,7 @@ extension SettingsBuilderImpl: SettingsBuilder {
         let view = SettingsView()
 
         let interactor = SettingsInteractorImpl(
-            authorizationUseCase: context.authorizationUseCase
+            authorizationService: context.authorizationService
         )
         let alertBuilder = AlertBuilderImpl()
         let router = SettingsRouterImpl(

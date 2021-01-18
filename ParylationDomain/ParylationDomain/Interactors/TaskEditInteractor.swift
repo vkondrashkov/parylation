@@ -22,17 +22,17 @@ public protocol TaskEditInteractor {
 
 public final class TaskEditInteractorImpl {
     private let taskRepository: TaskRepository
-    private let credentialsValidatorUseCase: CredentialsValidatorUseCase
-    private let pushNotificationsUseCase: PushNotificationsUseCase
+    private let credentialsValidatorService: CredentialsValidatorService
+    private let pushNotificationsService: PushNotificationsService
 
     public init(
         taskRepository: TaskRepository,
-        credentialsValidatorUseCase: CredentialsValidatorUseCase,
-        pushNotificationsUseCase: PushNotificationsUseCase
+        credentialsValidatorService: CredentialsValidatorService,
+        pushNotificationsService: PushNotificationsService
     ) {
         self.taskRepository = taskRepository
-        self.credentialsValidatorUseCase = credentialsValidatorUseCase
-        self.pushNotificationsUseCase = pushNotificationsUseCase
+        self.credentialsValidatorService = credentialsValidatorService
+        self.pushNotificationsService = pushNotificationsService
     }
 }
 
@@ -55,17 +55,17 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
     }
 
     public func validate(title: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(taskTitle: title)
+        return credentialsValidatorService.validate(taskTitle: title)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 
     public func validate(description: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(taskDescription: description)
+        return credentialsValidatorService.validate(taskDescription: description)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 
     public func scheduleNotification(_ notification: PushNotification) -> Single<Void> {
-        return pushNotificationsUseCase.scheduleNotification(notification)
+        return pushNotificationsService.scheduleNotification(notification)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 }

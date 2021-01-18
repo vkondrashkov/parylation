@@ -19,10 +19,10 @@ public protocol SettingsInteractor {
 }
 
 public final class SettingsInteractorImpl {
-    private let authorizationUseCase: AuthorizationUseCase
+    private let authorizationService: AuthorizationService
 
-    public init(authorizationUseCase: AuthorizationUseCase) {
-        self.authorizationUseCase = authorizationUseCase
+    public init(authorizationService: AuthorizationService) {
+        self.authorizationService = authorizationService
     }
 }
 
@@ -30,7 +30,7 @@ public final class SettingsInteractorImpl {
 
 extension SettingsInteractorImpl: SettingsInteractor {
     public func signout() -> Single<Void> {
-        return authorizationUseCase.signout()
+        return authorizationService.signout()
             .catchError { _ in .error(SettingsInteractorError.failed) }
     }
 }

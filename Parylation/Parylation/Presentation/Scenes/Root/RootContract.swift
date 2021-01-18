@@ -12,8 +12,8 @@ import RxSwift
 import UIKit
 
 protocol RootContainer {
-    var authorizationUseCase: AuthorizationUseCase { get }
-    var pushNotificationsUseCase: PushNotificationsUseCase { get }
+    var authorizationService: AuthorizationService { get }
+    var pushNotificationsService: PushNotificationsService { get }
 }
 
 protocol RootBuilder: AnyObject {

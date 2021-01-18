@@ -14,7 +14,7 @@ import UIKit
 import ParylationDomain
 
 protocol SettingsContainer {
-    var authorizationUseCase: AuthorizationUseCase { get }
+    var authorizationService: AuthorizationService { get }
 }
 
 protocol SettingsBuilder {

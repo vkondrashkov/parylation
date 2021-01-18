@@ -12,7 +12,7 @@ import ParylationDomain
 import UIKit
 
 protocol SignUpContainer {
-    var authorizationUseCase: AuthorizationUseCase { get }
+    var authorizationService: AuthorizationService { get }
 }
 
 protocol SignUpListener: AnyObject {

@@ -10,19 +10,19 @@
 		69AD1543B4ABD32B88403CA4 /* Pods_ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A79C9C0058B9766CAF65338 /* Pods_ParylationDomain.framework */; };
 		9C11CE3E258FE46900E99F9E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE3D258FE46900E99F9E /* Task.swift */; };
 		9C11CE41258FE52300E99F9E /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE40258FE52300E99F9E /* TaskRepository.swift */; };
-		9C1CADB225A4A5030006B513 /* PushNotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CADB125A4A5030006B513 /* PushNotificationsUseCase.swift */; };
+		9C1CADB225A4A5030006B513 /* PushNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CADB125A4A5030006B513 /* PushNotificationsService.swift */; };
 		9C1CADB525A4ADC10006B513 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CADB425A4ADC10006B513 /* PushNotification.swift */; };
 		9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */; };
 		9C90F87825969A600052080B /* TaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F87725969A600052080B /* TaskInteractor.swift */; };
 		9C90F8B9259731610052080B /* TaskEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8B8259731610052080B /* TaskEditInteractor.swift */; };
-		9C90F91D25991D730052080B /* CredentialsValidatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */; };
+		9C90F91D25991D730052080B /* CredentialsValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F91C25991D730052080B /* CredentialsValidatorService.swift */; };
 		9CADB564249E0DD500901E45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB563249E0DD500901E45 /* User.swift */; };
 		9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB566249E0E0000901E45 /* RootInteractor.swift */; };
 		9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB568249E0E1900901E45 /* SignUpInteractor.swift */; };
 		9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */; };
 		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
 		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
-		9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */; };
+		9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationService.swift */; };
 		9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */; };
 		9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EC24F05F24008B835A /* SignInInteractor.swift */; };
 		9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590724F1352C008B835A /* HomeInteractor.swift */; };
@@ -37,12 +37,12 @@
 		7BC5593B75FEDB2740C4E44C /* Pods-ParylationDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParylationDomain.debug.xcconfig"; path = "Target Support Files/Pods-ParylationDomain/Pods-ParylationDomain.debug.xcconfig"; sourceTree = "<group>"; };
 		9C11CE3D258FE46900E99F9E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9C11CE40258FE52300E99F9E /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
-		9C1CADB125A4A5030006B513 /* PushNotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsUseCase.swift; sourceTree = "<group>"; };
+		9C1CADB125A4A5030006B513 /* PushNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsService.swift; sourceTree = "<group>"; };
 		9C1CADB425A4ADC10006B513 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9C90F87725969A600052080B /* TaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInteractor.swift; sourceTree = "<group>"; };
 		9C90F8B8259731610052080B /* TaskEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditInteractor.swift; sourceTree = "<group>"; };
-		9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorUseCase.swift; sourceTree = "<group>"; };
+		9C90F91C25991D730052080B /* CredentialsValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorService.swift; sourceTree = "<group>"; };
 		9CADB548249CD86C00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB54C249CD86C00901E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CADB563249E0DD500901E45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
-		9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
+		9CADB5C824A00AB300901E45 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		9CEB58EC24F05F24008B835A /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		9CEB590724F1352C008B835A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				9CADB562249E0DCA00901E45 /* Entities */,
 				9CADB565249E0DEF00901E45 /* Interactors */,
 				9CADB56C249E0E3C00901E45 /* Repositories */,
-				9CADB56F249E0E6300901E45 /* UseCases */,
+				9CADB56F249E0E6300901E45 /* Services */,
 				9CADB54C249CD86C00901E45 /* Info.plist */,
 			);
 			path = ParylationDomain;
@@ -156,14 +156,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		9CADB56F249E0E6300901E45 /* UseCases */ = {
+		9CADB56F249E0E6300901E45 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */,
-				9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */,
-				9C1CADB125A4A5030006B513 /* PushNotificationsUseCase.swift */,
+				9CADB5C824A00AB300901E45 /* AuthorizationService.swift */,
+				9C90F91C25991D730052080B /* CredentialsValidatorService.swift */,
+				9C1CADB125A4A5030006B513 /* PushNotificationsService.swift */,
 			);
-			path = UseCases;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,17 +277,17 @@
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
 				9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */,
 				9C11CE3E258FE46900E99F9E /* Task.swift in Sources */,
-				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
+				9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */,
 				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
 				9C11CE41258FE52300E99F9E /* TaskRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
-				9C90F91D25991D730052080B /* CredentialsValidatorUseCase.swift in Sources */,
+				9C90F91D25991D730052080B /* CredentialsValidatorService.swift in Sources */,
 				9C90F8B9259731610052080B /* TaskEditInteractor.swift in Sources */,
 				9C90F87825969A600052080B /* TaskInteractor.swift in Sources */,
 				9C1CADB525A4ADC10006B513 /* PushNotification.swift in Sources */,
-				9C1CADB225A4A5030006B513 /* PushNotificationsUseCase.swift in Sources */,
+				9C1CADB225A4A5030006B513 /* PushNotificationsService.swift in Sources */,
 				9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */,
 				9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */,
 			);

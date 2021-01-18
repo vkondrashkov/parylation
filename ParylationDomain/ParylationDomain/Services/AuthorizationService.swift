@@ -1,5 +1,5 @@
 //
-//  AuthorizationUseCase.swift
+//  AuthorizationService.swift
 //  ParylationDomain
 //
 //  Created by Vladislav Kondrashkov on 6/22/20.
@@ -8,12 +8,12 @@
 
 import RxSwift
 
-public enum AuthorizationUseCaseError: Error {
+public enum AuthorizationServiceError: Error {
     case failed
     case missingData
 }
 
-public protocol AuthorizationUseCase: AnyObject {
+public protocol AuthorizationService: AnyObject {
     func isAuthorized() -> Single<Bool>
     func fetchCurrentUser() -> Single<User>
     func authorize(email: String, password: String) -> Single<User>
@@ -24,7 +24,7 @@ public protocol AuthorizationUseCase: AnyObject {
     func saveUser(user: User) -> Single<Void>
 }
 
-public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
+public final class AuthorizationServiceImpl: AuthorizationService {
     private let authorizedUserRepository: AuthorizedUserRepository
     
     public init(authorizedUserRepository: AuthorizedUserRepository) {
@@ -39,7 +39,7 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
     
     public func fetchCurrentUser() -> Single<User> {
         return authorizedUserRepository.fetchUser()
-            .catchError { _ in .error(AuthorizationUseCaseError.missingData) }
+            .catchError { _ in .error(AuthorizationServiceError.missingData) }
     }
     
     public func authorize(email: String, password: String) -> Single<User> {
@@ -47,7 +47,7 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
         let user = User(id: "123", name: "Vladislav")
         return authorizedUserRepository.saveUser(user: user)
             .map { _ in user }
-            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
+            .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
     
     public func register(email: String, password: String) -> Single<User> {
@@ -55,16 +55,16 @@ public final class AuthorizationUseCaseImpl: AuthorizationUseCase {
         let user = User(id: "123", name: "Vladislav")
         return authorizedUserRepository.saveUser(user: user)
             .map { _ in user }
-            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
+            .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
 
     public func signout() -> Single<Void> {
         return authorizedUserRepository.deleteUser()
-            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
+            .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
     
     public func saveUser(user: User) -> Single<Void> {
         return authorizedUserRepository.saveUser(user: user)
-            .catchError { _ in .error(AuthorizationUseCaseError.failed) }
+            .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
 }
