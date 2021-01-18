@@ -1,5 +1,5 @@
 //
-//  CredentialsValidatorUseCase.swift
+//  CredentialsValidatorService.swift
 //  ParylationDomain
 //
 //  Created by Vladislav Kondrashkov on 27.12.20.
@@ -8,11 +8,11 @@
 
 import RxSwift
 
-public enum CredentialsValidatorUseCaseError: Error {
+public enum CredentialsValidatorServiceError: Error {
     case failed
 }
 
-public protocol CredentialsValidatorUseCase: AnyObject {
+public protocol CredentialsValidatorService: AnyObject {
     func validate(email: String) -> Single<Bool>
     func validate(username: String) -> Single<Bool>
     func validate(password: String) -> Single<Bool>
@@ -21,7 +21,7 @@ public protocol CredentialsValidatorUseCase: AnyObject {
     func validate(taskDescription: String) -> Single<Bool>
 }
 
-public final class CredentialsValidatorUseCaseImpl: CredentialsValidatorUseCase {
+public final class CredentialsValidatorServiceImpl: CredentialsValidatorService {
     private let emailRegexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     private let usernameRegexPattern = "(?!user\\d*)\\b[a-zA-Z\\d]{3,20}"
     private let passwordRegexPattern = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!@#$&()-`.+,\\\"]{6,24}"

@@ -22,16 +22,16 @@ public protocol TaskEditInteractor {
 
 public final class TaskEditInteractorImpl {
     private let taskRepository: TaskRepository
-    private let credentialsValidatorUseCase: CredentialsValidatorUseCase
+    private let credentialsValidatorService: CredentialsValidatorService
     private let pushNotificationsUseCase: PushNotificationsUseCase
 
     public init(
         taskRepository: TaskRepository,
-        credentialsValidatorUseCase: CredentialsValidatorUseCase,
+        credentialsValidatorService: CredentialsValidatorService,
         pushNotificationsUseCase: PushNotificationsUseCase
     ) {
         self.taskRepository = taskRepository
-        self.credentialsValidatorUseCase = credentialsValidatorUseCase
+        self.credentialsValidatorService = credentialsValidatorService
         self.pushNotificationsUseCase = pushNotificationsUseCase
     }
 }
@@ -55,12 +55,12 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
     }
 
     public func validate(title: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(taskTitle: title)
+        return credentialsValidatorService.validate(taskTitle: title)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 
     public func validate(description: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(taskDescription: description)
+        return credentialsValidatorService.validate(taskDescription: description)
             .catchError { _ in .error(TaskEditInteractorError.failed) }
     }
 

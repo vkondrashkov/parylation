@@ -15,7 +15,7 @@
 		9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */; };
 		9C90F87825969A600052080B /* TaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F87725969A600052080B /* TaskInteractor.swift */; };
 		9C90F8B9259731610052080B /* TaskEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8B8259731610052080B /* TaskEditInteractor.swift */; };
-		9C90F91D25991D730052080B /* CredentialsValidatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */; };
+		9C90F91D25991D730052080B /* CredentialsValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F91C25991D730052080B /* CredentialsValidatorService.swift */; };
 		9CADB564249E0DD500901E45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB563249E0DD500901E45 /* User.swift */; };
 		9CADB567249E0E0000901E45 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB566249E0E0000901E45 /* RootInteractor.swift */; };
 		9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB568249E0E1900901E45 /* SignUpInteractor.swift */; };
@@ -42,7 +42,7 @@
 		9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9C90F87725969A600052080B /* TaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInteractor.swift; sourceTree = "<group>"; };
 		9C90F8B8259731610052080B /* TaskEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditInteractor.swift; sourceTree = "<group>"; };
-		9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorUseCase.swift; sourceTree = "<group>"; };
+		9C90F91C25991D730052080B /* CredentialsValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorService.swift; sourceTree = "<group>"; };
 		9CADB548249CD86C00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB54C249CD86C00901E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CADB563249E0DD500901E45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9CADB5C824A00AB300901E45 /* AuthorizationService.swift */,
-				9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */,
+				9C90F91C25991D730052080B /* CredentialsValidatorService.swift */,
 				9C1CADB125A4A5030006B513 /* PushNotificationsUseCase.swift */,
 			);
 			path = Services;
@@ -283,7 +283,7 @@
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,
 				9C11CE41258FE52300E99F9E /* TaskRepository.swift in Sources */,
 				9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */,
-				9C90F91D25991D730052080B /* CredentialsValidatorUseCase.swift in Sources */,
+				9C90F91D25991D730052080B /* CredentialsValidatorService.swift in Sources */,
 				9C90F8B9259731610052080B /* TaskEditInteractor.swift in Sources */,
 				9C90F87825969A600052080B /* TaskInteractor.swift in Sources */,
 				9C1CADB525A4ADC10006B513 /* PushNotification.swift in Sources */,
