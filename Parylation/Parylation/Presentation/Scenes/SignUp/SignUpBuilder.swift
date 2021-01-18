@@ -26,7 +26,7 @@ extension SignUpBuilderImpl: SignUpBuilder {
         let view = SignUpView()
         let signInBuilder = SignInBuilderImpl(context: context)
         let interactor = SignUpInteractorImpl(
-            authorizationUseCase: context.authorizationUseCase,
+            authorizationService: context.authorizationService,
             credentialsValidatorUseCase: CredentialsValidatorUseCaseImpl()
         )
         let router = SignUpRouterImpl(

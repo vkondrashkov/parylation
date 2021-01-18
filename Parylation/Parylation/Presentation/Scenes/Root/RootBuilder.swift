@@ -28,7 +28,7 @@ extension RootBuilderImpl: RootBuilder {
         let welcomeBuilder = WelcomeBuilderImpl(context: context)
         let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = RootInteractorImpl(
-            authorizationUseCase: context.authorizationUseCase,
+            authorizationService: context.authorizationService,
             pushNotificationsUseCase: context.pushNotificationsUseCase
         )
         let router = RootRouterImpl(

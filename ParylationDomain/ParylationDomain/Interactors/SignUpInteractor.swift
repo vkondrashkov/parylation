@@ -20,14 +20,14 @@ public protocol SignUpInteractor {
 }
 
 public final class SignUpInteractorImpl {
-    private let authorizationUseCase: AuthorizationUseCase
+    private let authorizationService: AuthorizationService
     private let credentialsValidatorUseCase: CredentialsValidatorUseCase
     
     public init(
-        authorizationUseCase: AuthorizationUseCase,
+        authorizationService: AuthorizationService,
         credentialsValidatorUseCase: CredentialsValidatorUseCase
     ) {
-        self.authorizationUseCase = authorizationUseCase
+        self.authorizationService = authorizationService
         self.credentialsValidatorUseCase = credentialsValidatorUseCase
     }
 }
@@ -36,7 +36,7 @@ public final class SignUpInteractorImpl {
 
 extension SignUpInteractorImpl: SignUpInteractor {
     public func register(email: String, password: String) -> Single<User> {
-        return authorizationUseCase.register(email: email, password: password)
+        return authorizationService.register(email: email, password: password)
             .catchError { _ in .error(SignInInteractorError.failed) }
     }
 

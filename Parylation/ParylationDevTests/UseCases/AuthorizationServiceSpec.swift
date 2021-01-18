@@ -1,5 +1,5 @@
 //
-//  AuthorizationUseCaseSpec.swift
+//  AuthorizationServiceSpec.swift
 //  ParylationDevTests
 //
 //  Created by Vladislav Kondrashkov on 6/22/20.
@@ -15,10 +15,10 @@ import Nimble
 
 @testable import ParylationDev
 
-final class AuthorizationUseCaseSpec: QuickSpec {
+final class AuthorizationServiceSpec: QuickSpec {
     override func spec() {
         var scheduler: TestScheduler!
-        var authorizationUseCase: AuthorizationUseCase!
+        var authorizationService: AuthorizationService!
         var disposeBag: DisposeBag!
         
         beforeSuite {
@@ -27,7 +27,7 @@ final class AuthorizationUseCaseSpec: QuickSpec {
 
         beforeEach {
             scheduler = TestScheduler(initialClock: 0)
-            authorizationUseCase = AuthorizationUseCaseImpl(
+            authorizationService = AuthorizationServiceImpl(
                 authorizedUserRepository: AuthorizedUserRepositoryImpl(realm: try! Realm())
             )
             disposeBag = DisposeBag()
@@ -49,7 +49,7 @@ final class AuthorizationUseCaseSpec: QuickSpec {
             describe("on isAuthorized()") {
                 it("should return true") {
                     let observer = scheduler.createObserver(Bool.self)
-                    authorizationUseCase.isAuthorized()
+                    authorizationService.isAuthorized()
                         .asObservable()
                         .bind(to: observer)
                         .disposed(by: disposeBag)
@@ -67,7 +67,7 @@ final class AuthorizationUseCaseSpec: QuickSpec {
             describe("on fetchUser()") {
                 it("should return user") {
                     let observer = scheduler.createObserver(User.self)
-                    authorizationUseCase.fetchCurrentUser()
+                    authorizationService.fetchCurrentUser()
                         .asObservable()
                         .bind(to: observer)
                         .disposed(by: disposeBag)
@@ -87,7 +87,7 @@ final class AuthorizationUseCaseSpec: QuickSpec {
             describe("on isAuthorized()") {
                 it("should return false") {
                     let observer = scheduler.createObserver(Bool.self)
-                    authorizationUseCase.isAuthorized()
+                    authorizationService.isAuthorized()
                         .asObservable()
                         .bind(to: observer)
                         .disposed(by: disposeBag)
@@ -105,13 +105,13 @@ final class AuthorizationUseCaseSpec: QuickSpec {
             describe("on fetchUser()") {
                 it("should return error") {
                     let observer = scheduler.createObserver(User.self)
-                    authorizationUseCase.fetchCurrentUser()
+                    authorizationService.fetchCurrentUser()
                         .asObservable()
                         .bind(to: observer)
                         .disposed(by: disposeBag)
 
                     let expected: [Recorded<Event<User>>] = [
-                        .error(0, AuthorizationUseCaseError.missingData)
+                        .error(0, AuthorizationServiceError.missingData)
                     ]
 
                     scheduler.start()

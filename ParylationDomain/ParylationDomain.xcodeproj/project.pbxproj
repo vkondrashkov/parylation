@@ -22,7 +22,7 @@
 		9CADB56B249E0E2C00901E45 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */; };
 		9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB56D249E0E4C00901E45 /* UserRepository.swift */; };
 		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
-		9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */; };
+		9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationService.swift */; };
 		9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */; };
 		9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EC24F05F24008B835A /* SignInInteractor.swift */; };
 		9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590724F1352C008B835A /* HomeInteractor.swift */; };
@@ -51,7 +51,7 @@
 		9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9CADB56D249E0E4C00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
-		9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
+		9CADB5C824A00AB300901E45 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		9CEB58EC24F05F24008B835A /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		9CEB590724F1352C008B835A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				9CADB562249E0DCA00901E45 /* Entities */,
 				9CADB565249E0DEF00901E45 /* Interactors */,
 				9CADB56C249E0E3C00901E45 /* Repositories */,
-				9CADB56F249E0E6300901E45 /* UseCases */,
+				9CADB56F249E0E6300901E45 /* Services */,
 				9CADB54C249CD86C00901E45 /* Info.plist */,
 			);
 			path = ParylationDomain;
@@ -156,14 +156,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		9CADB56F249E0E6300901E45 /* UseCases */ = {
+		9CADB56F249E0E6300901E45 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5C824A00AB300901E45 /* AuthorizationUseCase.swift */,
+				9CADB5C824A00AB300901E45 /* AuthorizationService.swift */,
 				9C90F91C25991D730052080B /* CredentialsValidatorUseCase.swift */,
 				9C1CADB125A4A5030006B513 /* PushNotificationsUseCase.swift */,
 			);
-			path = UseCases;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +277,7 @@
 				9CADB569249E0E1900901E45 /* SignUpInteractor.swift in Sources */,
 				9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */,
 				9C11CE3E258FE46900E99F9E /* Task.swift in Sources */,
-				9CADB5C924A00AB300901E45 /* AuthorizationUseCase.swift in Sources */,
+				9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */,
 				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9CADB56E249E0E4C00901E45 /* UserRepository.swift in Sources */,

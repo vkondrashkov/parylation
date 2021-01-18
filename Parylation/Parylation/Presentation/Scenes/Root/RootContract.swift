@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 protocol RootContainer {
-    var authorizationUseCase: AuthorizationUseCase { get }
+    var authorizationService: AuthorizationService { get }
     var pushNotificationsUseCase: PushNotificationsUseCase { get }
 }
 
