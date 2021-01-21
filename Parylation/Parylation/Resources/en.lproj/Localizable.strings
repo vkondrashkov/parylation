@@ -9,6 +9,11 @@
 // MARK: - Common
 
 "app_name" = "Parylation";
+"cancel" = "Cancel";
+"ok" = "Ok";
+"accept" = "Accept";
+"unavailable_feature_title" = "Oh no...";
+"unavailable_feature_description" = "This feature is not working yet. Try again later ;(";
 
 // MARK: - Welcome page
 
@@ -76,3 +81,9 @@
 "settings_others_rate_us" = "Rate us";
 "settings_others_about_us" = "About us";
 "settings_sign_out" = "Sign out";
+"settings_popup_old_password" = "Old password";
+"settings_popup_new_password" = "New password";
+"settings_popup_confirm_new_password" = "Confirm new password";
+"settings_popup_signout_title" = "Are you sure?";
+"settings_popup_signout_description" = "This action can't be undone! Do you want to quit anyway?";
+"settings_popup_signout_confirm" = "Quit";
