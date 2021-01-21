@@ -54,7 +54,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentView.addSubview(contentBackgroundView)
         contentBackgroundView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
 
         contentMaskView.backgroundColor = Color.whisper

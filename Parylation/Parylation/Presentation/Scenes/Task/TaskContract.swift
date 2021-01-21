@@ -15,6 +15,8 @@ import UIKit
 
 protocol TaskContainer {
     var taskRepository: TaskRepository { get }
+    var iconRepository: IconRepository { get }
+    var colorRepository: ColorRepository { get }
 }
 
 protocol TaskBuilder {

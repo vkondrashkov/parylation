@@ -42,7 +42,7 @@ final class TaskView: UIViewController {
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalTo(15)
+            $0.size.equalTo(30)
         }
 
         view.addSubview(taskTitleLabel)
@@ -113,6 +113,9 @@ final class TaskView: UIViewController {
         if #available(iOS 13.0, *) {
             iconBackgroundView.layer.cornerCurve = .continuous
         }
+
+        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.tintColor = .white
 
         taskTitleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         taskTitleLabel.numberOfLines = 2
@@ -207,6 +210,8 @@ final class TaskView: UIViewController {
         case .loading:
             break
         case .display(let info):
+            iconImageView.image = info.icon
+            iconBackgroundView.backgroundColor = info.color
             taskTitleLabel.text = info.title
             descriptionLabel.text = info.taskDescription
             dateLabel.text = info.date

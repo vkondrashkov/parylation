@@ -38,10 +38,18 @@ final class TaskViewModelImpl: TaskViewModel {
         let stateSubject = BehaviorSubject<TaskViewState>(value: .ready)
 
         let willAppearSubject = PublishSubject<Void>()
-        willAppearSubject
+        let task = willAppearSubject
             .do(onNext: { stateSubject.onNext(.loading) })
             .flatMap { interactor.fetchTask(taskId: taskId) }
-            .map { TaskViewInfo.from(task: $0) }
+
+        let icon = task
+            .flatMap { interactor.fetchIcon(id: $0.iconId) }
+
+        let color = task
+            .flatMap { interactor.fetchColor(id: $0.colorId) }
+
+        Observable.combineLatest(task, icon, color)
+            .map { TaskViewInfo.from(task: $0, icon: $1, color: $2) }
             .map { TaskViewState.display($0) }
             .bind(to: stateSubject)
             .disposed(by: disposeBag)

@@ -35,6 +35,8 @@ final class AppContextImpl: AppContext {
     unowned var window: UIWindow
     let authorizationService: AuthorizationService
     let taskRepository: TaskRepository
+    let iconRepository: IconRepository
+    let colorRepository: ColorRepository
     let pushNotificationsService: PushNotificationsService
 
     init(window: UIWindow)  {
@@ -45,6 +47,8 @@ final class AppContextImpl: AppContext {
             authorizedUserRepository: authorizedUserRepository
         )
         taskRepository = TaskRepositoryImpl(realm: realm)
+        iconRepository = IconRepositoryImpl()
+        colorRepository = ColorRepositoryImpl()
         pushNotificationsService = PushNotificationsServiceImpl()
     }
 }
