@@ -29,6 +29,8 @@ extension TaskEditBuilderImpl: TaskEditBuilder {
 
         let interactor = TaskEditInteractorImpl(
             taskRepository: context.taskRepository,
+            iconRepository: IconRepositoryImpl(),
+            colorRepository: ColorRepositoryImpl(),
             credentialsValidatorService: CredentialsValidatorServiceImpl(),
             pushNotificationsService: context.pushNotificationsService
         )

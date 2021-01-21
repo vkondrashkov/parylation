@@ -37,7 +37,7 @@ final class HomeTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentView.addSubview(contentBackgroundView)
         contentBackgroundView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(5)
-            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
 
         iconBackgroundView.layer.cornerRadius = 10
@@ -50,6 +50,8 @@ final class HomeTableViewCell: UITableViewCell, ReuseIdentifiable {
             $0.size.equalTo(40)
         }
 
+        iconImageView.tintColor = .white
+//        iconImageView.contentMode = .scaleAspectFit
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.size.equalTo(20)
@@ -96,17 +98,17 @@ final class HomeTableViewCell: UITableViewCell, ReuseIdentifiable {
     func bindViewModel(_ viewModel: HomeTableViewCellViewModel) {
         self.viewModel = viewModel
 
-        viewModel.icon
-            .drive(iconImageView.rx.image)
-            .disposed(by: disposeBag)
-
-        viewModel.color
-            .drive(iconBackgroundView.rx.backgroundColor)
-            .disposed(by: disposeBag)
-
         viewModel.title
             .drive(titleLabel.rx.text)
             .disposed(by: disposeBag)
+    }
+
+    func update(icon: UIImage) {
+        iconImageView.image = icon
+    }
+
+    func update(color: UIColor) {
+        iconBackgroundView.backgroundColor = color
     }
     
     required init?(coder: NSCoder) {

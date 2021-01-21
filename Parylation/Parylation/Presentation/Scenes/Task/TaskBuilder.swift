@@ -28,7 +28,9 @@ extension TaskBuilderImpl: TaskBuilder {
         let view = TaskView()
 
         let interactor = TaskInteractorImpl(
-            taskRepository: context.taskRepository
+            taskRepository: context.taskRepository,
+            iconRepository: context.iconRepository,
+            colorRepository: context.colorRepository
         )
         let alertBuilder = AlertBuilderImpl()
         let taskEditBuilder = TaskEditBuilderImpl(context: context)

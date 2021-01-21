@@ -41,6 +41,18 @@
 		9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
+		9C2785E125B5DC09000502AA /* SelectiveCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */; };
+		9C2785E225B5DC09000502AA /* SelectiveCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */; };
+		9C2785E625B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */; };
+		9C2785E725B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */; };
+		9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */; };
+		9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */; };
+		9C2785EE25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */; };
+		9C2785EF25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */; };
+		9C27860025B702AE000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FF25B702AE000502AA /* IconRepository.swift */; };
+		9C27860125B702AE000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FF25B702AE000502AA /* IconRepository.swift */; };
+		9C27860525B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
+		9C27860625B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
 		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
@@ -258,6 +270,12 @@
 		9C207EB6247169580022AC92 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveCollectionView.swift; sourceTree = "<group>"; };
+		9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Genetic.swift"; sourceTree = "<group>"; };
+		9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C2785FF25B702AE000502AA /* IconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRepository.swift; sourceTree = "<group>"; };
+		9C27860425B702B6000502AA /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C656D249A602600E9D889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -497,6 +515,7 @@
 		9C207EA62470B73C0022AC92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9C2785FD25B7027F000502AA /* InMemory */,
 				9CADB5BD24A0076F00901E45 /* Realm */,
 			);
 			path = Data;
@@ -512,6 +531,33 @@
 				9C207EBC247169730022AC92 /* DashboardView.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		9C2785DF25B5DAED000502AA /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */,
+				9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */,
+				9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		9C2785FD25B7027F000502AA /* InMemory */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785FE25B7029C000502AA /* Repositories */,
+			);
+			path = InMemory;
+			sourceTree = "<group>";
+		};
+		9C2785FE25B7029C000502AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785FF25B702AE000502AA /* IconRepository.swift */,
+				9C27860425B702B6000502AA /* ColorRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		9C5C6564249A5ED200E9D889 /* Resources */ = {
@@ -599,6 +645,7 @@
 		9C90F8A22597312E0052080B /* TaskEdit */ = {
 			isa = PBXGroup;
 			children = (
+				9C2785DF25B5DAED000502AA /* ContentView */,
 				9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */,
 				9C90F8A3259731490052080B /* TaskEditContract.swift */,
 				9C90F8A4259731490052080B /* TaskEditRouter.swift */,
@@ -717,6 +764,7 @@
 			children = (
 				9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */,
 				9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */,
+				9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */,
 			);
 			path = GenericCollectionViews;
 			sourceTree = "<group>";
@@ -1059,6 +1107,7 @@
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC024F50771005EF51A /* SettingsView.swift in Sources */,
+				9C2785EE25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
 				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE49258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1078,10 +1127,12 @@
 				9C11CE44258FE5CA00E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AD2597314A0052080B /* TaskEditBuilder.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
+				9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
 				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C27860525B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */,
 				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9C90F87B2596A13F0052080B /* TaskViewInfo.swift in Sources */,
@@ -1094,6 +1145,7 @@
 				9C90F9112597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
+				9C27860025B702AE000502AA /* IconRepository.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */,
@@ -1103,6 +1155,7 @@
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B12597314A0052080B /* TaskEditView.swift in Sources */,
+				9C2785E125B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
 				9C90F87325969A0F0052080B /* TaskViewModel.swift in Sources */,
 				9C90F87125969A0F0052080B /* TaskView.swift in Sources */,
 				9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
@@ -1114,6 +1167,7 @@
 				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C67854024EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9C2785E625B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */,
 				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
@@ -1147,6 +1201,7 @@
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC124F50771005EF51A /* SettingsView.swift in Sources */,
+				9C2785EF25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
 				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE4A258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1166,10 +1221,12 @@
 				9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AE2597314A0052080B /* TaskEditBuilder.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
+				9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
 				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C27860625B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */,
 				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9C90F87C2596A13F0052080B /* TaskViewInfo.swift in Sources */,
@@ -1182,6 +1239,7 @@
 				9C90F9122597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
+				9C27860125B702AE000502AA /* IconRepository.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */,
@@ -1191,6 +1249,7 @@
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B22597314A0052080B /* TaskEditView.swift in Sources */,
+				9C2785E225B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
 				9C90F87425969A0F0052080B /* TaskViewModel.swift in Sources */,
 				9C90F87225969A0F0052080B /* TaskView.swift in Sources */,
 				9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
@@ -1202,6 +1261,7 @@
 				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9C2785E725B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */,
 				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,

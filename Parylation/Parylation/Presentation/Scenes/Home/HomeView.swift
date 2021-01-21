@@ -93,7 +93,7 @@ final class HomeView: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -202,6 +202,29 @@ final class HomeView: UIViewController {
 
         tableView.rx.itemDeleted
             .bind(to: viewModel.deleteTrigger)
+            .disposed(by: disposeBag)
+
+        tableView.rx.willDisplayCell
+            .map { $0.indexPath }
+            .bind(to: viewModel.willDisplayItemTrigger)
+            .disposed(by: disposeBag)
+
+        viewModel.itemIcon
+            .delay(.milliseconds(1))
+            .drive(onNext: { [weak self] icon, indexPath in
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? HomeTableViewCell
+                cell?.update(icon: icon.image)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.itemColor
+            .delay(.milliseconds(1))
+            .drive(onNext: { [weak self] color, indexPath in
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? HomeTableViewCell
+                cell?.update(color: color.value)
+            })
             .disposed(by: disposeBag)
     }
 }

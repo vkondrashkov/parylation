@@ -2,8 +2,10 @@
 
 ## Alpha 0.2.0
 ### Added
+- Icons and Colors for tasks
 
 ### Changed
+- Settings UI
 
 ## Alpha 0.1.0
 ### Added

@@ -39,7 +39,7 @@ final class SettingsView: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.width.equalToSuperview()
-            $0.height.equalToSuperview().priority(.low)
+            $0.height.equalTo(view.safeAreaLayoutGuide.snp.height).priority(.low)
         }
 
         contentView.addSubview(headerTitleLabel)

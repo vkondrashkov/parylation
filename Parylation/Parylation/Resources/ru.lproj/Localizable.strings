@@ -9,6 +9,11 @@
 // MARK: - Common
 
 "app_name" = "Parylation";
+"cancel" = "Отменить";
+"ok" = "Хорошо";
+"accept" = "Принять";
+"unavailable_feature_title" = "О нет...";
+"unavailable_feature_description" = "Эта функция не работает. Попробуйте еще раз позже ;(";
 
 // MARK: - Welcome page
 
@@ -76,3 +81,9 @@
 "settings_others_rate_us" = "Оцените нас";
 "settings_others_about_us" = "О нас";
 "settings_sign_out" = "Выйти";
+"settings_popup_old_password" = "Старый пароль";
+"settings_popup_new_password" = "Новый пароль";
+"settings_popup_confirm_new_password" = "Подтвердите пароль";
+"settings_popup_signout_title" = "Вы уверены?";
+"settings_popup_signout_description" = "Действие нельзя будет отменить! Вы хотите выйти?";
+"settings_popup_signout_confirm" = "Выйти";

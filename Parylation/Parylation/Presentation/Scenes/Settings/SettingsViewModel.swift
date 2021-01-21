@@ -35,20 +35,20 @@ final class SettingsViewModelImpl: SettingsViewModel {
                 name: L10n.settingsMainSection,
                 items: [
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-change_username"),
+                        icon: Asset.settingsChangeUsername.image,
                         color: Color.gigas,
                         title: L10n.settingsMainChangeUsername,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Change username"))
+                                .add(.title(L10n.settingsMainChangeUsername))
                                 .add(.textField({ "vkondrashkov" }, { _ in }))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Cancel",
+                                    name: L10n.cancel,
                                     color: Color.gigas,
                                     action: nil
                                 )))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Accept",
+                                    name: L10n.accept,
                                     color: Color.shamrock,
                                     action: {
 //                                        alertSubject.onNext(())
@@ -59,20 +59,20 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         }
                     ),
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-change_email"),
+                        icon: Asset.settingsChangeEmail.image,
                         color: Color.gigas,
                         title: L10n.settingsMainChangeEmail,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Change email"))
+                                .add(.title(L10n.settingsMainChangeEmail))
                                 .add(.textField({ "vladislav@kondrashkov.com" }, { _ in }))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Cancel",
+                                    name: L10n.cancel,
                                     color: Color.gigas,
                                     action: nil
                                 )))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Accept",
+                                    name: L10n.accept,
                                     color: Color.shamrock,
                                     action: {
 //                                        alertSubject.onNext(())
@@ -83,25 +83,25 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         }
                     ),
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-change_password"),
+                        icon: Asset.settingsChangePassword.image,
                         color: Color.gigas,
                         title: L10n.settingsMainChangePassword,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Change password"))
-                                .add(.text("Old password"))
+                                .add(.title(L10n.settingsMainChangePassword))
+                                .add(.text(L10n.settingsPopupOldPassword))
                                 .add(.textField({ "" }, { _ in }))
-                                .add(.text("New password"))
+                                .add(.text(L10n.settingsPopupNewPassword))
                                 .add(.textField({ "" }, { _ in }))
-                                .add(.text("Confirm new password"))
+                                .add(.text(L10n.settingsPopupConfirmNewPassword))
                                 .add(.textField({ "" }, { _ in }))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Cancel",
+                                    name: L10n.cancel,
                                     color: Color.gigas,
                                     action: nil
                                 )))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Accept",
+                                    name: L10n.accept,
                                     color: Color.shamrock,
                                     action: {
 //                                        alertSubject.onNext(())
@@ -117,15 +117,15 @@ final class SettingsViewModelImpl: SettingsViewModel {
                 name: L10n.settingsOthersSection,
                 items: [
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-rate_us"),
+                        icon: Asset.settingsRateUs.image,
                         color: Color.marigoldYellow,
                         title: L10n.settingsOthersRateUs,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Oh no..."))
-                                .add(.text("This feature is not working yet. Try again later ;("))
+                                .add(.title(L10n.unavailableFeatureTitle))
+                                .add(.text(L10n.unavailableFeatureDescription))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Ok",
+                                    name: L10n.ok,
                                     color: Color.gigas,
                                     action: nil
                                 )))
@@ -134,15 +134,15 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         }
                     ),
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-about_us"),
+                        icon: Asset.settingsAboutUs.image,
                         color: Color.marigoldYellow,
                         title: L10n.settingsOthersAboutUs,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Oh no..."))
-                                .add(.text("This feature is not working yet. Try again later ;("))
+                                .add(.title(L10n.unavailableFeatureTitle))
+                                .add(.text(L10n.unavailableFeatureDescription))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Ok",
+                                    name: L10n.ok,
                                     color: Color.gigas,
                                     action: nil
                                 )))
@@ -156,20 +156,20 @@ final class SettingsViewModelImpl: SettingsViewModel {
                 name: nil,
                 items: [
                     SettingsTableItem(
-                        icon: UIImage(named: "settings-signout"),
+                        icon: Asset.settingsSignout.image,
                         color: Color.blazeOrange,
                         title: L10n.settingsSignOut,
                         action: {
                             let alertViewInfo = AlertViewInfoBuilderImpl()
-                                .add(.title("Are you sure?"))
-                                .add(.text("This action can't be undone! Do you want to quit anyway?"))
+                                .add(.title(L10n.settingsPopupSignoutTitle))
+                                .add(.text(L10n.settingsPopupSignoutDescription))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Cancel",
+                                    name: L10n.cancel,
                                     color: Color.gigas,
                                     action: nil
                                 )))
                                 .add(.action(AlertViewInfo.ActionInfo(
-                                    name: "Quit",
+                                    name: L10n.settingsPopupSignoutConfirm,
                                     color: Color.blazeOrange,
                                     action: {
                                         interactor.signout()
