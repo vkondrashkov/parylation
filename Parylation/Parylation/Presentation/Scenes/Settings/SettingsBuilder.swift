@@ -24,7 +24,7 @@ final class SettingsBuilderImpl {
 // MARK: - SettingsBuilder implementation
 
 extension SettingsBuilderImpl: SettingsBuilder {
-    func build() -> UIViewController {
+    func build(listener: SettingsListener?) -> UIViewController {
         let view = SettingsView()
 
         let interactor = SettingsInteractorImpl(
@@ -35,7 +35,8 @@ extension SettingsBuilderImpl: SettingsBuilder {
         let alertBuilder = AlertBuilderImpl()
         let router = SettingsRouterImpl(
             view: view,
-            alertBuilder: alertBuilder
+            alertBuilder: alertBuilder,
+            listener: listener
         )
         let viewModel = SettingsViewModelImpl(
             interactor: interactor,

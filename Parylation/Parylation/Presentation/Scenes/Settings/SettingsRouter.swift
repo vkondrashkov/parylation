@@ -13,14 +13,17 @@ import UIKit
 final class SettingsRouterImpl {
     private weak var view: UIViewController?
     private let alertBuilder: AlertBuilder
-    private var window: UIWindow?
+
+    private weak var listener: SettingsListener?
 
     init(
         view: UIViewController,
-        alertBuilder: AlertBuilder
+        alertBuilder: AlertBuilder,
+        listener: SettingsListener?
     ) {
         self.view = view
         self.alertBuilder = alertBuilder
+        self.listener = listener
     }
 }
 
@@ -33,6 +36,6 @@ extension SettingsRouterImpl: SettingsRouter {
     }
 
     func terminate() {
-        view?.presentingViewController?.dismiss(animated: true, completion: nil)
+        listener?.onSignOut()
     }
 }

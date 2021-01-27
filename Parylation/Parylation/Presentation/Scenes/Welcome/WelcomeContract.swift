@@ -15,12 +15,15 @@ protocol WelcomeContainer {
     var window: UIWindow { get }
 }
 
+protocol WelcomeListener: AnyObject {
+    func onAuthorizationFinish()
+}
+
 protocol WelcomeBuilder: AnyObject {
-    func build() -> UIViewController
+    func build(listener: WelcomeListener?) -> UIViewController
 }
 
 protocol WelcomeRouter: AnyObject {
-    func showDashboard()
     func showSignUp()
     func showSignIn()
 }

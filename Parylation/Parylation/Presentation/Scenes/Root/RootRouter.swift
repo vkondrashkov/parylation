@@ -28,16 +28,34 @@ final class RootRouterImpl {
 
 extension RootRouterImpl: RootRouter {
     func showWelcome() {
-        let welcomeView = welcomeBuilder.build()
+        let welcomeView = welcomeBuilder.build(listener: self)
         welcomeView.modalPresentationStyle = .fullScreen
         welcomeView.modalTransitionStyle = .crossDissolve
         view?.present(welcomeView, animated: true, completion: nil)
     }
     
     func showDashboard() {
-        let dashboardView = dashboardBuilder.build()
+        let dashboardView = dashboardBuilder.build(listener: self)
         dashboardView.modalPresentationStyle = .fullScreen
         dashboardView.modalTransitionStyle = .crossDissolve
         view?.present(dashboardView, animated: true, completion: nil)
+    }
+}
+
+// MARK: - WelcomeListener implementation
+
+extension RootRouterImpl: WelcomeListener {
+    func onAuthorizationFinish() {
+        view?.dismiss(animated: true, completion: { [weak self] in
+            self?.showDashboard()
+        })
+    }
+}
+
+extension RootRouterImpl: DashboardListener {
+    func onSignOut() {
+        view?.dismiss(animated: true, completion: { [weak self] in
+            self?.showWelcome()
+        })
     }
 }

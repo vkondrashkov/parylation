@@ -10,7 +10,7 @@ import UIKit
 import ParylationDomain
 
 final class WelcomeBuilderImpl {
-    typealias Context = AuthContext & MainContext
+    typealias Context = AuthContext
     
     private let context: Context
     
@@ -22,18 +22,17 @@ final class WelcomeBuilderImpl {
 // MARK: - WelcomeBuilder implementation
 
 extension WelcomeBuilderImpl: WelcomeBuilder {
-    func build() -> UIViewController {
+    func build(listener: WelcomeListener?) -> UIViewController {
         let view = WelcomeView()
         let signUpBuilder = SignUpBuilderImpl(context: context)
         let signInBuilder = SignInBuilderImpl(context: context)
-        let dashboardBuilder = DashboardBuilderImpl(context: context)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
             window: context.window,
             view: view,
             signUpBuilder: signUpBuilder,
             signInBuilder: signInBuilder,
-            dashboardBuilder: dashboardBuilder
+            listener: listener
         )
         let viewModel = WelcomeViewModelImpl(
             interactor: interactor,
