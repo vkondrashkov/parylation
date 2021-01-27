@@ -90,6 +90,10 @@
 		9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67853F24EFECD5006E28BD /* WelcomeView.swift */; };
 		9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
 		9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
+		9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
+		9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
 		9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8572594D3680052080B /* TaskRepositorySpec.swift */; };
@@ -141,8 +145,6 @@
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
 		9CADB576249E0F1A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
-		9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
 		9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
@@ -304,6 +306,8 @@
 		9C67853C24EFECCF006E28BD /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		9C67853F24EFECD5006E28BD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
+		9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		9C7D3A1F25BA1B9B000E7EDF /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9C90F8572594D3680052080B /* TaskRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositorySpec.swift; sourceTree = "<group>"; };
 		9C90F86325969A0F0052080B /* TaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContract.swift; sourceTree = "<group>"; };
@@ -331,7 +335,6 @@
 		9C90F9192597E7C50052080B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
 		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
@@ -697,7 +700,8 @@
 		9CADB5AC249ECB7600901E45 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */,
+				9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */,
+				9C7D3A1F25BA1B9B000E7EDF /* Server.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1136,6 +1140,7 @@
 			files = (
 				9C90F86925969A0F0052080B /* TaskContract.swift in Sources */,
 				9C1CAF4A25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F90F2597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1174,7 +1179,6 @@
 				9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
-				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */,
 				9C27860525B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */,
@@ -1191,6 +1195,7 @@
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860025B702AE000502AA /* IconRepository.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
+				9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
@@ -1230,6 +1235,7 @@
 			files = (
 				9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */,
 				9C1CAF4B25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F9102597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1268,7 +1274,6 @@
 				9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
-				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */,
 				9C27860625B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */,
@@ -1285,6 +1290,7 @@
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860125B702AE000502AA /* IconRepository.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
+				9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,
