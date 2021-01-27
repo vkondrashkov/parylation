@@ -51,6 +51,12 @@
 "home_plan_button" = "Write important things";
 "home_delete_button" = "Delete";
 
+// MARK: - Calendar page
+
+"calendar_title" = "That's what's important";
+"calendar_subtitle" = "Check your ";
+"calendar_subtitle_accent" = "schedule";
+
 // MARK: - Task page
 
 "task_page_title" = "Task";
