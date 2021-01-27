@@ -16,19 +16,23 @@ final class DashboardRouterImpl {
     
     private weak var settingsNavigationController: UINavigationController?
     private let settingsBuilder: SettingsBuilder
+
+    private weak var listener: DashboardListener?
     
     init(
         tabBarController: UITabBarController,
         homeNavigationController: UINavigationController,
         homeBuilder: HomeBuilder,
         settingsNavigationController: UINavigationController,
-        settingsBuilder: SettingsBuilder
+        settingsBuilder: SettingsBuilder,
+        listener: DashboardListener?
     ) {
         self.tabBarController = tabBarController
         self.homeNavigationController = homeNavigationController
         self.homeBuilder = homeBuilder
         self.settingsNavigationController = settingsNavigationController
         self.settingsBuilder = settingsBuilder
+        self.listener = listener
     }
 }
 
@@ -38,7 +42,15 @@ extension DashboardRouterImpl: DashboardRouter {
     func showTabs() {
         let homeView = homeBuilder.build()
         homeNavigationController?.setViewControllers([homeView], animated: false)
-        let settingsView = settingsBuilder.build()
+        let settingsView = settingsBuilder.build(listener: self)
         settingsNavigationController?.setViewControllers([settingsView], animated: false)
+    }
+}
+
+// MARK: - SettingsListener implementation
+
+extension DashboardRouterImpl: SettingsListener {
+    func onSignOut() {
+        listener?.onSignOut()
     }
 }

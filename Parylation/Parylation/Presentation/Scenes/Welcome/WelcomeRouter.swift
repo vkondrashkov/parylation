@@ -14,20 +14,21 @@ final class WelcomeRouterImpl {
     private weak var view: UIViewController?
     private let signUpBuilder: SignUpBuilder
     private let signInBuilder: SignInBuilder
-    private let dashboardBuilder: DashboardBuilder
+
+    private weak var listener: WelcomeListener?
     
     init(
         window: UIWindow,
         view: UIViewController,
         signUpBuilder: SignUpBuilder,
         signInBuilder: SignInBuilder,
-        dashboardBuilder: DashboardBuilder
+        listener: WelcomeListener?
     ) {
         self.window = window
         self.view = view
         self.signUpBuilder = signUpBuilder
         self.signInBuilder = signInBuilder
-        self.dashboardBuilder = dashboardBuilder
+        self.listener = listener
 
         navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
@@ -48,11 +49,6 @@ extension WelcomeRouterImpl: WelcomeRouter {
         navigationController.setViewControllers([signInView], animated: false)
         view?.present(navigationController, animated: true, completion: nil)
     }
-    
-    func showDashboard() {
-        let dashboardView = dashboardBuilder.build()
-        window?.rootViewController = dashboardView
-    }
 }
 
 // MARK: - SignInListener implementation
@@ -60,7 +56,7 @@ extension WelcomeRouterImpl: WelcomeRouter {
 extension WelcomeRouterImpl: SignInListener {
     func onSignInFinish() {
         view?.dismiss(animated: true, completion: { [weak self] in
-            self?.showDashboard()
+            self?.listener?.onAuthorizationFinish()
         })
     }
 }
@@ -70,7 +66,7 @@ extension WelcomeRouterImpl: SignInListener {
 extension WelcomeRouterImpl: SignUpListener {
     func onSignUpFinish() {
         view?.dismiss(animated: true, completion: { [weak self] in
-            self?.showDashboard()
+            self?.listener?.onAuthorizationFinish()
         })
     }
 }

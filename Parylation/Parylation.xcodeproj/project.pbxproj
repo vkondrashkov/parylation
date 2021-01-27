@@ -90,6 +90,10 @@
 		9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67853F24EFECD5006E28BD /* WelcomeView.swift */; };
 		9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
 		9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
+		9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
+		9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
 		9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8572594D3680052080B /* TaskRepositorySpec.swift */; };
@@ -141,8 +145,6 @@
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
 		9CADB576249E0F1A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
-		9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
 		9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
@@ -180,6 +182,18 @@
 		9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
 		9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
 		9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
+		9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8727925C1CF80003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
+		9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8728125C1CF87003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -292,6 +306,8 @@
 		9C67853C24EFECCF006E28BD /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		9C67853F24EFECD5006E28BD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
+		9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		9C7D3A1F25BA1B9B000E7EDF /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9C90F8572594D3680052080B /* TaskRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositorySpec.swift; sourceTree = "<group>"; };
 		9C90F86325969A0F0052080B /* TaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContract.swift; sourceTree = "<group>"; };
@@ -319,7 +335,6 @@
 		9C90F9192597E7C50052080B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
 		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
@@ -339,6 +354,12 @@
 		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfoBuilder.swift; sourceTree = "<group>"; };
 		9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDisplayable.swift; sourceTree = "<group>"; };
+		9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signIn-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signUp-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateEmail-uid123-vladislav@kondrashkov.com.json"; sourceTree = "<group>"; };
+		9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateUsername-uid123-vladislav.json"; sourceTree = "<group>"; };
+		9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updatePassword-uid123-B12345-A12345.json"; sourceTree = "<group>"; };
+		9CD8727825C1CF80003D7868 /* signOut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signOut.json; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -574,6 +595,7 @@
 		9C5C656A249A602600E9D889 /* ParylationDevTests */ = {
 			isa = PBXGroup;
 			children = (
+				9CD8726325C1CEC4003D7868 /* StubbedResponses */,
 				9C1CB00925A749CA0006B513 /* TestDoubles */,
 				9C1CB00425A73E3C0006B513 /* Repositories */,
 				9C1CB01525A74B2F0006B513 /* ViewModels */,
@@ -678,7 +700,8 @@
 		9CADB5AC249ECB7600901E45 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */,
+				9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */,
+				9C7D3A1F25BA1B9B000E7EDF /* Server.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -777,6 +800,19 @@
 				9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		9CD8726325C1CEC4003D7868 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */,
+				9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */,
+				9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */,
+				9CD8727825C1CF80003D7868 /* signOut.json */,
+			);
+			path = StubbedResponses;
 			sourceTree = "<group>";
 		};
 		9CEB58D424F05DDF008B835A /* SignIn */ = {
@@ -950,9 +986,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
 				9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */,
+				9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 				9C90F8EC2597883E0052080B /* Localizable.strings in Resources */,
 				9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */,
+				9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8728125C1CF87003D7868 /* signOut.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +1002,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727925C1CF80003D7868 /* signOut.json in Resources */,
+				9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,6 +1140,7 @@
 			files = (
 				9C90F86925969A0F0052080B /* TaskContract.swift in Sources */,
 				9C1CAF4A25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F90F2597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1130,7 +1179,6 @@
 				9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
-				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */,
 				9C27860525B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */,
@@ -1147,6 +1195,7 @@
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860025B702AE000502AA /* IconRepository.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
+				9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
@@ -1186,6 +1235,7 @@
 			files = (
 				9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */,
 				9C1CAF4B25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F9102597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1224,7 +1274,6 @@
 				9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
-				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */,
 				9C27860625B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */,
@@ -1241,6 +1290,7 @@
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860125B702AE000502AA /* IconRepository.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
+				9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,

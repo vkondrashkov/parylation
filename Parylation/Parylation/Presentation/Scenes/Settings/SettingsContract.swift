@@ -15,10 +15,15 @@ import ParylationDomain
 
 protocol SettingsContainer {
     var authorizationService: AuthorizationService { get }
+    var userService: UserService { get }
+}
+
+protocol SettingsListener: AnyObject {
+    func onSignOut()
 }
 
 protocol SettingsBuilder {
-    func build() -> UIViewController
+    func build(listener: SettingsListener?) -> UIViewController
 }
 
 protocol SettingsRouter: AnyObject {

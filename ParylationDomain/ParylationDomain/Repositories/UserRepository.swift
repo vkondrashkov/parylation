@@ -15,6 +15,10 @@ public enum UserRepositoryError: Error {
 }
 
 public protocol UserRepository {
-    func registerUser(login: String, password: String) -> Single<Void>
+    func registerUser(login: String, password: String) -> Single<User>
     func authorizeUser(login: String, password: String) -> Single<User>
+    func update(userId: String, email: String) -> Single<User>
+    func update(userId: String, username: String) -> Single<User>
+    func update(userId: String, password: String) -> Single<Void>
+    func signout() -> Single<Void>
 }

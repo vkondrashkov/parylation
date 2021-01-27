@@ -22,7 +22,7 @@ final class DashboardBuilderImpl {
 // MARK: - DashboardBuilder implementation
 
 extension DashboardBuilderImpl: DashboardBuilder {
-    func build() -> UIViewController {
+    func build(listener: DashboardListener?) -> UIViewController {
         let view = DashboardView()
         
         let homeNavigationController = UINavigationController()
@@ -69,7 +69,8 @@ extension DashboardBuilderImpl: DashboardBuilder {
             homeNavigationController: homeNavigationController,
             homeBuilder: homeBuilder,
             settingsNavigationController: settingsNavigationController,
-            settingsBuilder: settingsBuilder
+            settingsBuilder: settingsBuilder,
+            listener: listener
         )
         let viewModel = DashboardViewModelImpl(
             interactor: interactor,

@@ -9,6 +9,7 @@
 import ParylationDomain
 import RealmSwift
 import UIKit
+import Moya
 
 // TODO: typealias AnalyticsContext =
 
@@ -34,6 +35,7 @@ typealias AppContext = AuthContext & MainContext // & AnalyticsContext
 final class AppContextImpl: AppContext {
     unowned var window: UIWindow
     let authorizationService: AuthorizationService
+    let userService: UserService
     let taskRepository: TaskRepository
     let iconRepository: IconRepository
     let colorRepository: ColorRepository
@@ -42,8 +44,16 @@ final class AppContextImpl: AppContext {
     init(window: UIWindow)  {
         self.window = window
         let realm = try! Realm()
+
+        let userProvider = MoyaProvider<UserAPI>(stubClosure: MoyaProvider<UserAPI>.immediatelyStub)
+        let userRepository = UserRepositoryImpl(provider: userProvider)
         let authorizedUserRepository = AuthorizedUserRepositoryImpl(realm: realm)
         authorizationService = AuthorizationServiceImpl(
+            userRepository: userRepository,
+            authorizedUserRepository: authorizedUserRepository
+        )
+        userService = UserServiceImpl(
+            userRepository: userRepository,
             authorizedUserRepository: authorizedUserRepository
         )
         taskRepository = TaskRepositoryImpl(realm: realm)

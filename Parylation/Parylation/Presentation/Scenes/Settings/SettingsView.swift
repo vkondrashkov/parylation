@@ -159,6 +159,7 @@ extension SettingsView: UITableViewDelegate {
 
         viewModel.sections
             .drive(onNext: {
+                guard $0.count > section else { return }
                 header.text = $0[section].name
             })
             .disposed(by: disposeBag)

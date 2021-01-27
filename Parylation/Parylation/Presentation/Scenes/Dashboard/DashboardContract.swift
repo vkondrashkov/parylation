@@ -13,7 +13,11 @@ import UIKit
 protocol DashboardContainer { }
 
 protocol DashboardBuilder {
-    func build() -> UIViewController
+    func build(listener: DashboardListener?) -> UIViewController
+}
+
+protocol DashboardListener: AnyObject {
+    func onSignOut()
 }
 
 protocol DashboardRouter: AnyObject {

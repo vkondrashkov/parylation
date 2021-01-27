@@ -3,6 +3,7 @@
 ## Alpha 0.2.0
 ### Added
 - Icons and Colors for tasks
+- Change username and email features
 
 ### Changed
 - Settings UI
