@@ -15,19 +15,20 @@ public enum AuthorizationServiceError: Error {
 
 public protocol AuthorizationService: AnyObject {
     func isAuthorized() -> Single<Bool>
-    func fetchCurrentUser() -> Single<User>
     func authorize(email: String, password: String) -> Single<User>
     func register(email: String, password: String) -> Single<User>
     func signout() -> Single<Void>
-    // DEPRECATED
-    @available(*, deprecated, message: "Do not use this method")
-    func saveUser(user: User) -> Single<Void>
 }
 
 public final class AuthorizationServiceImpl: AuthorizationService {
+    private let userRepository: UserRepository
     private let authorizedUserRepository: AuthorizedUserRepository
     
-    public init(authorizedUserRepository: AuthorizedUserRepository) {
+    public init(
+        userRepository: UserRepository,
+        authorizedUserRepository: AuthorizedUserRepository
+    ) {
+        self.userRepository = userRepository
         self.authorizedUserRepository = authorizedUserRepository
     }
     
@@ -37,34 +38,29 @@ public final class AuthorizationServiceImpl: AuthorizationService {
             .catchError { _ in .just(false) }
     }
     
-    public func fetchCurrentUser() -> Single<User> {
-        return authorizedUserRepository.fetchUser()
-            .catchError { _ in .error(AuthorizationServiceError.missingData) }
-    }
-    
     public func authorize(email: String, password: String) -> Single<User> {
-        // TODO: DO API LOGIC
-        let user = User(id: "123", name: "Vladislav")
-        return authorizedUserRepository.saveUser(user: user)
-            .map { _ in user }
+        let user = userRepository.authorizeUser(login: email, password: password)
+        return user
+            .flatMap { self.authorizedUserRepository.saveUser(user: $0) }
+            .asObservable()
+            .withLatestFrom(user)
+            .asSingle()
             .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
     
     public func register(email: String, password: String) -> Single<User> {
-        // TODO: DO API LOGIC
-        let user = User(id: "123", name: "Vladislav")
-        return authorizedUserRepository.saveUser(user: user)
-            .map { _ in user }
+        let user = userRepository.registerUser(login: email, password: password)
+        return user
+            .flatMap { self.authorizedUserRepository.saveUser(user: $0) }
+            .asObservable()
+            .withLatestFrom(user)
+            .asSingle()
             .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
 
     public func signout() -> Single<Void> {
-        return authorizedUserRepository.deleteUser()
-            .catchError { _ in .error(AuthorizationServiceError.failed) }
-    }
-    
-    public func saveUser(user: User) -> Single<Void> {
-        return authorizedUserRepository.saveUser(user: user)
+        return userRepository.signout()
+            .flatMap { self.authorizedUserRepository.deleteUser() }
             .catchError { _ in .error(AuthorizationServiceError.failed) }
     }
 }

@@ -17,6 +17,7 @@
 		9C2785F825B700EB000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785F725B700EB000502AA /* IconRepository.swift */; };
 		9C2785FB25B70209000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FA25B70209000502AA /* ColorRepository.swift */; };
 		9C67854324EFED5B006E28BD /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */; };
+		9C7D3A1925BA12AB000E7EDF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1825BA12AB000E7EDF /* UserService.swift */; };
 		9C90F87825969A600052080B /* TaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F87725969A600052080B /* TaskInteractor.swift */; };
 		9C90F8B9259731610052080B /* TaskEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8B8259731610052080B /* TaskEditInteractor.swift */; };
 		9C90F91D25991D730052080B /* CredentialsValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F91C25991D730052080B /* CredentialsValidatorService.swift */; };
@@ -48,6 +49,7 @@
 		9C2785F725B700EB000502AA /* IconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRepository.swift; sourceTree = "<group>"; };
 		9C2785FA25B70209000502AA /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
 		9C67854224EFED5B006E28BD /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		9C7D3A1825BA12AB000E7EDF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9C90F87725969A600052080B /* TaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInteractor.swift; sourceTree = "<group>"; };
 		9C90F8B8259731610052080B /* TaskEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditInteractor.swift; sourceTree = "<group>"; };
 		9C90F91C25991D730052080B /* CredentialsValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorService.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				9CADB5C824A00AB300901E45 /* AuthorizationService.swift */,
 				9C90F91C25991D730052080B /* CredentialsValidatorService.swift */,
 				9C1CADB125A4A5030006B513 /* PushNotificationsService.swift */,
+				9C7D3A1825BA12AB000E7EDF /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				9C11CE3E258FE46900E99F9E /* Task.swift in Sources */,
 				9C2785FB25B70209000502AA /* ColorRepository.swift in Sources */,
 				9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */,
+				9C7D3A1925BA12AB000E7EDF /* UserService.swift in Sources */,
 				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9C2785F825B700EB000502AA /* IconRepository.swift in Sources */,
