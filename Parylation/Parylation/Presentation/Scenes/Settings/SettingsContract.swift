@@ -15,6 +15,7 @@ import ParylationDomain
 
 protocol SettingsContainer {
     var authorizationService: AuthorizationService { get }
+    var userService: UserService { get }
 }
 
 protocol SettingsBuilder {
