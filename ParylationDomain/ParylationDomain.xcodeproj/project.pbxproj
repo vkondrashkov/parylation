@@ -29,6 +29,7 @@
 		9CADB5C724A0092500901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C824A00AB300901E45 /* AuthorizationService.swift */; };
 		9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */; };
+		9CD872A025C1E95C003D7868 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8729F25C1E95C003D7868 /* CalendarInteractor.swift */; };
 		9CEB58ED24F05F24008B835A /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58EC24F05F24008B835A /* SignInInteractor.swift */; };
 		9CEB590824F1352C008B835A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB590724F1352C008B835A /* HomeInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		9CADB5C624A0092500901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
 		9CADB5C824A00AB300901E45 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		9CD8729F25C1E95C003D7868 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
 		9CEB58EC24F05F24008B835A /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		9CEB590724F1352C008B835A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				9CEB58EC24F05F24008B835A /* SignInInteractor.swift */,
 				9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */,
 				9CEB590724F1352C008B835A /* HomeInteractor.swift */,
+				9CD8729F25C1E95C003D7868 /* CalendarInteractor.swift */,
 				9C90F87725969A600052080B /* TaskInteractor.swift */,
 				9C90F8B8259731610052080B /* TaskEditInteractor.swift */,
 				9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */,
@@ -295,6 +298,7 @@
 				9C2785FB25B70209000502AA /* ColorRepository.swift in Sources */,
 				9CADB5C924A00AB300901E45 /* AuthorizationService.swift in Sources */,
 				9C7D3A1925BA12AB000E7EDF /* UserService.swift in Sources */,
+				9CD872A025C1E95C003D7868 /* CalendarInteractor.swift in Sources */,
 				9CBB9BB124F50742005EF51A /* SettingsInteractor.swift in Sources */,
 				9CADB564249E0DD500901E45 /* User.swift in Sources */,
 				9C2785F825B700EB000502AA /* IconRepository.swift in Sources */,
