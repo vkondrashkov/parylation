@@ -180,6 +180,18 @@
 		9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
 		9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
 		9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
+		9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8727925C1CF80003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
+		9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8728125C1CF87003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -339,6 +351,12 @@
 		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfoBuilder.swift; sourceTree = "<group>"; };
 		9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDisplayable.swift; sourceTree = "<group>"; };
+		9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signIn-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signUp-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateEmail-uid123-vladislav@kondrashkov.com.json"; sourceTree = "<group>"; };
+		9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateUsername-uid123-vladislav.json"; sourceTree = "<group>"; };
+		9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updatePassword-uid123-B12345-A12345.json"; sourceTree = "<group>"; };
+		9CD8727825C1CF80003D7868 /* signOut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signOut.json; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -574,6 +592,7 @@
 		9C5C656A249A602600E9D889 /* ParylationDevTests */ = {
 			isa = PBXGroup;
 			children = (
+				9CD8726325C1CEC4003D7868 /* StubbedResponses */,
 				9C1CB00925A749CA0006B513 /* TestDoubles */,
 				9C1CB00425A73E3C0006B513 /* Repositories */,
 				9C1CB01525A74B2F0006B513 /* ViewModels */,
@@ -779,6 +798,19 @@
 			path = ContentView;
 			sourceTree = "<group>";
 		};
+		9CD8726325C1CEC4003D7868 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */,
+				9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */,
+				9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */,
+				9CD8727825C1CF80003D7868 /* signOut.json */,
+			);
+			path = StubbedResponses;
+			sourceTree = "<group>";
+		};
 		9CEB58D424F05DDF008B835A /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,9 +982,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
 				9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */,
+				9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 				9C90F8EC2597883E0052080B /* Localizable.strings in Resources */,
 				9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */,
+				9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8728125C1CF87003D7868 /* signOut.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +998,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727925C1CF80003D7868 /* signOut.json in Resources */,
+				9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
