@@ -40,6 +40,7 @@ final class AuthorizedUserRepositoryImpl: AuthorizedUserRepository {
             } catch {
                 single(.error(AuthorizedUserRepositoryError.failed))
             }
+            single(.success(()))
             return Disposables.create()
         }
     }

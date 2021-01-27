@@ -14,7 +14,8 @@ final class RealmUser: Object {
     dynamic var id = UUID().uuidString
     
     dynamic var userId = ""
-    dynamic var name = ""
+    dynamic var email = ""
+    dynamic var username = ""
     
     override class func primaryKey() -> String? {
         return "id"
@@ -23,14 +24,16 @@ final class RealmUser: Object {
     static func from(user: User) -> RealmUser {
         let realmUser = RealmUser()
         realmUser.userId = user.id
-        realmUser.name = user.name
+        realmUser.email = user.email
+        realmUser.username = user.username
         return realmUser
     }
     
     func toDomain() -> User {
         return User(
             id: userId,
-            name: name
+            email: email,
+            username: username
         )
     }
 }
