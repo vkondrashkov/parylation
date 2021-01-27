@@ -58,6 +58,7 @@ extension DashboardBuilderImpl: DashboardBuilder {
         settingsNavigationController.tabBarItem = profileTabBarItem
         
         let homeBuilder = HomeBuilderImpl(context: context)
+        let calendarBuilder = CalendarBuilderImpl(context: context)
         let settingsBuilder = SettingsBuilderImpl(context: context)
         
         let interactor = DashboardInteractorImpl()
@@ -68,6 +69,8 @@ extension DashboardBuilderImpl: DashboardBuilder {
             tabBarController: view,
             homeNavigationController: homeNavigationController,
             homeBuilder: homeBuilder,
+            calendarNavigationController: calendarNavigationController,
+            calendarBuilder: calendarBuilder,
             settingsNavigationController: settingsNavigationController,
             settingsBuilder: settingsBuilder,
             listener: listener

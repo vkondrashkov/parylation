@@ -23,11 +23,12 @@ typealias HomeContext = DashboardContainer
     & TaskContainer
     & TaskEditContainer
 
-// TODO: typealias CalendarContext
+typealias CalendarContext = CalendarContainer
 
 typealias SettingsContext = SettingsContainer
 
 typealias MainContext = HomeContext
+    & CalendarContext
     & SettingsContext
 
 typealias AppContext = AuthContext & MainContext // & AnalyticsContext
