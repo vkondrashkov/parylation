@@ -155,6 +155,7 @@ final class HomeView: UIViewController {
 
         createButton.layer.cornerRadius = 30
         createButton.backgroundColor = Color.marigoldYellow
+        createButton.setImage(Asset.commonTaskPlus.image, for: .normal)
     }
 
     private func bindViewModel() {

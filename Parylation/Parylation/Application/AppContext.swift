@@ -24,6 +24,8 @@ typealias HomeContext = DashboardContainer
     & TaskEditContainer
 
 typealias CalendarContext = CalendarContainer
+    & TaskEditContainer
+    & TaskContainer
 
 typealias SettingsContext = SettingsContainer
 
