@@ -53,6 +53,8 @@
 		9C27860125B702AE000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FF25B702AE000502AA /* IconRepository.swift */; };
 		9C27860525B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
 		9C27860625B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
+		9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
+		9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
 		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
@@ -302,6 +304,7 @@
 		9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C2785FF25B702AE000502AA /* IconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRepository.swift; sourceTree = "<group>"; };
 		9C27860425B702B6000502AA /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
+		9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C656D249A602600E9D889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -600,6 +603,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		9C57B24E25C60B7C00A49797 /* ContentVIew */ = {
+			isa = PBXGroup;
+			children = (
+				9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */,
+			);
+			path = ContentVIew;
+			sourceTree = "<group>";
+		};
 		9C5C6564249A5ED200E9D889 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +848,7 @@
 		9CD8728725C1E92A003D7868 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				9C57B24E25C60B7C00A49797 /* ContentVIew */,
 				9CD872B725C1F1AA003D7868 /* Day.swift */,
 				9CD8728B25C1E940003D7868 /* CalendarContract.swift */,
 				9CD8728C25C1E940003D7868 /* CalendarRouter.swift */,
@@ -1263,6 +1275,7 @@
 				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CBB9BC224F50771005EF51A /* SettingsViewModel.swift in Sources */,
+				9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */,
 				9CD8729125C1E940003D7868 /* CalendarContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1364,6 +1377,7 @@
 				9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBB24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CBB9BC324F50771005EF51A /* SettingsViewModel.swift in Sources */,
+				9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */,
 				9CD8729225C1E940003D7868 /* CalendarContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

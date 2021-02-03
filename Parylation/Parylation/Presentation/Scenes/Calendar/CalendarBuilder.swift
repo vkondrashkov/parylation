@@ -12,7 +12,7 @@ import UIKit
 import ParylationDomain
 
 final class CalendarBuilderImpl {
-    typealias Context = CalendarContainer
+    typealias Context = CalendarContext
     
     private let context: Context
 
@@ -27,13 +27,20 @@ extension CalendarBuilderImpl: CalendarBuilder {
     func build() -> UIViewController {
         let view = CalendarView()
 
-        let interactor = CalendarInteractorImpl()
+        let calendar = Calendar(identifier: .gregorian)
+        let interactor = CalendarInteractorImpl(calendar: calendar)
+        let taskEditBuilder = TaskEditBuilderImpl(context: context)
         let router = CalendarRouterImpl(
-            view: view
+            view: view,
+            taskEditBuilder: taskEditBuilder
         )
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
         let viewModel = CalendarViewModelImpl(
             interactor: interactor,
-            router: router
+            router: router,
+            calendar: calendar,
+            dateFormatter: dateFormatter
         ) 
         view.viewModel = viewModel
         return view
