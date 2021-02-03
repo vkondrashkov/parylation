@@ -204,6 +204,8 @@
 		9CD8729A25C1E940003D7868 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728F25C1E940003D7868 /* CalendarView.swift */; };
 		9CD8729B25C1E940003D7868 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8729025C1E940003D7868 /* CalendarViewModel.swift */; };
 		9CD8729C25C1E940003D7868 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8729025C1E940003D7868 /* CalendarViewModel.swift */; };
+		9CD872B825C1F1AA003D7868 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD872B725C1F1AA003D7868 /* Day.swift */; };
+		9CD872B925C1F1AA003D7868 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD872B725C1F1AA003D7868 /* Day.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -375,6 +377,7 @@
 		9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBuilder.swift; sourceTree = "<group>"; };
 		9CD8728F25C1E940003D7868 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9CD8729025C1E940003D7868 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		9CD872B725C1F1AA003D7868 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -834,6 +837,7 @@
 		9CD8728725C1E92A003D7868 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				9CD872B725C1F1AA003D7868 /* Day.swift */,
 				9CD8728B25C1E940003D7868 /* CalendarContract.swift */,
 				9CD8728C25C1E940003D7868 /* CalendarRouter.swift */,
 				9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */,
@@ -1252,6 +1256,7 @@
 				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CD872B825C1F1AA003D7868 /* Day.swift in Sources */,
 				9C90F88A2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
@@ -1352,6 +1357,7 @@
 				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CD872B925C1F1AA003D7868 /* Day.swift in Sources */,
 				9C90F88B2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
