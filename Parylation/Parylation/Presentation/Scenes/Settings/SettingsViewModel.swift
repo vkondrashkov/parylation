@@ -35,9 +35,6 @@ final class SettingsViewModelImpl: SettingsViewModel {
         self.interactor = interactor
         self.router = router
 
-        let disposeBag_ = disposeBag
-
-        let userSubject_ = userSubject
         let user = userSubject
             .flatMap { interactor.fetchUser() }
             .asObservable()

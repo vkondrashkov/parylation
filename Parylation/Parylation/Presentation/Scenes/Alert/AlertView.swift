@@ -108,7 +108,7 @@ final class AlertView: UIViewController {
                 itemView = buildTitle(title)
             case .toggle(let switchProvider, let switchConsumer):
                 itemView = buildToggle(switchProvider, switchConsumer)
-            case .combined(let items):
+            case .combined:
                 itemView = UIView() // TODO
             }
 //            itemView.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
