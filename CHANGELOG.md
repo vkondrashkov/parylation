@@ -4,6 +4,7 @@
 ### Added
 - Icons and Colors for tasks
 - Change username and email features
+- Calendar
 
 ### Changed
 - Settings UI

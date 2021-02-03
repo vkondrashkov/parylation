@@ -27,6 +27,7 @@ final class RootView: UIViewController {
     }
     
     private func setupUI() {
+        UINavigationBar.appearance().tintColor = Color.gigas
         view.backgroundColor = Color.chablis
         view.addSubview(logoImageView)
         logoImageView.image = Asset.appLogo.image

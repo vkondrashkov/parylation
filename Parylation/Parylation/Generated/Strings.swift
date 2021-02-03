@@ -14,6 +14,12 @@ internal enum L10n {
   internal static let accept = L10n.tr("Localizable", "accept")
   /// Parylation
   internal static let appName = L10n.tr("Localizable", "app_name")
+  /// Check your 
+  internal static let calendarSubtitle = L10n.tr("Localizable", "calendar_subtitle")
+  /// schedule
+  internal static let calendarSubtitleAccent = L10n.tr("Localizable", "calendar_subtitle_accent")
+  /// That's what's important
+  internal static let calendarTitle = L10n.tr("Localizable", "calendar_title")
   /// Cancel
   internal static let cancel = L10n.tr("Localizable", "cancel")
   /// Delete

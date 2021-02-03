@@ -51,6 +51,12 @@
 "home_plan_button" = "Составьте свой план";
 "home_delete_button" = "Удалить";
 
+// MARK: - Calendar page
+
+"calendar_title" = "Вот что важно";
+"calendar_subtitle" = "Проверьте Ваше";
+"calendar_subtitle_accent" = "расписание";
+
 // MARK: - Task page
 
 "task_page_title" = "Задача";
