@@ -36,23 +36,20 @@ final class CalendarView: UIViewController {
 
         view.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(30)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30).priority(.high)
         }
 
         view.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
         }
 
         let monthHeaderContainerView = UIView()
         view.addSubview(monthHeaderContainerView)
         monthHeaderContainerView.snp.makeConstraints {
             $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(70)
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
         }
 
         monthHeaderContainerView.addSubview(previousMonthButton)
@@ -77,13 +74,13 @@ final class CalendarView: UIViewController {
         view.addSubview(weekdaysStackView)
         weekdaysStackView.snp.makeConstraints {
             $0.top.equalTo(monthHeaderContainerView.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
         }
 
         view.addSubview(monthCollectionView)
         monthCollectionView.snp.makeConstraints {
             $0.top.equalTo(weekdaysStackView.snp.bottom).offset(5)
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
             $0.height.equalTo(270)
         }
 
@@ -226,8 +223,6 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-//    let width = Int(collectionView.frame.width / 7)
-//    let height = Int(collectionView.frame.height) / numberOfWeeksInBaseDate
     return CGSize(width: 45, height: 45)
   }
 }
