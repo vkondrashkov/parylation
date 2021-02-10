@@ -111,7 +111,6 @@ final class AlertView: UIViewController {
             case .combined:
                 itemView = UIView() // TODO
             }
-//            itemView.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
             contentContainerView.addArrangedSubview(itemView)
         }
     }

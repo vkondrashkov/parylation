@@ -28,7 +28,6 @@ extension WelcomeBuilderImpl: WelcomeBuilder {
         let signInBuilder = SignInBuilderImpl(context: context)
         let interactor = WelcomeInteractorImpl()
         let router = WelcomeRouterImpl(
-            window: context.window,
             view: view,
             signUpBuilder: signUpBuilder,
             signInBuilder: signInBuilder,

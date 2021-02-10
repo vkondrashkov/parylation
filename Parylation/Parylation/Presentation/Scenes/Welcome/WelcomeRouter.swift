@@ -9,7 +9,6 @@
 import UIKit
 
 final class WelcomeRouterImpl {
-    private weak var window: UIWindow?
     private let navigationController: UINavigationController
     private weak var view: UIViewController?
     private let signUpBuilder: SignUpBuilder
@@ -18,13 +17,11 @@ final class WelcomeRouterImpl {
     private weak var listener: WelcomeListener?
     
     init(
-        window: UIWindow,
         view: UIViewController,
         signUpBuilder: SignUpBuilder,
         signInBuilder: SignInBuilder,
         listener: WelcomeListener?
     ) {
-        self.window = window
         self.view = view
         self.signUpBuilder = signUpBuilder
         self.signInBuilder = signInBuilder

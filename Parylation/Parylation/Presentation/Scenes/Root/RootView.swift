@@ -7,23 +7,20 @@
 //
 
 import UIKit
+import RxSwift
 
 final class RootView: UIViewController {
     var viewModel: RootViewModel!
     
     private let logoImageView = UIImageView()
+
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         bindViewModel()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        viewModel.viewDidAppearTrigger.onNext(())
     }
     
     private func setupUI() {
@@ -39,6 +36,9 @@ final class RootView: UIViewController {
     }
     
     private func bindViewModel() {
-        
+        rx.methodInvoked(#selector(UIViewController.viewDidAppear))
+            .map { _ in () }
+            .bind(to: viewModel.viewDidAppearTrigger)
+            .disposed(by: disposeBag)
     }
 }

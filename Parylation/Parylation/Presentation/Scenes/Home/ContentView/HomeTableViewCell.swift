@@ -51,7 +51,6 @@ final class HomeTableViewCell: UITableViewCell, ReuseIdentifiable {
         }
 
         iconImageView.tintColor = .white
-//        iconImageView.contentMode = .scaleAspectFit
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.size.equalTo(20)

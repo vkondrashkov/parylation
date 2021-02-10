@@ -17,9 +17,6 @@ public protocol HomeInteractor {
     func fetchIcon(id: String) -> Single<Icon>
     func fetchColor(id: String) -> Single<Color>
     func deleteTask(taskId: String) -> Single<Void>
-
-    // TEMP:
-    func createTask(task: Task) -> Single<Void>
 }
 
 public final class HomeInteractorImpl {
@@ -53,11 +50,6 @@ extension HomeInteractorImpl: HomeInteractor {
 
     public func fetchColor(id: String) -> Single<Color> {
         return colorRepository.fetch(id: id)
-            .catchError { _ in .error(HomeInteractorError.failed) }
-    }
-
-    public func createTask(task: Task) -> Single<Void> {
-        return taskRepository.save(task: task)
             .catchError { _ in .error(HomeInteractorError.failed) }
     }
 

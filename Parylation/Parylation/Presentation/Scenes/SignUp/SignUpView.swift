@@ -280,10 +280,4 @@ final class SignUpView: UIViewController {
             .drive(confirmPasswordErrorLabel.rx.text)
             .disposed(by: disposeBag)
     }
-
-    private func updateSignUpButton(isEnabled: Bool) {
-        signUpButton.backgroundColor = isEnabled ? Color.blazeOrange : Color.gray
-        signUpButton.isEnabled = isEnabled
-        signUpButton.layer.shadowOpacity = isEnabled ? 0.5 : 0
-    }
 }
