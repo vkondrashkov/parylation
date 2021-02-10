@@ -106,7 +106,6 @@ extension UserAPI: TargetType {
 
     var headers: [String : String]? {
         let headers = ["Content-Type": "application/json"]
-        // TODO: Implement custom headers, for example: tokens
         return headers
     }
 

@@ -28,11 +28,10 @@ final class HomeView: UIViewController {
     
     override func loadView() {
         view = UIView()
-        
+
         view.addSubview(headerBackgroundView)
         headerBackgroundView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.lessThanOrEqualTo(view.snp.centerY)
+            $0.top.leading.trailing.equalToSuperview().priority(.high)
         }
         
         let headerMaskView = UIView()
@@ -45,22 +44,19 @@ final class HomeView: UIViewController {
         
         headerBackgroundView.addSubview(headerContentView)
         headerContentView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.bottom.equalToSuperview().inset(30)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
-            $0.bottom.equalToSuperview().offset(-30)
         }
         
         headerContentView.addSubview(greetingsTitleLabel)
         greetingsTitleLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
         }
         
         headerContentView.addSubview(greetingsSubtitleLabel)
         greetingsSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(greetingsTitleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview()
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
         
         headerContentView.addSubview(planButton)
@@ -72,9 +68,9 @@ final class HomeView: UIViewController {
 
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(20)
+            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(20).priority(.high)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).priority(.high)
         }
 
         view.addSubview(createButton)

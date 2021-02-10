@@ -6,8 +6,6 @@
 //  Copyright © 2021 Vladislav Kondrashkov. All rights reserved.
 //
 
-
-
 protocol AlertViewInfoBuilder {
     func add(_ item: AlertViewInfoItem) -> Self
     func build() -> AlertViewInfo

@@ -18,8 +18,8 @@ struct TaskEditViewInfo {
 
     static func from(task: Task) -> TaskEditViewInfo {
         return TaskEditViewInfo(
-            icon: Asset.taskEditList.image.withRenderingMode(.alwaysTemplate), // TEMP
-            color: Color.gigas,             // TEMP
+            icon: Asset.taskEditList.image.withRenderingMode(.alwaysTemplate),
+            color: Color.gigas,
             title: task.title,
             taskDescription: task.taskDescription,
             date: task.date

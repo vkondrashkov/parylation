@@ -11,9 +11,7 @@ import RxSwift
 import ParylationDomain
 import UIKit
 
-protocol WelcomeContainer {
-    var window: UIWindow { get }
-}
+protocol WelcomeContainer { }
 
 protocol WelcomeListener: AnyObject {
     func onAuthorizationFinish()

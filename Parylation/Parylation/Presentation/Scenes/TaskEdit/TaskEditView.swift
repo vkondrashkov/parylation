@@ -54,7 +54,7 @@ final class TaskEditView: UIViewController {
 
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().priority(.high)
         }
 
         scrollView.addSubview(contentView)
@@ -105,7 +105,7 @@ final class TaskEditView: UIViewController {
 
         contentView.addSubview(taskDateCaptionLabel)
         taskDateCaptionLabel.snp.makeConstraints {
-            $0.bottom.equalTo(taskDescriptionTextField.snp.bottom).offset(20)
+            $0.top.equalTo(taskDescriptionTextField.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 

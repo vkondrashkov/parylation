@@ -44,16 +44,13 @@ final class SettingsView: UIViewController {
 
         contentView.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(30)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+            $0.top.leading.trailing.equalToSuperview().inset(30).priority(.high)
         }
 
         contentView.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.lessThanOrEqualToSuperview().offset(-30)
+            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
         }
 
         contentView.addSubview(settingsTableView)
@@ -61,7 +58,6 @@ final class SettingsView: UIViewController {
             $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
         }
-
     }
 
     override func viewDidLoad() {
