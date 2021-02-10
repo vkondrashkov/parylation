@@ -160,6 +160,9 @@ final class SignInView: UIViewController {
         emailTextField.leftViewMode = .always
         emailTextField.placeholder = "example@domain.com"
         emailTextField.keyboardType = .emailAddress
+        emailTextField.textContentType = .emailAddress
+        emailTextField.autocorrectionType = .no
+        emailTextField.autocapitalizationType = .none
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         passwordCaptionLabel.text = L10n.signInPassword
@@ -170,6 +173,7 @@ final class SignInView: UIViewController {
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.textContentType = .password
         
         forgotPasswordButton.setTitle(L10n.signInForgotPassword, for: .normal)
         forgotPasswordButton.setTitleColor(Color.blazeOrange, for: .normal)
