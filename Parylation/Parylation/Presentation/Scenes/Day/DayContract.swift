@@ -25,4 +25,11 @@ protocol DayBuilder {
 
 protocol DayRouter: AnyObject { }
 
-protocol DayViewModel { }
+protocol DayViewModel {
+    var reloadTrigger: AnyObserver<Void> { get }
+    var createTrigger: AnyObserver<Void> { get }
+    var selectTrigger: AnyObserver<IndexPath> { get }
+
+    var items: Driver<[DayTableItem]> { get }
+    var selectedDay: Driver<String> { get }
+}
