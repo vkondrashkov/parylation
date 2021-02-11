@@ -63,6 +63,12 @@
 		9C45DD3125D4676C00C57954 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2625D4676C00C57954 /* DayView.swift */; };
 		9C45DD3225D4676C00C57954 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2725D4676C00C57954 /* DayViewModel.swift */; };
 		9C45DD3325D4676C00C57954 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2725D4676C00C57954 /* DayViewModel.swift */; };
+		9C45DD3B25D46A1C00C57954 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */; };
+		9C45DD3C25D46A1C00C57954 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */; };
+		9C45DD4025D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
+		9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
+		9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
+		9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
 		9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
@@ -319,6 +325,9 @@
 		9C45DD2425D4676C00C57954 /* DayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBuilder.swift; sourceTree = "<group>"; };
 		9C45DD2625D4676C00C57954 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		9C45DD2725D4676C00C57954 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		9C45DD4425D46DEE00C57954 /* DayTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableItem.swift; sourceTree = "<group>"; };
 		9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -622,13 +631,24 @@
 		9C45DD2125D4674D00C57954 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				9C45DD3925D46A0B00C57954 /* ContentView */,
 				9C45DD2225D4676C00C57954 /* DayContract.swift */,
 				9C45DD2325D4676C00C57954 /* DayRouter.swift */,
 				9C45DD2425D4676C00C57954 /* DayBuilder.swift */,
 				9C45DD2625D4676C00C57954 /* DayView.swift */,
 				9C45DD2725D4676C00C57954 /* DayViewModel.swift */,
+				9C45DD4425D46DEE00C57954 /* DayTableItem.swift */,
 			);
 			path = Day;
+			sourceTree = "<group>";
+		};
+		9C45DD3925D46A0B00C57954 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */,
+				9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */,
+			);
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 		9C57B24E25C60B7C00A49797 /* ContentVIew */ = {
@@ -1251,6 +1271,7 @@
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C11CE44258FE5CA00E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AD2597314A0052080B /* TaskEditBuilder.swift in Sources */,
+				9C45DD4025D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
@@ -1281,6 +1302,7 @@
 				9C90F8B32597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
+				9C45DD3B25D46A1C00C57954 /* DayTableViewCell.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B12597314A0052080B /* TaskEditView.swift in Sources */,
 				9C2785E125B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
@@ -1289,6 +1311,7 @@
 				9C45DD2825D4676C00C57954 /* DayContract.swift in Sources */,
 				9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
+				9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */,
 				9CD8729925C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
@@ -1358,6 +1381,7 @@
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AE2597314A0052080B /* TaskEditBuilder.swift in Sources */,
+				9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
 				9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
@@ -1388,6 +1412,7 @@
 				9C90F8B42597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
+				9C45DD3C25D46A1C00C57954 /* DayTableViewCell.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B22597314A0052080B /* TaskEditView.swift in Sources */,
 				9C2785E225B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
@@ -1396,6 +1421,7 @@
 				9C45DD2925D4676C00C57954 /* DayContract.swift in Sources */,
 				9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
+				9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */,
 				9CD8729A25C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
