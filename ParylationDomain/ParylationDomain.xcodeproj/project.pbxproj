@@ -159,10 +159,10 @@
 				9CADB56A249E0E2C00901E45 /* DashboardInteractor.swift */,
 				9CEB590724F1352C008B835A /* HomeInteractor.swift */,
 				9CD8729F25C1E95C003D7868 /* CalendarInteractor.swift */,
+				9C45DD3625D467CB00C57954 /* DayInteractor.swift */,
 				9C90F87725969A600052080B /* TaskInteractor.swift */,
 				9C90F8B8259731610052080B /* TaskEditInteractor.swift */,
 				9CBB9BB024F50742005EF51A /* SettingsInteractor.swift */,
-				9C45DD3625D467CB00C57954 /* DayInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
