@@ -12,7 +12,7 @@ import UIKit
 import ParylationDomain
 
 final class DayBuilderImpl {
-    typealias Context = DayContainer
+    typealias Context = DayContainer & TaskContainer & TaskEditContainer
     
     private let context: Context
 
@@ -24,16 +24,23 @@ final class DayBuilderImpl {
 // MARK: - DayBuilder implementation
 
 extension DayBuilderImpl: DayBuilder {
-    func build() -> UIViewController {
+    func build(date: Date) -> UIViewController {
         let view = DayView()
 
-        let interactor = DayInteractorImpl()
+        let interactor = DayInteractorImpl(
+            taskRepository: context.taskRepository,
+            iconRepository: context.iconRepository,
+            colorRepository: context.colorRepository
+        )
+        let taskBuilder = TaskBuilderImpl(context: context)
         let router = DayRouterImpl(
-            view: view
+            view: view,
+            taskBuilder: taskBuilder
         )
         let viewModel = DayViewModelImpl(
             interactor: interactor,
-            router: router
+            router: router,
+            date: date
         ) 
         view.viewModel = viewModel
         return view

@@ -111,10 +111,25 @@ final class CalendarViewModelImpl: CalendarViewModel {
 
     private func finishViewModelSetup() {
         selectedDaySubject
+            .distinctUntilChanged()
             .flatMap { self.interactor.monthMetadata(date: $0) }
             .withLatestFrom(selectedDaySubject) { ($0, $1) }
             .map { self.generateDaysInMonth(metadata: $0, selectedDate: $1) }
             .bind(to: daysSubject)
+            .disposed(by: disposeBag)
+
+        let sameDay = selectedDaySubject
+            .scan([]) { previous, current in
+                return Array(previous + [current]).suffix(2)
+            }
+            .filter { $0.count > 1 }
+            .filter { $0[0] == $0[1] }
+            .compactMap { $0.first }
+
+        sameDay
+            .subscribe(onNext: { [weak self] date in
+                self?.router.showDay(date: date)
+            })
             .disposed(by: disposeBag)
     }
 

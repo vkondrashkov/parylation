@@ -20,6 +20,7 @@ protocol CalendarBuilder {
 
 protocol CalendarRouter: AnyObject {
     func showTaskCreation()
+    func showDay(date: Date)
 }
 
 protocol CalendarViewModel {

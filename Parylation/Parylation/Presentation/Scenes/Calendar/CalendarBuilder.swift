@@ -30,9 +30,11 @@ extension CalendarBuilderImpl: CalendarBuilder {
         let calendar = Calendar(identifier: .gregorian)
         let interactor = CalendarInteractorImpl(calendar: calendar)
         let taskEditBuilder = TaskEditBuilderImpl(context: context)
+        let dayBuilder = DayBuilderImpl(context: context)
         let router = CalendarRouterImpl(
             view: view,
-            taskEditBuilder: taskEditBuilder
+            taskEditBuilder: taskEditBuilder,
+            dayBuilder: dayBuilder
         )
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
