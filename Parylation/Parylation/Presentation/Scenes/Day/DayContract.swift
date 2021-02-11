@@ -20,10 +20,12 @@ protocol DayContainer {
 }
 
 protocol DayBuilder {
-    func build() -> UIViewController
+    func build(date: Date) -> UIViewController
 }
 
-protocol DayRouter: AnyObject { }
+protocol DayRouter: AnyObject {
+    func showTask(taskId: String)
+}
 
 protocol DayViewModel {
     var reloadTrigger: AnyObserver<Void> { get }

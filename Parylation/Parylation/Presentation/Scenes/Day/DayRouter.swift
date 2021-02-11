@@ -12,12 +12,23 @@ import UIKit
 
 final class DayRouterImpl {
     private weak var view: UIViewController?
+    private let taskBuilder: TaskBuilder
 
-    init(view: UIViewController) {
+    init(
+        view: UIViewController,
+        taskBuilder: TaskBuilder
+    ) {
         self.view = view
+        self.taskBuilder = taskBuilder
     }
 }
 
 // MARK: - DayRouter implementation
 
-extension DayRouterImpl: DayRouter { }
+extension DayRouterImpl: DayRouter {
+    func showTask(taskId: String) {
+        let taskView = taskBuilder.build(taskId: taskId)
+        taskView.hidesBottomBarWhenPushed = true
+        view?.navigationController?.pushViewController(taskView, animated: true)
+    }
+}
