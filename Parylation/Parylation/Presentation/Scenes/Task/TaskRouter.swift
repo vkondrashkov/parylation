@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import ParylationDomain
 
 final class TaskRouterImpl {
     private weak var viewController: UIViewController?
@@ -29,8 +30,9 @@ final class TaskRouterImpl {
 // MARK: - TaskRouter implementation
 
 extension TaskRouterImpl: TaskRouter {
-    func showTaskEdit(taskId: String, completion: (() -> Void)?) {
-        let editView = taskEditBuilder.build(taskId: taskId)
+    func showTaskEdit(task: Task, completion: (() -> Void)?) {
+        let data: TaskEditData = .from(task: task)
+        let editView = taskEditBuilder.build(data: data)
         viewController?.navigationController?.pushViewController(editView, animated: true)
     }
 

@@ -69,6 +69,9 @@
 		9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
 		9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
 		9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
+		9C4F96AC25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
+		9C4F96AD25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
+		9C4F96B025E26175000DCA79 /* TaskEditViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */; };
 		9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
@@ -328,6 +331,8 @@
 		9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		9C45DD4425D46DEE00C57954 /* DayTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableItem.swift; sourceTree = "<group>"; };
+		9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditData.swift; sourceTree = "<group>"; };
+		9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModelSpec.swift; sourceTree = "<group>"; };
 		9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -470,8 +475,8 @@
 		9C1CB00925A749CA0006B513 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
-				9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */,
-				9C1CB01225A74A540006B513 /* RootInteractorMock.swift */,
+				9C4F96B225E261BA000DCA79 /* Root */,
+				9C4F96B325E261C2000DCA79 /* TaskEdit */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */,
+				9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -651,6 +657,22 @@
 			path = ContentView;
 			sourceTree = "<group>";
 		};
+		9C4F96B225E261BA000DCA79 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */,
+				9C1CB01225A74A540006B513 /* RootInteractorMock.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9C4F96B325E261C2000DCA79 /* TaskEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TaskEdit;
+			sourceTree = "<group>";
+		};
 		9C57B24E25C60B7C00A49797 /* ContentVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +769,7 @@
 			children = (
 				9C2785DF25B5DAED000502AA /* ContentView */,
 				9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */,
+				9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */,
 				9C90F8A3259731490052080B /* TaskEditContract.swift */,
 				9C90F8A4259731490052080B /* TaskEditRouter.swift */,
 				9C90F8A5259731490052080B /* TaskEditBuilder.swift */,
@@ -1294,6 +1317,7 @@
 				9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860025B702AE000502AA /* IconRepository.swift in Sources */,
+				9C4F96AC25E24F2B000DCA79 /* TaskEditData.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
 				9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
@@ -1404,6 +1428,7 @@
 				9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
 				9C27860125B702AE000502AA /* IconRepository.swift in Sources */,
+				9C4F96AD25E24F2B000DCA79 /* TaskEditData.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
 				9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
@@ -1451,6 +1476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1CB00F25A749EA0006B513 /* RootRouterSpy.swift in Sources */,
+				9C4F96B025E26175000DCA79 /* TaskEditViewModelSpec.swift in Sources */,
 				9CADB5CC24A0130D00901E45 /* AuthorizationServiceSpec.swift in Sources */,
 				9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */,
 				9C1CB01325A74A540006B513 /* RootInteractorMock.swift in Sources */,
