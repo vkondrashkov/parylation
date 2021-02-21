@@ -29,8 +29,8 @@ final class CalendarRouterImpl {
 // MARK: - CalendarRouter implementation
 
 extension CalendarRouterImpl: CalendarRouter {
-    func showTaskCreation() {
-        let editView = taskEditBuilder.build(taskId: nil)
+    func showTaskCreation(data: TaskEditData) {
+        let editView = taskEditBuilder.build(data: data)
         view?.present(editView, animated: true, completion: nil)
     }
 

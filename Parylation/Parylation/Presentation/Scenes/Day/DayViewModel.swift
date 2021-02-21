@@ -61,8 +61,6 @@ final class DayViewModelImpl: DayViewModel {
             .toArray()
             .debug("🛑 Array")
 
-        let createSubject = PublishSubject<Void>()
-
         let selectSubject = PublishSubject<IndexPath>()
         selectSubject
             .withLatestFrom(tasks) { ($0, $1) }
@@ -74,6 +72,14 @@ final class DayViewModelImpl: DayViewModel {
             }
             .subscribe(onNext: { task in
                 router.showTask(taskId: task.id)
+            })
+            .disposed(by: disposeBag)
+
+        let createSubject = PublishSubject<Void>()
+        createSubject
+            .subscribe(onNext: {
+                let taskEditData = TaskEditData(date: date)
+                router.showTaskEdit(data: taskEditData)
             })
             .disposed(by: disposeBag)
 

@@ -25,6 +25,7 @@ protocol DayBuilder {
 
 protocol DayRouter: AnyObject {
     func showTask(taskId: String)
+    func showTaskEdit(data: TaskEditData)
 }
 
 protocol DayViewModel {

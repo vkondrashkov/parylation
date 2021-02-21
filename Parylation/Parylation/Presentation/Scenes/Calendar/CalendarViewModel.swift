@@ -88,7 +88,11 @@ final class CalendarViewModelImpl: CalendarViewModel {
 
         let createSubject = PublishSubject<Void>()
         createSubject
-            .subscribe(onNext: { router.showTaskCreation() })
+            .withLatestFrom(selectedDaySubject)
+            .subscribe(onNext: { date in
+                let taskEditData = TaskEditData(date: date)
+                router.showTaskCreation(data: taskEditData)
+            })
             .disposed(by: disposeBag)
 
         daySelectionTrigger = selectedDaySubject.asObserver()

@@ -33,9 +33,11 @@ extension DayBuilderImpl: DayBuilder {
             colorRepository: context.colorRepository
         )
         let taskBuilder = TaskBuilderImpl(context: context)
+        let taskEditBuilder = TaskEditBuilderImpl(context: context)
         let router = DayRouterImpl(
             view: view,
-            taskBuilder: taskBuilder
+            taskBuilder: taskBuilder,
+            taskEditBuilder: taskEditBuilder
         )
         let viewModel = DayViewModelImpl(
             interactor: interactor,
