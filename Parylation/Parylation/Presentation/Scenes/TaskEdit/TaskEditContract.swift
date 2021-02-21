@@ -19,7 +19,7 @@ protocol TaskEditContainer {
 }
 
 protocol TaskEditBuilder {
-    func build(taskId: String?) -> UIViewController
+    func build(data: TaskEditData?) -> UIViewController
 }
 
 protocol TaskEditRouter: AnyObject {

@@ -24,7 +24,7 @@ final class TaskEditBuilderImpl {
 // MARK: - TaskEditBuilder implementation
 
 extension TaskEditBuilderImpl: TaskEditBuilder {
-    func build(taskId: String?) -> UIViewController {
+    func build(data: TaskEditData?) -> UIViewController {
         let view = TaskEditView()
 
         let interactor = TaskEditInteractorImpl(
@@ -40,7 +40,7 @@ extension TaskEditBuilderImpl: TaskEditBuilder {
         let viewModel = TaskEditViewModelImpl(
             interactor: interactor,
             router: router,
-            taskId: taskId
+            data: data
         ) 
         view.viewModel = viewModel
         return view

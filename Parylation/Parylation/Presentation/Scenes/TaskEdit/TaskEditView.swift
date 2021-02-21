@@ -228,16 +228,14 @@ final class TaskEditView: UIViewController {
 
     private func bindViewModel() {
         viewModel.icons
-            .asObservable()
-            .bind(to: iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
+            .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
                 let iconCell = cell as? SelectiveIconCollectionViewCell
                 iconCell?.iconImageView.image = item.image
             }
             .disposed(by: disposeBag)
 
         viewModel.colors
-            .asObservable()
-            .bind(to: colorSelectiveCollectionView.rx.items(cellIdentifier: SelectiveColorCollectionViewCell.reuseId, cellType: SelectiveColorCollectionViewCell.self)) { row, item, cell in
+            .drive(colorSelectiveCollectionView.rx.items(cellIdentifier: SelectiveColorCollectionViewCell.reuseId, cellType: SelectiveColorCollectionViewCell.self)) { row, item, cell in
                 cell.color = item.value
             }
             .disposed(by: disposeBag)
@@ -295,12 +293,12 @@ final class TaskEditView: UIViewController {
         case .loading:
             break
         case .display(let info):
-            iconImageView.image = info.icon
-            iconBackgroundView.backgroundColor = info.color
             taskTitleTextField.text = info.title
             taskDescriptionTextField.text = info.taskDescription
-            taskDateTextField.text = CommonTextFormatter().dateToString(info.date)
-            datePicker.date = info.date
+            if let date = info.date {
+                taskDateTextField.text = CommonTextFormatter().dateToString(date)
+                datePicker.date = date
+            }
         }
     }
 
