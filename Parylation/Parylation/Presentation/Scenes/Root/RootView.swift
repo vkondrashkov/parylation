@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
 final class RootView: UIViewController {
     var viewModel: RootViewModel!
     
     private let logoImageView = UIImageView()
+
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +23,8 @@ final class RootView: UIViewController {
         bindViewModel()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        viewModel.viewDidAppearTrigger.onNext(())
-    }
-    
     private func setupUI() {
+        UINavigationBar.appearance().tintColor = Color.gigas
         view.backgroundColor = Color.chablis
         view.addSubview(logoImageView)
         logoImageView.image = Asset.appLogo.image
@@ -38,6 +36,9 @@ final class RootView: UIViewController {
     }
     
     private func bindViewModel() {
-        
+        rx.methodInvoked(#selector(UIViewController.viewDidAppear))
+            .map { _ in () }
+            .bind(to: viewModel.viewDidAppearTrigger)
+            .disposed(by: disposeBag)
     }
 }

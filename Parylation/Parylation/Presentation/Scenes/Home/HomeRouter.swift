@@ -28,7 +28,7 @@ final class HomeRouterImpl {
 
 extension HomeRouterImpl: HomeRouter {
     func showTaskCreation() {
-        let editView = taskEditBuilder.build(taskId: nil)
+        let editView = taskEditBuilder.build(data: nil)
         view?.present(editView, animated: true, completion: nil)
     }
 

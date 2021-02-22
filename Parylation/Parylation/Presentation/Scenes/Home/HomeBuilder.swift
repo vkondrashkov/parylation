@@ -25,7 +25,9 @@ extension HomeBuilderImpl: HomeBuilder {
     func build() -> UIViewController {
         let view = HomeView()
         let interactor = HomeInteractorImpl(
-            taskRepository: context.taskRepository
+            taskRepository: context.taskRepository,
+            iconRepository: context.iconRepository,
+            colorRepository: context.colorRepository
         )
         let taskBuilder = TaskBuilderImpl(context: context)
         let taskEditBuilder = TaskEditBuilderImpl(context: context)

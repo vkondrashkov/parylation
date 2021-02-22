@@ -13,22 +13,33 @@ final class DashboardRouterImpl {
     
     private weak var homeNavigationController: UINavigationController?
     private let homeBuilder: HomeBuilder
+
+    private weak var calendarNavigationController: UINavigationController?
+    private let calendarBuilder: CalendarBuilder
     
     private weak var settingsNavigationController: UINavigationController?
     private let settingsBuilder: SettingsBuilder
+
+    private weak var listener: DashboardListener?
     
     init(
         tabBarController: UITabBarController,
         homeNavigationController: UINavigationController,
         homeBuilder: HomeBuilder,
+        calendarNavigationController: UINavigationController,
+        calendarBuilder: CalendarBuilder,
         settingsNavigationController: UINavigationController,
-        settingsBuilder: SettingsBuilder
+        settingsBuilder: SettingsBuilder,
+        listener: DashboardListener?
     ) {
         self.tabBarController = tabBarController
         self.homeNavigationController = homeNavigationController
         self.homeBuilder = homeBuilder
+        self.calendarNavigationController = calendarNavigationController
+        self.calendarBuilder = calendarBuilder
         self.settingsNavigationController = settingsNavigationController
         self.settingsBuilder = settingsBuilder
+        self.listener = listener
     }
 }
 
@@ -38,7 +49,17 @@ extension DashboardRouterImpl: DashboardRouter {
     func showTabs() {
         let homeView = homeBuilder.build()
         homeNavigationController?.setViewControllers([homeView], animated: false)
-        let settingsView = settingsBuilder.build()
+        let calendarView = calendarBuilder.build()
+        calendarNavigationController?.setViewControllers([calendarView], animated: false)
+        let settingsView = settingsBuilder.build(listener: self)
         settingsNavigationController?.setViewControllers([settingsView], animated: false)
+    }
+}
+
+// MARK: - SettingsListener implementation
+
+extension DashboardRouterImpl: SettingsListener {
+    func onSignOut() {
+        listener?.onSignOut()
     }
 }

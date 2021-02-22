@@ -1,5 +1,5 @@
 //
-//  PushNotificationsUseCase.swift
+//  PushNotificationsService.swift
 //  ParylationDomain
 //
 //  Created by Vladislav Kondrashkov on 5.01.21.
@@ -9,18 +9,18 @@
 import UserNotifications
 import RxSwift
 
-public enum PushNotificationsUseCaseError: Error {
+public enum PushNotificationsServiceError: Error {
     case failed
     case underlying(Error)
 }
 
-public protocol PushNotificationsUseCase: AnyObject {
+public protocol PushNotificationsService: AnyObject {
     func isPermissonGranted() -> Single<Bool>
     func requestPermissions() -> Single<Bool>
     func scheduleNotification(_ notification: PushNotification) -> Single<Void>
 }
 
-public final class PushNotificationsUseCaseImpl: PushNotificationsUseCase {
+public final class PushNotificationsServiceImpl: PushNotificationsService {
     private let center: UNUserNotificationCenter
 
     public init() {
@@ -44,7 +44,7 @@ public final class PushNotificationsUseCaseImpl: PushNotificationsUseCase {
                 options: [.alert, .sound, .badge],
                 completionHandler: { isGranted, error in
                     if let error = error, !isGranted {
-                        single(.error(PushNotificationsUseCaseError.underlying(error)))
+                        single(.error(PushNotificationsServiceError.underlying(error)))
                     } else {
                         single(.success(isGranted))
                     }
@@ -77,7 +77,7 @@ public final class PushNotificationsUseCaseImpl: PushNotificationsUseCase {
             self.center.removePendingNotificationRequests(withIdentifiers: [notification.id])
             self.center.add(request, withCompletionHandler: { error in
                 if let error = error {
-                    single(.error(PushNotificationsUseCaseError.underlying(error)))
+                    single(.error(PushNotificationsServiceError.underlying(error)))
                 } else {
                     single(.success(()))
                 }

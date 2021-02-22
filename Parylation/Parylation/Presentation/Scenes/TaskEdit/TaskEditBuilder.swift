@@ -24,13 +24,15 @@ final class TaskEditBuilderImpl {
 // MARK: - TaskEditBuilder implementation
 
 extension TaskEditBuilderImpl: TaskEditBuilder {
-    func build(taskId: String?) -> UIViewController {
+    func build(data: TaskEditData?) -> UIViewController {
         let view = TaskEditView()
 
         let interactor = TaskEditInteractorImpl(
             taskRepository: context.taskRepository,
-            credentialsValidatorUseCase: CredentialsValidatorUseCaseImpl(),
-            pushNotificationsUseCase: context.pushNotificationsUseCase
+            iconRepository: IconRepositoryImpl(),
+            colorRepository: ColorRepositoryImpl(),
+            credentialsValidatorService: CredentialsValidatorServiceImpl(),
+            pushNotificationsService: context.pushNotificationsService
         )
         let router = TaskEditRouterImpl(
             viewController: view
@@ -38,7 +40,7 @@ extension TaskEditBuilderImpl: TaskEditBuilder {
         let viewModel = TaskEditViewModelImpl(
             interactor: interactor,
             router: router,
-            taskId: taskId
+            data: data
         ) 
         view.viewModel = viewModel
         return view

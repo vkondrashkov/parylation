@@ -10,20 +10,8 @@
 
 import UIKit
 
-final class AlertBuilderImpl {
-//    typealias Context = AlertContainer
-//
-//    private let context: Context
-//
-//    init(context: Context) {
-//        self.context = context
-//    }
-}
-
-// MARK: - AlertBuilder implementation
-
-extension AlertBuilderImpl: AlertBuilder {
-    func build(info: AlertViewInfo) -> UIViewController {
+final class AlertBuilderImpl: AlertBuilder {
+    func build(info: AlertViewInfo) -> SelfDisplayable {
         let view = AlertView()
         view.modalPresentationStyle = .overCurrentContext
         view.modalTransitionStyle = .crossDissolve

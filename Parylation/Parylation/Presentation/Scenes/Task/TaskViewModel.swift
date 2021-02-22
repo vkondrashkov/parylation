@@ -38,10 +38,18 @@ final class TaskViewModelImpl: TaskViewModel {
         let stateSubject = BehaviorSubject<TaskViewState>(value: .ready)
 
         let willAppearSubject = PublishSubject<Void>()
-        willAppearSubject
+        let task = willAppearSubject
             .do(onNext: { stateSubject.onNext(.loading) })
             .flatMap { interactor.fetchTask(taskId: taskId) }
-            .map { TaskViewInfo.from(task: $0) }
+
+        let icon = task
+            .flatMap { interactor.fetchIcon(id: $0.iconId) }
+
+        let color = task
+            .flatMap { interactor.fetchColor(id: $0.colorId) }
+
+        Observable.combineLatest(task, icon, color)
+            .map { TaskViewInfo.from(task: $0, icon: $1, color: $2) }
             .map { TaskViewState.display($0) }
             .bind(to: stateSubject)
             .disposed(by: disposeBag)
@@ -51,24 +59,22 @@ final class TaskViewModelImpl: TaskViewModel {
             .do(onNext: { stateSubject.onNext(.loading) })
             .flatMap { _ -> PublishSubject<Void> in
                 let alertSubject = PublishSubject<Void>()
-                let alertInfo = AlertViewInfo(
-                    title: "Delete task?",
-                    message: "This action can't be undone! Do you want to delete it anyway?",
-                    actions: [
-                        AlertViewInfo.ActionInfo(
-                            name: "Cancel",
-                            color: Color.gigas,
-                            action: nil
-                        ),
-                        AlertViewInfo.ActionInfo(
-                            name: "Delete",
-                            color: Color.blazeOrange,
-                            action: {
-                                alertSubject.onNext(())
-                            }
-                        )
-                    ]
-                )
+                let alertInfo = AlertViewInfoBuilderImpl()
+                    .add(.title("Delete task?"))
+                    .add(.text("This action can't be undone! Do you want to delete it anyway?"))
+                    .add(.action(AlertViewInfo.ActionInfo(
+                        name: "Cancel",
+                        color: Color.gigas,
+                        action: nil
+                    )))
+                    .add(.action(AlertViewInfo.ActionInfo(
+                        name: "Delete",
+                        color: Color.blazeOrange,
+                        action: {
+                            alertSubject.onNext(())
+                        }
+                    )))
+                    .build()
                 router.showAlert(info: alertInfo)
                 return alertSubject.asObserver()
             }
@@ -80,8 +86,9 @@ final class TaskViewModelImpl: TaskViewModel {
 
         let editSubject = PublishSubject<Void>()
         editSubject
+            .withLatestFrom(task)
             .subscribe(onNext: {
-                router.showTaskEdit(taskId: taskId, completion: nil)
+                router.showTaskEdit(task: $0, completion: nil)
             })
             .disposed(by: disposeBag)
 

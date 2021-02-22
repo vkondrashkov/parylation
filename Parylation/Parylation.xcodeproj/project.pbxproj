@@ -24,7 +24,7 @@
 		9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */; };
 		9C1CAF4A25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */; };
 		9C1CAF4B25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */; };
-		9C1CB00625A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */; };
+		9C1CB00625A73E500006B513 /* CredentialsValidatorServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB00525A73E500006B513 /* CredentialsValidatorServiceSpec.swift */; };
 		9C1CB00F25A749EA0006B513 /* RootRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */; };
 		9C1CB01325A74A540006B513 /* RootInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB01225A74A540006B513 /* RootInteractorMock.swift */; };
 		9C1CB01725A74B3D0006B513 /* RootViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */; };
@@ -41,6 +41,39 @@
 		9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB6247169580022AC92 /* DashboardRouter.swift */; };
 		9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */; };
 		9C207EBD247169730022AC92 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EBC247169730022AC92 /* DashboardView.swift */; };
+		9C2785E125B5DC09000502AA /* SelectiveCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */; };
+		9C2785E225B5DC09000502AA /* SelectiveCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */; };
+		9C2785E625B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */; };
+		9C2785E725B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */; };
+		9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */; };
+		9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */; };
+		9C2785EE25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */; };
+		9C2785EF25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */; };
+		9C27860025B702AE000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FF25B702AE000502AA /* IconRepository.swift */; };
+		9C27860125B702AE000502AA /* IconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2785FF25B702AE000502AA /* IconRepository.swift */; };
+		9C27860525B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
+		9C27860625B702B6000502AA /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27860425B702B6000502AA /* ColorRepository.swift */; };
+		9C45DD2825D4676C00C57954 /* DayContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2225D4676C00C57954 /* DayContract.swift */; };
+		9C45DD2925D4676C00C57954 /* DayContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2225D4676C00C57954 /* DayContract.swift */; };
+		9C45DD2A25D4676C00C57954 /* DayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2325D4676C00C57954 /* DayRouter.swift */; };
+		9C45DD2B25D4676C00C57954 /* DayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2325D4676C00C57954 /* DayRouter.swift */; };
+		9C45DD2C25D4676C00C57954 /* DayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2425D4676C00C57954 /* DayBuilder.swift */; };
+		9C45DD2D25D4676C00C57954 /* DayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2425D4676C00C57954 /* DayBuilder.swift */; };
+		9C45DD3025D4676C00C57954 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2625D4676C00C57954 /* DayView.swift */; };
+		9C45DD3125D4676C00C57954 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2625D4676C00C57954 /* DayView.swift */; };
+		9C45DD3225D4676C00C57954 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2725D4676C00C57954 /* DayViewModel.swift */; };
+		9C45DD3325D4676C00C57954 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD2725D4676C00C57954 /* DayViewModel.swift */; };
+		9C45DD3B25D46A1C00C57954 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */; };
+		9C45DD3C25D46A1C00C57954 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */; };
+		9C45DD4025D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
+		9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
+		9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
+		9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
+		9C4F96AC25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
+		9C4F96AD25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
+		9C4F96B025E26175000DCA79 /* TaskEditViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */; };
+		9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
+		9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */; };
 		9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB4247169500022AC92 /* DashboardBuilder.swift */; };
 		9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207E772470ADAE0022AC92 /* AppDelegate.swift */; };
 		9C5C6547249A5DC800E9D889 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C207EB0247169410022AC92 /* DashboardContract.swift */; };
@@ -78,6 +111,10 @@
 		9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67853F24EFECD5006E28BD /* WelcomeView.swift */; };
 		9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
 		9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
+		9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
+		9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
+		9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
 		9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */; };
 		9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90F8572594D3680052080B /* TaskRepositorySpec.swift */; };
@@ -129,8 +166,6 @@
 		9CADB572249E0E8A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB570249E0E8A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CADB575249E0F1A00901E45 /* ParylationDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; };
 		9CADB576249E0F1A00901E45 /* ParylationDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CADB574249E0F1A00901E45 /* ParylationDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
-		9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */; };
 		9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B1249ED03F00901E45 /* UserRepository.swift */; };
 		9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5B5249ED7C800901E45 /* MappableUser.swift */; };
@@ -139,7 +174,7 @@
 		9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C024A0079100901E45 /* RealmUser.swift */; };
 		9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
 		9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */; };
-		9CADB5CC24A0130D00901E45 /* AuthorizationUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */; };
+		9CADB5CC24A0130D00901E45 /* AuthorizationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB5CB24A0130D00901E45 /* AuthorizationServiceSpec.swift */; };
 		9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB224F50771005EF51A /* SettingsContract.swift */; };
 		9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB224F50771005EF51A /* SettingsContract.swift */; };
 		9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BB324F50771005EF51A /* SettingsRouter.swift */; };
@@ -164,6 +199,34 @@
 		9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */; };
 		9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
 		9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB9C1524FFBCFD005EF51A /* AppContext.swift */; };
+		9CD38E2725B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
+		9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */; };
+		9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
+		9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */; };
+		9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8727925C1CF80003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
+		9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */; };
+		9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */; };
+		9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */; };
+		9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */; };
+		9CD8728125C1CF87003D7868 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8727825C1CF80003D7868 /* signOut.json */; };
+		9CD8729125C1E940003D7868 /* CalendarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728B25C1E940003D7868 /* CalendarContract.swift */; };
+		9CD8729225C1E940003D7868 /* CalendarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728B25C1E940003D7868 /* CalendarContract.swift */; };
+		9CD8729325C1E940003D7868 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728C25C1E940003D7868 /* CalendarRouter.swift */; };
+		9CD8729425C1E940003D7868 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728C25C1E940003D7868 /* CalendarRouter.swift */; };
+		9CD8729525C1E940003D7868 /* CalendarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */; };
+		9CD8729625C1E940003D7868 /* CalendarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */; };
+		9CD8729925C1E940003D7868 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728F25C1E940003D7868 /* CalendarView.swift */; };
+		9CD8729A25C1E940003D7868 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8728F25C1E940003D7868 /* CalendarView.swift */; };
+		9CD8729B25C1E940003D7868 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8729025C1E940003D7868 /* CalendarViewModel.swift */; };
+		9CD8729C25C1E940003D7868 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8729025C1E940003D7868 /* CalendarViewModel.swift */; };
+		9CD872B825C1F1AA003D7868 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD872B725C1F1AA003D7868 /* Day.swift */; };
+		9CD872B925C1F1AA003D7868 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD872B725C1F1AA003D7868 /* Day.swift */; };
 		9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58DD24F05E2D008B835A /* SignInContract.swift */; };
 		9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB58E024F05E34008B835A /* SignInBuilder.swift */; };
@@ -235,7 +298,7 @@
 		9C11CE56258FEC8300E99F9E /* HomeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableItem.swift; sourceTree = "<group>"; };
 		9C11CE5A258FED1F00E99F9E /* HomeTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSection.swift; sourceTree = "<group>"; };
 		9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextFormatter.swift; sourceTree = "<group>"; };
-		9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorUseCaseSpec.swift; sourceTree = "<group>"; };
+		9C1CB00525A73E500006B513 /* CredentialsValidatorServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidatorServiceSpec.swift; sourceTree = "<group>"; };
 		9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterSpy.swift; sourceTree = "<group>"; };
 		9C1CB01225A74A540006B513 /* RootInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorMock.swift; sourceTree = "<group>"; };
 		9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelSpec.swift; sourceTree = "<group>"; };
@@ -254,6 +317,23 @@
 		9C207EB6247169580022AC92 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		9C207EBA2471696A0022AC92 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9C207EBC247169730022AC92 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveCollectionView.swift; sourceTree = "<group>"; };
+		9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Genetic.swift"; sourceTree = "<group>"; };
+		9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectiveColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C2785FF25B702AE000502AA /* IconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRepository.swift; sourceTree = "<group>"; };
+		9C27860425B702B6000502AA /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
+		9C45DD2225D4676C00C57954 /* DayContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayContract.swift; sourceTree = "<group>"; };
+		9C45DD2325D4676C00C57954 /* DayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRouter.swift; sourceTree = "<group>"; };
+		9C45DD2425D4676C00C57954 /* DayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBuilder.swift; sourceTree = "<group>"; };
+		9C45DD2625D4676C00C57954 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		9C45DD2725D4676C00C57954 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		9C45DD4425D46DEE00C57954 /* DayTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableItem.swift; sourceTree = "<group>"; };
+		9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditData.swift; sourceTree = "<group>"; };
+		9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModelSpec.swift; sourceTree = "<group>"; };
+		9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C5C6562249A5DC800E9D889 /* ParylationDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParylationDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C6569249A602600E9D889 /* ParylationDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParylationDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5C656D249A602600E9D889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,6 +350,8 @@
 		9C67853C24EFECCF006E28BD /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		9C67853F24EFECD5006E28BD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
+		9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		9C7D3A1F25BA1B9B000E7EDF /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9C90F8572594D3680052080B /* TaskRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositorySpec.swift; sourceTree = "<group>"; };
 		9C90F86325969A0F0052080B /* TaskContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContract.swift; sourceTree = "<group>"; };
@@ -297,12 +379,11 @@
 		9C90F9192597E7C50052080B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CADB570249E0E8A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADB574249E0F1A00901E45 /* ParylationDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ParylationDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParylationAPI.swift; sourceTree = "<group>"; };
 		9CADB5B1249ED03F00901E45 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9CADB5B5249ED7C800901E45 /* MappableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableUser.swift; sourceTree = "<group>"; };
 		9CADB5C024A0079100901E45 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		9CADB5C324A0091200901E45 /* AuthorizedUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserRepository.swift; sourceTree = "<group>"; };
-		9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCaseSpec.swift; sourceTree = "<group>"; };
+		9CADB5CB24A0130D00901E45 /* AuthorizationServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationServiceSpec.swift; sourceTree = "<group>"; };
 		9CBB9BB224F50771005EF51A /* SettingsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContract.swift; sourceTree = "<group>"; };
 		9CBB9BB324F50771005EF51A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		9CBB9BB524F50771005EF51A /* SettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
@@ -315,6 +396,20 @@
 		9CBB9BD624F5AF80005EF51A /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		9CBB9BE924F6E74D005EF51A /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		9CBB9C1524FFBCFD005EF51A /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfoBuilder.swift; sourceTree = "<group>"; };
+		9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDisplayable.swift; sourceTree = "<group>"; };
+		9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signIn-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signUp-vladislav.kondrashkov@gmail.com-B12345.json"; sourceTree = "<group>"; };
+		9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateEmail-uid123-vladislav@kondrashkov.com.json"; sourceTree = "<group>"; };
+		9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateUsername-uid123-vladislav.json"; sourceTree = "<group>"; };
+		9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updatePassword-uid123-B12345-A12345.json"; sourceTree = "<group>"; };
+		9CD8727825C1CF80003D7868 /* signOut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signOut.json; sourceTree = "<group>"; };
+		9CD8728B25C1E940003D7868 /* CalendarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContract.swift; sourceTree = "<group>"; };
+		9CD8728C25C1E940003D7868 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
+		9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBuilder.swift; sourceTree = "<group>"; };
+		9CD8728F25C1E940003D7868 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9CD8729025C1E940003D7868 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		9CD872B725C1F1AA003D7868 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		9CEB58DD24F05E2D008B835A /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9CEB58E024F05E34008B835A /* SignInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilder.swift; sourceTree = "<group>"; };
 		9CEB58E324F05E3B008B835A /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -380,8 +475,8 @@
 		9C1CB00925A749CA0006B513 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
-				9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */,
-				9C1CB01225A74A540006B513 /* RootInteractorMock.swift */,
+				9C4F96B225E261BA000DCA79 /* Root */,
+				9C4F96B325E261C2000DCA79 /* TaskEdit */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -390,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				9C1CB01625A74B3D0006B513 /* RootViewModelSpec.swift */,
+				9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -458,6 +554,8 @@
 				9CEB58D424F05DDF008B835A /* SignIn */,
 				9C207EAF247169280022AC92 /* Dashboard */,
 				9CEB58F424F13419008B835A /* Home */,
+				9CD8728725C1E92A003D7868 /* Calendar */,
+				9C45DD2125D4674D00C57954 /* Day */,
 				9C90F862259699E40052080B /* Task */,
 				9C90F8A22597312E0052080B /* TaskEdit */,
 				9CBB9B5B24F5044C005EF51A /* Settings */,
@@ -471,6 +569,7 @@
 				9C67852C24EFE321006E28BD /* Color.swift */,
 				9C90F89E2596C3700052080B /* ClosureButton.swift */,
 				9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */,
+				9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -490,6 +589,7 @@
 		9C207EA62470B73C0022AC92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9C2785FD25B7027F000502AA /* InMemory */,
 				9CADB5BD24A0076F00901E45 /* Realm */,
 			);
 			path = Data;
@@ -507,6 +607,80 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		9C2785DF25B5DAED000502AA /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785E025B5DC09000502AA /* SelectiveCollectionView.swift */,
+				9C2785E925B5E05D000502AA /* SelectiveIconCollectionViewCell.swift */,
+				9C2785ED25B60353000502AA /* SelectiveColorCollectionViewCell.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		9C2785FD25B7027F000502AA /* InMemory */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785FE25B7029C000502AA /* Repositories */,
+			);
+			path = InMemory;
+			sourceTree = "<group>";
+		};
+		9C2785FE25B7029C000502AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9C2785FF25B702AE000502AA /* IconRepository.swift */,
+				9C27860425B702B6000502AA /* ColorRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9C45DD2125D4674D00C57954 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				9C45DD3925D46A0B00C57954 /* ContentView */,
+				9C45DD2225D4676C00C57954 /* DayContract.swift */,
+				9C45DD2325D4676C00C57954 /* DayRouter.swift */,
+				9C45DD2425D4676C00C57954 /* DayBuilder.swift */,
+				9C45DD2625D4676C00C57954 /* DayView.swift */,
+				9C45DD2725D4676C00C57954 /* DayViewModel.swift */,
+				9C45DD4425D46DEE00C57954 /* DayTableItem.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		9C45DD3925D46A0B00C57954 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */,
+				9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		9C4F96B225E261BA000DCA79 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CB00E25A749EA0006B513 /* RootRouterSpy.swift */,
+				9C1CB01225A74A540006B513 /* RootInteractorMock.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9C4F96B325E261C2000DCA79 /* TaskEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TaskEdit;
+			sourceTree = "<group>";
+		};
+		9C57B24E25C60B7C00A49797 /* ContentVIew */ = {
+			isa = PBXGroup;
+			children = (
+				9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */,
+			);
+			path = ContentVIew;
+			sourceTree = "<group>";
+		};
 		9C5C6564249A5ED200E9D889 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +695,7 @@
 		9C5C656A249A602600E9D889 /* ParylationDevTests */ = {
 			isa = PBXGroup;
 			children = (
+				9CD8726325C1CEC4003D7868 /* StubbedResponses */,
 				9C1CB00925A749CA0006B513 /* TestDoubles */,
 				9C1CB00425A73E3C0006B513 /* Repositories */,
 				9C1CB01525A74B2F0006B513 /* ViewModels */,
@@ -584,6 +759,7 @@
 				9C90F8822596B63F0052080B /* AlertBuilder.swift */,
 				9C90F8842596B63F0052080B /* AlertView.swift */,
 				9C90F8852596B63F0052080B /* AlertViewModel.swift */,
+				9CD38E2625B37C2E00DECB7B /* AlertViewInfoBuilder.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -591,7 +767,9 @@
 		9C90F8A22597312E0052080B /* TaskEdit */ = {
 			isa = PBXGroup;
 			children = (
+				9C2785DF25B5DAED000502AA /* ContentView */,
 				9C90F8C1259732BD0052080B /* TaskEditViewInfo.swift */,
+				9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */,
 				9C90F8A3259731490052080B /* TaskEditContract.swift */,
 				9C90F8A4259731490052080B /* TaskEditRouter.swift */,
 				9C90F8A5259731490052080B /* TaskEditBuilder.swift */,
@@ -623,7 +801,8 @@
 		9CADB5AC249ECB7600901E45 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5AD249ECB8B00901E45 /* ParylationAPI.swift */,
+				9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */,
+				9C7D3A1F25BA1B9B000E7EDF /* Server.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -683,8 +862,8 @@
 		9CADB5CA24A012F800901E45 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				9CADB5CB24A0130D00901E45 /* AuthorizationUseCaseSpec.swift */,
-				9C1CB00525A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift */,
+				9CADB5CB24A0130D00901E45 /* AuthorizationServiceSpec.swift */,
+				9C1CB00525A73E500006B513 /* CredentialsValidatorServiceSpec.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -709,6 +888,7 @@
 			children = (
 				9CBB9BC624F5AAC6005EF51A /* ReuseIdentifiable.swift */,
 				9CBB9BC924F5AAE6005EF51A /* UITableView+Generic.swift */,
+				9C2785E525B5DCBD000502AA /* UICollectionView+Genetic.swift */,
 			);
 			path = GenericCollectionViews;
 			sourceTree = "<group>";
@@ -721,6 +901,33 @@
 				9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		9CD8726325C1CEC4003D7868 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				9CD8726425C1CEFE003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726825C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json */,
+				9CD8726D25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json */,
+				9CD8727125C1CF5E003D7868 /* updateUsername-uid123-vladislav.json */,
+				9CD8727425C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json */,
+				9CD8727825C1CF80003D7868 /* signOut.json */,
+			);
+			path = StubbedResponses;
+			sourceTree = "<group>";
+		};
+		9CD8728725C1E92A003D7868 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9C57B24E25C60B7C00A49797 /* ContentVIew */,
+				9CD872B725C1F1AA003D7868 /* Day.swift */,
+				9CD8728B25C1E940003D7868 /* CalendarContract.swift */,
+				9CD8728C25C1E940003D7868 /* CalendarRouter.swift */,
+				9CD8728D25C1E940003D7868 /* CalendarBuilder.swift */,
+				9CD8728F25C1E940003D7868 /* CalendarView.swift */,
+				9CD8729025C1E940003D7868 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		9CEB58D424F05DDF008B835A /* SignIn */ = {
@@ -845,7 +1052,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Vladislav Kondrashkov";
 				TargetAttributes = {
 					9C207E732470ADAE0022AC92 = {
@@ -894,9 +1101,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727C25C1CF87003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
 				9C5C655C249A5DC800E9D889 /* LaunchScreen.storyboard in Resources */,
+				9CD8727D25C1CF87003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 				9C90F8EC2597883E0052080B /* Localizable.strings in Resources */,
 				9C5C655D249A5DC800E9D889 /* Assets.xcassets in Resources */,
+				9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8728125C1CF87003D7868 /* signOut.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,6 +1117,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD8727925C1CF80003D7868 /* signOut.json in Resources */,
+				9CD8727525C1CF71003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
+				9CD8726E25C1CF3F003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
+				9CD8726525C1CEFF003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8726925C1CF0F003D7868 /* signUp-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9CD8727225C1CF5E003D7868 /* updateUsername-uid123-vladislav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,7 +1254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C90F86925969A0F0052080B /* TaskContract.swift in Sources */,
+				9C45DD3025D4676C00C57954 /* DayView.swift in Sources */,
 				9C1CAF4A25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F90F2597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B6249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853124EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1045,11 +1266,15 @@
 				9C7FC196250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C207EB5247169500022AC92 /* DashboardBuilder.swift in Sources */,
 				9C90F8952596B6700052080B /* AlertViewInfo.swift in Sources */,
+				9C45DD2A25D4676C00C57954 /* DayRouter.swift in Sources */,
+				9CD38E2725B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */,
+				9CD8729B25C1E940003D7868 /* CalendarViewModel.swift in Sources */,
 				9CADB5C124A0079100901E45 /* RealmUser.swift in Sources */,
 				9C207E782470ADAE0022AC92 /* AppDelegate.swift in Sources */,
 				9CEB58E724F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC024F50771005EF51A /* SettingsView.swift in Sources */,
+				9C2785EE25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
 				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE49258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1059,24 +1284,31 @@
 				9C207EBB2471696A0022AC92 /* DashboardViewModel.swift in Sources */,
 				9C207EAE2470BA6C0022AC92 /* RootViewModel.swift in Sources */,
 				9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CD38E2C25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */,
 				9CBB9BB824F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F89F2596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
 				9C11CE57258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
+				9C45DD3225D4676C00C57954 /* DayViewModel.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
 				9C11CE44258FE5CA00E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AD2597314A0052080B /* TaskEditBuilder.swift in Sources */,
+				9C45DD4025D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */,
 				9CBB9BD024F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
+				9C2785EA25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590224F13457008B835A /* HomeViewModel.swift in Sources */,
+				9C45DD2C25D4676C00C57954 /* DayBuilder.swift in Sources */,
 				9C207E9D2470B4B40022AC92 /* RootBuilder.swift in Sources */,
-				9CADB5AE249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AB2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C27860525B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8902596B63F0052080B /* AlertViewModel.swift in Sources */,
+				9CD8729525C1E940003D7868 /* CalendarBuilder.swift in Sources */,
 				9CBB9BD324F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9C90F87B2596A13F0052080B /* TaskViewInfo.swift in Sources */,
 				9CBB9C1624FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9C90F88E2596B63F0052080B /* AlertView.swift in Sources */,
+				9CD8729325C1E940003D7868 /* CalendarRouter.swift in Sources */,
 				9CEB58DE24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C90F86B25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE52258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
@@ -1084,19 +1316,27 @@
 				9C90F9112597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8882596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5B258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
+				9C27860025B702AE000502AA /* IconRepository.swift in Sources */,
+				9C4F96AC25E24F2B000DCA79 /* TaskEditData.swift in Sources */,
 				9C207EA12470B4C80022AC92 /* RootRouter.swift in Sources */,
+				9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853724EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86D25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F624F1343A008B835A /* HomeContract.swift in Sources */,
 				9C90F8B32597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6582249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6588249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
+				9C45DD3B25D46A1C00C57954 /* DayTableViewCell.swift in Sources */,
 				9C5C658B249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B12597314A0052080B /* TaskEditView.swift in Sources */,
+				9C2785E125B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
 				9C90F87325969A0F0052080B /* TaskViewModel.swift in Sources */,
 				9C90F87125969A0F0052080B /* TaskView.swift in Sources */,
+				9C45DD2825D4676C00C57954 /* DayContract.swift in Sources */,
 				9CBB9BEA24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C424A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
+				9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */,
+				9CD8729925C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB58FF24F13450008B835A /* HomeRouter.swift in Sources */,
@@ -1104,15 +1344,19 @@
 				9CADB5B2249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C207E9B2470B4A00022AC92 /* RootContract.swift in Sources */,
 				9C67854024EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9C2785E625B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */,
 				9CEB58EA24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC724F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853D24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CD872B825C1F1AA003D7868 /* Day.swift in Sources */,
 				9C90F88A2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E124F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C207EBD247169730022AC92 /* DashboardView.swift in Sources */,
 				9CBB9BCA24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBA24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CBB9BC224F50771005EF51A /* SettingsViewModel.swift in Sources */,
+				9C57B25025C60B9300A49797 /* CalendarDateCollectionViewCell.swift in Sources */,
+				9CD8729125C1E940003D7868 /* CalendarContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,7 +1365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C90F86A25969A0F0052080B /* TaskContract.swift in Sources */,
+				9C45DD3125D4676C00C57954 /* DayView.swift in Sources */,
 				9C1CAF4B25A65D2B0006B513 /* CommonTextFormatter.swift in Sources */,
+				9C7D3A2125BA1B9B000E7EDF /* Server.swift in Sources */,
 				9C90F9102597DFD90052080B /* Assets.swift in Sources */,
 				9CADB5B7249ED7C800901E45 /* MappableUser.swift in Sources */,
 				9C67853224EFECAC006E28BD /* WelcomeContract.swift in Sources */,
@@ -1131,11 +1377,15 @@
 				9C7FC197250A24BC00079C8C /* SettingsTableViewCell.swift in Sources */,
 				9C5C6544249A5DC800E9D889 /* DashboardBuilder.swift in Sources */,
 				9C90F8962596B6700052080B /* AlertViewInfo.swift in Sources */,
+				9C45DD2B25D4676C00C57954 /* DayRouter.swift in Sources */,
+				9CD38E2825B37C2E00DECB7B /* AlertViewInfoBuilder.swift in Sources */,
+				9CD8729C25C1E940003D7868 /* CalendarViewModel.swift in Sources */,
 				9CADB5C224A0079100901E45 /* RealmUser.swift in Sources */,
 				9C5C6546249A5DC800E9D889 /* AppDelegate.swift in Sources */,
 				9CEB58E824F05E45008B835A /* SignInViewModel.swift in Sources */,
 				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC124F50771005EF51A /* SettingsView.swift in Sources */,
+				9C2785EF25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
 				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE4A258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1145,24 +1395,31 @@
 				9C5C6548249A5DC800E9D889 /* DashboardViewModel.swift in Sources */,
 				9C5C6549249A5DC800E9D889 /* RootViewModel.swift in Sources */,
 				9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */,
+				9CD38E2D25B44A4B00DECB7B /* SelfDisplayable.swift in Sources */,
 				9CBB9BB924F50771005EF51A /* SettingsContract.swift in Sources */,
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F8A02596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
 				9C11CE58258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
+				9C45DD3325D4676C00C57954 /* DayViewModel.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
 				9C11CE46258FE6B900E99F9E /* RealmTask.swift in Sources */,
 				9C90F8AE2597314A0052080B /* TaskEditBuilder.swift in Sources */,
+				9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */,
 				9CBB9BD124F5ABC3005EF51A /* SettingsTableItem.swift in Sources */,
+				9C2785EB25B5E05D000502AA /* SelectiveIconCollectionViewCell.swift in Sources */,
 				9CEB590324F13457008B835A /* HomeViewModel.swift in Sources */,
+				9C45DD2D25D4676C00C57954 /* DayBuilder.swift in Sources */,
 				9C5C654C249A5DC800E9D889 /* RootBuilder.swift in Sources */,
-				9CADB5AF249ECB8B00901E45 /* ParylationAPI.swift in Sources */,
 				9C90F8AC2597314A0052080B /* TaskEditRouter.swift in Sources */,
+				9C27860625B702B6000502AA /* ColorRepository.swift in Sources */,
 				9C90F8912596B63F0052080B /* AlertViewModel.swift in Sources */,
+				9CD8729625C1E940003D7868 /* CalendarBuilder.swift in Sources */,
 				9CBB9BD424F5AE2B005EF51A /* SettingsTableSection.swift in Sources */,
 				9C90F87C2596A13F0052080B /* TaskViewInfo.swift in Sources */,
 				9CBB9C1724FFBCFD005EF51A /* AppContext.swift in Sources */,
 				9C90F88F2596B63F0052080B /* AlertView.swift in Sources */,
+				9CD8729425C1E940003D7868 /* CalendarRouter.swift in Sources */,
 				9CEB58DF24F05E2D008B835A /* SignInContract.swift in Sources */,
 				9C90F86C25969A0F0052080B /* TaskRouter.swift in Sources */,
 				9C11CE53258FEABA00E99F9E /* HomeTableViewCellViewModel.swift in Sources */,
@@ -1170,19 +1427,27 @@
 				9C90F9122597DFD90052080B /* Strings.swift in Sources */,
 				9C90F8892596B63F0052080B /* AlertRouter.swift in Sources */,
 				9C11CE5C258FED1F00E99F9E /* HomeTableSection.swift in Sources */,
+				9C27860125B702AE000502AA /* IconRepository.swift in Sources */,
+				9C4F96AD25E24F2B000DCA79 /* TaskEditData.swift in Sources */,
 				9C5C654E249A5DC800E9D889 /* RootRouter.swift in Sources */,
+				9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */,
 				9C67853824EFECBD006E28BD /* WelcomeBuilder.swift in Sources */,
 				9C90F86E25969A0F0052080B /* TaskBuilder.swift in Sources */,
 				9CEB58F724F1343A008B835A /* HomeContract.swift in Sources */,
 				9C90F8B42597314A0052080B /* TaskEditViewModel.swift in Sources */,
 				9C5C6583249A65ED00E9D889 /* SignUpRouter.swift in Sources */,
 				9C5C6589249A65FF00E9D889 /* SignUpViewModel.swift in Sources */,
+				9C45DD3C25D46A1C00C57954 /* DayTableViewCell.swift in Sources */,
 				9C5C658C249A660500E9D889 /* SignUpView.swift in Sources */,
 				9C90F8B22597314A0052080B /* TaskEditView.swift in Sources */,
+				9C2785E225B5DC09000502AA /* SelectiveCollectionView.swift in Sources */,
 				9C90F87425969A0F0052080B /* TaskViewModel.swift in Sources */,
 				9C90F87225969A0F0052080B /* TaskView.swift in Sources */,
+				9C45DD2925D4676C00C57954 /* DayContract.swift in Sources */,
 				9CBB9BEB24F6E74D005EF51A /* SettingsTableViewCellViewModel.swift in Sources */,
 				9CADB5C524A0091200901E45 /* AuthorizedUserRepository.swift in Sources */,
+				9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */,
+				9CD8729A25C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB590024F13450008B835A /* HomeRouter.swift in Sources */,
@@ -1190,15 +1455,19 @@
 				9CADB5B3249ED03F00901E45 /* UserRepository.swift in Sources */,
 				9C5C6554249A5DC800E9D889 /* RootContract.swift in Sources */,
 				9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */,
+				9C2785E725B5DCBD000502AA /* UICollectionView+Genetic.swift in Sources */,
 				9CEB58EB24F05E4E008B835A /* SignInView.swift in Sources */,
 				9CBB9BC824F5AAC7005EF51A /* ReuseIdentifiable.swift in Sources */,
 				9C67853E24EFECCF006E28BD /* WelcomeViewModel.swift in Sources */,
+				9CD872B925C1F1AA003D7868 /* Day.swift in Sources */,
 				9C90F88B2596B63F0052080B /* AlertBuilder.swift in Sources */,
 				9CEB58E224F05E34008B835A /* SignInBuilder.swift in Sources */,
 				9C5C6556249A5DC800E9D889 /* DashboardView.swift in Sources */,
 				9CBB9BCB24F5AAE6005EF51A /* UITableView+Generic.swift in Sources */,
 				9CBB9BBB24F50771005EF51A /* SettingsRouter.swift in Sources */,
 				9CBB9BC324F50771005EF51A /* SettingsViewModel.swift in Sources */,
+				9C57B25325C60DF600A49797 /* CalendarDateCollectionViewCell.swift in Sources */,
+				9CD8729225C1E940003D7868 /* CalendarContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,10 +1476,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1CB00F25A749EA0006B513 /* RootRouterSpy.swift in Sources */,
-				9CADB5CC24A0130D00901E45 /* AuthorizationUseCaseSpec.swift in Sources */,
+				9C4F96B025E26175000DCA79 /* TaskEditViewModelSpec.swift in Sources */,
+				9CADB5CC24A0130D00901E45 /* AuthorizationServiceSpec.swift in Sources */,
 				9C90F8582594D3680052080B /* TaskRepositorySpec.swift in Sources */,
 				9C1CB01325A74A540006B513 /* RootInteractorMock.swift in Sources */,
-				9C1CB00625A73E500006B513 /* CredentialsValidatorUseCaseSpec.swift in Sources */,
+				9C1CB00625A73E500006B513 /* CredentialsValidatorServiceSpec.swift in Sources */,
 				9C1CB01725A74B3D0006B513 /* RootViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

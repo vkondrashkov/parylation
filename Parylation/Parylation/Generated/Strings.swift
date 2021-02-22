@@ -10,8 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Accept
+  internal static let accept = L10n.tr("Localizable", "accept")
   /// Parylation
   internal static let appName = L10n.tr("Localizable", "app_name")
+  /// Check your 
+  internal static let calendarSubtitle = L10n.tr("Localizable", "calendar_subtitle")
+  /// schedule
+  internal static let calendarSubtitleAccent = L10n.tr("Localizable", "calendar_subtitle_accent")
+  /// That's what's important
+  internal static let calendarTitle = L10n.tr("Localizable", "calendar_title")
+  /// Cancel
+  internal static let cancel = L10n.tr("Localizable", "cancel")
   /// Delete
   internal static let homeDeleteButton = L10n.tr("Localizable", "home_delete_button")
   /// Let's plan your 
@@ -22,6 +32,8 @@ internal enum L10n {
   }
   /// Write important things
   internal static let homePlanButton = L10n.tr("Localizable", "home_plan_button")
+  /// Ok
+  internal static let ok = L10n.tr("Localizable", "ok")
   /// Change email
   internal static let settingsMainChangeEmail = L10n.tr("Localizable", "settings_main_change_email")
   /// Change password
@@ -36,6 +48,18 @@ internal enum L10n {
   internal static let settingsOthersRateUs = L10n.tr("Localizable", "settings_others_rate_us")
   /// Others
   internal static let settingsOthersSection = L10n.tr("Localizable", "settings_others_section")
+  /// Confirm new password
+  internal static let settingsPopupConfirmNewPassword = L10n.tr("Localizable", "settings_popup_confirm_new_password")
+  /// New password
+  internal static let settingsPopupNewPassword = L10n.tr("Localizable", "settings_popup_new_password")
+  /// Old password
+  internal static let settingsPopupOldPassword = L10n.tr("Localizable", "settings_popup_old_password")
+  /// Quit
+  internal static let settingsPopupSignoutConfirm = L10n.tr("Localizable", "settings_popup_signout_confirm")
+  /// This action can't be undone! Do you want to quit anyway?
+  internal static let settingsPopupSignoutDescription = L10n.tr("Localizable", "settings_popup_signout_description")
+  /// Are you sure?
+  internal static let settingsPopupSignoutTitle = L10n.tr("Localizable", "settings_popup_signout_title")
   /// Sign out
   internal static let settingsSignOut = L10n.tr("Localizable", "settings_sign_out")
   /// Update your 
@@ -100,6 +124,10 @@ internal enum L10n {
   internal static let taskEditTitle = L10n.tr("Localizable", "task_edit_title")
   /// Task
   internal static let taskPageTitle = L10n.tr("Localizable", "task_page_title")
+  /// This feature is not working yet. Try again later ;(
+  internal static let unavailableFeatureDescription = L10n.tr("Localizable", "unavailable_feature_description")
+  /// Oh no...
+  internal static let unavailableFeatureTitle = L10n.tr("Localizable", "unavailable_feature_title")
   /// I already have an account
   internal static let welcomeSignIn = L10n.tr("Localizable", "welcome_sign_in")
   /// Sign Up

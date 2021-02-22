@@ -14,17 +14,24 @@ public enum HomeInteractorError: Error {
 
 public protocol HomeInteractor {
     func fetchTaks() -> Single<[Task]>
+    func fetchIcon(id: String) -> Single<Icon>
+    func fetchColor(id: String) -> Single<Color>
     func deleteTask(taskId: String) -> Single<Void>
-
-    // TEMP:
-    func createTask(task: Task) -> Single<Void>
 }
 
 public final class HomeInteractorImpl {
     private let taskRepository: TaskRepository
+    private let iconRepository: IconRepository
+    private let colorRepository: ColorRepository
 
-    public init(taskRepository: TaskRepository) {
+    public init(
+        taskRepository: TaskRepository,
+        iconRepository: IconRepository,
+        colorRepository: ColorRepository
+    ) {
         self.taskRepository = taskRepository
+        self.iconRepository = iconRepository
+        self.colorRepository = colorRepository
     }
 }
 
@@ -36,8 +43,13 @@ extension HomeInteractorImpl: HomeInteractor {
             .catchError { _ in .error(HomeInteractorError.failed) }
     }
 
-    public func createTask(task: Task) -> Single<Void> {
-        return taskRepository.save(task: task)
+    public func fetchIcon(id: String) -> Single<Icon> {
+        return iconRepository.fetch(id: id)
+            .catchError { _ in .error(HomeInteractorError.failed) }
+    }
+
+    public func fetchColor(id: String) -> Single<Color> {
+        return colorRepository.fetch(id: id)
             .catchError { _ in .error(HomeInteractorError.failed) }
     }
 

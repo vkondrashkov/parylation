@@ -9,6 +9,7 @@
 import ParylationDomain
 import RealmSwift
 import UIKit
+import Moya
 
 // TODO: typealias AnalyticsContext =
 
@@ -22,29 +23,46 @@ typealias HomeContext = DashboardContainer
     & TaskContainer
     & TaskEditContainer
 
-// TODO: typealias CalendarContext
+typealias CalendarContext = CalendarContainer
+    & TaskEditContainer
+    & TaskContainer
+    & DayContainer
 
 typealias SettingsContext = SettingsContainer
 
 typealias MainContext = HomeContext
+    & CalendarContext
     & SettingsContext
 
 typealias AppContext = AuthContext & MainContext // & AnalyticsContext
 
 final class AppContextImpl: AppContext {
     unowned var window: UIWindow
-    let authorizationUseCase: AuthorizationUseCase
+    let authorizationService: AuthorizationService
+    let userService: UserService
     let taskRepository: TaskRepository
-    let pushNotificationsUseCase: PushNotificationsUseCase
+    let iconRepository: IconRepository
+    let colorRepository: ColorRepository
+    let pushNotificationsService: PushNotificationsService
 
     init(window: UIWindow)  {
         self.window = window
         let realm = try! Realm()
+
+        let userProvider = MoyaProvider<UserAPI>(stubClosure: MoyaProvider<UserAPI>.immediatelyStub)
+        let userRepository = UserRepositoryImpl(provider: userProvider)
         let authorizedUserRepository = AuthorizedUserRepositoryImpl(realm: realm)
-        authorizationUseCase = AuthorizationUseCaseImpl(
+        authorizationService = AuthorizationServiceImpl(
+            userRepository: userRepository,
+            authorizedUserRepository: authorizedUserRepository
+        )
+        userService = UserServiceImpl(
+            userRepository: userRepository,
             authorizedUserRepository: authorizedUserRepository
         )
         taskRepository = TaskRepositoryImpl(realm: realm)
-        pushNotificationsUseCase = PushNotificationsUseCaseImpl()
+        iconRepository = IconRepositoryImpl()
+        colorRepository = ColorRepositoryImpl()
+        pushNotificationsService = PushNotificationsServiceImpl()
     }
 }

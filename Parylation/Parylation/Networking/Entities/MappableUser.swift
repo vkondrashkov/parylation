@@ -10,12 +10,14 @@ import ParylationDomain
 
 class MappableUser: Codable {
     let id: String
-    let name: String
+    let email: String
+    let username: String
     
     func toDomain() -> User {
         return User(
             id: id,
-            name: name
+            email: email,
+            username: username
         )
     }
 }

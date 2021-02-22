@@ -11,16 +11,17 @@ import RxSwift
 import ParylationDomain
 import UIKit
 
-protocol WelcomeContainer {
-    var window: UIWindow { get }
+protocol WelcomeContainer { }
+
+protocol WelcomeListener: AnyObject {
+    func onAuthorizationFinish()
 }
 
 protocol WelcomeBuilder: AnyObject {
-    func build() -> UIViewController
+    func build(listener: WelcomeListener?) -> UIViewController
 }
 
 protocol WelcomeRouter: AnyObject {
-    func showDashboard()
     func showSignUp()
     func showSignIn()
 }

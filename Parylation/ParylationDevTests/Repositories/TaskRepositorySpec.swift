@@ -39,7 +39,14 @@ final class TaskRepositorySpec: QuickSpec {
             context("when storage is not empty") {
                 beforeEach {
                     let realm = try! Realm()
-                    let task = Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                    let task = Task(
+                        id: "1",
+                        iconId: "",
+                        colorId: "",
+                        title: "foo",
+                        taskDescription: "bar",
+                        date: Date(timeIntervalSince1970: 0)
+                    )
                     try? realm.write {
                         realm.add(RealmTask.from(task: task))
                     }
@@ -53,7 +60,14 @@ final class TaskRepositorySpec: QuickSpec {
                         .disposed(by: disposeBag)
 
                     let expected: [Recorded<Event<[Task]>>] = [
-                        .next(0, [Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))]),
+                        .next(0, [Task(
+                            id: "1",
+                            iconId: "",
+                            colorId: "",
+                            title: "foo",
+                            taskDescription: "bar",
+                            date: Date(timeIntervalSince1970: 0)
+                        )]),
                         .completed(0)
                     ]
 
@@ -87,7 +101,14 @@ final class TaskRepositorySpec: QuickSpec {
                 observer = scheduler.createObserver([Task].self)
                 scheduler
                     .createColdObservable([
-                        .next(10, Task(id: "2", title: "new", taskDescription: "task", date: Date(timeIntervalSince1970: 0)))
+                        .next(10, Task(
+                            id: "2",
+                            iconId: "",
+                            colorId: "",
+                            title: "new",
+                            taskDescription: "task",
+                            date: Date(timeIntervalSince1970: 0)
+                        ))
                     ])
                     .flatMap { taskRepository.save(task: $0) }
                     .subscribe(onNext: { })
@@ -105,7 +126,14 @@ final class TaskRepositorySpec: QuickSpec {
             context("when storage has values") {
                 beforeEach {
                     let realm = try! Realm()
-                    let task = Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                    let task = Task(
+                        id: "1",
+                        iconId: "",
+                        colorId: "",
+                        title: "foo",
+                        taskDescription: "bar",
+                        date: Date(timeIntervalSince1970: 0)
+                    )
                     try? realm.write {
                         realm.add(RealmTask.from(task: task))
                     }
@@ -114,11 +142,32 @@ final class TaskRepositorySpec: QuickSpec {
                 it("should store all values") {
                     let expected: [Recorded<Event<[Task]>>] = [
                         .next(0, [
-                            Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "1",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ]),
                         .next(10, [
-                            Task(id: "2", title: "new", taskDescription: "task", date: Date(timeIntervalSince1970: 0)),
-                            Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "new",
+                                taskDescription: "task",
+                                date: Date(timeIntervalSince1970: 0)
+                            ),
+                            Task(
+                                id: "1",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ])
                     ]
 
@@ -130,7 +179,14 @@ final class TaskRepositorySpec: QuickSpec {
             context("when storage has same values") {
                 beforeEach {
                     let realm = try! Realm()
-                    let task = Task(id: "2", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                    let task = Task(
+                        id: "2",
+                        iconId: "",
+                        colorId: "",
+                        title: "foo",
+                        taskDescription: "bar",
+                        date: Date(timeIntervalSince1970: 0)
+                    )
                     try? realm.write {
                         realm.add(RealmTask.from(task: task))
                     }
@@ -139,10 +195,24 @@ final class TaskRepositorySpec: QuickSpec {
                 it("should override value") {
                     let expected: [Recorded<Event<[Task]>>] = [
                         .next(0, [
-                            Task(id: "2", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ]),
                         .next(10, [
-                            Task(id: "2", title: "new", taskDescription: "task", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "new",
+                                taskDescription: "task",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ])
                     ]
 
@@ -156,7 +226,14 @@ final class TaskRepositorySpec: QuickSpec {
                     let expected: [Recorded<Event<[Task]>>] = [
                         .next(0, []),
                         .next(10, [
-                            Task(id: "2", title: "new", taskDescription: "task", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "new",
+                                taskDescription: "task",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ])
                     ]
 
@@ -190,7 +267,14 @@ final class TaskRepositorySpec: QuickSpec {
             context("when storage contains deleting value") {
                 beforeEach {
                     let realm = try! Realm()
-                    let task = Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                    let task = Task(
+                        id: "1",
+                        iconId: "",
+                        colorId: "",
+                        title: "foo",
+                        taskDescription: "bar",
+                        date: Date(timeIntervalSince1970: 0)
+                    )
                     try? realm.write {
                         realm.add(RealmTask.from(task: task))
                     }
@@ -199,7 +283,14 @@ final class TaskRepositorySpec: QuickSpec {
                 it("should remove value") {
                     let expected: [Recorded<Event<[Task]>>] = [
                         .next(0, [
-                            Task(id: "1", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "1",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ]),
                         .next(10, [])
                     ]
@@ -212,7 +303,14 @@ final class TaskRepositorySpec: QuickSpec {
             context("when storage doesn't contain deleting value") {
                 beforeEach {
                     let realm = try! Realm()
-                    let task = Task(id: "2", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                    let task = Task(
+                        id: "2",
+                        iconId: "",
+                        colorId: "",
+                        title: "foo",
+                        taskDescription: "bar",
+                        date: Date(timeIntervalSince1970: 0)
+                    )
                     try? realm.write {
                         realm.add(RealmTask.from(task: task))
                     }
@@ -221,10 +319,24 @@ final class TaskRepositorySpec: QuickSpec {
                 it("should remain the same") {
                     let expected: [Recorded<Event<[Task]>>] = [
                         .next(0, [
-                            Task(id: "2", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ]),
                         .next(10, [
-                            Task(id: "2", title: "foo", taskDescription: "bar", date: Date(timeIntervalSince1970: 0))
+                            Task(
+                                id: "2",
+                                iconId: "",
+                                colorId: "",
+                                title: "foo",
+                                taskDescription: "bar",
+                                date: Date(timeIntervalSince1970: 0)
+                            )
                         ])
                     ]
 

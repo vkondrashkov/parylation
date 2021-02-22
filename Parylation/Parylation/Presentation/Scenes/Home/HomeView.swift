@@ -28,11 +28,10 @@ final class HomeView: UIViewController {
     
     override func loadView() {
         view = UIView()
-        
+
         view.addSubview(headerBackgroundView)
         headerBackgroundView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.lessThanOrEqualTo(view.snp.centerY)
+            $0.top.leading.trailing.equalToSuperview().priority(.high)
         }
         
         let headerMaskView = UIView()
@@ -45,22 +44,19 @@ final class HomeView: UIViewController {
         
         headerBackgroundView.addSubview(headerContentView)
         headerContentView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.bottom.equalToSuperview().inset(30)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
-            $0.bottom.equalToSuperview().offset(-30)
         }
         
         headerContentView.addSubview(greetingsTitleLabel)
         greetingsTitleLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
         }
         
         headerContentView.addSubview(greetingsSubtitleLabel)
         greetingsSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(greetingsTitleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview()
-            $0.trailing.lessThanOrEqualToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
         
         headerContentView.addSubview(planButton)
@@ -72,9 +68,9 @@ final class HomeView: UIViewController {
 
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(20)
+            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(20).priority(.high)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).priority(.high)
         }
 
         view.addSubview(createButton)
@@ -93,7 +89,7 @@ final class HomeView: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -155,6 +151,7 @@ final class HomeView: UIViewController {
 
         createButton.layer.cornerRadius = 30
         createButton.backgroundColor = Color.marigoldYellow
+        createButton.setImage(Asset.commonTaskPlus.image, for: .normal)
     }
 
     private func bindViewModel() {
@@ -202,6 +199,29 @@ final class HomeView: UIViewController {
 
         tableView.rx.itemDeleted
             .bind(to: viewModel.deleteTrigger)
+            .disposed(by: disposeBag)
+
+        tableView.rx.willDisplayCell
+            .map { $0.indexPath }
+            .bind(to: viewModel.willDisplayItemTrigger)
+            .disposed(by: disposeBag)
+
+        viewModel.itemIcon
+            .delay(.milliseconds(1))
+            .drive(onNext: { [weak self] icon, indexPath in
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? HomeTableViewCell
+                cell?.update(icon: icon.image)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.itemColor
+            .delay(.milliseconds(1))
+            .drive(onNext: { [weak self] color, indexPath in
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? HomeTableViewCell
+                cell?.update(color: color.value)
+            })
             .disposed(by: disposeBag)
     }
 }

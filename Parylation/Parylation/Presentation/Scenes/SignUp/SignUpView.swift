@@ -184,6 +184,9 @@ final class SignUpView: UIViewController {
         emailTextField.leftViewMode = .always
         emailTextField.placeholder = "example@domain.com"
         emailTextField.keyboardType = .emailAddress
+        emailTextField.autocorrectionType = .no
+        emailTextField.textContentType = .emailAddress
+        emailTextField.autocapitalizationType = .none
         
         passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         passwordCaptionLabel.text = L10n.signUpPassword
@@ -198,6 +201,7 @@ final class SignUpView: UIViewController {
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.textContentType = .password
         
         confirmPasswordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         confirmPasswordCaptionLabel.text = L10n.signUpConfirmPassword
@@ -212,6 +216,7 @@ final class SignUpView: UIViewController {
         confirmPasswordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         confirmPasswordTextField.leftViewMode = .always
         confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.textContentType = .password
         
         signUpButton.setTitle(L10n.signUpButton.uppercased(), for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
@@ -274,11 +279,5 @@ final class SignUpView: UIViewController {
         viewModel.confirmPasswordError
             .drive(confirmPasswordErrorLabel.rx.text)
             .disposed(by: disposeBag)
-    }
-
-    private func updateSignUpButton(isEnabled: Bool) {
-        signUpButton.backgroundColor = isEnabled ? Color.blazeOrange : Color.gray
-        signUpButton.isEnabled = isEnabled
-        signUpButton.layer.shadowOpacity = isEnabled ? 0.5 : 0
     }
 }

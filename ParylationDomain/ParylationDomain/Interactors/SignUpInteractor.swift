@@ -20,15 +20,15 @@ public protocol SignUpInteractor {
 }
 
 public final class SignUpInteractorImpl {
-    private let authorizationUseCase: AuthorizationUseCase
-    private let credentialsValidatorUseCase: CredentialsValidatorUseCase
+    private let authorizationService: AuthorizationService
+    private let credentialsValidatorService: CredentialsValidatorService
     
     public init(
-        authorizationUseCase: AuthorizationUseCase,
-        credentialsValidatorUseCase: CredentialsValidatorUseCase
+        authorizationService: AuthorizationService,
+        credentialsValidatorService: CredentialsValidatorService
     ) {
-        self.authorizationUseCase = authorizationUseCase
-        self.credentialsValidatorUseCase = credentialsValidatorUseCase
+        self.authorizationService = authorizationService
+        self.credentialsValidatorService = credentialsValidatorService
     }
 }
 
@@ -36,16 +36,16 @@ public final class SignUpInteractorImpl {
 
 extension SignUpInteractorImpl: SignUpInteractor {
     public func register(email: String, password: String) -> Single<User> {
-        return authorizationUseCase.register(email: email, password: password)
+        return authorizationService.register(email: email, password: password)
             .catchError { _ in .error(SignInInteractorError.failed) }
     }
 
     public func validate(email: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(email: email)
+        return credentialsValidatorService.validate(email: email)
     }
 
     public func validate(password: String) -> Single<Bool> {
-        return credentialsValidatorUseCase.validate(password: password)
+        return credentialsValidatorService.validate(password: password)
     }
 
     public func validate(password: String, confirmPassword: String) -> Single<Bool> {

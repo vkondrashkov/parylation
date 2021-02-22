@@ -15,11 +15,11 @@ import UIKit
 
 protocol TaskEditContainer {
     var taskRepository: TaskRepository { get }
-    var pushNotificationsUseCase: PushNotificationsUseCase { get }
+    var pushNotificationsService: PushNotificationsService { get }
 }
 
 protocol TaskEditBuilder {
-    func build(taskId: String?) -> UIViewController
+    func build(data: TaskEditData?) -> UIViewController
 }
 
 protocol TaskEditRouter: AnyObject {
@@ -33,11 +33,18 @@ enum TaskEditViewState {
 }
 
 protocol TaskEditViewModel {
-    var willAppearTrigger: AnyObserver<Void> { get }
     var taskTitle: AnyObserver<String> { get }
     var taskDescription: AnyObserver<String> { get }
     var taskDate: AnyObserver<Date> { get }
+
+    var willAppearTrigger: AnyObserver<Void> { get }
+    var iconSelectionTrigger: AnyObserver<IndexPath> { get }
+    var colorSelectionTrigger: AnyObserver<IndexPath> { get }
     var saveTrigger: AnyObserver<Void> { get }
 
+    var taskIcon: Driver<UIImage> { get }
+    var taskColor: Driver<UIColor> { get }
     var state: Driver<TaskEditViewState> { get }
+    var icons: Driver<[Icon]> { get }
+    var colors: Driver<[ParylationDomain.Color]> { get }
 }

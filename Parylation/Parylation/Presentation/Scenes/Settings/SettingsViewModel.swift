@@ -16,6 +16,12 @@ final class SettingsViewModelImpl: SettingsViewModel {
     private let interactor: SettingsInteractor
     private let router: SettingsRouter
 
+    private let userSubject = BehaviorSubject<Void>(value: ())
+    private let updateUsernameSubject = PublishSubject<Void>()
+    private let updateEmailSubject = PublishSubject<Void>()
+    private let updatePasswordSubject = PublishSubject<Void>()
+    private let signOutSubject = PublishSubject<Void>()
+
     let selectTrigger: AnyObserver<IndexPath>
 
     let sections: Driver<[SettingsTableSection]>
@@ -28,61 +34,203 @@ final class SettingsViewModelImpl: SettingsViewModel {
     ) {
         self.interactor = interactor
         self.router = router
-        
-        let items = Observable.just([
-            SettingsTableSection(
-                name: L10n.settingsMainSection,
-                items: [
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.gigas,
-                        title: L10n.settingsMainChangeUsername,
-                        action: nil
+
+        let user = userSubject
+            .flatMap { interactor.fetchUser() }
+            .asObservable()
+            .share(replay: 1)
+
+        let emailSubject = PublishSubject<String>()
+        user
+            .map { $0.email }
+            .bind(to: emailSubject)
+            .disposed(by: disposeBag)
+
+        let updateEmailSubject_ = updateEmailSubject
+        updateEmailSubject
+            .withLatestFrom(emailSubject)
+            .flatMap { interactor.update(email: $0) }
+            .bind(onNext: userSubject.onNext)
+            .disposed(by: disposeBag)
+
+        let usernameSubject = PublishSubject<String>()
+        user
+            .map { $0.username }
+            .bind(to: usernameSubject)
+            .disposed(by: disposeBag)
+
+        let updateUsernameSubject_ = updateUsernameSubject
+        updateUsernameSubject
+            .withLatestFrom(usernameSubject)
+            .flatMap { interactor.update(username: $0) }
+            .bind(onNext: userSubject.onNext)
+            .disposed(by: disposeBag)
+
+        let signOutSubject_ = signOutSubject
+        signOutSubject
+            .flatMap { interactor.signout() }
+            .subscribe(onNext: {
+                router.terminate()
+            })
+            .disposed(by: disposeBag)
+
+        // TODO: revisit, doubled events
+        let items = user
+            .map { user_ -> [SettingsTableSection] in
+                [
+                    SettingsTableSection(
+                        name: L10n.settingsMainSection,
+                        items: [
+                            SettingsTableItem(
+                                icon: Asset.settingsChangeUsername.image,
+                                color: Color.gigas,
+                                title: L10n.settingsMainChangeUsername,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.settingsMainChangeUsername))
+                                        .add(.textField({ user_.username }, { usernameSubject.onNext($0) }))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.cancel,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.accept,
+                                            color: Color.shamrock,
+                                            action: {
+                                                updateUsernameSubject_.onNext(())
+                                            }
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            ),
+                            SettingsTableItem(
+                                icon: Asset.settingsChangeEmail.image,
+                                color: Color.gigas,
+                                title: L10n.settingsMainChangeEmail,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.settingsMainChangeEmail))
+                                        .add(.textField({ user_.email }, { emailSubject.onNext($0) }))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.cancel,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.accept,
+                                            color: Color.shamrock,
+                                            action: {
+                                                updateEmailSubject_.onNext(())
+                                            }
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            ),
+                            SettingsTableItem(
+                                icon: Asset.settingsChangePassword.image,
+                                color: Color.gigas,
+                                title: L10n.settingsMainChangePassword,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.settingsMainChangePassword))
+                                        .add(.text(L10n.settingsPopupOldPassword))
+                                        .add(.textField({ "" }, { _ in }))
+                                        .add(.text(L10n.settingsPopupNewPassword))
+                                        .add(.textField({ "" }, { _ in }))
+                                        .add(.text(L10n.settingsPopupConfirmNewPassword))
+                                        .add(.textField({ "" }, { _ in }))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.cancel,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.accept,
+                                            color: Color.shamrock,
+                                            action: {
+                                                //                                        alertSubject.onNext(())
+                                            }
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            )
+                        ]
                     ),
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.gigas,
-                        title: L10n.settingsMainChangeEmail,
-                        action: nil
+                    SettingsTableSection(
+                        name: L10n.settingsOthersSection,
+                        items: [
+                            SettingsTableItem(
+                                icon: Asset.settingsRateUs.image,
+                                color: Color.marigoldYellow,
+                                title: L10n.settingsOthersRateUs,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.unavailableFeatureTitle))
+                                        .add(.text(L10n.unavailableFeatureDescription))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.ok,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            ),
+                            SettingsTableItem(
+                                icon: Asset.settingsAboutUs.image,
+                                color: Color.marigoldYellow,
+                                title: L10n.settingsOthersAboutUs,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.unavailableFeatureTitle))
+                                        .add(.text(L10n.unavailableFeatureDescription))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.ok,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            )
+                        ]
                     ),
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.gigas,
-                        title: L10n.settingsMainChangePassword,
-                        action: nil
+                    SettingsTableSection(
+                        name: nil,
+                        items: [
+                            SettingsTableItem(
+                                icon: Asset.settingsSignout.image,
+                                color: Color.blazeOrange,
+                                title: L10n.settingsSignOut,
+                                action: {
+                                    let alertViewInfo = AlertViewInfoBuilderImpl()
+                                        .add(.title(L10n.settingsPopupSignoutTitle))
+                                        .add(.text(L10n.settingsPopupSignoutDescription))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.cancel,
+                                            color: Color.gigas,
+                                            action: nil
+                                        )))
+                                        .add(.action(AlertViewInfo.ActionInfo(
+                                            name: L10n.settingsPopupSignoutConfirm,
+                                            color: Color.blazeOrange,
+                                            action: {
+                                                signOutSubject_.onNext(())
+                                            }
+                                        )))
+                                        .build()
+                                    router.showAlert(info: alertViewInfo)
+                                }
+                            )
+                        ]
                     )
                 ]
-            ),
-            SettingsTableSection(
-                name: L10n.settingsOthersSection,
-                items: [
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.marigoldYellow,
-                        title: L10n.settingsOthersRateUs,
-                        action: nil
-                    ),
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.marigoldYellow,
-                        title: L10n.settingsOthersAboutUs,
-                        action: nil
-                    )
-                ]
-            ),
-            SettingsTableSection(
-                name: nil,
-                items: [
-                    SettingsTableItem(
-                        icon: nil,
-                        color: Color.blazeOrange,
-                        title: L10n.settingsSignOut,
-                        action: nil
-                    )
-                ]
-            )
-        ])
-        
+            }
+
         let selectSubject = PublishSubject<IndexPath>()
         selectSubject
             .withLatestFrom(items) { ($0, $1) }

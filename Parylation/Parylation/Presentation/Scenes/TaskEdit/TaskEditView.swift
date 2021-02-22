@@ -32,10 +32,16 @@ final class TaskEditView: UIViewController {
     private let datePicker = UIDatePicker()
 
     private let iconCaptionLabel = UILabel()
-    private let iconContainerView = UIView() // Temp
+    private let iconSelectionCollectionView = SelectiveCollectionView<SelectiveIconCollectionViewCell>(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
 
     private let colorCaptionLabel = UILabel()
-    private let colorContainerView = UIView() // Temp
+    private let colorSelectiveCollectionView = SelectiveCollectionView<SelectiveColorCollectionViewCell>(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
 
     private let saveButton = UIButton()
 
@@ -48,7 +54,7 @@ final class TaskEditView: UIViewController {
 
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().priority(.high)
         }
 
         scrollView.addSubview(contentView)
@@ -68,7 +74,7 @@ final class TaskEditView: UIViewController {
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalTo(15)
+            $0.size.equalTo(30)
         }
 
         contentView.addSubview(taskTitleCaptionLabel)
@@ -99,7 +105,7 @@ final class TaskEditView: UIViewController {
 
         contentView.addSubview(taskDateCaptionLabel)
         taskDateCaptionLabel.snp.makeConstraints {
-            $0.bottom.equalTo(taskDescriptionTextField.snp.bottom).offset(20)
+            $0.top.equalTo(taskDescriptionTextField.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 
@@ -116,29 +122,27 @@ final class TaskEditView: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 
-        contentView.addSubview(iconContainerView)
-        iconContainerView.snp.makeConstraints {
+        contentView.addSubview(iconSelectionCollectionView)
+        iconSelectionCollectionView.snp.makeConstraints {
             $0.top.equalTo(iconCaptionLabel.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(129)
         }
 
         contentView.addSubview(colorCaptionLabel)
         colorCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(iconContainerView.snp.bottom).offset(20)
+            $0.top.equalTo(iconSelectionCollectionView.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 
-        contentView.addSubview(colorContainerView)
-        colorContainerView.snp.makeConstraints {
+        contentView.addSubview(colorSelectiveCollectionView)
+        colorSelectiveCollectionView.snp.makeConstraints {
             $0.top.equalTo(colorCaptionLabel.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
         }
 
         contentView.addSubview(saveButton)
         saveButton.snp.makeConstraints {
-            $0.top.equalTo(colorContainerView.snp.bottom).offset(30)
+            $0.top.equalTo(colorSelectiveCollectionView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(60)
             $0.bottom.equalToSuperview().offset(-30)
@@ -158,6 +162,9 @@ final class TaskEditView: UIViewController {
 
         iconBackgroundView.layer.cornerRadius = 15
         iconBackgroundView.backgroundColor = Color.gigas
+
+        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.tintColor = .white
 
         taskTitleCaptionLabel.text = L10n.taskEditTitle
         taskTitleCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -193,12 +200,8 @@ final class TaskEditView: UIViewController {
         iconCaptionLabel.text = L10n.taskEditIcon
         iconCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
 
-        iconContainerView.backgroundColor = Color.gray
-
         colorCaptionLabel.text = L10n.taskEditColor
         colorCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-
-        colorContainerView.backgroundColor = Color.gray
 
         saveButton.layer.cornerRadius = 20
         saveButton.backgroundColor = Color.shamrock
@@ -224,6 +227,35 @@ final class TaskEditView: UIViewController {
     }
 
     private func bindViewModel() {
+        viewModel.icons
+            .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
+                let iconCell = cell as? SelectiveIconCollectionViewCell
+                iconCell?.iconImageView.image = item.image
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.colors
+            .drive(colorSelectiveCollectionView.rx.items(cellIdentifier: SelectiveColorCollectionViewCell.reuseId, cellType: SelectiveColorCollectionViewCell.self)) { row, item, cell in
+                cell.color = item.value
+            }
+            .disposed(by: disposeBag)
+
+        iconSelectionCollectionView.rx.itemSelected
+            .bind(to: viewModel.iconSelectionTrigger)
+            .disposed(by: disposeBag)
+
+        colorSelectiveCollectionView.rx.itemSelected
+            .bind(to: viewModel.colorSelectionTrigger)
+            .disposed(by: disposeBag)
+
+        viewModel.taskIcon
+            .drive(iconImageView.rx.image)
+            .disposed(by: disposeBag)
+
+        viewModel.taskColor
+            .drive(iconBackgroundView.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
         rx.methodInvoked(#selector(UIViewController.viewWillAppear))
             .map { _ in () }
             .bind(to: viewModel.willAppearTrigger)
@@ -244,7 +276,7 @@ final class TaskEditView: UIViewController {
             .disposed(by: disposeBag)
 
         datePicker.rx.date
-            .map { [weak self] date_ in CommonTextFormatter().dateToString(date_) }
+            .map { CommonTextFormatter().dateToString($0) }
             .bind(to: taskDateTextField.rx.text)
             .disposed(by: disposeBag)
 
@@ -256,14 +288,17 @@ final class TaskEditView: UIViewController {
     private func updateState(_ state: TaskEditViewState) {
         switch state {
         case .ready:
-            break
+            iconSelectionCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
+            colorSelectiveCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
         case .loading:
             break
         case .display(let info):
             taskTitleTextField.text = info.title
             taskDescriptionTextField.text = info.taskDescription
-            taskDateTextField.text = CommonTextFormatter().dateToString(info.date)
-            datePicker.date = info.date
+            if let date = info.date {
+                taskDateTextField.text = CommonTextFormatter().dateToString(date)
+                datePicker.date = date
+            }
         }
     }
 

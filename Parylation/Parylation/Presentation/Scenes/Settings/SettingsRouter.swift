@@ -12,12 +12,30 @@ import UIKit
 
 final class SettingsRouterImpl {
     private weak var view: UIViewController?
+    private let alertBuilder: AlertBuilder
 
-    init(view: UIViewController) {
+    private weak var listener: SettingsListener?
+
+    init(
+        view: UIViewController,
+        alertBuilder: AlertBuilder,
+        listener: SettingsListener?
+    ) {
         self.view = view
+        self.alertBuilder = alertBuilder
+        self.listener = listener
     }
 }
 
 // MARK: - SettingsRouter implementation
 
-extension SettingsRouterImpl: SettingsRouter { }
+extension SettingsRouterImpl: SettingsRouter {
+    func showAlert(info: AlertViewInfo) {
+        let alertView = alertBuilder.build(info: info)
+        alertView.selfDisplay()
+    }
+
+    func terminate() {
+        listener?.onSignOut()
+    }
+}

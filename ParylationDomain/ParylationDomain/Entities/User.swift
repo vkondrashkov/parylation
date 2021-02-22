@@ -8,17 +8,24 @@
 
 public struct User {
     public let id: String
-    public let name: String
+    public let email: String
+    public let username: String
     
-    public init(id: String, name: String) {
+    public init(
+        id: String,
+        email: String,
+        username: String
+    ) {
         self.id = id
-        self.name = name
+        self.email = email
+        self.username = username
     }
 }
 
 extension User: Equatable {
     public static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.id == rhs.id &&
-            lhs.name == rhs.name
+        return lhs.id == rhs.id
+            && lhs.email == rhs.email
+            && lhs.username == rhs.username
     }
 }
