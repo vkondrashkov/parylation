@@ -57,9 +57,7 @@ final class DayViewModelImpl: DayViewModel {
                     title: task.title
                 )
             }
-            .debug("🛑 Item")
             .toArray()
-            .debug("🛑 Array")
 
         let selectSubject = PublishSubject<IndexPath>()
         selectSubject
