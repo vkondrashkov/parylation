@@ -1,18 +1,20 @@
 //
-//  HomeRouter.swift
+// 
+//  DayRouter.swift
 //  Parylation
 //
-//  Created by Vladislav Kondrashkov on 8/22/20.
-//  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
+//  Created by Vladislav Kondrashkov on 10.02.21.
+//  Copyright © 2021 Vladislav Kondrashkov. All rights reserved.
+//
 //
 
 import UIKit
 
-final class HomeRouterImpl {
+final class DayRouterImpl {
     private weak var view: UIViewController?
     private let taskBuilder: TaskBuilder
     private let taskEditBuilder: TaskEditBuilder
-    
+
     init(
         view: UIViewController,
         taskBuilder: TaskBuilder,
@@ -24,17 +26,18 @@ final class HomeRouterImpl {
     }
 }
 
-// MARK: - HomeRouter implementation
+// MARK: - DayRouter implementation
 
-extension HomeRouterImpl: HomeRouter {
-    func showTaskCreation() {
-        let editView = taskEditBuilder.build(data: nil)
-        view?.present(editView, animated: true, completion: nil)
-    }
-
+extension DayRouterImpl: DayRouter {
     func showTask(taskId: String) {
         let taskView = taskBuilder.build(taskId: taskId)
         taskView.hidesBottomBarWhenPushed = true
         view?.navigationController?.pushViewController(taskView, animated: true)
+    }
+
+    func showTaskEdit(data: TaskEditData) {
+        let taskEditView = taskEditBuilder.build(data: data)
+        taskEditView.hidesBottomBarWhenPushed = true
+        view?.navigationController?.pushViewController(taskEditView, animated: true)
     }
 }

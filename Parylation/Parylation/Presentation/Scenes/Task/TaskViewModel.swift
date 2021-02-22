@@ -86,8 +86,9 @@ final class TaskViewModelImpl: TaskViewModel {
 
         let editSubject = PublishSubject<Void>()
         editSubject
+            .withLatestFrom(task)
             .subscribe(onNext: {
-                router.showTaskEdit(taskId: taskId, completion: nil)
+                router.showTaskEdit(task: $0, completion: nil)
             })
             .disposed(by: disposeBag)
 

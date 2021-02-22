@@ -7,22 +7,17 @@
 //
 
 import UIKit
-import ParylationDomain
 
 struct TaskEditViewInfo {
-    let icon: UIImage
-    let color: UIColor
-    let title: String
-    let taskDescription: String
-    let date: Date
+    let title: String?
+    let taskDescription: String?
+    let date: Date?
 
-    static func from(task: Task) -> TaskEditViewInfo {
-        return TaskEditViewInfo(
-            icon: Asset.taskEditList.image.withRenderingMode(.alwaysTemplate),
-            color: Color.gigas,
-            title: task.title,
-            taskDescription: task.taskDescription,
-            date: task.date
+    static func from(data: TaskEditData) -> TaskEditViewInfo {
+        return .init(
+            title: data.title,
+            taskDescription: data.taskDescription,
+            date: data.date
         )
     }
 }
