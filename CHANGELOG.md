@@ -5,9 +5,14 @@
 - Icons and Colors for tasks
 - Change username and email features
 - Calendar
+- Day overview on calendar
 
 ### Changed
 - Settings UI
+
+### Known issues
+- Icon and color are not match on editing (#54)
+- Unable to create task on appear (#55)
 
 ## Alpha 0.1.0
 ### Added
