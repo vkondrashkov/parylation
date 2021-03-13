@@ -64,10 +64,11 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
 
         updateLayoutAccording(cellType: cellType)
 
+        iconImageView.tintColor = .white
         iconImageView.contentMode = .scaleAspectFit
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
-            $0.size.equalTo(25)
+            $0.size.equalTo(20)
             $0.center.equalToSuperview()
         }
 

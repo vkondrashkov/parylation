@@ -21,6 +21,8 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let calendarArrowLeft = ImageAsset(name: "calendar-arrow_left")
   internal static let calendarArrowRight = ImageAsset(name: "calendar-arrow_right")
+  internal static let commonConfirm = ImageAsset(name: "common-confirm")
+  internal static let commonDelete = ImageAsset(name: "common-delete")
   internal static let commonTaskPlus = ImageAsset(name: "common-task_plus")
   internal static let dashboardCalendar = ImageAsset(name: "dashboard-calendar")
   internal static let dashboardHome = ImageAsset(name: "dashboard-home")
