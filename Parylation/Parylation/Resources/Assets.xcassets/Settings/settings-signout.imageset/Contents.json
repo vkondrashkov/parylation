@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "settings-signout.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "settings-signout@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "settings-signout@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "settings-signout.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "settings-change_email.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "settings-change_email@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "settings-change_email@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "settings-change_email.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

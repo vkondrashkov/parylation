@@ -82,7 +82,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         name: L10n.settingsMainSection,
                         items: [
                             SettingsTableItem(
-                                icon: Asset.settingsChangeUsername.image,
+                                icon: Asset.settingsChangeUsername.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.gigas,
                                 title: L10n.settingsMainChangeUsername,
                                 action: {
@@ -106,7 +106,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                                 }
                             ),
                             SettingsTableItem(
-                                icon: Asset.settingsChangeEmail.image,
+                                icon: Asset.settingsChangeEmail.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.gigas,
                                 title: L10n.settingsMainChangeEmail,
                                 action: {
@@ -130,7 +130,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                                 }
                             ),
                             SettingsTableItem(
-                                icon: Asset.settingsChangePassword.image,
+                                icon: Asset.settingsChangePassword.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.gigas,
                                 title: L10n.settingsMainChangePassword,
                                 action: {
@@ -164,7 +164,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         name: L10n.settingsOthersSection,
                         items: [
                             SettingsTableItem(
-                                icon: Asset.settingsRateUs.image,
+                                icon: Asset.settingsRateUs.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.marigoldYellow,
                                 title: L10n.settingsOthersRateUs,
                                 action: {
@@ -181,7 +181,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                                 }
                             ),
                             SettingsTableItem(
-                                icon: Asset.settingsAboutUs.image,
+                                icon: Asset.settingsAboutUs.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.marigoldYellow,
                                 title: L10n.settingsOthersAboutUs,
                                 action: {
@@ -203,7 +203,7 @@ final class SettingsViewModelImpl: SettingsViewModel {
                         name: nil,
                         items: [
                             SettingsTableItem(
-                                icon: Asset.settingsSignout.image,
+                                icon: Asset.settingsSignout.image.withRenderingMode(.alwaysTemplate),
                                 color: Color.blazeOrange,
                                 title: L10n.settingsSignOut,
                                 action: {

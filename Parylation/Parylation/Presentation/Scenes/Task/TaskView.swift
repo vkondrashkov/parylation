@@ -135,6 +135,9 @@ final class TaskView: UIViewController {
         deleteButton.layer.cornerRadius = 20
         deleteButton.backgroundColor = Color.blazeOrange
         deleteButton.setTitleColor(.white, for: .normal)
+        deleteButton.setImage(Asset.commonDelete.image.withRenderingMode(.alwaysTemplate), for: .normal)
+        deleteButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        deleteButton.tintColor = .white
         if #available(iOS 13.0, *) {
             deleteButton.layer.cornerCurve = .continuous
         }
@@ -167,6 +170,9 @@ final class TaskView: UIViewController {
         completeButton.layer.cornerRadius = 20
         completeButton.backgroundColor = Color.shamrock
         completeButton.setTitleColor(.white, for: .normal)
+        completeButton.setImage(Asset.commonConfirm.image.withRenderingMode(.alwaysTemplate), for: .normal)
+        completeButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        completeButton.tintColor = .white
         if #available(iOS 13.0, *) {
             completeButton.layer.cornerCurve = .continuous
         }
