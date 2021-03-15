@@ -26,7 +26,7 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    static let itemSize: CGFloat = Sizes.value(from: [.iPhone5s: 50], defaultValue: 60)
+    static let itemSize: CGFloat = Sizes.value(from: [.iPhone5s: 50,  .iPhone8: 55], defaultValue: 60)
 
     override func prepareForReuse() {
         super.prepareForReuse()

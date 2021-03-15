@@ -72,10 +72,10 @@ final class HomeView: UIViewController {
         view.addSubview(missingItemsView)
         missingItemsView.snp.makeConstraints {
             $0.top.equalTo(headerBackgroundView.snp.bottom).offset(
-                Sizes.value(from: [.iPhone5s: 20], defaultValue: 60)
+                Sizes.value(from: [.iPhone5s: 20, .iPhone8: 30], defaultValue: 60)
             )
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 130], defaultValue: 200))
+            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 160, .iPhone8: 160], defaultValue: 200))
         }
 
         view.addSubview(tableView)

@@ -22,8 +22,8 @@ final class HomeMissingItemsView: UIView {
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 130], defaultValue: 200))
-            $0.height.equalTo(Sizes.value(from: [.iPhone5s: 156], defaultValue: 240))
+            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 130, .iPhone8: 160], defaultValue: 200))
+            $0.height.equalTo(Sizes.value(from: [.iPhone5s: 156, .iPhone8: 192], defaultValue: 240))
         }
 
         titleLabel.text = L10n.homeMissingTitle

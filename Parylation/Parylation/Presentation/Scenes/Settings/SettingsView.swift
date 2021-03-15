@@ -44,7 +44,8 @@ final class SettingsView: UIViewController {
 
         contentView.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview().inset(
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.trailing.equalToSuperview().inset(
                 StyleGuide.Header.margins
             ).priority(.high)
         }
