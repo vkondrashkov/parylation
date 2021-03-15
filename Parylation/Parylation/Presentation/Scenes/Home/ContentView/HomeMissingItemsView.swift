@@ -22,12 +22,15 @@ final class HomeMissingItemsView: UIView {
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(200)
-            $0.height.equalTo(240)
+            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 130], defaultValue: 200))
+            $0.height.equalTo(Sizes.value(from: [.iPhone5s: 156], defaultValue: 240))
         }
 
         titleLabel.text = L10n.homeMissingTitle
-        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.subtitleFontSize,
+            weight: .semibold
+        )
         titleLabel.textAlignment = .center
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
@@ -36,7 +39,10 @@ final class HomeMissingItemsView: UIView {
         }
 
         descriptionLabel.text = L10n.homeMissingDescription
-        descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
+        descriptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .light
+        )
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         addSubview(descriptionLabel)

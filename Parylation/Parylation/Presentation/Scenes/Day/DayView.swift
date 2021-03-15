@@ -33,20 +33,27 @@ final class DayView: UIViewController {
 
         view.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30).priority(.high)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         view.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         let monthHeaderContainerView = UIView()
         view.addSubview(monthHeaderContainerView)
         monthHeaderContainerView.snp.makeConstraints {
             $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         monthHeaderContainerView.addSubview(previousMonthButton)
@@ -71,14 +78,16 @@ final class DayView: UIViewController {
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.top.equalTo(monthHeaderContainerView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Screen.margins
+            ).priority(.high)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
 
         view.addSubview(createButton)
         createButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.size.equalTo(60)
+            $0.size.equalTo(StyleGuide.Button.height)
         }
     }
 
@@ -128,7 +137,7 @@ final class DayView: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
 
-        createButton.layer.cornerRadius = 30
+        createButton.layer.cornerRadius = StyleGuide.Button.height / 2
         createButton.backgroundColor = Color.marigoldYellow
         createButton.setImage(Asset.commonTaskPlus.image, for: .normal)
     }

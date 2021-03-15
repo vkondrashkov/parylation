@@ -53,7 +53,7 @@ final class WelcomeView: UIViewController {
         
         contentView.addSubview(logoImageView)
         logoImageView.snp.makeConstraints {
-            $0.size.equalTo(75)
+            $0.size.equalTo(Sizes.value(from: [.iPhone5s: 60], defaultValue: 75))
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
@@ -77,8 +77,8 @@ final class WelcomeView: UIViewController {
         contentView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.width.equalTo(200)
-            $0.height.equalTo(60)
+            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 180], defaultValue: 200))
+            $0.height.equalTo(StyleGuide.Button.height)
             $0.centerX.equalToSuperview()
             $0.leading.greaterThanOrEqualToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
@@ -126,11 +126,17 @@ final class WelcomeView: UIViewController {
         
         logoImageView.image = Asset.appLogo.image
         
-        subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        subtitleLabel.font = .systemFont(
+            ofSize: Sizes.value(from: [.iPhone5s: 20], defaultValue: 24),
+            weight: .ultraLight
+        )
         subtitleLabel.text = L10n.welcomeSubtitle
         subtitleLabel.textColor = .black
         
-        titleLabel.font = .systemFont(ofSize: 32, weight: .heavy)
+        titleLabel.font = .systemFont(
+            ofSize: Sizes.value(from: [.iPhone5s: 28], defaultValue: 32),
+            weight: .heavy
+        )
         titleLabel.text = L10n.appName.uppercased()
         titleLabel.textColor = Color.gigas
         
@@ -141,7 +147,10 @@ final class WelcomeView: UIViewController {
         if #available(iOS 13.0, *) {
             signUpButton.layer.cornerCurve = .continuous
         }
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        signUpButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .semibold
+        )
         signUpButton.layer.applyShadow(
             color: Color.marigoldYellow,
             alpha: 0.5,
@@ -153,7 +162,10 @@ final class WelcomeView: UIViewController {
         
         signInButton.setTitle(L10n.welcomeSignIn, for: .normal)
         signInButton.setTitleColor(Color.dustyGray, for: .normal)
-        signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
+        signInButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .regular
+        )
         
         homeIndicatorMaskView.backgroundColor = Color.gigas
         

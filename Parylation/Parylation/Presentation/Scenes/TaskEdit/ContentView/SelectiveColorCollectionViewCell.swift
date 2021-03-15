@@ -26,6 +26,8 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    static let itemSize: CGFloat = Sizes.value(from: [.iPhone5s: 50], defaultValue: 60)
+
     override func prepareForReuse() {
         super.prepareForReuse()
 
@@ -38,7 +40,7 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
 
-        backgroundContentView.layer.cornerRadius = 30
+        backgroundContentView.layer.cornerRadius = SelectiveColorCollectionViewCell.itemSize / 2
         backgroundContentView.backgroundColor = .white
         contentView.addSubview(backgroundContentView)
         backgroundContentView.snp.makeConstraints {
@@ -46,7 +48,7 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
         }
 
         selectionView.isHidden = true
-        selectionView.layer.cornerRadius = 30
+        selectionView.layer.cornerRadius = SelectiveColorCollectionViewCell.itemSize / 2
         selectionView.layer.borderColor = UIColor.white.cgColor
         selectionView.layer.borderWidth = 7
         backgroundContentView.addSubview(selectionView)
@@ -55,7 +57,7 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
         }
 
         secondSelectionView.isHidden = true
-        secondSelectionView.layer.cornerRadius = 30
+        secondSelectionView.layer.cornerRadius = SelectiveColorCollectionViewCell.itemSize / 2
         secondSelectionView.layer.borderColor = color?.cgColor
         secondSelectionView.layer.borderWidth = 2
         backgroundContentView.addSubview(secondSelectionView)
@@ -73,6 +75,6 @@ class SelectiveColorCollectionViewCell: UICollectionViewCell {
 
 extension SelectiveColorCollectionViewCell: SelectiveCollectionViewItem {
     static var size: CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: itemSize, height: itemSize)
     }
 }

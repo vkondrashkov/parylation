@@ -24,6 +24,8 @@ class SelectiveIconCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    static let itemSize: CGFloat = Sizes.value(from: [.iPhone5s: 50], defaultValue: 60)
+
     override func prepareForReuse() {
         super.prepareForReuse()
 
@@ -36,7 +38,7 @@ class SelectiveIconCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
 
-        backgroundContentView.layer.cornerRadius = 15
+        backgroundContentView.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         backgroundContentView.backgroundColor = .white
         contentView.addSubview(backgroundContentView)
         backgroundContentView.snp.makeConstraints {
@@ -52,7 +54,7 @@ class SelectiveIconCollectionViewCell: UICollectionViewCell {
         }
 
         selectionView.isHidden = true
-        selectionView.layer.cornerRadius = 15
+        selectionView.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         selectionView.layer.borderColor = Color.gigas.cgColor
         selectionView.layer.borderWidth = 2
         backgroundContentView.addSubview(selectionView)
@@ -70,6 +72,6 @@ class SelectiveIconCollectionViewCell: UICollectionViewCell {
 
 extension SelectiveIconCollectionViewCell: SelectiveCollectionViewItem {
     static var size: CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: itemSize, height: itemSize)
     }
 }

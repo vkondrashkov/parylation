@@ -36,20 +36,29 @@ final class CalendarView: UIViewController {
 
         view.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30).priority(.high)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         view.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         let monthHeaderContainerView = UIView()
         view.addSubview(monthHeaderContainerView)
         monthHeaderContainerView.snp.makeConstraints {
-            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(70)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 30], defaultValue: 70)
+            )
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         monthHeaderContainerView.addSubview(previousMonthButton)
@@ -74,20 +83,24 @@ final class CalendarView: UIViewController {
         view.addSubview(weekdaysStackView)
         weekdaysStackView.snp.makeConstraints {
             $0.top.equalTo(monthHeaderContainerView.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Screen.margins
+            ).priority(.high)
         }
 
         view.addSubview(monthCollectionView)
         monthCollectionView.snp.makeConstraints {
             $0.top.equalTo(weekdaysStackView.snp.bottom).offset(5)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Screen.margins
+            ).priority(.high)
             $0.height.equalTo(270)
         }
 
         view.addSubview(createButton)
         createButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.size.equalTo(60)
+            $0.size.equalTo(StyleGuide.Button.height)
         }
     }
 
@@ -101,21 +114,33 @@ final class CalendarView: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
 
-        headerTitleLabel.font = .systemFont(ofSize: 28, weight: .heavy)
+        headerTitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.titleFontSize,
+            weight: .heavy
+        )
         headerTitleLabel.text = L10n.calendarTitle
         headerTitleLabel.textColor = Color.gigas
 
-        headerSubtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        headerSubtitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.subtitleFontSize,
+            weight: .ultraLight
+        )
         let subtitleText = L10n.calendarSubtitle
         let accent = L10n.calendarSubtitleAccent
         let headerSubtitleText = NSMutableAttributedString(
             string: subtitleText + accent,
             attributes: [
-                .font: UIFont.systemFont(ofSize: 24, weight: .ultraLight)
+                .font: UIFont.systemFont(
+                    ofSize: StyleGuide.Header.subtitleFontSize,
+                    weight: .ultraLight
+                )
             ]
         )
         headerSubtitleText.addAttributes([
-            .font: UIFont.systemFont(ofSize: 24, weight: .semibold)
+            .font: UIFont.systemFont(
+                ofSize: StyleGuide.Header.subtitleFontSize,
+                weight: .semibold
+            )
         ], range: NSRange(location: subtitleText.count, length: accent.count))
         headerSubtitleLabel.attributedText = headerSubtitleText
         headerSubtitleLabel.textColor = .black
@@ -124,7 +149,10 @@ final class CalendarView: UIViewController {
         previousMonthButton.layer.cornerRadius = 15
         previousMonthButton.setImage(Asset.calendarArrowLeft.image, for: .normal)
 
-        currentMonthLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        currentMonthLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .bold
+        )
 
         nextMonthButton.backgroundColor = Color.gigas
         nextMonthButton.layer.cornerRadius = 15
@@ -142,7 +170,7 @@ final class CalendarView: UIViewController {
         monthCollectionView.delegate = self
         monthCollectionView.register(CalendarDateCollectionViewCell.self)
 
-        createButton.layer.cornerRadius = 30
+        createButton.layer.cornerRadius = StyleGuide.Button.height / 2
         createButton.backgroundColor = Color.marigoldYellow
         createButton.setImage(Asset.commonTaskPlus.image, for: .normal)
     }
@@ -223,6 +251,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    return CGSize(width: 45, height: 45)
+    let cellSize: CGFloat = Sizes.value(from: [.iPhone5s: 40], defaultValue: 45)
+    return CGSize(width: cellSize, height: cellSize)
   }
 }

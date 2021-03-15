@@ -31,6 +31,10 @@ final class SignInView: UIViewController {
     private let signUpButton = UIButton()
 
     private let disposeBag = DisposeBag()
+
+    private let labelOffset: CGFloat = Sizes.value(from: [.iPhone5s: 18], defaultValue: 25)
+    private let textFieldOffset: CGFloat = Sizes.value(from: [.iPhone5s: 10], defaultValue: 15)
+    private let errorLabelSize: CGFloat = Sizes.value(from: [.iPhone5s: 12], defaultValue: 14)
     
     override func loadView() {
         view = UIView()
@@ -40,7 +44,7 @@ final class SignInView: UIViewController {
             $0.centerY.equalTo(view.safeAreaLayoutGuide.snp.centerY)
             $0.top.greaterThanOrEqualToSuperview()
             $0.bottom.lessThanOrEqualToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
         
         contentView.addSubview(titleLabel)
@@ -61,7 +65,9 @@ final class SignInView: UIViewController {
         
         contentView.addSubview(emailCaptionLabel)
         emailCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(30)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 25], defaultValue: 30)
+            )
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
@@ -74,37 +80,39 @@ final class SignInView: UIViewController {
         
         contentView.addSubview(emailTextField)
         emailTextField.snp.makeConstraints {
-            $0.top.equalTo(emailCaptionLabel.snp.bottom).offset(15)
+            $0.top.equalTo(emailCaptionLabel.snp.bottom).offset(textFieldOffset)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
         contentView.addSubview(passwordCaptionLabel)
         passwordCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(25)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(labelOffset)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
         contentView.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(passwordCaptionLabel.snp.bottom).offset(15)
+            $0.top.equalTo(passwordCaptionLabel.snp.bottom).offset(textFieldOffset)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
         contentView.addSubview(forgotPasswordButton)
         forgotPasswordButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(textFieldOffset)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
         contentView.addSubview(signInButton)
         signInButton.snp.makeConstraints {
-            $0.top.equalTo(forgotPasswordButton.snp.bottom).offset(25)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.top.equalTo(forgotPasswordButton.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 20], defaultValue: 25)
+            )
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.height.equalTo(StyleGuide.Button.height)
         }
         
         let signUpView = UIView()
@@ -139,23 +147,26 @@ final class SignInView: UIViewController {
     private func setupUI() {
         view.backgroundColor = Color.whisper
         
-        titleLabel.font = .systemFont(ofSize: 48)
+        titleLabel.font = .systemFont(ofSize: Sizes.value(from: [.iPhone5s: 44], defaultValue: 48))
         titleLabel.text = "👋"
         
         subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
         subtitleLabel.text = L10n.signInSubtitle
         subtitleLabel.textColor = .black
         
-        emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        emailCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
         emailCaptionLabel.text = L10n.signInEmail
-        emailCaptionLabel.textColor = Color.gigas
+        emailCaptionLabel.textColor = .black
 
-        emailErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        emailErrorLabel.font = .systemFont(ofSize: errorLabelSize, weight: .semibold)
         emailErrorLabel.textColor = Color.monza
         emailErrorLabel.textAlignment = .right
         
         emailTextField.backgroundColor = .white
-        emailTextField.layer.cornerRadius = 15
+        emailTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         emailTextField.leftViewMode = .always
         emailTextField.placeholder = "example@domain.com"
@@ -164,31 +175,37 @@ final class SignInView: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.autocapitalizationType = .none
         
-        passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        passwordCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
         passwordCaptionLabel.text = L10n.signInPassword
-        passwordCaptionLabel.textColor = Color.gigas
+        passwordCaptionLabel.textColor = .black
         
         passwordTextField.backgroundColor = .white
-        passwordTextField.layer.cornerRadius = 15
+        passwordTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         passwordTextField.textContentType = .password
         
         forgotPasswordButton.setTitle(L10n.signInForgotPassword, for: .normal)
-        forgotPasswordButton.setTitleColor(Color.blazeOrange, for: .normal)
+        forgotPasswordButton.setTitleColor(Color.gigas, for: .normal)
         forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         
         signInButton.setTitle(L10n.signInButton.uppercased(), for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
-        signInButton.backgroundColor = Color.blazeOrange
+        signInButton.backgroundColor = Color.gigas
         signInButton.layer.cornerRadius = 20
         if #available(iOS 13.0, *) {
             signInButton.layer.cornerCurve = .continuous
         }
-        signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        signInButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .semibold
+        )
         signInButton.layer.applyShadow(
-            color: Color.blazeOrange,
+            color: Color.gigas,
             alpha: 0.5,
             x: 0,
             y: 5,
@@ -198,11 +215,17 @@ final class SignInView: UIViewController {
         
         signUpCaption.text = L10n.signInSignUpCaption
         signUpCaption.textColor = Color.dustyGray
-        signUpCaption.font = .systemFont(ofSize: 14, weight: .regular)
+        signUpCaption.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .regular
+        )
         
         signUpButton.setTitle(L10n.signInSignUp, for: .normal)
-        signUpButton.setTitleColor(Color.blazeOrange, for: .normal)
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signUpButton.setTitleColor(Color.gigas, for: .normal)
+        signUpButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .bold
+        )
     }
     
     private func bindViewModel() {
