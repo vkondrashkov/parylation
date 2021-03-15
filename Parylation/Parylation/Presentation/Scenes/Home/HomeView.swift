@@ -20,6 +20,7 @@ final class HomeView: UIViewController {
     private let greetingsSubtitleLabel = UILabel()
     private let planButton = UIButton()
 
+    private let missingItemsView = HomeMissingItemsView()
     private let tableView = UITableView()
 
     private let createButton = UIButton()
@@ -64,6 +65,13 @@ final class HomeView: UIViewController {
             $0.top.equalTo(greetingsSubtitleLabel.snp.bottom).offset(20)
             $0.height.equalTo(60)
             $0.bottom.leading.trailing.equalToSuperview()
+        }
+
+        view.addSubview(missingItemsView)
+        missingItemsView.snp.makeConstraints {
+            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(60)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(200)
         }
 
         view.addSubview(tableView)
@@ -142,6 +150,8 @@ final class HomeView: UIViewController {
             spread: -20
         )
 
+        missingItemsView.isHidden = true
+
         tableView.register(HomeTableViewCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
@@ -175,6 +185,10 @@ final class HomeView: UIViewController {
         )
 
         viewModel.sections
+            .debug("🛑 SECTIONS")
+            .do(onNext: { [weak self] sections in
+                self?.missingItemsView.isHidden = (sections.first?.items ?? []).count != 0
+            })
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
