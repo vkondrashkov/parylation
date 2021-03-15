@@ -50,6 +50,8 @@
 "home_greetings_subtitle" = "Cпланируем Ваш ";
 "home_plan_button" = "Составьте свой план";
 "home_delete_button" = "Удалить";
+"home_missing_title" = "Пусто!";
+"home_missing_description" = "У Вас нет задач на данный момент";
 
 // MARK: - Calendar page
 

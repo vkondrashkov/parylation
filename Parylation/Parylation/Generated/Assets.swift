@@ -27,6 +27,7 @@ internal enum Asset {
   internal static let dashboardCalendar = ImageAsset(name: "dashboard-calendar")
   internal static let dashboardHome = ImageAsset(name: "dashboard-home")
   internal static let dashboardProfile = ImageAsset(name: "dashboard-profile")
+  internal static let homeMissingItems = ImageAsset(name: "home-missing_items")
   internal static let settingsAboutUs = ImageAsset(name: "settings-about_us")
   internal static let settingsChangeEmail = ImageAsset(name: "settings-change_email")
   internal static let settingsChangePassword = ImageAsset(name: "settings-change_password")
