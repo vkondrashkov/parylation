@@ -42,7 +42,7 @@
 "sign_in_forgot_password" = "Забыли Ваш пароль?";
 "sign_in_button" = "Войти";
 "sign_in_sign_up_caption" = "Не зарегистрированы?";
-"sign_in_sign_up" = "Зарегистрироваться";
+"sign_in_sign_up" = "Создать";
 
 // MARK: - Home page
 
@@ -56,7 +56,7 @@
 // MARK: - Calendar page
 
 "calendar_title" = "Вот что важно";
-"calendar_subtitle" = "Проверьте Ваше";
+"calendar_subtitle" = "Проверьте Ваше ";
 "calendar_subtitle_accent" = "расписание";
 
 // MARK: - Task page
@@ -78,7 +78,7 @@
 
 // MARK: - Settings page
 
-"settings_title" = "Рабочее пространство";
+"settings_title" = "Рабочее место";
 "settings_subtitle" = "Обновите Ваши ";
 "settings_subtitle_accent" = "настройки";
 "settings_main_section" = "Настройки";
