@@ -37,7 +37,7 @@ final class HomeTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentView.addSubview(contentBackgroundView)
         contentBackgroundView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(5)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         iconBackgroundView.layer.cornerRadius = 10

@@ -36,9 +36,7 @@ final class CalendarDateCollectionViewCell: UICollectionViewCell, ReuseIdentifia
         contentView.addSubview(numberLabel)
         numberLabel.textAlignment = .center
         numberLabel.font = .systemFont(ofSize: 17, weight: .bold)
-        if #available(iOS 13.0, *) {
-            numberLabel.textColor = .label
-        }
+        numberLabel.textColor = .black
         numberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
@@ -64,30 +62,19 @@ private extension CalendarDateCollectionViewCell {
         }
     }
 
-    var isSmallScreenSize: Bool {
-        let isCompact = traitCollection.horizontalSizeClass == .compact
-        let smallWidth = UIScreen.main.bounds.width <= 350
-        let widthGreaterThanHeight =
-            UIScreen.main.bounds.width > UIScreen.main.bounds.height
-
-        return isCompact && (smallWidth || widthGreaterThanHeight)
-    }
-
     func applySelectedStyle() {
         accessibilityTraits.insert(.selected)
         accessibilityHint = nil
 
-        numberLabel.textColor = isSmallScreenSize ? .systemRed : .white
-        selectionBackgroundView.isHidden = isSmallScreenSize
+        numberLabel.textColor = .white
+        selectionBackgroundView.isHidden = false
     }
 
     func applyDefaultStyle(isWithinDisplayedMonth: Bool) {
         accessibilityTraits.remove(.selected)
         accessibilityHint = "Tap to select"
 
-        if #available(iOS 13, *) {
-            numberLabel.textColor = isWithinDisplayedMonth ? .label : .secondaryLabel
-        }
+        numberLabel.textColor = isWithinDisplayedMonth ? .black : .lightGray
         selectionBackgroundView.isHidden = true
     }
 }
