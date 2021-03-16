@@ -18,6 +18,8 @@ final class TaskEditView: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
 
+    private let closeButton = UIButton()
+
     private let iconBackgroundView = UIView()
     private let iconImageView = UIImageView()
 
@@ -179,6 +181,8 @@ final class TaskEditView: UIViewController {
         taskTitleTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         taskTitleTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskTitleTextField.leftViewMode = .always
+        taskTitleTextField.returnKeyType = .next
+        taskTitleTextField.delegate = self
 
         taskDescriptionCaptionLabel.text = L10n.taskEditDescription
         taskDescriptionCaptionLabel.font = .systemFont(
@@ -190,6 +194,8 @@ final class TaskEditView: UIViewController {
         taskDescriptionTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         taskDescriptionTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDescriptionTextField.leftViewMode = .always
+        taskDescriptionTextField.returnKeyType = .next
+        taskDescriptionTextField.delegate = self
 
         taskDateCaptionLabel.text = L10n.taskEditDate
         taskDateCaptionLabel.font = .systemFont(
@@ -203,6 +209,8 @@ final class TaskEditView: UIViewController {
         taskDateTextField.leftViewMode = .always
         taskDateTextField.inputAccessoryView = toolBar
         taskDateTextField.inputView = datePicker
+        taskDateTextField.returnKeyType = .done
+        taskDateTextField.delegate = self
 
         datePicker.datePickerMode = .dateAndTime
         if #available(iOS 13.4, *) {
@@ -248,6 +256,47 @@ final class TaskEditView: UIViewController {
     }
 
     private func bindViewModel() {
+        let tapGesture = UITapGestureRecognizer()
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] notification in
+                guard let self = self else { return }
+                let userInfo = notification.userInfo ?? [:]
+                let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
+                self.scrollView.snp.remakeConstraints {
+                    $0.top.leading.trailing.equalToSuperview()
+                    $0.bottom.equalToSuperview().offset(-keyboardFrame.height)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.scrollView.snp.remakeConstraints {
+                    $0.edges.equalToSuperview().priority(.high)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+
         viewModel.icons
             .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
                 let iconCell = cell as? SelectiveIconCollectionViewCell
@@ -325,5 +374,20 @@ final class TaskEditView: UIViewController {
 
     @objc private func doneButtonDidTap() {
         view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate implementation
+
+extension TaskEditView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === taskTitleTextField {
+            taskDescriptionTextField.becomeFirstResponder()
+        } else if textField === taskDescriptionTextField {
+            taskDateTextField.becomeFirstResponder()
+        } else if textField === taskDateTextField {
+            view.endEditing(true)
+        }
+        return true
     }
 }
