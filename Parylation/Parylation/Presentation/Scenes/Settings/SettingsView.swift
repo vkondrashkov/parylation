@@ -62,7 +62,7 @@ final class SettingsView: UIViewController {
         settingsTableView.snp.makeConstraints {
             $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(StyleGuide.Screen.margins)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
         }
     }
 
@@ -106,7 +106,8 @@ final class SettingsView: UIViewController {
         ], range: NSRange(location: subtitleText.count, length: accent.count))
         headerSubtitleLabel.attributedText = headerSubtitleText
         headerSubtitleLabel.textColor = .black
-        
+
+        settingsTableView.isScrollEnabled = false
         settingsTableView.tableFooterView = nil
         settingsTableView.separatorStyle = .none
     }
