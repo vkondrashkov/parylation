@@ -29,7 +29,12 @@ final class HomeRouterImpl {
 extension HomeRouterImpl: HomeRouter {
     func showTaskCreation() {
         let editView = taskEditBuilder.build(data: nil)
-        view?.present(editView, animated: true, completion: nil)
+        if #available(iOS 13, *) {
+            view?.present(editView, animated: true, completion: nil)
+        } else {
+            editView.hidesBottomBarWhenPushed = true
+            view?.navigationController?.pushViewController(editView, animated: true)
+        }
     }
 
     func showTask(taskId: String) {

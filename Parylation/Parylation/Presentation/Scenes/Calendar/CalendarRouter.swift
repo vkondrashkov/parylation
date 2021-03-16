@@ -31,7 +31,12 @@ final class CalendarRouterImpl {
 extension CalendarRouterImpl: CalendarRouter {
     func showTaskCreation(data: TaskEditData) {
         let editView = taskEditBuilder.build(data: data)
-        view?.present(editView, animated: true, completion: nil)
+        if #available(iOS 13, *) {
+            view?.present(editView, animated: true, completion: nil)
+        } else {
+            editView.hidesBottomBarWhenPushed = true
+            view?.navigationController?.pushViewController(editView, animated: true)
+        }
     }
 
     func showDay(date: Date) {
