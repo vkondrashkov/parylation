@@ -1,5 +1,17 @@
 # Changelog
 
+## Alpha 0.3.0
+### Added
+- iPhone SE (1st & 2nd gen) UI support
+- Empty placeholder on Home screen
+
+### Changed
+- Improved images quality
+- Animated background on Welcome screen
+
+### Fixed
+- Keyboard no longer covers all the screen
+
 ## Alpha 0.2.0
 ### Added
 - Icons and Colors for tasks

@@ -18,6 +18,8 @@ final class TaskEditView: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
 
+    private let closeButton = UIButton()
+
     private let iconBackgroundView = UIView()
     private let iconImageView = UIImageView()
 
@@ -49,6 +51,9 @@ final class TaskEditView: UIViewController {
 
     private let disposeBag = DisposeBag()
 
+    private let labelOffset: CGFloat = Sizes.value(from: [.iPhone5s: 16], defaultValue: 20)
+    private let textFieldOffset: CGFloat = Sizes.value(from: [.iPhone5s: 10], defaultValue: 15)
+
     override func loadView() {
         view = UIView()
 
@@ -68,83 +73,83 @@ final class TaskEditView: UIViewController {
         iconBackgroundView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(20)
             $0.centerX.equalToSuperview()
-            $0.size.equalTo(60)
+            $0.size.equalTo(StyleGuide.Button.height)
         }
 
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalTo(30)
+            $0.size.equalTo(StyleGuide.Button.height / 2)
         }
 
         contentView.addSubview(taskTitleCaptionLabel)
         taskTitleCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(iconBackgroundView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(iconBackgroundView.snp.bottom).offset(labelOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(taskTitleTextField)
         taskTitleTextField.snp.makeConstraints {
-            $0.top.equalTo(taskTitleCaptionLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.top.equalTo(taskTitleCaptionLabel.snp.bottom).offset(textFieldOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
 
         contentView.addSubview(taskDescriptionCaptionLabel)
         taskDescriptionCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(taskTitleTextField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(taskTitleTextField.snp.bottom).offset(labelOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(taskDescriptionTextField)
         taskDescriptionTextField.snp.makeConstraints {
-            $0.top.equalTo(taskDescriptionCaptionLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.top.equalTo(taskDescriptionCaptionLabel.snp.bottom).offset(textFieldOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
 
         contentView.addSubview(taskDateCaptionLabel)
         taskDateCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(taskDescriptionTextField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(taskDescriptionTextField.snp.bottom).offset(labelOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(taskDateTextField)
         taskDateTextField.snp.makeConstraints {
-            $0.top.equalTo(taskDateCaptionLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.top.equalTo(taskDateCaptionLabel.snp.bottom).offset(textFieldOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
 
         contentView.addSubview(iconCaptionLabel)
         iconCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(taskDateTextField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(taskDateTextField.snp.bottom).offset(labelOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(iconSelectionCollectionView)
         iconSelectionCollectionView.snp.makeConstraints {
-            $0.top.equalTo(iconCaptionLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(iconCaptionLabel.snp.bottom).offset(textFieldOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(colorCaptionLabel)
         colorCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(iconSelectionCollectionView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(iconSelectionCollectionView.snp.bottom).offset(labelOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(colorSelectiveCollectionView)
         colorSelectiveCollectionView.snp.makeConstraints {
-            $0.top.equalTo(colorCaptionLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(colorCaptionLabel.snp.bottom).offset(textFieldOffset)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentView.addSubview(saveButton)
         saveButton.snp.makeConstraints {
             $0.top.equalTo(colorSelectiveCollectionView.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins + 10)
+            $0.height.equalTo(StyleGuide.Button.height)
             $0.bottom.equalToSuperview().offset(-30)
         }
     }
@@ -160,37 +165,52 @@ final class TaskEditView: UIViewController {
         title = L10n.taskEditPageTitle
         view.backgroundColor = Color.whisper
 
-        iconBackgroundView.layer.cornerRadius = 15
+        iconBackgroundView.layer.cornerRadius = Sizes.value(from: [.iPhone5s: 12], defaultValue: 15)
         iconBackgroundView.backgroundColor = Color.gigas
 
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = .white
 
         taskTitleCaptionLabel.text = L10n.taskEditTitle
-        taskTitleCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        taskTitleCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
 
         taskTitleTextField.backgroundColor = .white
-        taskTitleTextField.layer.cornerRadius = 15
+        taskTitleTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         taskTitleTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskTitleTextField.leftViewMode = .always
+        taskTitleTextField.returnKeyType = .next
+        taskTitleTextField.delegate = self
 
         taskDescriptionCaptionLabel.text = L10n.taskEditDescription
-        taskDescriptionCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        taskDescriptionCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
 
         taskDescriptionTextField.backgroundColor = .white
-        taskDescriptionTextField.layer.cornerRadius = 15
+        taskDescriptionTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         taskDescriptionTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDescriptionTextField.leftViewMode = .always
+        taskDescriptionTextField.returnKeyType = .next
+        taskDescriptionTextField.delegate = self
 
         taskDateCaptionLabel.text = L10n.taskEditDate
-        taskDateCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        taskDateCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
 
         taskDateTextField.backgroundColor = .white
-        taskDateTextField.layer.cornerRadius = 15
+        taskDateTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         taskDateTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         taskDateTextField.leftViewMode = .always
         taskDateTextField.inputAccessoryView = toolBar
         taskDateTextField.inputView = datePicker
+        taskDateTextField.returnKeyType = .done
+        taskDateTextField.delegate = self
 
         datePicker.datePickerMode = .dateAndTime
         if #available(iOS 13.4, *) {
@@ -198,16 +218,25 @@ final class TaskEditView: UIViewController {
         }
 
         iconCaptionLabel.text = L10n.taskEditIcon
-        iconCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        iconCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
 
         colorCaptionLabel.text = L10n.taskEditColor
-        colorCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        colorCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
 
-        saveButton.layer.cornerRadius = 20
+        saveButton.layer.cornerRadius = StyleGuide.Button.cornerRadius
         saveButton.backgroundColor = Color.shamrock
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.setTitle(L10n.taskEditSaveButton.uppercased(), for: .normal)
-        saveButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        saveButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .semibold
+        )
         if #available(iOS 13.0, *) {
             saveButton.layer.cornerCurve = .continuous
         }
@@ -227,6 +256,47 @@ final class TaskEditView: UIViewController {
     }
 
     private func bindViewModel() {
+        let tapGesture = UITapGestureRecognizer()
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] notification in
+                guard let self = self else { return }
+                let userInfo = notification.userInfo ?? [:]
+                let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
+                self.scrollView.snp.remakeConstraints {
+                    $0.top.leading.trailing.equalToSuperview()
+                    $0.bottom.equalToSuperview().offset(-keyboardFrame.height)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.scrollView.snp.remakeConstraints {
+                    $0.edges.equalToSuperview().priority(.high)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+
         viewModel.icons
             .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
                 let iconCell = cell as? SelectiveIconCollectionViewCell
@@ -304,5 +374,20 @@ final class TaskEditView: UIViewController {
 
     @objc private func doneButtonDidTap() {
         view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate implementation
+
+extension TaskEditView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === taskTitleTextField {
+            taskDescriptionTextField.becomeFirstResponder()
+        } else if textField === taskDescriptionTextField {
+            taskDateTextField.becomeFirstResponder()
+        } else if textField === taskDateTextField {
+            view.endEditing(true)
+        }
+        return true
     }
 }

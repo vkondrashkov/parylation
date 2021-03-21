@@ -44,19 +44,25 @@ final class SettingsView: UIViewController {
 
         contentView.addSubview(headerTitleLabel)
         headerTitleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         contentView.addSubview(headerSubtitleLabel)
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(headerTitleLabel.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(30).priority(.high)
+            $0.leading.trailing.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            ).priority(.high)
         }
 
         contentView.addSubview(settingsTableView)
         settingsTableView.snp.makeConstraints {
-            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(headerSubtitleLabel.snp.bottom).offset(StyleGuide.Screen.margins)
             $0.leading.trailing.equalToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
         }
     }
 
@@ -70,25 +76,38 @@ final class SettingsView: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        headerTitleLabel.font = .systemFont(ofSize: 28, weight: .heavy)
+        headerTitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.titleFontSize,
+            weight: .heavy
+        )
         headerTitleLabel.text = L10n.settingsTitle
         headerTitleLabel.textColor = Color.gigas
         
-        headerSubtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        headerSubtitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.subtitleFontSize,
+            weight: .ultraLight
+        )
         let subtitleText = L10n.settingsSubtitle
         let accent = L10n.settingsSubtitleAccent
         let headerSubtitleText = NSMutableAttributedString(
             string: subtitleText + accent,
             attributes: [
-                .font: UIFont.systemFont(ofSize: 24, weight: .ultraLight)
+                .font: UIFont.systemFont(
+                    ofSize: StyleGuide.Header.subtitleFontSize,
+                    weight: .ultraLight
+                )
             ]
         )
         headerSubtitleText.addAttributes([
-            .font: UIFont.systemFont(ofSize: 24, weight: .semibold)
+            .font: UIFont.systemFont(
+                ofSize: StyleGuide.Header.subtitleFontSize,
+                weight: .semibold
+            )
         ], range: NSRange(location: subtitleText.count, length: accent.count))
         headerSubtitleLabel.attributedText = headerSubtitleText
         headerSubtitleLabel.textColor = .black
-        
+
+        settingsTableView.isScrollEnabled = false
         settingsTableView.tableFooterView = nil
         settingsTableView.separatorStyle = .none
     }

@@ -54,7 +54,7 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
         contentView.addSubview(contentBackgroundView)
         contentBackgroundView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
         contentMaskView.backgroundColor = Color.whisper
@@ -64,10 +64,11 @@ final class SettingsTableViewCell: UITableViewCell, ReuseIdentifiable {
 
         updateLayoutAccording(cellType: cellType)
 
+        iconImageView.tintColor = .white
         iconImageView.contentMode = .scaleAspectFit
         iconBackgroundView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints {
-            $0.size.equalTo(25)
+            $0.size.equalTo(20)
             $0.center.equalToSuperview()
         }
 

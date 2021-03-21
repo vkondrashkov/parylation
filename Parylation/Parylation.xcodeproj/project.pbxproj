@@ -69,6 +69,12 @@
 		9C45DD4125D46A3800C57954 /* DayTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */; };
 		9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
 		9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45DD4425D46DEE00C57954 /* DayTableItem.swift */; };
+		9C46635125FCF4FA00816A9F /* HomeMissingItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C46635025FCF4FA00816A9F /* HomeMissingItemsView.swift */; };
+		9C46635225FCF4FA00816A9F /* HomeMissingItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C46635025FCF4FA00816A9F /* HomeMissingItemsView.swift */; };
+		9C4663FC25FFE6A200816A9F /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4663FB25FFE6A200816A9F /* Sizes.swift */; };
+		9C4663FD25FFE6A200816A9F /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4663FB25FFE6A200816A9F /* Sizes.swift */; };
+		9C46640025FFE8CF00816A9F /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4663FF25FFE8CE00816A9F /* StyleGuide.swift */; };
+		9C46640125FFE8CF00816A9F /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4663FF25FFE8CE00816A9F /* StyleGuide.swift */; };
 		9C4F96AC25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
 		9C4F96AD25E24F2B000DCA79 /* TaskEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */; };
 		9C4F96B025E26175000DCA79 /* TaskEditViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */; };
@@ -111,6 +117,8 @@
 		9C67854124EFECD5006E28BD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67853F24EFECD5006E28BD /* WelcomeView.swift */; };
 		9C67854624EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
 		9C67854724EFFBEA006E28BD /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */; };
+		9C78C4932603B312001E096B /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C78C4922603B312001E096B /* welcome.json */; };
+		9C78C4942603B312001E096B /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C78C4922603B312001E096B /* welcome.json */; };
 		9C7D3A1C25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
 		9C7D3A1D25BA1A19000E7EDF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */; };
 		9C7D3A2025BA1B9B000E7EDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D3A1F25BA1B9B000E7EDF /* Server.swift */; };
@@ -331,6 +339,9 @@
 		9C45DD3A25D46A1C00C57954 /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		9C45DD3F25D46A3800C57954 /* DayTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		9C45DD4425D46DEE00C57954 /* DayTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableItem.swift; sourceTree = "<group>"; };
+		9C46635025FCF4FA00816A9F /* HomeMissingItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMissingItemsView.swift; sourceTree = "<group>"; };
+		9C4663FB25FFE6A200816A9F /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		9C4663FF25FFE8CE00816A9F /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		9C4F96AB25E24F2B000DCA79 /* TaskEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditData.swift; sourceTree = "<group>"; };
 		9C4F96AF25E26175000DCA79 /* TaskEditViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModelSpec.swift; sourceTree = "<group>"; };
 		9C57B24F25C60B9300A49797 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -350,6 +361,7 @@
 		9C67853C24EFECCF006E28BD /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		9C67853F24EFECD5006E28BD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
+		9C78C4922603B312001E096B /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome.json; sourceTree = "<group>"; };
 		9C7D3A1B25BA1A19000E7EDF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		9C7D3A1F25BA1B9B000E7EDF /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9C7FC195250A24BC00079C8C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -460,6 +472,7 @@
 			children = (
 				9C11CE51258FEABA00E99F9E /* HomeTableViewCellViewModel.swift */,
 				9C11CE4D258FEA8600E99F9E /* HomeTableViewCell.swift */,
+				9C46635025FCF4FA00816A9F /* HomeMissingItemsView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -570,6 +583,8 @@
 				9C90F89E2596C3700052080B /* ClosureButton.swift */,
 				9C1CAF4925A65D2B0006B513 /* CommonTextFormatter.swift */,
 				9CD38E2B25B44A4B00DECB7B /* SelfDisplayable.swift */,
+				9C4663FB25FFE6A200816A9F /* Sizes.swift */,
+				9C4663FF25FFE8CE00816A9F /* StyleGuide.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -684,6 +699,7 @@
 		9C5C6564249A5ED200E9D889 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C8525CC2604FC9100220006 /* JSON */,
 				9C207E802470ADB10022AC92 /* Assets.xcassets */,
 				9C207E852470ADB10022AC92 /* Info.plist */,
 				9C5C6579249A625400E9D889 /* InfoDev.plist */,
@@ -735,6 +751,14 @@
 				9C67854524EFFBEA006E28BD /* CALayer+Shadow.swift */,
 			);
 			path = "UIKit+Utils";
+			sourceTree = "<group>";
+		};
+		9C8525CC2604FC9100220006 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				9C78C4922603B312001E096B /* welcome.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		9C90F862259699E40052080B /* Task */ = {
@@ -1094,6 +1118,7 @@
 				9C207E842470ADB10022AC92 /* LaunchScreen.storyboard in Resources */,
 				9C90F8EB2597883E0052080B /* Localizable.strings in Resources */,
 				9C207E812470ADB10022AC92 /* Assets.xcassets in Resources */,
+				9C78C4932603B312001E096B /* welcome.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1134,7 @@
 				9CD8727E25C1CF87003D7868 /* updateEmail-uid123-vladislav@kondrashkov.com.json in Resources */,
 				9CD8728025C1CF87003D7868 /* updatePassword-uid123-B12345-A12345.json in Resources */,
 				9CD8727F25C1CF87003D7868 /* signIn-vladislav.kondrashkov@gmail.com-B12345.json in Resources */,
+				9C78C4942603B312001E096B /* welcome.json in Resources */,
 				9CD8728125C1CF87003D7868 /* signOut.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1275,6 +1301,7 @@
 				9CEB58E424F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC024F50771005EF51A /* SettingsView.swift in Sources */,
 				9C2785EE25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
+				9C4663FC25FFE6A200816A9F /* Sizes.swift in Sources */,
 				9CEB58FC24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853A24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE49258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1289,6 +1316,7 @@
 				9C5C657C249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F89F2596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD724F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9C46640025FFE8CF00816A9F /* StyleGuide.swift in Sources */,
 				9C11CE57258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C45DD3225D4676C00C57954 /* DayViewModel.swift in Sources */,
 				9C207E9F2470B4C00022AC92 /* RootView.swift in Sources */,
@@ -1338,6 +1366,7 @@
 				9C45DD4525D46DEE00C57954 /* DayTableItem.swift in Sources */,
 				9CD8729925C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C207EB7247169580022AC92 /* DashboardRouter.swift in Sources */,
+				9C46635125FCF4FA00816A9F /* HomeMissingItemsView.swift in Sources */,
 				9C5C657F249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB58FF24F13450008B835A /* HomeRouter.swift in Sources */,
 				9C11CE4E258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */,
@@ -1386,6 +1415,7 @@
 				9CEB58E524F05E3B008B835A /* SignInRouter.swift in Sources */,
 				9CBB9BC124F50771005EF51A /* SettingsView.swift in Sources */,
 				9C2785EF25B60353000502AA /* SelectiveColorCollectionViewCell.swift in Sources */,
+				9C4663FD25FFE6A200816A9F /* Sizes.swift in Sources */,
 				9CEB58FD24F13449008B835A /* HomeBuilder.swift in Sources */,
 				9C67853B24EFECC5006E28BD /* WelcomeRouter.swift in Sources */,
 				9C11CE4A258FE72B00E99F9E /* TaskRepositoryImpl.swift in Sources */,
@@ -1400,6 +1430,7 @@
 				9C5C657D249A65DD00E9D889 /* SignUpContract.swift in Sources */,
 				9C90F8A02596C3700052080B /* ClosureButton.swift in Sources */,
 				9CBB9BD824F5AF80005EF51A /* SettingsTableView.swift in Sources */,
+				9C46640125FFE8CF00816A9F /* StyleGuide.swift in Sources */,
 				9C11CE58258FEC8300E99F9E /* HomeTableItem.swift in Sources */,
 				9C45DD3325D4676C00C57954 /* DayViewModel.swift in Sources */,
 				9C5C654B249A5DC800E9D889 /* RootView.swift in Sources */,
@@ -1449,6 +1480,7 @@
 				9C45DD4625D46DEE00C57954 /* DayTableItem.swift in Sources */,
 				9CD8729A25C1E940003D7868 /* CalendarView.swift in Sources */,
 				9C5C6550249A5DC800E9D889 /* DashboardRouter.swift in Sources */,
+				9C46635225FCF4FA00816A9F /* HomeMissingItemsView.swift in Sources */,
 				9C5C6580249A65E600E9D889 /* SignUpBuilder.swift in Sources */,
 				9CEB590024F13450008B835A /* HomeRouter.swift in Sources */,
 				9C11CE4F258FEA8600E99F9E /* HomeTableViewCell.swift in Sources */,

@@ -50,6 +50,8 @@
 "home_greetings_subtitle" = "Let's plan your ";
 "home_plan_button" = "Write important things";
 "home_delete_button" = "Delete";
+"home_missing_title" = "Empty list!";
+"home_missing_description" = "You have no tasks at this moment";
 
 // MARK: - Calendar page
 

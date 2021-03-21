@@ -16,7 +16,9 @@ final class AlertView: UIViewController {
     var viewModel: AlertViewModel!
 
     private let maskView = UIView()
+    private let scrollView = UIScrollView()
     private let contentView = UIView()
+    private let containerView = UIView()
     private let contentContainerView = UIStackView()
     private let actionsContainerView = UIStackView()
 
@@ -30,21 +32,36 @@ final class AlertView: UIViewController {
             $0.edges.equalToSuperview()
         }
 
-        maskView.addSubview(contentView)
+        maskView.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        scrollView.addSubview(contentView)
         contentView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.equalToSuperview().priority(.low)
+        }
+
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints {
+            let containerMargin = Sizes.value(from: [.iPhone5s: 12], defaultValue: 15)
+            $0.top.greaterThanOrEqualToSuperview().inset(containerMargin)
+            $0.bottom.lessThanOrEqualToSuperview().inset(containerMargin)
+            $0.leading.trailing.equalToSuperview().inset(containerMargin)
             $0.centerY.equalToSuperview()
         }
 
-        contentView.addSubview(contentContainerView)
+        containerView.addSubview(contentContainerView)
         contentContainerView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview().inset(20)
+            $0.top.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
 
-        contentView.addSubview(actionsContainerView)
+        containerView.addSubview(actionsContainerView)
         actionsContainerView.snp.makeConstraints {
             $0.top.equalTo(contentContainerView.snp.bottom).offset(30)
-            $0.leading.trailing.bottom.equalToSuperview().inset(20)
+            $0.leading.trailing.bottom.equalToSuperview().inset(StyleGuide.Screen.margins)
         }
     }
 
@@ -58,8 +75,10 @@ final class AlertView: UIViewController {
     private func setupUI() {
         maskView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 
-        contentView.backgroundColor = Color.whisper
-        contentView.layer.cornerRadius = 20
+        scrollView.showsHorizontalScrollIndicator = false
+
+        containerView.backgroundColor = Color.whisper
+        containerView.layer.cornerRadius = 20
 
         contentContainerView.alignment = .fill
         contentContainerView.axis = .vertical
@@ -73,11 +92,39 @@ final class AlertView: UIViewController {
     }
 
     private func bindViewModel() {
-//        rx.methodInvoked(#selector(AlertView.selfDisplay))
-//            .map { _ in () }
-//            .bind(to: viewModel.showTrigger)
-//            .disposed(by: disposeBag)
-
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] notification in
+                guard let self = self else { return }
+                let userInfo = notification.userInfo ?? [:]
+                let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
+                self.scrollView.snp.remakeConstraints {
+                    $0.top.leading.trailing.equalToSuperview()
+                    $0.bottom.equalToSuperview().offset(-keyboardFrame.height)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.scrollView.snp.remakeConstraints {
+                    $0.edges.equalToSuperview()
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
         viewModel.info
             .drive(onNext: { [weak self] info in
                 self?.buildContent(info.content)
@@ -118,7 +165,10 @@ final class AlertView: UIViewController {
     private func buildTitle(_ text: String) -> UIView {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.subtitleFontSize,
+            weight: .semibold
+        )
         titleLabel.text = text
         return titleLabel
     }
@@ -126,7 +176,7 @@ final class AlertView: UIViewController {
     private func buildText(_ text: String) -> UIView {
         let textLabel = UILabel()
         textLabel.textAlignment = .justified
-        textLabel.font = .systemFont(ofSize: 17)
+        textLabel.font = .systemFont(ofSize: StyleGuide.Label.fontSize)
         textLabel.numberOfLines = 0
         textLabel.text = text
         return textLabel
@@ -139,7 +189,7 @@ final class AlertView: UIViewController {
     private func buildTextField(_ textProvider: @escaping () -> String, _ textConsumer: @escaping (String) -> Void) -> UIView {
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.layer.cornerRadius = 15
+        textField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         textField.leftViewMode = .always
         textField.text = textProvider()
@@ -147,7 +197,7 @@ final class AlertView: UIViewController {
             .subscribe(onNext: { textConsumer($0 ?? "") })
             .disposed(by: disposeBag)
         textField.snp.makeConstraints {
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         return textField
     }
@@ -160,12 +210,12 @@ final class AlertView: UIViewController {
         actions.forEach { action in
             let button = ClosureButton()
             button.snp.makeConstraints {
-                $0.height.equalTo(60)
+                $0.height.equalTo(StyleGuide.Button.height)
             }
             button.backgroundColor = action.color
             button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
             button.setTitle(action.name.uppercased(), for: .normal)
-            button.layer.cornerRadius = 20
+            button.layer.cornerRadius = StyleGuide.Button.cornerRadius
             if #available(iOS 13.0, *) {
                 button.layer.cornerCurve = .continuous
             }
@@ -186,6 +236,7 @@ final class AlertView: UIViewController {
     }
 
     @objc func viewDidTap() {
+        view.endEditing(true)
         viewModel.terminateTrigger.onNext(())
     }
 }

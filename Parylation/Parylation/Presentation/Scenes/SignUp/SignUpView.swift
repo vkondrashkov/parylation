@@ -12,8 +12,11 @@ import UIKit
 
 final class SignUpView: UIViewController {
     var viewModel: SignUpViewModel!
-    
+
+    private let scrollView = UIScrollView()
     private let contentView = UIView()
+    
+    private let containerView = UIView()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
 
@@ -34,19 +37,35 @@ final class SignUpView: UIViewController {
     private let signInButton = UIButton()
 
     private let disposeBag = DisposeBag()
+
+    private let labelOffset: CGFloat = Sizes.value(from: [.iPhone5s: 18], defaultValue: 25)
+    private let textFieldOffset: CGFloat = Sizes.value(from: [.iPhone5s: 10], defaultValue: 15)
+    private let errorLabelSize: CGFloat = Sizes.value(from: [.iPhone5s: 12], defaultValue: 14)
     
     override func loadView() {
         view = UIView()
-        
-        view.addSubview(contentView)
+
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        scrollView.addSubview(contentView)
         contentView.snp.makeConstraints {
-            $0.centerY.equalTo(view.safeAreaLayoutGuide.snp.centerY)
-            $0.top.greaterThanOrEqualToSuperview()
-            $0.bottom.lessThanOrEqualToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.equalToSuperview().priority(.low)
         }
         
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints {
+            $0.centerY.equalTo(contentView.snp.centerY)
+            $0.top.greaterThanOrEqualToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(StyleGuide.Screen.margins)
+        }
+        
+        containerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
@@ -54,7 +73,7 @@ final class SignUpView: UIViewController {
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
-        contentView.addSubview(subtitleLabel)
+        containerView.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
@@ -62,75 +81,79 @@ final class SignUpView: UIViewController {
             $0.trailing.lessThanOrEqualToSuperview()
         }
         
-        contentView.addSubview(emailCaptionLabel)
+        containerView.addSubview(emailCaptionLabel)
         emailCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(30)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 25], defaultValue: 30)
+            )
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
 
-        contentView.addSubview(emailErrorLabel)
+        containerView.addSubview(emailErrorLabel)
         emailErrorLabel.snp.makeConstraints {
             $0.centerY.equalTo(emailCaptionLabel)
             $0.trailing.equalToSuperview()
         }
         
-        contentView.addSubview(emailTextField)
+        containerView.addSubview(emailTextField)
         emailTextField.snp.makeConstraints {
-            $0.top.equalTo(emailCaptionLabel.snp.bottom).offset(15)
+            $0.top.equalTo(emailCaptionLabel.snp.bottom).offset(textFieldOffset)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
-        contentView.addSubview(passwordCaptionLabel)
+        containerView.addSubview(passwordCaptionLabel)
         passwordCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(25)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(labelOffset)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
 
-        contentView.addSubview(passwordErrorLabel)
+        containerView.addSubview(passwordErrorLabel)
         passwordErrorLabel.snp.makeConstraints {
             $0.centerY.equalTo(passwordCaptionLabel)
             $0.trailing.equalToSuperview()
         }
         
-        contentView.addSubview(passwordTextField)
+        containerView.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(passwordCaptionLabel.snp.bottom).offset(15)
+            $0.top.equalTo(passwordCaptionLabel.snp.bottom).offset(textFieldOffset)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
-        contentView.addSubview(confirmPasswordCaptionLabel)
+        containerView.addSubview(confirmPasswordCaptionLabel)
         confirmPasswordCaptionLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(25)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(labelOffset)
             $0.leading.equalToSuperview()
             $0.trailing.lessThanOrEqualToSuperview()
         }
 
-        contentView.addSubview(confirmPasswordErrorLabel)
+        containerView.addSubview(confirmPasswordErrorLabel)
         confirmPasswordErrorLabel.snp.makeConstraints {
             $0.centerY.equalTo(confirmPasswordCaptionLabel)
             $0.trailing.equalToSuperview()
         }
         
-        contentView.addSubview(confirmPasswordTextField)
+        containerView.addSubview(confirmPasswordTextField)
         confirmPasswordTextField.snp.makeConstraints {
-            $0.top.equalTo(confirmPasswordCaptionLabel.snp.bottom).offset(15)
+            $0.top.equalTo(confirmPasswordCaptionLabel.snp.bottom).offset(textFieldOffset)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
-        contentView.addSubview(signUpButton)
+        containerView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints {
-            $0.top.equalTo(confirmPasswordTextField.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.top.equalTo(confirmPasswordTextField.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 25], defaultValue: 30)
+            )
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.height.equalTo(StyleGuide.TextField.height)
         }
         
         let signInView = UIView()
-        contentView.addSubview(signInView)
+        containerView.addSubview(signInView)
         signInView.snp.makeConstraints {
             $0.top.equalTo(signUpButton.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
@@ -160,26 +183,34 @@ final class SignUpView: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = Color.whisper
+
+        scrollView.showsHorizontalScrollIndicator = false
         
-        titleLabel.font = .systemFont(ofSize: 56)
+        titleLabel.font = .systemFont(ofSize: Sizes.value(from: [.iPhone5s: 48], defaultValue: 56))
         titleLabel.text = "🤝"
         
-        subtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        subtitleLabel.font = .systemFont(
+            ofSize: Sizes.value(from: [.iPhone5s: 20], defaultValue: 24),
+            weight: .ultraLight
+        )
         subtitleLabel.text = L10n.signUpSubtitle
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = .black
         
-        emailCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        emailCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
         emailCaptionLabel.text = L10n.signUpEmail
-        emailCaptionLabel.textColor = Color.gigas
+        emailCaptionLabel.textColor = .black
 
-        emailErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        emailErrorLabel.font = .systemFont(ofSize: errorLabelSize, weight: .semibold)
         emailErrorLabel.textColor = Color.monza
         emailErrorLabel.textAlignment = .right
         
         emailTextField.backgroundColor = .white
-        emailTextField.layer.cornerRadius = 15
+        emailTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         emailTextField.leftViewMode = .always
         emailTextField.placeholder = "example@domain.com"
@@ -187,47 +218,62 @@ final class SignUpView: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.textContentType = .emailAddress
         emailTextField.autocapitalizationType = .none
+        emailTextField.returnKeyType = .next
+        emailTextField.delegate = self
         
-        passwordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        passwordCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
         passwordCaptionLabel.text = L10n.signUpPassword
-        passwordCaptionLabel.textColor = Color.gigas
+        passwordCaptionLabel.textColor = .black
 
-        passwordErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        passwordErrorLabel.font = .systemFont(ofSize: errorLabelSize, weight: .semibold)
         passwordErrorLabel.textColor = Color.monza
         passwordErrorLabel.textAlignment = .right
         
         passwordTextField.backgroundColor = .white
-        passwordTextField.layer.cornerRadius = 15
+        passwordTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         passwordTextField.textContentType = .password
+        passwordTextField.returnKeyType = .next
+        passwordTextField.delegate = self
         
-        confirmPasswordCaptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        confirmPasswordCaptionLabel.font = .systemFont(
+            ofSize: StyleGuide.Label.fontSize,
+            weight: .semibold
+        )
         confirmPasswordCaptionLabel.text = L10n.signUpConfirmPassword
-        confirmPasswordCaptionLabel.textColor = Color.gigas
+        confirmPasswordCaptionLabel.textColor = .black
 
-        confirmPasswordErrorLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        confirmPasswordErrorLabel.font = .systemFont(ofSize: errorLabelSize, weight: .semibold)
         confirmPasswordErrorLabel.textColor = Color.monza
         confirmPasswordErrorLabel.textAlignment = .right
         
         confirmPasswordTextField.backgroundColor = .white
-        confirmPasswordTextField.layer.cornerRadius = 15
+        confirmPasswordTextField.layer.cornerRadius = StyleGuide.TextField.cornerRadius
         confirmPasswordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 2))
         confirmPasswordTextField.leftViewMode = .always
         confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.textContentType = .password
+        confirmPasswordTextField.returnKeyType = .go
+        confirmPasswordTextField.delegate = self
         
         signUpButton.setTitle(L10n.signUpButton.uppercased(), for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
-        signUpButton.backgroundColor = Color.blazeOrange
+        signUpButton.backgroundColor = Color.gigas
         signUpButton.layer.cornerRadius = 20
         if #available(iOS 13.0, *) {
             signUpButton.layer.cornerCurve = .continuous
         }
-        signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        signUpButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .semibold
+        )
         signUpButton.layer.applyShadow(
-            color: Color.blazeOrange,
+            color: Color.gigas,
             alpha: 0.5,
             x: 0,
             y: 5,
@@ -237,14 +283,61 @@ final class SignUpView: UIViewController {
         
         signInCaption.text = L10n.signUpSignInCaption
         signInCaption.textColor = Color.dustyGray
-        signInCaption.font = .systemFont(ofSize: 14, weight: .regular)
+        signInCaption.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .regular
+        )
         
         signInButton.setTitle(L10n.signUpSignIn, for: .normal)
-        signInButton.setTitleColor(Color.blazeOrange, for: .normal)
-        signInButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        signInButton.setTitleColor(Color.gigas, for: .normal)
+        signInButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .bold
+        )
     }
     
     private func bindViewModel() {
+        let tapGesture = UITapGestureRecognizer()
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] notification in
+                guard let self = self else { return }
+                let userInfo = notification.userInfo ?? [:]
+                let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
+                self.scrollView.snp.remakeConstraints {
+                    $0.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+                    $0.bottom.equalToSuperview().offset(-keyboardFrame.height)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.scrollView.snp.remakeConstraints {
+                    $0.edges.equalTo(self.view.safeAreaLayoutGuide)
+                }
+                UIView.animate(
+                    withDuration: 0.25,
+                    animations: {
+                        self.view.layoutIfNeeded()
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+
         emailTextField.rx.text
             .compactMap { $0 }
             .bind(to: viewModel.email)
@@ -279,5 +372,21 @@ final class SignUpView: UIViewController {
         viewModel.confirmPasswordError
             .drive(confirmPasswordErrorLabel.rx.text)
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UITextFieldDelegate implementation
+
+extension SignUpView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField === passwordTextField {
+            confirmPasswordTextField.becomeFirstResponder()
+        } else if textField === confirmPasswordTextField {
+            view.endEditing(true)
+            viewModel.signUpTrigger.onNext(())
+        }
+        return true
     }
 }

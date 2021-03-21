@@ -18,6 +18,7 @@ def common_pods
   pod 'RxSwift', '~> 5.1'
   pod 'RxCocoa', '~> 5.1'
   pod 'RealmSwift', '~> 5.0'
+  pod 'lottie-ios', '~> 3.2'
 end
 
 def app_pods

@@ -20,6 +20,7 @@ final class HomeView: UIViewController {
     private let greetingsSubtitleLabel = UILabel()
     private let planButton = UIButton()
 
+    private let missingItemsView = HomeMissingItemsView()
     private let tableView = UITableView()
 
     private let createButton = UIButton()
@@ -44,7 +45,9 @@ final class HomeView: UIViewController {
         
         headerBackgroundView.addSubview(headerContentView)
         headerContentView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview().inset(30)
+            $0.leading.trailing.bottom.equalToSuperview().inset(
+                StyleGuide.Header.margins
+            )
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
         }
         
@@ -62,8 +65,17 @@ final class HomeView: UIViewController {
         headerContentView.addSubview(planButton)
         planButton.snp.makeConstraints {
             $0.top.equalTo(greetingsSubtitleLabel.snp.bottom).offset(20)
-            $0.height.equalTo(60)
+            $0.height.equalTo(StyleGuide.Button.height)
             $0.bottom.leading.trailing.equalToSuperview()
+        }
+
+        view.addSubview(missingItemsView)
+        missingItemsView.snp.makeConstraints {
+            $0.top.equalTo(headerBackgroundView.snp.bottom).offset(
+                Sizes.value(from: [.iPhone5s: 20, .iPhone8: 30], defaultValue: 60)
+            )
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(Sizes.value(from: [.iPhone5s: 160, .iPhone8: 160], defaultValue: 200))
         }
 
         view.addSubview(tableView)
@@ -76,7 +88,7 @@ final class HomeView: UIViewController {
         view.addSubview(createButton)
         createButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.size.equalTo(60)
+            $0.size.equalTo(StyleGuide.Button.height)
         }
     }
     
@@ -106,21 +118,33 @@ final class HomeView: UIViewController {
             headerBackgroundView.layer.cornerCurve = .continuous
         }
         
-        greetingsTitleLabel.font = .systemFont(ofSize: 28, weight: .heavy)
+        greetingsTitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.titleFontSize,
+            weight: .heavy
+        )
         greetingsTitleLabel.text = L10n.homeGreetingsTitle("Vladislav")
         greetingsTitleLabel.textColor = Color.gigas
         
-        greetingsSubtitleLabel.font = .systemFont(ofSize: 24, weight: .ultraLight)
+        greetingsSubtitleLabel.font = .systemFont(
+            ofSize: StyleGuide.Header.subtitleFontSize,
+            weight: .ultraLight
+        )
         let subtitleText = L10n.homeGreetingsSubtitle
         let date = "Monday"
         let greetingsSubtitleText = NSMutableAttributedString(
             string: subtitleText + date,
             attributes: [
-                .font: UIFont.systemFont(ofSize: 24, weight: .ultraLight)
+                .font: UIFont.systemFont(
+                    ofSize: StyleGuide.Header.subtitleFontSize,
+                    weight: .ultraLight
+                )
             ]
         )
         greetingsSubtitleText.addAttributes([
-            .font: UIFont.systemFont(ofSize: 24, weight: .semibold)
+            .font: UIFont.systemFont(
+                ofSize: StyleGuide.Header.subtitleFontSize,
+                weight: .semibold
+            )
         ], range: NSRange(location: subtitleText.count, length: date.count))
         greetingsSubtitleLabel.attributedText = greetingsSubtitleText
         greetingsSubtitleLabel.textColor = .black
@@ -132,7 +156,10 @@ final class HomeView: UIViewController {
         if #available(iOS 13.0, *) {
             planButton.layer.cornerCurve = .continuous
         }
-        planButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        planButton.titleLabel?.font = .systemFont(
+            ofSize: StyleGuide.Button.fontSize,
+            weight: .semibold
+        )
         planButton.layer.applyShadow(
             color: Color.marigoldYellow,
             alpha: 0.5,
@@ -142,6 +169,8 @@ final class HomeView: UIViewController {
             spread: -20
         )
 
+        missingItemsView.isHidden = true
+
         tableView.register(HomeTableViewCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
@@ -149,7 +178,7 @@ final class HomeView: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
 
-        createButton.layer.cornerRadius = 30
+        createButton.layer.cornerRadius = StyleGuide.Button.height / 2
         createButton.backgroundColor = Color.marigoldYellow
         createButton.setImage(Asset.commonTaskPlus.image, for: .normal)
     }
@@ -175,6 +204,10 @@ final class HomeView: UIViewController {
         )
 
         viewModel.sections
+            .debug("🛑 SECTIONS")
+            .do(onNext: { [weak self] sections in
+                self?.missingItemsView.isHidden = (sections.first?.items ?? []).count != 0
+            })
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 

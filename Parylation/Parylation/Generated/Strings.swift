@@ -30,6 +30,10 @@ internal enum L10n {
   internal static func homeGreetingsTitle(_ p1: Any) -> String {
     return L10n.tr("Localizable", "home_greetings_title", String(describing: p1))
   }
+  /// You have no tasks at this moment
+  internal static let homeMissingDescription = L10n.tr("Localizable", "home_missing_description")
+  /// Empty list!
+  internal static let homeMissingTitle = L10n.tr("Localizable", "home_missing_title")
   /// Write important things
   internal static let homePlanButton = L10n.tr("Localizable", "home_plan_button")
   /// Ok
