@@ -3,6 +3,7 @@
 ## Alpha 0.4.0
 ### Fixed
 - Incorrect transitioning between Sign In and Sign Up screens
+- Unexpected dismissing on Alerts
 
 ## Alpha 0.3.0
 ### Added
