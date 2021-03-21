@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.0)
   - Differentiator (4.0.1)
+  - lottie-ios (3.2.1)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (14.0.0):
@@ -31,6 +32,7 @@ PODS:
   - SwiftGen (6.4.0)
 
 DEPENDENCIES:
+  - lottie-ios (~> 3.2)
   - Moya/RxSwift (~> 14.0)
   - Nimble (~> 8.0)
   - Quick (~> 2.0)
@@ -47,6 +49,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Differentiator
+    - lottie-ios
     - Moya
     - Nimble
     - Quick
@@ -64,6 +67,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
@@ -78,6 +82,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
 
-PODFILE CHECKSUM: 070e164f04a478645b07c7074108f2efa4501718
+PODFILE CHECKSUM: 1547efa420bdb72d139b658e174ffeb8d709ca6e
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
