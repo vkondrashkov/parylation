@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vladislav Kondrashkov. All rights reserved.
 //
 
+import Lottie
 import RxCocoa
 import RxSwift
 import UIKit
@@ -20,9 +21,9 @@ final class WelcomeView: UIViewController {
     private let titleLabel = UILabel()
     private let signUpButton = UIButton()
     private let signInButton = UIButton()
+    private let lottieAnimationView = AnimationView(name: "welcome")
     private let imageBackgroundView = UIView()
     private let homeIndicatorMaskView = UIView()
-    private let imageView = UIImageView()
 
     private let disposeBag = DisposeBag()
     
@@ -32,11 +33,12 @@ final class WelcomeView: UIViewController {
         } else {
             return .default
         }
+        
     }
     
     override func loadView() {
         view = UIView()
-        
+
         view.addSubview(contentBackgroundView)
         contentBackgroundView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -106,8 +108,8 @@ final class WelcomeView: UIViewController {
             $0.top.equalTo(imageBackgroundView.snp.centerY)
         }
         
-        imageBackgroundView.addSubview(imageView)
-        imageView.snp.makeConstraints {
+        imageBackgroundView.addSubview(lottieAnimationView)
+        lottieAnimationView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.top.equalToSuperview()
@@ -174,9 +176,10 @@ final class WelcomeView: UIViewController {
         if #available(iOS 13.0, *) {
             imageBackgroundView.layer.cornerCurve = .continuous
         }
-        
-        imageView.image = Asset.welcomeBackground.image
-        imageView.contentMode = .scaleAspectFit
+
+        lottieAnimationView.contentMode = .scaleAspectFit
+        lottieAnimationView.loopMode = .loop
+        lottieAnimationView.play()
     }
     
     private func bindViewModel() {
