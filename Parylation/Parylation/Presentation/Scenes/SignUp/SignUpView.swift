@@ -301,7 +301,7 @@ final class SignUpView: UIViewController {
         view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
             .subscribe(onNext: { [weak self] _ in
-                self?.view.endEditing(true)
+                self?.hideKeyboard()
             })
             .disposed(by: disposeBag)
         NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
@@ -354,10 +354,16 @@ final class SignUpView: UIViewController {
             .disposed(by: disposeBag)
 
         signUpButton.rx.tap
+            .do(onNext: { [weak self] in
+                self?.hideKeyboard()
+            })
             .bind(to: viewModel.signUpTrigger)
             .disposed(by: disposeBag)
         
         signInButton.rx.tap
+            .do(onNext: { [weak self] in
+                self?.hideKeyboard()
+            })
             .bind(to: viewModel.signInTrigger)
             .disposed(by: disposeBag)
 
@@ -373,6 +379,10 @@ final class SignUpView: UIViewController {
             .drive(confirmPasswordErrorLabel.rx.text)
             .disposed(by: disposeBag)
     }
+
+    private func hideKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - UITextFieldDelegate implementation
@@ -384,7 +394,7 @@ extension SignUpView: UITextFieldDelegate {
         } else if textField === passwordTextField {
             confirmPasswordTextField.becomeFirstResponder()
         } else if textField === confirmPasswordTextField {
-            view.endEditing(true)
+            hideKeyboard()
             viewModel.signUpTrigger.onNext(())
         }
         return true
