@@ -257,6 +257,7 @@ final class TaskEditView: UIViewController {
 
     private func bindViewModel() {
         let tapGesture = UITapGestureRecognizer()
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
             .subscribe(onNext: { [weak self] _ in
