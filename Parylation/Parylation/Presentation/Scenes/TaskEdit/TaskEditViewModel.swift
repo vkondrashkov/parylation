@@ -51,22 +51,33 @@ final class TaskEditViewModelImpl: TaskEditViewModel {
         let descriptionSubject = PublishSubject<String>()
         let dateSubject = PublishSubject<Date>()
 
-        let stateSubject = BehaviorSubject<TaskEditViewState>(value: .ready)
+        let stateSubject = PublishSubject<TaskEditViewState>()
 
-        let willAppearSubject = PublishSubject<Void>()
-        willAppearSubject
+        let willAppearSubject = ReplaySubject<Void>.create(bufferSize: 1)
+        let editData = willAppearSubject
             .do(onNext: { stateSubject.onNext(.loading) })
-            .map { _ -> TaskEditViewInfo? in
-                if let taskData = data {
-                    return .from(data: taskData)
-                }
-                return nil
+            .compactMap { data }
+
+        let presettedIcon = editData
+            .flatMap { interactor.fetchIcon(id: $0.iconId ?? "") }
+
+        let presettedColor = editData
+            .flatMap { interactor.fetchColor(id: $0.colorId ?? "") }
+
+        let editViewInfo = Observable
+            .combineLatest(editData, presettedIcon, presettedColor)
+            .map { data, icon, color -> TaskEditViewInfo in
+                .from(data: data, icon: icon, color: color)
             }
-            .map { info -> TaskEditViewState in
-                if let taskInfo = info {
-                    return .display(taskInfo)
+
+        willAppearSubject
+            .flatMap { _ -> Observable<TaskEditViewState> in
+                if data != nil {
+                    return editViewInfo
+                        .map { .display($0) }
+                } else {
+                    return .just(.ready)
                 }
-                return .ready
             }
             .bind(to: stateSubject)
             .disposed(by: disposeBag)
