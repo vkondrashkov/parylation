@@ -1,4 +1,5 @@
 # Parylation
+<img src="Example/Assets/banner.jpg" alt="" />
 Thesis work. Application for creating reminders and tasks for self-organizing.
 
 ## Contents
