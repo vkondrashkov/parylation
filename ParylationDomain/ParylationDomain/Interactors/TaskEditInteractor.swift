@@ -15,7 +15,9 @@ public enum TaskEditInteractorError: Error {
 public protocol TaskEditInteractor {
     func fetchTask(taskId: String) -> Single<Task>
     func fetchIcons() -> Single<[Icon]>
+    func fetchIcon(id: String) -> Single<Icon>
     func fetchColors() -> Single<[Color]>
+    func fetchColor(id: String) -> Single<Color>
     func save(task: Task) -> Single<Void>
     func validate(title: String) -> Single<Bool>
     func validate(description: String) -> Single<Bool>
@@ -64,8 +66,18 @@ extension TaskEditInteractorImpl: TaskEditInteractor {
             .catchError { _ in return .error(TaskEditInteractorError.failed) }
     }
 
+    public func fetchIcon(id: String) -> Single<Icon> {
+        return iconRepository.fetch(id: id)
+            .catchError { _ in return .error(TaskEditInteractorError.failed) }
+    }
+
     public func fetchColors() -> Single<[Color]> {
         return colorRepository.fetchAll()
+            .catchError { _ in return .error(TaskEditInteractorError.failed) }
+    }
+
+    public func fetchColor(id: String) -> Single<Color> {
+        return colorRepository.fetch(id: id)
             .catchError { _ in return .error(TaskEditInteractorError.failed) }
     }
 
