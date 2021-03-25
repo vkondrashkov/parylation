@@ -254,7 +254,7 @@ final class SignInView: UIViewController {
         view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
             .subscribe(onNext: { [weak self] _ in
-                self?.view.endEditing(true)
+                self?.hideKeyboard()
             })
             .disposed(by: disposeBag)
         NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
@@ -302,16 +302,26 @@ final class SignInView: UIViewController {
             .disposed(by: disposeBag)
 
         signInButton.rx.tap
+            .do(onNext: { [weak self] in
+                self?.hideKeyboard()
+            })
             .bind(to: viewModel.signInTrigger)
             .disposed(by: disposeBag)
         
         signUpButton.rx.tap
+            .do(onNext: { [weak self] in
+                self?.hideKeyboard()
+            })
             .bind(to: viewModel.signUpTrigger)
             .disposed(by: disposeBag)
 
         viewModel.emailError
             .drive(emailErrorLabel.rx.text)
             .disposed(by: disposeBag)
+    }
+
+    private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -322,7 +332,7 @@ extension SignInView: UITextFieldDelegate {
         if textField === emailTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField === passwordTextField {
-            view.endEditing(true)
+            hideKeyboard()
             viewModel.signInTrigger.onNext(())
         }
         return true

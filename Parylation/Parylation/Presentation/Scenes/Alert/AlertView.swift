@@ -132,8 +132,20 @@ final class AlertView: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
-        maskView.addGestureRecognizer(tapGesture)
+        let terminateGesture = UITapGestureRecognizer()
+        maskView.addGestureRecognizer(terminateGesture)
+        terminateGesture.rx.event
+            .map { _ in () }
+            .do(onNext: { [weak self] in self?.hideKeyboard() })
+            .bind(to: viewModel.terminateTrigger)
+            .disposed(by: disposeBag)
+
+        let keyboardGesture = UITapGestureRecognizer()
+        containerView.addGestureRecognizer(keyboardGesture)
+        keyboardGesture.rx.event
+            .map { _ in () }
+            .subscribe(onNext: { [weak self] in self?.hideKeyboard() })
+            .disposed(by: disposeBag)
     }
 
     private func buildContent(_ content: [AlertViewInfoItem]) {
@@ -235,9 +247,8 @@ final class AlertView: UIViewController {
         }
     }
 
-    @objc func viewDidTap() {
+    private func hideKeyboard() {
         view.endEditing(true)
-        viewModel.terminateTrigger.onNext(())
     }
 }
 

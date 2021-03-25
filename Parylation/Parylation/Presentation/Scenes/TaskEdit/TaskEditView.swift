@@ -166,7 +166,6 @@ final class TaskEditView: UIViewController {
         view.backgroundColor = Color.whisper
 
         iconBackgroundView.layer.cornerRadius = Sizes.value(from: [.iPhone5s: 12], defaultValue: 15)
-        iconBackgroundView.backgroundColor = Color.gigas
 
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = .white
@@ -257,6 +256,7 @@ final class TaskEditView: UIViewController {
 
     private func bindViewModel() {
         let tapGesture = UITapGestureRecognizer()
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
             .subscribe(onNext: { [weak self] _ in
@@ -298,23 +298,39 @@ final class TaskEditView: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.icons
-            .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { row, item, cell in
+            .drive(iconSelectionCollectionView.rx.items(cellIdentifier: SelectiveIconCollectionViewCell.reuseId)) { [weak self] row, item, cell in
                 let iconCell = cell as? SelectiveIconCollectionViewCell
+                if item.image == self?.iconImageView.image {
+                    cell.isSelected = true
+                    self?.viewModel.iconSelectionTrigger.onNext(IndexPath(row: row, section: 0))
+                }
                 iconCell?.iconImageView.image = item.image
             }
             .disposed(by: disposeBag)
 
         viewModel.colors
-            .drive(colorSelectiveCollectionView.rx.items(cellIdentifier: SelectiveColorCollectionViewCell.reuseId, cellType: SelectiveColorCollectionViewCell.self)) { row, item, cell in
+            .drive(colorSelectiveCollectionView.rx.items(cellIdentifier: SelectiveColorCollectionViewCell.reuseId, cellType: SelectiveColorCollectionViewCell.self)) { [weak self] row, item, cell in
+                if item.value == self?.iconBackgroundView.backgroundColor {
+                    cell.isSelected = true
+                    self?.viewModel.colorSelectionTrigger.onNext(IndexPath(row: row, section: 0))
+                }
                 cell.color = item.value
             }
             .disposed(by: disposeBag)
 
         iconSelectionCollectionView.rx.itemSelected
+            .do(onNext: { [weak self] indexPath in
+                self?.iconSelectionCollectionView.visibleCells
+                    .forEach { $0.isSelected = false }
+            })
             .bind(to: viewModel.iconSelectionTrigger)
             .disposed(by: disposeBag)
 
         colorSelectiveCollectionView.rx.itemSelected
+            .do(onNext: { [weak self] indexPath in
+                self?.colorSelectiveCollectionView.visibleCells
+                    .forEach { $0.isSelected = false }
+            })
             .bind(to: viewModel.colorSelectionTrigger)
             .disposed(by: disposeBag)
 
@@ -358,14 +374,23 @@ final class TaskEditView: UIViewController {
     private func updateState(_ state: TaskEditViewState) {
         switch state {
         case .ready:
-            iconSelectionCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
-            colorSelectiveCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
+            viewModel.iconSelectionTrigger.onNext(IndexPath(row: 0, section: 0))
+            viewModel.colorSelectionTrigger.onNext(IndexPath(row: 0, section: 0))
         case .loading:
             break
         case .display(let info):
+            iconImageView.image = info.image
+            iconBackgroundView.backgroundColor = info.color
             taskTitleTextField.text = info.title
+            if let title = info.title {
+                viewModel.taskTitle.onNext(title)
+            }
             taskDescriptionTextField.text = info.taskDescription
+            if let description = info.taskDescription {
+                viewModel.taskDescription.onNext(description)
+            }
             if let date = info.date {
+                viewModel.taskDate.onNext(date)
                 taskDateTextField.text = CommonTextFormatter().dateToString(date)
                 datePicker.date = date
             }

@@ -1,5 +1,12 @@
 # Changelog
 
+## Alpha 0.4.0
+### Fixed
+- Incorrect transitioning between Sign In and Sign Up screens
+- Unexpected dismissing on Alerts
+- Fixed Icon and Color selection
+- Fixed Icon and Color match on Edit
+
 ## Alpha 0.3.0
 ### Added
 - iPhone SE (1st & 2nd gen) UI support
