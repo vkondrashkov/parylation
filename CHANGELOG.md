@@ -4,6 +4,8 @@
 ### Fixed
 - Incorrect transitioning between Sign In and Sign Up screens
 - Unexpected dismissing on Alerts
+- Fixed Icon and Color selection
+- Fixed Icon and Color match on Edit
 
 ## Alpha 0.3.0
 ### Added
